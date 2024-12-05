@@ -8,6 +8,7 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
+    <PackageVersion Include="CommunityToolkit.WinUI.Converters" Version="8.1.240916" />
     <PackageVersion Include="System.Private.Uri" Version="4.3.2" />
   </ItemGroup>
 </Project>

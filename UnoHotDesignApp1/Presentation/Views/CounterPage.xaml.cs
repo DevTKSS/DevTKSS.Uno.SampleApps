@@ -8,6 +8,6 @@ public sealed partial class CounterPage : Page
     public CounterPage()
     {
         this.InitializeComponent();
-        DataContext = new CounterViewModel();
+        this.DataContext = (CounterViewModel)DataContext;
     }
 }

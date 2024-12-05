@@ -39,6 +39,7 @@ public partial class App : Application
 
                     // Uno Platform namespace filter groups
                     // Uncomment individual methods to see more detailed logging
+
                     //// Generic Xaml events
                     //logBuilder.XamlLogLevel(LogLevel.Debug);
                     //// Layout specific messages
@@ -46,9 +47,9 @@ public partial class App : Application
                     //// Storage messages
                     //logBuilder.StorageLogLevel(LogLevel.Debug);
                     //// Binding related messages
-                    //logBuilder.XamlBindingLogLevel(LogLevel.Debug);
+                    logBuilder.XamlBindingLogLevel(LogLevel.Debug);
                     //// Binder memory references tracking
-                    //logBuilder.BinderMemoryReferenceLogLevel(LogLevel.Debug);
+                    logBuilder.BinderMemoryReferenceLogLevel(LogLevel.Debug);
                     //// DevServer and HotReload related
                     //logBuilder.HotReloadCoreLogLevel(LogLevel.Information);
                     //// Debug JS interop
@@ -75,7 +76,7 @@ public partial class App : Application
         MainWindow.UseStudio();
 #endif
         MainWindow.SetWindowIcon();
-        MainWindow.ExtendsContentIntoTitleBar = true;
+        
         Host = await builder.NavigateAsync<Shell>();
     }
 

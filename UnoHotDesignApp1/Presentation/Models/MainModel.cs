@@ -5,28 +5,35 @@ namespace UnoHotDesignApp1.Presentation.Models;
 [Bindable]
 public partial record MainModel
 {
-    private INavigator _navigator;
-    private ILocalizationService _localizer;
+    private readonly INavigator _navigator;
+    private readonly ILocalizationService _localizationService;
+    private readonly IStringLocalizer _stringLocalizer;
+
     public MainModel(
         IOptions<AppConfig> appInfo,
         INavigator navigator,
-        ILocalizationService localizer)
+        ILocalizationService localizationService,
+        IStringLocalizer stringLocalizer)
     {
-        _navigator = navigator;
-        _localizer = localizer;
-        Title = $"Welcome to my Uno Platform Hot Design Application! \n You are running in {appInfo?.Value?.Environment} Environment";
+        this._navigator = navigator;
+        this._localizationService = localizationService;
+        this._stringLocalizer = stringLocalizer;
+        //this.Title.SetAsync($"{stringLocalizer["ApplicationName"]}");
     }
 
-    public string? Title { get; }
-    public IState<string> Name => State<string>.Value(this, () => string.Empty);
-    //public IState<Page> CurrentPage;
+    public IState<string> AppTitle => State<string>.Value(this, () => _stringLocalizer["ApplicationName"]);
+   // public IState<string> Name => State<string>.Value(this, () => string.Empty);
+    public IState<bool> MenuPaneOpen => State<bool>.Value(this, () => false);
     public async Task GoBack()
     {
         await _navigator.NavigateRouteAsync(this,"Dashboard", qualifier: Qualifiers.Separator);
     }
-   // public async Task ChangeCulture(string culture)
-   // {
-        //await _localizer.SetCurrentCultureAsync(newCulture: );
-   // }
+   
+
+    public async Task ToggleMenuVisibility()
+    {
+        await MenuPaneOpen.SetAsync(await MenuPaneOpen == false ? true : false);
+    }
+    
 }
 

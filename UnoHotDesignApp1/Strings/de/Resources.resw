@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationDescription" xml:space="preserve">
-    <value>Willkommen in meiner ersten Uno HotDesign App!</value>
-  </data>
   <data name="ApplicationName" xml:space="preserve">
-    <value>Meine erste Uno HotDesign App</value>
+    <value>Willkommen zu meiner ersten Uno HotDesign App!</value>
   </data>
   <data name="CounterTitle" xml:space="preserve">
-    <value>Hier wird gezählt!</value>
+    <value>Lass uns zählen!</value>
   </data>
   <data name="DashboardTitle" xml:space="preserve">
     <value>Willkommen im Dashboard!

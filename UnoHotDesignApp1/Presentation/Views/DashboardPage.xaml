@@ -1,19 +1,45 @@
-﻿<Page
+<Page 
     x:Class="UnoHotDesignApp1.Presentation.Views.DashboardPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UnoHotDesignApp1.Presentation.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    xmlns:um="using:Uno.Material"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border CornerRadius="5">
-            <TextBlock Text="{Binding ViewModel.Title}"/>
+        <Border Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="0" Margin="5" CornerRadius="10">
+            <TextBlock TextAlignment="Center"
+                       VerticalAlignment="Center"
+                       Style="{StaticResource HeadlineMedium}"
+                       Text="{Binding Path=Title,Mode=OneWay}"/>
         </Border>
+        <utu:Card x:Name="FirstCard"
+                  CornerRadius="20"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  HeaderContent="Elevated Card"
+                  Style="{StaticResource ElevatedCardStyle}" />
+        <utu:Card x:Name="SecondCard"
+                  CornerRadius="20"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  HeaderContent="Filled Card"
+                  Style="{StaticResource FilledCardStyle}" />
+        <utu:Card x:Name="ThirdCard"
+                  CornerRadius="20"
+                  Grid.Row="1"
+                  Grid.Column="2"
+                  HeaderContent="Outlined Card"
+                  Style="{StaticResource OutlinedCardStyle}" />
     </Grid>
 </Page>

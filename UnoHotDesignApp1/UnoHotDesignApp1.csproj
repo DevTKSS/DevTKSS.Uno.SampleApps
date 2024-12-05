@@ -51,6 +51,7 @@
     <None Remove="Presentation\DashboardPage.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.WinUI.Converters" />
     <PackageReference Include="System.Private.Uri" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Presentation\Views\" />
+    <Folder Include="Themes\" />
   </ItemGroup>
 
 </Project>
