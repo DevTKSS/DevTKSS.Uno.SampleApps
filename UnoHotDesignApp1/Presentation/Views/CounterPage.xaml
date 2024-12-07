@@ -6,32 +6,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:utu="using:Uno.Toolkit.UI"
         mc:Ignorable="d"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        Background="{ThemeResource BackgroundBrush}">
 
     <Grid x:Name="CounterPageContentGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" x:Name="HeadlineRow"/>
             <RowDefinition Height="*" x:Name="ContentArea"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel x:Name="SPContent" Grid.Row="1">
-            <Border CornerRadius="5" HorizontalAlignment="Center">
-                <Image Source="Assets//Images//logo.png" Width="150"/>
-            </Border>
-            <TextBox PlaceholderText="Increment by Step Size"
-                     Text="{Binding ViewModel.StepSize, Mode=TwoWay}"
-                    HorizontalAlignment="Center"
-                    Margin="12" />
+        <Grid Height="85" x:Name="CounterHeader"
+              Grid.Row="0"
+              Margin="5"
+              CornerRadius="10"
+              Background="{ThemeResource SecondaryContainerBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
             <TextBlock TextAlignment="Center"
-                Text="{Binding Path=Countable.Count}"
-                HorizontalAlignment="Center"
-                Margin="12" />
-            <Button VerticalAlignment="Stretch"
-                Content="Increment Counter"
-                Command="{Binding Path=IncrementCounter}"
-                HorizontalAlignment="Center"
-                Margin="12"/>
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Stretch"
+                       Grid.Column="0"
+                       Style="{StaticResource HeadlineMedium}"
+                       Text="{Binding Path=CounterTitle,Mode=OneWay}"
+                       Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
+               <Button Command="{Binding Path=ReloadCounterTitle}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Grid.Column="1" Margin="10">
+                   <SymbolIcon Symbol="Refresh"/>
+               </Button>
+        </Grid>
+        <StackPanel x:Name="spCounterContent"
+                    Grid.Row="1"
+                    VerticalAlignment="Center">
+
+            <Border CornerRadius="5"
+                    HorizontalAlignment="Center">
+                <Image Source="Assets//Images//logo.png" Width="200"/>
+            </Border>
+
+            <TextBox x:Name="txtBoxStepSize"
+                     TextAlignment="Center"
+                     Width="{x:Bind spCounterContent.Width,Mode=OneWay}"
+                     PlaceholderText="Increment by Step Size"
+                     Text="{Binding ViewModel.StepSize, Mode=TwoWay}"
+                     HorizontalAlignment="Center"
+                     Margin="12" />
+
+            <TextBlock TextAlignment="Center"
+                     Text="{Binding Path=Countable.Count}"
+                     Margin="12"
+                     Width="{x:Bind spCounterContent.Width,Mode=OneWay}"/>
+
+            <Button Style="{StaticResource ButtonRevealStyle}" VerticalAlignment="Stretch"
+                    Content="Increment Counter"
+                    Command="{Binding Path=IncrementCounter}"
+                    HorizontalAlignment="Center"
+                    Margin="12"
+                    Width="{x:Bind spCounterContent.Width, Mode=OneWay}"/>
         </StackPanel>
     </Grid>
 </Page>
-

@@ -1,6 +1,3 @@
-using System.Globalization;
-using Microsoft.UI.Xaml.Data;
-
 namespace UnoHotDesignApp1.Presentation.Models;
 [Bindable]
 public partial record MainModel
@@ -18,22 +15,24 @@ public partial record MainModel
         this._navigator = navigator;
         this._localizationService = localizationService;
         this._stringLocalizer = stringLocalizer;
-        //this.Title.SetAsync($"{stringLocalizer["ApplicationName"]}");
     }
 
     public IState<string> AppTitle => State<string>.Value(this, () => _stringLocalizer["ApplicationName"]);
-   // public IState<string> Name => State<string>.Value(this, () => string.Empty);
+   
     public IState<bool> MenuPaneOpen => State<bool>.Value(this, () => false);
-    public async Task GoBack()
+
+    public async Task DoMainNavigation(string RegionName)
     {
-        await _navigator.NavigateRouteAsync(this,"Dashboard", qualifier: Qualifiers.Separator);
+        await _navigator.NavigateRouteAsync(this, RegionName, qualifier: Qualifiers.Nested);
     }
    
-
     public async Task ToggleMenuVisibility()
     {
         await MenuPaneOpen.SetAsync(await MenuPaneOpen == false ? true : false);
     }
-    
+    public async Task ReloadTitle()
+    {
+        await AppTitle.SetAsync(_stringLocalizer["ApplicationName"]);
+    }
 }
 

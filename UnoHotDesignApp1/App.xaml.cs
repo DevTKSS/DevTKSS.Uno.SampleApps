@@ -63,11 +63,12 @@ public partial class App : Application
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
-                .ConfigureServices((context, services) =>
-                {
+                .ConfigureServices((context, services) => 
+                    services
                     // TODO: Register your services
-                    //services.AddSingleton<IMyService, MyService>();
-                })
+                        .AddSingleton<ICardService,CardService>()
+                        .AddSingleton<IGalleryImageService, GalleryImageService>()
+                )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
             );
         MainWindow = builder.Window;
@@ -100,7 +101,8 @@ public partial class App : Application
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
                             new ("Second", View: views.FindByViewModel<SecondModel>()),
-                        ]),
+                        ]
+                    ),
                     
                 ]
             )

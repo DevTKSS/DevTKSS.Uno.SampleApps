@@ -1,4 +1,4 @@
-<Page x:Class="UnoHotDesignApp1.Presentation.Views.MainPage"
+﻿<Page x:Class="UnoHotDesignApp1.Presentation.Views.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="using:UnoHotDesignApp1.Presentation.Views"
@@ -7,17 +7,22 @@
       xmlns:utu="using:Uno.Toolkit.UI"
       xmlns:um="using:Uno.Material"
       xmlns:ctk="using:CommunityToolkit.WinUI.Converters"
+      uen:Region.Name="Main"
       NavigationCacheMode="Required"
       Background="{ThemeResource BackgroundBrush}">
 
-    <Grid uen:Region.Attached="True">
+    <Page.Resources>
+        <ctk:BoolNegationConverter x:Name="InvertBoolConv"/>
+    </Page.Resources>
+    <Grid x:Name="MainContentGrid"
+          uen:Region.Attached="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-               <Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-       </Grid.RowDefinitions>
+        </Grid.RowDefinitions>
 
         <utu:NavigationBar x:Name="NavBar" 
                            Grid.Row="0"
@@ -25,17 +30,24 @@
                            HorizontalContentAlignment="Center"
                            VerticalContentAlignment="Center"
                            VerticalAlignment="Top"
-                           Content="{Binding Path=AppTitle,Mode=OneWay}"
-                           MainCommandMode="Action">
+                           Content="{Binding Path=AppTitle, Mode=OneWay}"
+                           MainCommandMode="Action"
+                           Background="{ThemeResource PrimaryContainerBrush}"
+                           Foreground="{ThemeResource OnPrimaryContainerBrush}">
             <utu:NavigationBar.MainCommand>
                 <AppBarButton Icon="GlobalNavigationButton"
-                              Command="{Binding Path=ToggleMenuVisibility}"
-                              Width="{x:Bind NavView.CompactPaneLength,Mode=OneWay}"
+                              Command="{x:Bind NavView.IsPaneOpen, Converter={StaticResource InvertBoolConv}}"
+                              Width="{x:Bind NavView.CompactPaneLength, Mode=OneWay}"
                               HorizontalContentAlignment="Center"/>
             </utu:NavigationBar.MainCommand>
+            <utu:NavigationBar.PrimaryCommands>  
+               <AppBarButton Icon="Refresh" Command="{Binding Path=ReloadAppTitle}"/>  
+            </utu:NavigationBar.PrimaryCommands>
         </utu:NavigationBar>
 
-        <NavigationView IsPaneOpen="{Binding Path=MenuPaneOpen}" IsPaneToggleButtonVisible="False" x:Name="NavView"
+        <NavigationView x:Name="NavView"
+                        IsPaneOpen="False"
+                        IsPaneToggleButtonVisible="False" 
                         Grid.Row="1"
                         PaneDisplayMode="LeftCompact"
                         IsBackButtonVisible="Collapsed"
@@ -43,9 +55,9 @@
                         HorizontalAlignment="Stretch">
             
             <NavigationView.MenuItems>
-                                <NavigationViewItem x:Name="NavItemDashboard" Content="Home"
-                                    Icon="Home"
-                                    uen:Region.Name="./Dashboard"/>
+                <NavigationViewItem x:Name="NavItemDashboard" Content="Home"
+                                    uen:Region.Name="./Dashboard"
+                                    Icon="Home"/>
                 <NavigationViewItem x:Name="NavItemCounter" Content="Counter"
                                     Icon="Calculator"
                                     uen:Region.Name="./Counter"/>
@@ -53,10 +65,39 @@
             </NavigationView.MenuItems>
             
             <NavigationView.Content>
-                <Grid uen:Region.Attached="True"
-                      uen:Region.Navigator="Visibility"
-                      Visibility="Visible">
-                
+                <Grid x:Name="NavigationViewContentGrid"
+                       uen:Region.Attached="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="MainNavigationGrid"
+                           uen:Region.Attached="True"
+                           uen:Region.Navigator="Visibility"
+                           Visibility="Visible">
+                        
+                    </Grid>
+                    <utu:TabBar x:Name="Tabs"
+                                Grid.Row="1"
+                                uen:Region.Attached="True"
+                                VerticalAlignment="Bottom">
+                        <utu:TabBar.Items>
+                            <utu:TabBarItem Style="{StaticResource MaterialBottomTabBarItemStyle}"
+                                            HorizontalAlignment="Stretch"
+                                            uen:Region.Name="./Dashboard">
+                                <utu:TabBarItem.Icon>
+                                    <SymbolIcon Symbol="Home"/>
+                                </utu:TabBarItem.Icon>
+                            </utu:TabBarItem>
+                            <utu:TabBarItem Style="{StaticResource MaterialBottomTabBarItemStyle}"
+                                            HorizontalAlignment="Stretch"
+                                            uen:Region.Name="./Counter">
+                                <utu:TabBarItem.Icon>
+                                    <SymbolIcon Symbol="Calculator"/>
+                                </utu:TabBarItem.Icon>
+                            </utu:TabBarItem>
+                        </utu:TabBar.Items>
+                    </utu:TabBar>
                 </Grid>
             </NavigationView.Content>
         </NavigationView>

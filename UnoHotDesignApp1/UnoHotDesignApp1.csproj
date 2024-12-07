@@ -46,7 +46,6 @@
     </UnoFeatures>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Assets\Images\logo.svg" />
     <None Remove="Presentation\CounterPage.xaml" />
     <None Remove="Presentation\DashboardPage.xaml" />
   </ItemGroup>
