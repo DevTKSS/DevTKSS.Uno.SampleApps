@@ -1,39 +1,100 @@
+using System.Globalization;
+
 namespace UnoHotDesignApp1.GeneralModels;
-public class GalleryImageService : IGalleryImageService
+[Bindable]
+public partial class GalleryImageService : IGalleryImageService
 {
+    private readonly ILocalizationService _localizationService;
+    public GalleryImageService(ILocalizationService localizationService)
+    {
+        this._localizationService = localizationService;
+    }
 
     public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromSeconds(2), ct);
+        string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
+        var galleryImages = cultureString switch
+        {
+            "de" => await GetDEGalleryImagesAsync(ct),
+            _ => await GetENGalleryImagesAsync(ct),
+        };
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        return galleryImages;
+    }
+
+    #region Get culture specific gallery imageDescription
+
+    #region German gallery descriptions
+    private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
+    {
+        await Task.Delay(TimeSpan.FromMicroseconds(1),ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
-                Title: "Elevated Card",
+                Title: "Fluffy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
-                Description:""),
+                Description: "Ein kleiner Kuschelmeister, der es liebt, im Zentrum der aufmerksamkeit zu stehen und sanft gekrault zu werden."),
             new GalleryImageModel(
-                Title: "Filled Card",
-                ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
-                Description: ""),
-            new GalleryImageModel(
-                Title: "Outlined Card",
-                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
-                Description : ""),
-            new GalleryImageModel(
-                Title: "Elevated Card",
-                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg", 
-                Description : ""),
-            new GalleryImageModel(
-                Title: "Filled Card",
-                ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
-                Description : ""),
-            new GalleryImageModel(
-                Title: "Outlined Card",
+                Title: "Snowball",
                 ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
-                Description : ""),
+                Description: "Ein verspielter Wirbelwind, der mit seinen Hüpfern jeden Raum zum Leben erweckt und dabei immer ein Lächeln hervorruft."),
+            new GalleryImageModel(
+                Title: "Buddy",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
+                Description: "Ein neugieriger Abenteurer, der ständig mit tapsigen Pfoten und seinem aufgeweckten Näschen die Welt erkundet."),
+            new GalleryImageModel(
+                Title: "Coco",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
+                Description: "Ein kleiner Genießer, der sich nichts sehnlicher wünscht, als den ganzen Tag an frischem Grünzeug zu knabbern."),
+            new GalleryImageModel(
+                Title: "Bunny",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
+                Description: "Ein absoluter Herzensbrecher, der sich mit einem einzigen Blick tief in die Herzen seiner Menschen schleicht."),
+            new GalleryImageModel(
+                Title: "Thumper",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
+                Description: "Ein lebhafter Freigeist, der mit seinen lustigen Sprüngen und Hüpfern für pure Lebensfreude sorgt."),
         }.ToImmutableList();
         return galleryImages;
     }
+    #endregion
+    
+    #region English gallery descriptions
+    private async ValueTask<IImmutableList<GalleryImageModel>> GetENGalleryImagesAsync(CancellationToken ct)
+    {
+        await Task.Delay(TimeSpan.FromMicroseconds(1), ct);
+        var galleryImages = new GalleryImageModel[]
+        {
+            new GalleryImageModel(
+                Title: "Fluffy",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
+                Description: "A little snuggle expert who loves curling up in blankets and soaking up gentle attention."),
+            new GalleryImageModel(
+                Title: "Snowball",
+                ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
+                Description: "A playful bundle of energy who hops around spreading joy wherever they go."),
+            new GalleryImageModel(
+                Title: "Buddy",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
+                Description: "A curious explorer, always investigating the world with tiny paws and an inquisitive nose."),
+            new GalleryImageModel(
+                Title: "Coco",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
+                Description: "A little foodie who would happily spend all day nibbling on fresh treats."),
+            new GalleryImageModel(
+                Title: "Bunny",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
+                Description: "A charming sweetheart who wins hearts with just one adorable glance."),
+            new GalleryImageModel(
+                Title: "Thumper",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
+                Description: "A lively free spirit who bounces around spreading cheer and fun."),
+            }.ToImmutableList();
+        return galleryImages;
+    }
+    #endregion
+    
+    #endregion
 }
 public interface IGalleryImageService
 {

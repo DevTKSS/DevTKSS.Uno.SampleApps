@@ -5,12 +5,12 @@ namespace UnoHotDesignApp1.Presentation.Views;
 [Bindable]
 public sealed partial class MainPage : Page
 {
-    
-    //MainViewModel? ViewModel;
+
+    //private MainViewModel? ViewModel => (MainViewModel)DataContext;
     public MainPage()
     {
         this.InitializeComponent();
-        this.DataContext = (MainViewModel)DataContext;
+        //this.DataContext = (MainViewModel)DataContext;
     }
 
 }

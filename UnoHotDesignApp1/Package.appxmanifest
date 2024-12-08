@@ -7,7 +7,7 @@
 
   <Identity Name="UnoHotDesignApp1"
             Version="1.0.0.0"
-            ProcessorArchitecture="neutral"
+            ProcessorArchitecture="x64"
             Publisher="CN=DevTKSS, O=Technische Konstruktion Sonja Schweitzer"/>
     <Properties>
         <DisplayName>Uno HotDesign App</DisplayName>

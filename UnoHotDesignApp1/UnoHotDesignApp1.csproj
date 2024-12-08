@@ -67,8 +67,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Presentation\Views\" />
     <Folder Include="Themes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\UserControls\GLFeedViewHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
 </Project>

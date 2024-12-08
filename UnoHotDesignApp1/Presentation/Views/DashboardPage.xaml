@@ -4,72 +4,83 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UnoHotDesignApp1.Presentation.Views"
     xmlns:gm="using:UnoHotDesignApp1.GeneralModels"
+    xmlns:uc="using:UnoHotDesignApp1.Presentation.UserControls"
     xmlns:mvux="using:Uno.Extensions.Reactive.UI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:utu="using:Uno.Toolkit.UI"
+    xmlns:conv="using:CommunityToolkit.WinUI.Converters"
     xmlns:um="using:Uno.Material"
+    xmlns:sys="using:System"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 
     <Page.Resources>
-        <DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:CardModel">
+        
+        <!--Right Side-->
+        <DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImageModel">
             <utu:Card CornerRadius="20"
-                      HeaderContent="{Binding HeaderContent}"
-                      MediaContent="{Binding MediaContent}"
+                      HorizontalContentAlignment="Stretch"
+                      HeaderContent="{Binding Title}"
+                      MediaContent="{Binding ImageLocation}"
+                      SubHeaderContent="{Binding Description}"
                       Style="{StaticResource OutlinedCardStyle}"
-                      Margin="5">
+                      HorizontalAlignment="Center"
+                      MaxWidth="300">
                 <utu:Card.HeaderContentTemplate>
                     <DataTemplate>
                         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
                             <TextBlock Text="{Binding}"
                                        Style="{ThemeResource TitleLarge}"
-                                       Margin="16,14,16,0"
-                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"/>
+                                       Margin="16,14,16,14"
+                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                       TextWrapping="WrapWholeWords"/>
                         </Border>
                     </DataTemplate>
                 </utu:Card.HeaderContentTemplate>
-                <!--<utu:Card.SubHeaderContentTemplate>
+                <utu:Card.SubHeaderContentTemplate>
                     <DataTemplate>
                         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
-                            <TextBlock Text="{Binding}"
+                            <TextBlock Text="{Binding }"
                                        Style="{ThemeResource BodySmall}"
                                        Margin="16,0,16,14"
-                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"/>
+                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                       TextWrapping="WrapWholeWords"/>
                         </Border>
                     </DataTemplate>
-                </utu:Card.SubHeaderContentTemplate>-->
+                </utu:Card.SubHeaderContentTemplate>
                 <utu:Card.MediaContentTemplate>
                     <DataTemplate>
                         <Image Source="{Binding }"
                                Stretch="Uniform"
-                               MaxHeight="194" />
+                               Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
                     </DataTemplate>
                 </utu:Card.MediaContentTemplate>
             </utu:Card>
         </DataTemplate>
 
-        <Style x:Key="MyGridViewItemStyle" TargetType="GridViewItem" BasedOn="{StaticResource DefaultGridViewItemStyle}">
-            <Setter Property="Margin" Value="5"/>
-        </Style>
-
+        <!--Left Side-->
         <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gm:GalleryImageModel">
-                <Grid HorizontalAlignment="Stretch"
-                      VerticalAlignment="Stretch"
-                      Margin="5">
+            <Grid HorizontalAlignment="Stretch"
+                  VerticalAlignment="Stretch"
+                  CornerRadius="20"
+                  Background="{ThemeResource BackgroundBrush}"
+                  Margin="5"
+                  Padding="2"
+                  MaxHeight="400">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" MaxHeight="200"/>
+                        <RowDefinition Height="*" MaxHeight="400"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Image Source="{Binding ImageLocation}"
                            Grid.Row="0" Grid.RowSpan="2"
                            Stretch="Uniform"
-                           MaxHeight="194" />
+                           Width="{utu:AncestorBinding AncestorType=Grid, Path=Width}" />
                     <StackPanel Background="{ThemeResource SurfaceInverseBrush}"
                                 Opacity=".7"
                                 Grid.Row="1"
                                 HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch">
+                                VerticalAlignment="Bottom">
                         <TextBlock Text="{Binding Title}"
                                    Style="{ThemeResource TitleLarge}"
                                    Margin="16,14,16,0"
@@ -105,18 +116,21 @@
                 </Button>
             </Grid>
         </DataTemplate>-->
-
-        <DataTemplate x:Key="FeedViewRefreshButton" x:DataType="mvux:FeedView">
-            <Button Command="{Binding Refresh}" Margin="5">
-                <Button.Content>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                        <TextBlock Text="Refresh" Margin="5"/>
-                        <SymbolIcon Symbol="Refresh"
-                                    Margin="5"/>
-                    </StackPanel>
-                </Button.Content>
-            </Button>
-        </DataTemplate>
+                         
+        <!--<DataTemplate x:Key="FeedViewRefreshButton">
+            <StackPanel Orientation="Horizontal">
+                
+                <Button Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}" Margin="5">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <TextBlock Text="Refresh" Margin="5"/>
+                            <SymbolIcon Symbol="Refresh"
+                                        Margin="5"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+        </DataTemplate>-->
 
     </Page.Resources>
     
@@ -126,7 +140,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid x:Name="HeadlineGrid"
+        <!--<Grid x:Name="HeadlineGrid"
               Grid.ColumnSpan="3"
               Margin="5"
               CornerRadius="10"
@@ -148,7 +162,7 @@
                     Grid.Column="1">
                 <SymbolIcon Symbol="Refresh"/>
             </Button>
-        </Grid>
+        </Grid>-->
         
         <Grid x:Name="ContentGrid"
               Grid.Row="1"
@@ -159,6 +173,34 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid x:Name="HeadlineGrid"
+                    Grid.ColumnSpan="3"
+                    Margin="3"
+                    CornerRadius="10"
+                    Padding="10"
+                    Background="{ThemeResource SecondaryContainerBrush}"
+                    Height="85">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="3"
+                            TextAlignment="Center"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource HeadlineMedium}"
+                            Text="{Binding Path=DashboardTitle,Mode=OneWay}"
+                            Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
+                <Button Command="{Binding Path=ReloadDashboardTitle}"
+                        HorizontalAlignment="Center"
+                        Grid.Column="1">
+                    <SymbolIcon Symbol="Refresh"/>
+                </Button>
+            </Grid>
             
             <!--<utu:Card x:Name="FirstCard"
                       CornerRadius="20"
@@ -211,24 +253,111 @@
                         HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
                         MediaContentTemplate="{StaticResource MediaContentTemplate}"/>-->
 
-            <mvux:FeedView Grid.Column="1"
-                           Source="{Binding Cards}">
-                <DataTemplate>
-                    <GridView ItemsSource="{Binding Data}"
+            <!--Right Side-->
+            <mvux:FeedView x:Name="RightFeedView" Grid.Column="1"
+                           Grid.Row="1"
+                           Source="{Binding GalleryImages}"
+                           Margin="3">
+                <DataTemplate x:DataType="mvux:FeedViewState">
+                    <GridView x:Name="ContentGridView"
+                              ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource StyledCardTemplate}"
-                              HeaderTemplate="{StaticResource FeedViewRefreshButton}"
-                              VariableSizedWrapGrid.ColumnSpan="3"
-                              VariableSizedWrapGrid.RowSpan="3">
+                              CanReorderItems="True"
+                              CanDragItems="True"
+                              IsItemClickEnabled="True"
+                              AllowDrop="True"
+                              SelectionMode="None"
+                              HorizontalAlignment="Stretch"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalContentAlignment="Center">
+                        <GridView.Header>
+                            
+                            <Grid Background="{ThemeResource SurfaceInverseBrush}"
+                                  CornerRadius="10,10,0,0"
+                                  Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*" MinWidth="100"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <PersonPicture ProfilePicture="Assets/Images/logo.png"
+                                                Width="60"
+                                                Style="{StaticResource DefaultPersonPictureStyle}"
+                                                Grid.Column="0"/>
+                                <TextBlock Text="This is a cool GridView fed from FeedView, isn't it?"
+                                            Style="{ThemeResource TitleMedium}"
+                                            Margin="16,14,16,0"
+                                            Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                            VerticalAlignment="Stretch"
+                                            HorizontalAlignment="Center"
+                                            TextAlignment="Center"
+                                            Grid.Column="1"
+                                           TextWrapping="WrapWholeWords"/>
+                                <Button Command="{utu:AncestorBinding AncestorType=mvux:FeedView,Path=Refresh}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Stretch"
+                                        Grid.Column="2">
+                                    <SymbolIcon Symbol="Refresh"
+                                                HorizontalAlignment="Right"/>
+                                </Button>
+                            </Grid>
+                            
+                        </GridView.Header>
                     </GridView>
                 </DataTemplate>
             </mvux:FeedView>
-            
-            <mvux:FeedView Grid.Column="0"
-                           Source="{Binding GalleryImages}">
+
+            <!--Left Side-->
+            <mvux:FeedView x:Name="LeftFeedView" Grid.Column="0"
+                           Grid.Row="1"
+                           Source="{Binding GalleryImages}"
+                           Margin="3" CanDrag="False" AllowDrop="False" >
                 <DataTemplate>
                     <ListView ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource GalleryImageOverlayTemplate}"
-                              HeaderTemplate="{StaticResource FeedViewRefreshButton}">
+                              AllowDrop="True"
+                              CanDrag="True"
+                              CanReorderItems="True"
+                              SelectionMode="Single">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsStackPanel AreStickyGroupHeadersEnabled="True"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.Header>
+
+                                <Grid Background="{ThemeResource SurfaceInverseBrush}"
+                                      CornerRadius="10,10,0,0"
+                                      Padding="10"
+                                      HorizontalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*" MinWidth="100"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <PersonPicture x:Name="PictureElement" ProfilePicture="Assets/Images/logo.png"
+                                                    Width="60"
+                                                    Style="{StaticResource DefaultPersonPictureStyle}"
+                                                    Grid.Column="0"/>
+                                    <TextBlock x:Name="CaptionText" Text="{x:Bind sys:StringFormat This is a cool ListView fed from FeedView, isn't it?}"
+                                                Style="{ThemeResource TitleMedium}"
+                                                Margin="16,14,16,0"
+                                                Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                                VerticalAlignment="Stretch"
+                                                HorizontalAlignment="Center"
+                                                TextAlignment="Center"
+                                                Grid.Column="1"
+                                               TextWrapping="WrapWholeWords"/>
+                                    <Button x:Name="RefreshButton" Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Stretch"
+                                            Grid.Column="2">
+                                    <SymbolIcon Symbol="Refresh"
+                                            HorizontalAlignment="Right"/>
+                                    </Button>
+                                </Grid>
+
+                        </ListView.Header>
                     </ListView>
                 </DataTemplate>
             </mvux:FeedView>

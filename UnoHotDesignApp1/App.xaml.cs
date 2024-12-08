@@ -66,7 +66,7 @@ public partial class App : Application
                 .ConfigureServices((context, services) => 
                     services
                     // TODO: Register your services
-                        .AddSingleton<ICardService,CardService>()
+                        
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)

@@ -1,7 +1,8 @@
 
 
 namespace UnoHotDesignApp1.GeneralModels;
-public class CardService : ICardService
+[Bindable]
+public partial class CardService : ICardService
 {
 
     public async ValueTask<IImmutableList<CardModel>> GetCardsAsync(CancellationToken ct)

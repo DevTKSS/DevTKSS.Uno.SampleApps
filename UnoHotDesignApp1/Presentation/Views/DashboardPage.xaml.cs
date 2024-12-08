@@ -6,6 +6,6 @@ public sealed partial class DashboardPage : Page
     public DashboardPage()
     {
         this.InitializeComponent();
-        DataContext = (DashboardViewModel)DataContext;
+        //DataContext = (DashboardViewModel)DataContext;
     }
 }
