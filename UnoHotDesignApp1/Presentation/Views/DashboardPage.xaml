@@ -339,7 +339,7 @@
                                                     Width="60"
                                                     Style="{StaticResource DefaultPersonPictureStyle}"
                                                     Grid.Column="0"/>
-                                    <TextBlock x:Name="CaptionText" Text="{x:Bind sys:StringFormat This is a cool ListView fed from FeedView, isn't it?}"
+                                    <TextBlock x:Name="CaptionText" Text="This is a cool ListView fed from FeedView, isn't it?"
                                                 Style="{ThemeResource TitleMedium}"
                                                 Margin="16,14,16,0"
                                                 Foreground="{ThemeResource OnSurfaceInverseBrush}"
