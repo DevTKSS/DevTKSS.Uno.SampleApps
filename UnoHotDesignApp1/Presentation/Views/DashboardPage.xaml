@@ -257,8 +257,10 @@
             <mvux:FeedView x:Name="RightFeedView" Grid.Column="1"
                            Grid.Row="1"
                            Source="{Binding GalleryImages}"
-                           Margin="3">
-                <DataTemplate x:DataType="mvux:FeedViewState">
+                           Margin="3"
+                           CanDrag="False"
+                           AllowDrop="False">
+                <DataTemplate>
                     <GridView x:Name="ContentGridView"
                               ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource StyledCardTemplate}"
@@ -311,7 +313,7 @@
             <mvux:FeedView x:Name="LeftFeedView" Grid.Column="0"
                            Grid.Row="1"
                            Source="{Binding GalleryImages}"
-                           Margin="3" CanDrag="False" AllowDrop="False" >
+                           Margin="3">
                 <DataTemplate>
                     <ListView ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource GalleryImageOverlayTemplate}"

@@ -86,7 +86,7 @@ public partial class App : Application
         views.Register(
             new ViewMap(ViewModel: typeof(ShellModel)),
             new ViewMap<MainPage, MainModel>(),
-            new DataViewMap<SecondPage, SecondModel, Entity>(),
+           // new DataViewMap<SecondPage, SecondModel, Entity>(),
             new ViewMap<CounterPage, CounterModel>(),
             new ViewMap<DashboardPage, DashboardModel>()
         );
@@ -100,7 +100,7 @@ public partial class App : Application
                         [
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
-                            new ("Second", View: views.FindByViewModel<SecondModel>()),
+                            //new ("Second", View: views.FindByViewModel<SecondModel>()),
                         ]
                     ),
                     

@@ -21,10 +21,10 @@ public partial record MainModel
    
     public IState<bool> MenuPaneOpen => State<bool>.Value(this, () => false);
 
-    public async Task DoMainNavigation(string RegionName)
-    {
-        await _navigator.NavigateRouteAsync(this, RegionName, qualifier: Qualifiers.Nested);
-    }
+    //public async Task DoMainNavigation(string RegionName)
+    //{
+    //    await _navigator.NavigateRouteAsync(this, RegionName, qualifier: Qualifiers.Nested);
+    //}
    
     public async Task ToggleMenuVisibility()
     {
