@@ -126,5 +126,8 @@
   <data name="DashboardTitle" xml:space="preserve">
     <value>Welcome on the Dashboard!
 What do you want to do today?</value>
+  </data> 
+  <data name="SettingsTitle" xml:space="preserve">
+    <value>Settings</value>
   </data>
 </root>
