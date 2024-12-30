@@ -70,7 +70,7 @@ public partial class App : Application
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
-                .UseThemeSwitching()
+               // .UseThemeSwitching()
             );
         MainWindow = builder.Window;
 
@@ -89,7 +89,7 @@ public partial class App : Application
             new ViewMap<MainPage, MainModel>(),
             new ViewMap<CounterPage, CounterModel>(),
             new ViewMap<DashboardPage, DashboardModel>(),
-            new ViewMap<MySettingsPage, MySettingsModel>()
+           // new ViewMap<MySettingsPage, MySettingsModel>()
         );
 
         routes.Register(
@@ -101,7 +101,7 @@ public partial class App : Application
                         [
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
-                            new ("MySettings", View: views.FindByViewModel<MySettingsModel>()),
+                          //  new ("MySettings", View: views.FindByViewModel<MySettingsModel>()),
                         ]
                     ),
                     
