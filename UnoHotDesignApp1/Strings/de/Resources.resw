@@ -127,4 +127,7 @@
     <value>Willkommen im Dashboard!
 Was willst du heute tun?</value>
   </data>
+<data name="SettingsTitle" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
 </root>
