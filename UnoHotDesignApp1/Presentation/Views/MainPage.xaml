@@ -50,7 +50,7 @@
                         IsPaneToggleButtonVisible="False" 
                         Grid.Row="1"
                         PaneDisplayMode="LeftCompact"
-                        IsBackButtonVisible="Collapsed"
+                        IsBackButtonVisible="Visible"
                         uen:Region.Attached="True"
                         HorizontalAlignment="Stretch">
             
