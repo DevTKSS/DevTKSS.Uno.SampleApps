@@ -88,7 +88,7 @@ public partial class App : Application
             new ViewMap(ViewModel: typeof(ShellModel)),
             new ViewMap<MainPage, MainModel>(),
             new ViewMap<CounterPage, CounterModel>(),
-            new ViewMap<DashboardPage, DashboardModel>(),
+            new ViewMap<DashboardPage, DashboardModel>()
            // new ViewMap<MySettingsPage, MySettingsModel>()
         );
 

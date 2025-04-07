@@ -1,6 +1,6 @@
 <Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-desktop;net8.0-windows10.0.26100</TargetFrameworks>
+    <TargetFrameworks>net9.0-desktop;net9.0-windows10.0.26100</TargetFrameworks>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
@@ -46,6 +46,11 @@
     </UnoFeatures>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Themes\**" />
+    <EmbeddedResource Remove="Themes\**" />
+    <None Remove="Themes\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="Presentation\CounterPage.xaml" />
     <None Remove="Presentation\DashboardPage.xaml" />
   </ItemGroup>
@@ -67,12 +72,21 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Themes\" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Update="Presentation\UserControls\GLFeedViewHeader.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Themes\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Remove="Themes\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Remove="Themes\**" />
   </ItemGroup>
 
 </Project>
