@@ -47,10 +47,10 @@
 
         <NavigationView x:Name="NavView"
                         IsPaneOpen="False"
-                        IsPaneToggleButtonVisible="False" 
+                        IsPaneToggleButtonVisible="True" 
                         Grid.Row="1"
                         PaneDisplayMode="LeftCompact"
-                        IsBackButtonVisible="Collapsed"
+                        IsBackButtonVisible="Visible"
                         uen:Region.Attached="True"
                         HorizontalAlignment="Stretch">
             
