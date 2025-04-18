@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,17 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>Willkommen zu meiner ersten Uno HotDesign App!</value>
-  </data>
   <data name="CounterTitle" xml:space="preserve">
     <value>Lass uns zählen!</value>
   </data>
   <data name="DashboardTitle" xml:space="preserve">
-    <value>Willkommen im Dashboard!
-Was willst du heute tun?</value>
+    <value>Willkommen im Dashboard!</value>
   </data>
-<data name="SettingsTitle" xml:space="preserve">
-    <value>Einstellungen</value>
+  <data name="ListboardTitle" xml:space="preserve">
+    <value>Listenweise Plüschnasen!</value>
+  </data>
+  <data name="GridViewTitle" xml:space="preserve">
+    <value>Das hier ist ein GridView Container in einer FeedView, welche das aktualisieren der darin enthaltenen Elemente erlaubt!</value>
+  </data>
+  <data name="ListViewTitle" xml:space="preserve">
+    <value>Das hier ist ein ListView Container in einer FeedView, welche das aktualisieren der darin enthaltenen Elemente erlaubt!</value>
+  </data>
+  <data name="img_20230302_175758" xml:space="preserve">
+    <value>Ein verspielter Wirbelwind, der mit seinen Hüpfern jeden Raum zum Leben erweckt und dabei immer ein Lächeln hervorruft.</value>
+  </data>
+  <data name="img_20240531_141928" xml:space="preserve">
+    <value>Ein kleiner Kuschelmeister, der es liebt, im Zentrum der aufmerksamkeit zu stehen und sanft gekrault zu werden.</value>
+  </data>
+  <data name="img_20240602_130506" xml:space="preserve">
+    <value>Ein neugieriger Abenteurer, der ständig mit tapsigen Pfoten und seinem aufgeweckten Näschen die Welt erkundet.</value>
+  </data>
+  <data name="img_20240721_130401" xml:space="preserve">
+    <value>Ein kleiner Genießer, der sich nichts sehnlicher wünscht, als den ganzen Tag an frischem Grünzeug zu knabbern.</value>
+  </data>
+  <data name="img_20240721_130831" xml:space="preserve">
+    <value>Ein absoluter Herzensbrecher, der sich mit einem einzigen Blick tief in die Herzen seiner Menschen schleicht.</value>
+  </data>
+  <data name="img_20240721_132103" xml:space="preserve">
+    <value>Ein lebhafter Freigeist, der mit seinen lustigen Sprüngen und Hüpfern für pure Lebensfreude sorgt.</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Willkommen zu meiner Uno App!</value>
   </data>
 </root>

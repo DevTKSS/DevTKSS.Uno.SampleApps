@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,17 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationName" xml:space="preserve">
-    <value>Welcome to my first Uno HotDesign App!</value>
-  </data>
   <data name="CounterTitle" xml:space="preserve">
     <value>Let's count!</value>
   </data>
   <data name="DashboardTitle" xml:space="preserve">
-    <value>Welcome on the Dashboard!
-What do you want to do today?</value>
-  </data> 
-  <data name="SettingsTitle" xml:space="preserve">
-    <value>Settings</value>
+    <value>Welcome on the Dashboard!</value>
+  </data>
+  <data name="ListboardTitle" xml:space="preserve">
+    <value>Listwise furry sweethearts!</value>
+  </data>
+  <data name="GridViewTitle" xml:space="preserve">
+    <value>This is a GridView Container nested in a FeedView, allowing to refresh the Content</value>
+  </data>
+  <data name="ListViewTitle" xml:space="preserve">
+    <value>This is a ListView Container nested in a FeedView, allowing to refresh the Content</value>
+  </data>
+  <data name="img_20230302_175758" xml:space="preserve">
+    <value>A playful bundle of energy who hops around spreading joy wherever they go.</value>
+  </data>
+  <data name="img_20240531_141928" xml:space="preserve">
+    <value>A little snuggle expert who loves curling up in blankets and soaking up gentle attention.</value>
+  </data>
+  <data name="img_20240602_130506" xml:space="preserve">
+    <value>A curious explorer, always investigating the world with tiny paws and an inquisitive nose.</value>
+  </data>
+  <data name="img_20240721_130401" xml:space="preserve">
+    <value>A little foodie who would happily spend all day nibbling on fresh treats.</value>
+  </data>
+  <data name="img_20240721_130831" xml:space="preserve">
+    <value>A charming sweetheart who wins hearts with just one adorable glance.</value>
+  </data>
+  <data name="img_20240721_132103" xml:space="preserve">
+    <value>A lively free spirit who bounces around spreading cheer and fun.</value>
+  </data>
+  <data name="ApplicationName" xml:space="preserve">
+    <value>Welcome to my first Uno HotDesign App!</value>
   </data>
 </root>
