@@ -1,0 +1,44 @@
+<Page.Resources>
+        
+    <DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImageModel">
+        <utu:Card CornerRadius="20"
+                    HorizontalContentAlignment="Stretch"
+                    HeaderContent="{Binding Title}"
+                    MediaContent="{Binding ImageLocation}"
+                    SubHeaderContent="{Binding Description}"
+                    Style="{StaticResource OutlinedCardStyle}"
+                    HorizontalAlignment="Center"
+                    MaxWidth="300">
+            <utu:Card.HeaderContentTemplate>
+                <DataTemplate>
+                    <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
+                        <TextBlock Text="{Binding}"
+                                    Style="{ThemeResource TitleLarge}"
+                                    Margin="16,14,16,14"
+                                    Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                    TextWrapping="WrapWholeWords"/>
+                    </Border>
+                </DataTemplate>
+            </utu:Card.HeaderContentTemplate>
+            <utu:Card.SubHeaderContentTemplate>
+                <DataTemplate>
+                    <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
+                        <TextBlock Text="{Binding }"
+                                    Style="{ThemeResource BodySmall}"
+                                    Margin="16,0,16,14"
+                                    Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                                    TextWrapping="WrapWholeWords"/>
+                    </Border>
+                </DataTemplate>
+            </utu:Card.SubHeaderContentTemplate>
+            <utu:Card.MediaContentTemplate>
+                <DataTemplate>
+                    <Image Source="{Binding }"
+                            Stretch="Uniform"
+                            Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
+                </DataTemplate>
+            </utu:Card.MediaContentTemplate>
+        </utu:Card>
+    </DataTemplate>
+
+</Page.Resources>

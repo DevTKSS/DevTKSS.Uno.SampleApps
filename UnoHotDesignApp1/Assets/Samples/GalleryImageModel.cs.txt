@@ -1,0 +1,1 @@
+public partial record GalleryImageModel(string Title, string ImageLocation, string Description);

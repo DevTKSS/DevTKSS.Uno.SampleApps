@@ -1,0 +1,22 @@
+public partial record DashboardModel
+{
+    private readonly INavigator _navigator;
+    private readonly ILocalizationService _localizationService;
+    private readonly IStringLocalizer _stringLocalizer;
+    private readonly IGalleryImageService _galleryImageService;
+
+    public DashboardModel(
+        INavigator navigator,
+        ILocalizationService localizationService,
+        IStringLocalizer stringLocalizer,
+        IGalleryImageService galleryImageService)
+    {
+        this._navigator = navigator;
+        this._localizationService = localizationService;
+        this._stringLocalizer = stringLocalizer;
+        this._galleryImageService = galleryImageService;
+    }
+
+    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesAsync);
+    public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
+}
