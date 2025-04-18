@@ -1,21 +1,28 @@
-using System.Globalization;
-
 namespace UnoHotDesignApp1.GeneralModels;
 [Bindable]
 public partial class GalleryImageService : IGalleryImageService
 {
     private readonly ILocalizationService _localizationService;
-    public GalleryImageService(ILocalizationService localizationService)
+    private readonly IStringLocalizer _stringlocalizer;
+    public GalleryImageService(
+        ILocalizationService localizationService,
+        IStringLocalizer _stringLocalizer)
     {
         this._localizationService = localizationService;
+        this._stringlocalizer = _stringLocalizer;
     }
 
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
+    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithReswAsync(CancellationToken ct)
+    {
+       return await GetGalleryImagesAsync(ct);
+    }
+    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
     {
         string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
         var galleryImages = cultureString switch
         {
             "de" => await GetDEGalleryImagesAsync(ct),
+            "en" => await GetENGalleryImagesAsync(ct),
             _ => await GetENGalleryImagesAsync(ct),
         };
         await Task.Delay(TimeSpan.FromSeconds(1));
@@ -24,6 +31,43 @@ public partial class GalleryImageService : IGalleryImageService
 
     #region Get culture specific gallery imageDescription
 
+    #region With resw
+    private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
+    {
+        await Task.Delay(TimeSpan.FromMicroseconds(1), ct);
+        var galleryImages = new GalleryImageModel[]
+        {
+            new GalleryImageModel(
+                Title: "Fluffy",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
+                Description: _stringlocalizer["img_20240531_141928"]),
+            new GalleryImageModel(
+                Title: "Snowball",
+                ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
+                Description: _stringlocalizer["img_20230302_175758"]),
+            new GalleryImageModel(
+                Title: "Buddy",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
+                Description: _stringlocalizer["img_20240602_130506"]),
+            new GalleryImageModel(
+                Title: "Coco",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
+                Description: _stringlocalizer["img_20240721_130401"]),
+            new GalleryImageModel(
+                Title: "Bunny",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
+                Description: _stringlocalizer["img_20240721_130831"]),
+            new GalleryImageModel(
+                Title: "Thumper",
+                ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
+                Description: _stringlocalizer["img_20240721_132103"]),
+        }.ToImmutableList();
+        return galleryImages;
+    }
+
+    #endregion
+    
+    #region Without resw
     #region German gallery descriptions
     private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
     {
@@ -93,10 +137,8 @@ public partial class GalleryImageService : IGalleryImageService
         return galleryImages;
     }
     #endregion
+
+    #endregion
     
     #endregion
-}
-public interface IGalleryImageService
-{
-    ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct);
 }
