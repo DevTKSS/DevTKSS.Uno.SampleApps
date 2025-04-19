@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net9.0-desktop;net9.0-windows10.0.26100</TargetFrameworks>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
@@ -33,60 +33,27 @@
       https://aka.platform.uno/singleproject-features
     -->
     <UnoFeatures>
-      Material;
-      Dsp;
-      Hosting;
-      Toolkit;
-      Logging;
-      MVUX;
-      Configuration;
-      Localization;
-      Navigation;
-      ThemeService;
+        Material;
+        Dsp;
+        Hosting;
+        Toolkit;
+        Logging;
+        MVUX;
+        Configuration;
+        Localization;
+        Navigation;
+        ThemeService;
+        Serialization;
+        Storage;
     </UnoFeatures>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Themes\**" />
-    <EmbeddedResource Remove="Themes\**" />
-    <None Remove="Themes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Presentation\CounterPage.xaml" />
-    <None Remove="Presentation\DashboardPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-    <PackageReference Include="System.Private.Uri" />
   </ItemGroup>
   <ItemGroup>
-    <UnoImage Include="Assets\Images\logo.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Presentation\DashboardPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Presentation\CounterPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Presentation\UserControls\GLFeedViewHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Themes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Remove="Themes\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Remove="Themes\**" />
+    <UnoImage Include="Assets\Images\*" />
+    <Resource Include="Assets\Samples\*" />
+    <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
 namespace UnoHotDesignApp1.Presentation.Models;
-[Bindable]
 public partial record MainModel
 {
     private readonly INavigator _navigator;

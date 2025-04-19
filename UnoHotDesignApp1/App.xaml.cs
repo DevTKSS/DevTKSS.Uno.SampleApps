@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Uno.Resizetizer;
 
 namespace UnoHotDesignApp1;
@@ -25,6 +26,7 @@ public partial class App : Application
                 // Switch to Development environment when running in DEBUG
                 .UseEnvironment(Environments.Development)
 #endif
+                .UseStorage()
                 .UseLogging(configure: (context, logBuilder) =>
                 {
                     // Configure log levels for different categories of logging
@@ -63,14 +65,17 @@ public partial class App : Application
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
-                .ConfigureServices((context, services) => 
+                .ConfigureServices((context, services) =>
                     services
-                    // TODO: Register your services
-                        
+                        // TODO: Register your services
+
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
+                        .AddJsonTypeInfo(SampleCodeContext.Default.SampleCode)
+                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
-               // .UseThemeSwitching()
+                .UseStorage()
+                .UseSerialization()
             );
         MainWindow = builder.Window;
 
@@ -88,8 +93,8 @@ public partial class App : Application
             new ViewMap(ViewModel: typeof(ShellModel)),
             new ViewMap<MainPage, MainModel>(),
             new ViewMap<CounterPage, CounterModel>(),
-            new ViewMap<DashboardPage, DashboardModel>()
-           // new ViewMap<MySettingsPage, MySettingsModel>()
+            new ViewMap<DashboardPage, DashboardModel>(),
+           new ViewMap<ListboardPage, ListboardModel>()
         );
 
         routes.Register(
@@ -100,8 +105,9 @@ public partial class App : Application
                         Nested:
                         [
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
+                            new ("Listboard", View: views.FindByViewModel<ListboardModel>()),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
-                          //  new ("MySettings", View: views.FindByViewModel<MySettingsModel>()),
+                           
                         ]
                     ),
                     

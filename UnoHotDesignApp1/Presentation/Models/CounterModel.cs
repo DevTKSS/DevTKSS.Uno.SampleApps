@@ -1,5 +1,5 @@
 namespace UnoHotDesignApp1.Presentation.Models;
-[Bindable]
+
 internal partial record CounterModel
 {
     private readonly IStringLocalizer _stringLocalizer;

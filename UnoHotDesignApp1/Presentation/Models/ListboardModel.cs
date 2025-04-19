@@ -1,18 +1,18 @@
-using Uno.Extensions.Reactive;
+using Uno.Extensions.Storage;
 
 namespace UnoHotDesignApp1.Presentation.Models;
 
-public partial record DashboardModel
+public partial record ListboardModel
 {
     #region Services
     private readonly INavigator _navigator;
     private readonly ILocalizationService _localizationService;
     private readonly IStringLocalizer _stringLocalizer;
-    private readonly IGalleryImageService _galleryImageService;
     private readonly IStorage _storage;
+    private readonly IGalleryImageService _galleryImageService;
     #endregion
 
-    public DashboardModel(
+    public ListboardModel(
         INavigator navigator,
         ILocalizationService localizationService,
         IStringLocalizer stringLocalizer,
@@ -26,10 +26,9 @@ public partial record DashboardModel
         this._storage = storage;
     }
 
-    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
-    public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
-    public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
-       
+    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesWithoutReswAsync);
+    public IState<string> ListboardTitle => State<string>.Value(this, () => _stringLocalizer["ListboardTitle"]);
+
     #region CodeSample import
     public IListFeed<string> CodeSampleOptions => ListFeed.Async(GetCodeSampleOptionsAsync);
 
@@ -43,7 +42,7 @@ public partial record DashboardModel
                     "DI Service without Resw",
                     "C# Record",
                     "XAML DataTemplate",
-                    "FeedView + GridView XAML"
+                    "FeedView + ListView XAML"
                 }.ToImmutableList();
     }
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
@@ -56,21 +55,20 @@ public partial record DashboardModel
             "DI Service without Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-noResw.cs.txt"),
             "C# Record" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageModel.cs.txt"),
             "XAML DataTemplate" => await _storage.ReadPackageFileAsync("Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt"),
-            "FeedView + GridView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-GridView-Sample.xaml.txt"),
+            "FeedView + ListView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-ListView-Sample.xaml.txt"),
             _ => string.Empty
         };
 
-        await CurrentCodeSample.SetAsync(codeSample ?? string.Empty);
+        await CurrentCodeSample.SetAsync(codeSample);
     }
     #endregion
 
-
     #region ViewHeaderContent
-    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetGridViewHeaderAsync);
-    public async ValueTask<HeaderContent> GetGridViewHeaderAsync(CancellationToken ctk)
+    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetListViewHeaderAsync);
+    public async ValueTask<HeaderContent> GetListViewHeaderAsync(CancellationToken ctk)
     {
         await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
-        var headerContent = new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["GridViewTitle"]);
+        var headerContent = new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["ListViewTitle"]);
         return headerContent;
     }
     #endregion

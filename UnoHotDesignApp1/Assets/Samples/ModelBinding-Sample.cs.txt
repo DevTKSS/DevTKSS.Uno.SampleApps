@@ -19,4 +19,14 @@ public partial record DashboardModel
 
     public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesAsync);
     public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
+
+    #region ViewHeaderContent
+    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetGridViewHeaderAsync);
+    public async ValueTask<HeaderContent> GetGridViewHeaderAsync(CancellationToken ctk)
+    {
+        await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
+        var headerContent = new HeaderContent("Assets/Images/logo.png", _stringLocalizer["GridViewTitle"]);
+        return headerContent;
+    }
+    #endregion
 }

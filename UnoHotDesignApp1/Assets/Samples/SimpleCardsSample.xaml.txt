@@ -1,0 +1,46 @@
+xmlns:utu="using:Uno.Toolkit.UI"
+
+...
+
+<ScrollViewer utu:SafeArea.Insets="VisibleBounds">
+    <StackPanel Orientation="Vertical">
+        <utu:Card x:Name="FirstCard"
+                    CornerRadius="20"
+                    HeaderContent="Elevated Card"
+                    MediaContent="ms-appx:///Assets/Images/img_20240531_141928.jpg"
+                    Style="{StaticResource ElevatedCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+        <utu:Card x:Name="SecondCard"
+                    CornerRadius="20"
+                    HeaderContent="Filled Card"
+                    MediaContent="ms-appx:///Assets/Images/img_20240602_130506.jpg"
+                    Style="{StaticResource FilledCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+        <utu:Card x:Name="ThirdCard"
+                    CornerRadius="20"
+                    MediaContent="ms-appx:///Assets/Images/img_20240721_130401.jpg"
+                    Style="{StaticResource OutlinedCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+        <utu:Card x:Name="FourthCard"
+                    CornerRadius="20"
+                    MediaContent="ms-appx:///Assets/Images/img_20240721_130831.jpg"
+                    Style="{StaticResource ElevatedCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+        <utu:Card x:Name="FifthCard"
+                    CornerRadius="20"
+                    MediaContent="ms-appx:///Assets/Images/img_20240721_132103.jpg"
+                    Style="{StaticResource FilledCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+        <utu:Card x:Name="SixthCard"
+                    CornerRadius="20"
+                    MediaContent="ms-appx:///Assets/Images/img_20230302_175758.jpg"
+                    Style="{StaticResource OutlinedCardStyle}"
+                    HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
+                    MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
+    </StackPanel>
+</ScrollViewer>

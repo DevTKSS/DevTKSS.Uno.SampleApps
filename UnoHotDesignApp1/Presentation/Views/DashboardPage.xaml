@@ -4,366 +4,55 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UnoHotDesignApp1.Presentation.Views"
     xmlns:gm="using:UnoHotDesignApp1.GeneralModels"
-    xmlns:uc="using:UnoHotDesignApp1.Presentation.UserControls"
     xmlns:mvux="using:Uno.Extensions.Reactive.UI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:utu="using:Uno.Toolkit.UI"
     xmlns:conv="using:CommunityToolkit.WinUI.Converters"
     xmlns:um="using:Uno.Material"
-    xmlns:sys="using:System"
+    xmlns:uen="using:Uno.Extensions.Navigation.UI"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 
-    <Page.Resources>
-        
-        <!--Right Side-->
-        <DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImageModel">
-            <utu:Card CornerRadius="20"
-                      HorizontalContentAlignment="Stretch"
-                      HeaderContent="{Binding Title}"
-                      MediaContent="{Binding ImageLocation}"
-                      SubHeaderContent="{Binding Description}"
-                      Style="{StaticResource OutlinedCardStyle}"
-                      HorizontalAlignment="Center"
-                      MaxWidth="300">
-                <utu:Card.HeaderContentTemplate>
-                    <DataTemplate>
-                        <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
-                            <TextBlock Text="{Binding}"
-                                       Style="{ThemeResource TitleLarge}"
-                                       Margin="16,14,16,14"
-                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                                       TextWrapping="WrapWholeWords"/>
-                        </Border>
-                    </DataTemplate>
-                </utu:Card.HeaderContentTemplate>
-                <utu:Card.SubHeaderContentTemplate>
-                    <DataTemplate>
-                        <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
-                            <TextBlock Text="{Binding }"
-                                       Style="{ThemeResource BodySmall}"
-                                       Margin="16,0,16,14"
-                                       Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                                       TextWrapping="WrapWholeWords"/>
-                        </Border>
-                    </DataTemplate>
-                </utu:Card.SubHeaderContentTemplate>
-                <utu:Card.MediaContentTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding }"
-                               Stretch="Uniform"
-                               Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
-                    </DataTemplate>
-                </utu:Card.MediaContentTemplate>
-            </utu:Card>
-        </DataTemplate>
-
-        <!--Left Side-->
-        <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gm:GalleryImageModel">
-            <Grid HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch"
-                  CornerRadius="20"
-                  Background="{ThemeResource BackgroundBrush}"
-                  Margin="5"
-                  Padding="2"
-                  MaxHeight="400">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" MaxHeight="400"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Image Source="{Binding ImageLocation}"
-                           Grid.Row="0" Grid.RowSpan="2"
-                           Stretch="Uniform"
-                           Width="{utu:AncestorBinding AncestorType=Grid, Path=Width}" />
-                    <StackPanel Background="{ThemeResource SurfaceInverseBrush}"
-                                Opacity=".7"
-                                Grid.Row="1"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Bottom">
-                        <TextBlock Text="{Binding Title}"
-                                   Style="{ThemeResource TitleLarge}"
-                                   Margin="16,14,16,0"
-                                   Foreground="{ThemeResource OnSurfaceInverseBrush}"/>
-                        <TextBlock Text="{Binding Description}"
-                                   Style="{ThemeResource BodySmall}"
-                                   Margin="16,0,16,14"
-                                   Foreground="{ThemeResource OnSurfaceInverseBrush}"/>
-                </StackPanel>
-                </Grid>
-            </DataTemplate>
-
-        <!--<DataTemplate x:Key="HeaderlineTemplate">
-            <Grid CornerRadius="10"
-                  Padding="10"
-                  Margin="5"
-                  Background="{ThemeResource SecondaryContainerBrush}"
-                  Height="85">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.ColumnSpan="3" Grid.Column="0"
-                           TextAlignment="Center"
-                           VerticalAlignment="Center"
-                           Style="{StaticResource HeadlineMedium}"
-                           Text="{Binding Path=DashboardTitle,Mode=OneWay}"
-                           Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
-                <Button Command="{Binding Path=ReloadDashboardTitle}"
-                        HorizontalAlignment="Center"
-                        Grid.Column="1">
-                    <SymbolIcon Symbol="Refresh"/>
-                </Button>
-            </Grid>
-        </DataTemplate>-->
-                         
-        <!--<DataTemplate x:Key="FeedViewRefreshButton">
-            <StackPanel Orientation="Horizontal">
-                
-                <Button Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}" Margin="5">
-                    <Button.Content>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                            <TextBlock Text="Refresh" Margin="5"/>
-                            <SymbolIcon Symbol="Refresh"
-                                        Margin="5"/>
-                        </StackPanel>
-                    </Button.Content>
-                </Button>
-            </StackPanel>
-        </DataTemplate>-->
-
-    </Page.Resources>
-    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!--<Grid x:Name="HeadlineGrid"
-              Grid.ColumnSpan="3"
-              Margin="5"
-              CornerRadius="10"
-              Padding="10"
-              Background="{ThemeResource SecondaryContainerBrush}"
-              Height="85">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.ColumnSpan="3"
-                       TextAlignment="Center"
-                       VerticalAlignment="Center"
-                       Style="{StaticResource HeadlineMedium}"
-                       Text="{Binding Path=DashboardTitle,Mode=OneWay}"
-                       Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
-            <Button Command="{Binding Path=ReloadDashboardTitle}"
-                    HorizontalAlignment="Center"
-                    Grid.Column="1">
-                <SymbolIcon Symbol="Refresh"/>
-            </Button>
-        </Grid>-->
-        
-        <Grid x:Name="ContentGrid"
-              Grid.Row="1"
-              HorizontalAlignment="Stretch"
-              VerticalAlignment="Stretch">
+        <!--<TextBlock  TextAlignment="Center"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource HeadlineMedium}"
+                    Text="{Binding Path=DashboardTitle,Mode=OneWay}"
+                    Foreground="{ThemeResource OnSecondaryContainerBrush}"/>-->
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <Grid x:Name="HeadlineGrid"
-                    Grid.ColumnSpan="3"
-                    Margin="3"
-                    CornerRadius="10"
-                    Padding="10"
-                    Background="{ThemeResource SecondaryContainerBrush}"
-                    Height="85">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.ColumnSpan="3"
-                            TextAlignment="Center"
-                            VerticalAlignment="Center"
-                            Style="{StaticResource HeadlineMedium}"
-                            Text="{Binding Path=DashboardTitle,Mode=OneWay}"
-                            Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
-                <Button Command="{Binding Path=ReloadDashboardTitle}"
-                        HorizontalAlignment="Center"
-                        Grid.Column="1">
-                    <SymbolIcon Symbol="Refresh"/>
-                </Button>
-            </Grid>
-            
-            <!--<utu:Card x:Name="FirstCard"
-                      CornerRadius="20"
-                      Grid.Row="0"
-                      Grid.Column="0"
-                      HeaderContent="Elevated Card"
-                      MediaContent="ms-appx:///Assets/Images/img_20240531_141928.jpg"
-                      Style="{StaticResource ElevatedCardStyle}"
-                      HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                      MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
-            <utu:Card x:Name="SecondCard"
-                      CornerRadius="20"
-                      Grid.Row="0"
-                      Grid.Column="1"
-                      HeaderContent="Filled Card"
-                      MediaContent="ms-appx:///Assets/Images/img_20240602_130506.jpg"
-                      Style="{StaticResource FilledCardStyle}"
-                      HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                      MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
-            <utu:Card x:Name="ThirdCard"
-                      CornerRadius="20"
-                      Grid.Row="0"
-                      Grid.Column="2"
-                      MediaContent="ms-appx:///Assets/Images/img_20240721_130401.jpg"
-                      Style="{StaticResource OutlinedCardStyle}"
-                      HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                      MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
-            <utu:Card x:Name="FourthCard"
-                        CornerRadius="20"
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        MediaContent="ms-appx:///Assets/Images/img_20240721_130831.jpg"
-                        Style="{StaticResource ElevatedCardStyle}"
-                        HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                        MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
-            <utu:Card x:Name="FifthCard"
-                        CornerRadius="20"
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        MediaContent="ms-appx:///Assets/Images/img_20240721_132103.jpg"
-                        Style="{StaticResource FilledCardStyle}"
-                        HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                        MediaContentTemplate="{StaticResource MediaContentTemplate}"/>
-            <utu:Card x:Name="SixthCard"
-                        CornerRadius="20"
-                        Grid.Row="2"
-                        Grid.Column="2"
-                        MediaContent="ms-appx:///Assets/Images/img_20230302_175758.jpg"
-                        Style="{StaticResource OutlinedCardStyle}"
-                        HeaderContentTemplate="{StaticResource HeaderContentTemplate}"
-                        MediaContentTemplate="{StaticResource MediaContentTemplate}"/>-->
+        <!--Right Side-->
+        <mvux:FeedView x:Name="GriddedFeedView"
+                        Grid.Row="1"
+                        Source="{Binding GalleryImages}"
+                        Margin="3"
+                        CanDrag="False"
+                        AllowDrop="False">
+            <DataTemplate>
+                <GridView x:Name="ContentGridView"
+                            ItemsSource="{Binding Data}"
+                            ItemTemplate="{StaticResource StyledCardTemplate}"
+                            HeaderTemplate="{StaticResource ViewHeaderTemplate}"
+                            Header="{Binding ViewHeaderContent}"
+                            Footer="{Binding CurrentCodeSample}"
+                            FooterTemplate="{StaticResource CodeSampleTemplate}"
+                            CanReorderItems="False"
+                            CanDragItems="False"
+                            IsItemClickEnabled="True"
+                            AllowDrop="False"
+                            SelectionMode="Single"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Center">
 
-            <!--Right Side-->
-            <mvux:FeedView x:Name="RightFeedView" Grid.Column="1"
-                           Grid.Row="1"
-                           Source="{Binding GalleryImages}"
-                           Margin="3"
-                           CanDrag="False"
-                           AllowDrop="False">
-                <DataTemplate>
-                    <GridView x:Name="ContentGridView"
-                              ItemsSource="{Binding Data}"
-                              ItemTemplate="{StaticResource StyledCardTemplate}"
-                              CanReorderItems="True"
-                              CanDragItems="True"
-                              IsItemClickEnabled="True"
-                              AllowDrop="True"
-                              SelectionMode="None"
-                              HorizontalAlignment="Stretch"
-                              HorizontalContentAlignment="Stretch"
-                              VerticalContentAlignment="Center">
-                        <GridView.Header>
-                            
-                            <Grid Background="{ThemeResource SurfaceInverseBrush}"
-                                  CornerRadius="10,10,0,0"
-                                  Padding="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*" MinWidth="100"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <PersonPicture ProfilePicture="Assets/Images/logo.png"
-                                                Width="60"
-                                                Style="{StaticResource DefaultPersonPictureStyle}"
-                                                Grid.Column="0"/>
-                                <TextBlock Text="This is a cool GridView fed from FeedView, isn't it?"
-                                            Style="{ThemeResource TitleMedium}"
-                                            Margin="16,14,16,0"
-                                            Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                                            VerticalAlignment="Stretch"
-                                            HorizontalAlignment="Center"
-                                            TextAlignment="Center"
-                                            Grid.Column="1"
-                                           TextWrapping="WrapWholeWords"/>
-                                <Button Command="{utu:AncestorBinding AncestorType=mvux:FeedView,Path=Refresh}"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Stretch"
-                                        Grid.Column="2">
-                                    <SymbolIcon Symbol="Refresh"
-                                                HorizontalAlignment="Right"/>
-                                </Button>
-                            </Grid>
-                            
-                        </GridView.Header>
-                    </GridView>
-                </DataTemplate>
-            </mvux:FeedView>
-
-            <!--Left Side-->
-            <mvux:FeedView x:Name="LeftFeedView" Grid.Column="0"
-                           Grid.Row="1"
-                           Source="{Binding GalleryImages}"
-                           Margin="3">
-                <DataTemplate>
-                    <ListView ItemsSource="{Binding Data}"
-                              ItemTemplate="{StaticResource GalleryImageOverlayTemplate}"
-                              AllowDrop="True"
-                              CanDrag="True"
-                              CanReorderItems="True"
-                              SelectionMode="Single">
-                        <ListView.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <ItemsStackPanel AreStickyGroupHeadersEnabled="True"/>
-                            </ItemsPanelTemplate>
-                        </ListView.ItemsPanel>
-                        <ListView.Header>
-
-                                <Grid Background="{ThemeResource SurfaceInverseBrush}"
-                                      CornerRadius="10,10,0,0"
-                                      Padding="10"
-                                      HorizontalAlignment="Stretch">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition Width="*" MinWidth="100"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <PersonPicture x:Name="PictureElement" ProfilePicture="Assets/Images/logo.png"
-                                                    Width="60"
-                                                    Style="{StaticResource DefaultPersonPictureStyle}"
-                                                    Grid.Column="0"/>
-                                    <TextBlock x:Name="CaptionText" Text="This is a cool ListView fed from FeedView, isn't it?"
-                                                Style="{ThemeResource TitleMedium}"
-                                                Margin="16,14,16,0"
-                                                Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                                                VerticalAlignment="Stretch"
-                                                HorizontalAlignment="Center"
-                                                TextAlignment="Center"
-                                                Grid.Column="1"
-                                               TextWrapping="WrapWholeWords"/>
-                                    <Button x:Name="RefreshButton" Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Stretch"
-                                            Grid.Column="2">
-                                    <SymbolIcon Symbol="Refresh"
-                                            HorizontalAlignment="Right"/>
-                                    </Button>
-                                </Grid>
-
-                        </ListView.Header>
-                    </ListView>
-                </DataTemplate>
-            </mvux:FeedView>
-        </Grid>
-    
+                </GridView>
+            </DataTemplate>
+        </mvux:FeedView>
     </Grid>
 </Page>

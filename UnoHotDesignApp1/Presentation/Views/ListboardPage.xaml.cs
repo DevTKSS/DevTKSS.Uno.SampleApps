@@ -1,7 +1,8 @@
 namespace UnoHotDesignApp1.Presentation.Views;
-public sealed partial class DashboardPage : Page
+
+public sealed partial class ListboardPage : Page
 {
-    public DashboardPage()
+    public ListboardPage()
     {
         this.InitializeComponent();
 

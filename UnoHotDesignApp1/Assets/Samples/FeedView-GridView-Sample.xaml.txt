@@ -1,0 +1,24 @@
+xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+
+...
+
+<mvux:FeedView  Source="{Binding GalleryImages}"
+                Margin="3"
+                CanDrag="False"
+                AllowDrop="False">
+  <DataTemplate>
+    <GridView x:Name="ContentGridView"
+              ItemsSource="{Binding Data}"
+              ItemTemplate="{StaticResource StyledCardTemplate}"
+              CanReorderItems="False"
+              CanDragItems="False"
+              IsItemClickEnabled="True"
+              AllowDrop="False"
+              SelectionMode="Single"
+              HorizontalAlignment="Stretch"
+              HorizontalContentAlignment="Stretch"
+              VerticalContentAlignment="Center">
+    </GridView>
+  </DataTemplate>
+</mvux:FeedView>
+</Grid>
