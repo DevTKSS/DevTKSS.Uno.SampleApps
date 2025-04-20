@@ -9,6 +9,7 @@ Example project which should show how different mvux ui controls and model bindi
   Not acceptable for me as final result since it had very poor performance and not relyable functionality
 
 - [ ] Restructuring, Refactoring applying SOC
+- [-] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app
 - [ ] (Re)record the video to show a final step by step Guide to Beginners like me and simplify the start with uno.extensions with Mvux.
 
 Controls to be explored in this App:
