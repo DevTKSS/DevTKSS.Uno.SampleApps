@@ -1,3 +1,36 @@
-Example project for very patient users that want to wait for reaction when click is done.
-Attached Video is showing making of from this project (uncut)
-https://technischekonstruktion-my.sharepoint.com/:v:/g/personal/info_technische-konstruktion_com/EQyOpS6sImZJmLd83Nn_q6IBb1dfIqudJHjEMebV5PCYqA?e=0EIBcw
+# Mvux meets HotDesign(TM) Sample App
+
+Example project which should show how different mvux ui controls and model binding can be done
+
+## Current state
+
+- [x] Created a first working state
+
+  Not acceptable for me as final result since it had very poor performance and not relyable functionality
+
+- [ ] Restructuring, Refactoring applying SOC
+- [ ] (Re)record the video to show a final step by step Guide to Beginners like me and simplify the start with uno.extensions with Mvux.
+
+Controls to be explored in this App:
+
+- FeedView + GridView
+- FeedView + ListView
+- DataTemplate centralized Recource definition
+- Card
+- "ItemOverlayTemplate" DataTemplate layout replicated from WinUI 3 Gallery
+
+Uno.Extensions to be Explored:
+
+- Storage
+- Serialization
+- Localization
+- Configuration
+- Mvux
+- Navigation 
+- Hosting
+- DependencyInjection 
+
+## Fist Recording (uncut, without sound)
+
+[This Video](https://technischekonstruktion-my.sharepoint.com/:v:/g/personal/info_technische-konstruktion_com/EQyOpS6sImZJmLd83Nn_q6IBb1dfIqudJHjEMebV5PCYqA?e=0EIBcw) is showing the initial making of from this project at the first commits
+
