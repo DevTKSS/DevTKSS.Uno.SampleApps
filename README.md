@@ -4,7 +4,7 @@ Example project which should show how different mvux ui controls and model bindi
 
 ## Current state
 
-- [x] Created a first working state
+- [x] Created a [first `working` state](https://github.com/DevTKSS/UnoHotDesignApp1/commit/9f6479fa37901a0478bbc9e1c3e92221223ce4d0)
 
   Not acceptable for me as final result since it had very poor performance and not relyable functionality
 
