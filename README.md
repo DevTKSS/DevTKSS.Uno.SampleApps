@@ -10,7 +10,7 @@ Example project which should show how different mvux ui controls and model bindi
 
 - [ ] Restructuring, Refactoring applying SOC
 - [-] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app
-  - [x] [Working State of DashboardPage](98fa25af8f23bb27c2dccac39d9248f3fc7254dd)
+  - [x] [Working State of DashboardPage](https://github.com/DevTKSS/UnoHotDesignApp1/commit/98fa25af8f23bb27c2dccac39d9248f3fc7254dd)
 - [ ] (Re)record the video to show a final step by step Guide to Beginners like me and simplify the start with uno.extensions with Mvux.
 
 ## Controls to be explored in this App
