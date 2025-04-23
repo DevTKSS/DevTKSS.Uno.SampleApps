@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0-desktop;net9.0-windows10.0.26100</TargetFrameworks>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetFrameworks>net9.0-desktop</TargetFrameworks> <!--;net9.0-windows10.0.26100-->
+    <!-- <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>-->
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
 

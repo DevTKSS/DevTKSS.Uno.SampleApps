@@ -1,56 +1,37 @@
 using System.ComponentModel.DataAnnotations;
 
-public class CodeSampleService
+public class CodeSampleService(ILogger<CodeSampleService>? Logger, IStorage Storage)
 {
-    private readonly IStorage _storage;
-    private readonly ILogger? _logger;
-    public CodeSampleService(
-        IStorage storage,
-        ILogger<CodeSampleService>? logger)
-    {
-        _storage = storage;
-        _logger = logger;
-    }
 
-    public async ValueTask<string> GetCodeSampleAsync(
-        [MinLength(1)]
-        [RegularExpression(@"^(?![a-zA-Z]:|/|\\)[a-zA-Z0-9_\-./\\]+$", ErrorMessage = "Invalid file path format. Only relative nested paths are allowed.")]
-        string filePath)
+    public async ValueTask<string> GetCodeSampleAsync(string filePath)
     {
-        var fileContent = await _storage.ReadPackageFileAsync(filePath);
+        Logger?.LogTrace("GetCodeSampleAsync called with filePath: {filePath}", filePath);
+        ArgumentNullException.ThrowIfNullOrWhiteSpace(filePath, nameof(filePath));
+        Logger?.LogTrace("Trying to read file from path: {filePath}", filePath);
+        var fileContent = await Storage.ReadPackageFileAsync(filePath);
+        Logger?.LogTrace("File content successfully read from path: {filePath}", filePath);
+        Logger?.LogDebug("File content successfully read from {filePath}: {fileContent}", filePath, fileContent);
         return string.IsNullOrEmpty(fileContent) ? string.Empty : fileContent;
     }
-    public async ValueTask<string> GetSampleCodeAsync(
-        [MinLength(1)]
-        [RegularExpression(@"^(?![a-zA-Z]:|/|\\)[a-zA-Z0-9_\-./\\]+$", ErrorMessage = "Invalid file path format. Only relative nested paths are allowed.")]
-        string filePath,
-        List<(int Start, int End)>? lineRanges = null)
+    public async ValueTask<ImmutableList<string>> GetSampleCodeAsync(string filePath, List<(int Start, int End)>? lineRanges = null)
     {
+        Logger?.LogTrace("GetSampleCodeAsync called with filePath: {filePath} and lineRanges {lineRanges}", filePath, lineRanges);
         lineRanges ??= new List<(int Start, int End)>();
         string fileContent = await GetCodeSampleAsync(filePath);
+        string[] lines = fileContent.Split(Environment.NewLine);
 
-        if (lineRanges == null || lineRanges.Count == 0)
-        {
-            return fileContent;
-        }
+        if (!(lineRanges.Count > 0)) return lines.ToImmutableList();
 
-        var lines = fileContent.Split(Environment.NewLine);
         var selectedLines = new List<string>();
 
-        foreach (var range in lineRanges)
+        foreach (var (Start, End) in lineRanges)
         {
-            if (range.Start <= 0 || range.End <= 0 || range.Start > range.End || range.Start > lines.Length)
-            {
-                _logger?.LogWarning("Skipping invalid line range: {StartRange} - {EndRange}. ", range.Start, range.End);
-                continue;
-            }
-
-            var start = range.Start - 1;
-            var end = Math.Min(range.End, lines.Length); // Ensure 'End' does not exceed available lines
+            var start = Math.Clamp(Start - 1, 0, lines.Length);
+            var end = Math.Clamp(End,start, lines.Length); // Ensure 'End' does not exceed available lines
             selectedLines.AddRange(lines[start..end]);
         }
 
-        return string.Join(Environment.NewLine, selectedLines);
+        return selectedLines.ToImmutableList();
     }
 
 }

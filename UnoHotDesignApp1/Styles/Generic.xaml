@@ -122,21 +122,4 @@
     </DataTemplate>
     <!--#endregion Grid Template aka GalleryImageOverlay-->
 
-    <!--#region Code Sample Template using TabBar for Content Navigation-->
-    <DataTemplate x:Key="CodeSampleTemplate"
-                  xmlns:uen="using:Uno.Extensions.Navigation.UI">
-        <utu:TabBar VerticalAlignment="Bottom"
-                    Style="{StaticResource ColoredTopTabBarStyle}"
-                    uen:Region.Attached="True"
-                    ItemsSource="{Binding Parent.CodeSampleOptions}"
-                    SelectedIndex="1">
-            <TextBlock x:Name="SampleContent"
-                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                        ScrollViewer.VerticalScrollBarVisibility="Auto"
-                        Text="{Binding }"
-                        TextAlignment="Left"
-                        HorizontalAlignment="Stretch"/>
-        </utu:TabBar>
-    </DataTemplate>
-    <!--#endregion Code Sample Template using TabBar for Content Navigation-->
 </ResourceDictionary>

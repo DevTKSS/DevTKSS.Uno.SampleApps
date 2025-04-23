@@ -21,27 +21,25 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!--<TextBlock  TextAlignment="Center"
+        <TextBlock  TextAlignment="Center"
                     VerticalAlignment="Center"
                     Style="{StaticResource HeadlineMedium}"
                     Text="{Binding Path=DashboardTitle,Mode=OneWay}"
-                    Foreground="{ThemeResource OnSecondaryContainerBrush}"/>-->
+                    Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
 
         <!--Right Side-->
-        <mvux:FeedView x:Name="GriddedFeedView"
+        <mvux:FeedView ManipulationMode="None" x:Name="GriddedFeedView"
                         Grid.Row="1"
                         Source="{Binding GalleryImages}"
                         Margin="3"
                         CanDrag="False"
                         AllowDrop="False">
             <DataTemplate>
-                <GridView x:Name="ContentGridView"
+                <GridView SelectedIndex="0" x:Name="ContentGridView"
                             ItemsSource="{Binding Data}"
                             ItemTemplate="{StaticResource StyledCardTemplate}"
                             HeaderTemplate="{StaticResource ViewHeaderTemplate}"
                             Header="{Binding ViewHeaderContent}"
-                            Footer="{Binding CurrentCodeSample}"
-                            FooterTemplate="{StaticResource CodeSampleTemplate}"
                             CanReorderItems="False"
                             CanDragItems="False"
                             IsItemClickEnabled="True"
@@ -50,9 +48,37 @@
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Stretch"
                             VerticalContentAlignment="Center">
-
                 </GridView>
             </DataTemplate>
         </mvux:FeedView>
+        <Expander Grid.Row="2"
+                  ExpandDirection="Down"
+                  MaxHeight="500">
+        
+            <Expander.Header>
+                <utu:TabBar VerticalAlignment="Bottom"
+                            Style="{StaticResource TopTabBarStyle}"
+                            ItemsSource="{Binding CodeSampleOptions}"
+                            SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+                    <utu:TabBar.ItemTemplate>
+                        <DataTemplate>
+                            <utu:TabBarItem Content="{Binding}"
+                                            Command="{Binding SwitchCodeSampleAsync}"
+                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
+                                            Style="{StaticResource MaterialTopTabBarItemStyle}"
+                                            Icon="Home"/>
+                        </DataTemplate>
+                    </utu:TabBar.ItemTemplate>
+                </utu:TabBar>
+            </Expander.Header>
+            <Expander.Content>
+                <ScrollViewer>
+                    <TextBlock x:Name="CodeSampleBlock"
+                            Text="{Binding CurrentCodeSample}"
+                            TextWrapping="WrapWholeWords"/>
+                </ScrollViewer>
+            </Expander.Content>
+            
+        </Expander>
     </Grid>
 </Page>
