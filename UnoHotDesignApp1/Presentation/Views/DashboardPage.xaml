@@ -28,7 +28,7 @@
                     Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
 
         <!--Right Side-->
-        <mvux:FeedView ManipulationMode="None" x:Name="GriddedFeedView"
+        <mvux:FeedView x:Name="GriddedFeedView"
                         Grid.Row="1"
                         Source="{Binding GalleryImages}"
                         Margin="3"
@@ -39,7 +39,7 @@
                             ItemsSource="{Binding Data}"
                             ItemTemplate="{StaticResource StyledCardTemplate}"
                             HeaderTemplate="{StaticResource ViewHeaderTemplate}"
-                            Header="{Binding ViewHeaderContent}"
+                            Header="{Binding Parent.ViewHeaderContent}"
                             CanReorderItems="False"
                             CanDragItems="False"
                             IsItemClickEnabled="True"

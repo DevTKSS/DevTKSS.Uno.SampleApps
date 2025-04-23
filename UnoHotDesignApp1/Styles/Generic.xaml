@@ -9,7 +9,7 @@
         <utu:Card CornerRadius="20"
                 HorizontalContentAlignment="Stretch"
                 HeaderContent="{Binding Title}"
-                MediaContent="{Binding ImageLocation}"
+                MediaContent="{Binding  ImageLocation}"
                 SubHeaderContent="{Binding Description}"
                 Style="{StaticResource OutlinedCardStyle}"
                 HorizontalAlignment="Center"
@@ -21,7 +21,7 @@
     <!--#region Card HeaderContent Template-->
     <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardHeaderContentTemplate">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
-            <TextBlock Text="{Binding Title}"
+            <TextBlock Text="{Binding }"
                    Style="{ThemeResource TitleLarge}"
                    Margin="16,14,16,14"
                    Foreground="{ThemeResource OnSurfaceInverseBrush}"
@@ -33,7 +33,7 @@
     <!--#region Card SubHeaderContent Template-->
     <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
-            <TextBlock Text="{Binding Description }"
+            <TextBlock Text="{Binding  }"
                    Style="{ThemeResource BodySmall}"
                    Margin="16,0,16,14"
                    Foreground="{ThemeResource OnSurfaceInverseBrush}"
@@ -44,7 +44,7 @@
     
     <!--#region Card MediaContentTemplate-->
     <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardMediaContentTemplate">
-        <Image Source="{Binding ImageLocation}"
+        <Image Source="{Binding }"
            Stretch="Uniform"
            Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
     </DataTemplate>

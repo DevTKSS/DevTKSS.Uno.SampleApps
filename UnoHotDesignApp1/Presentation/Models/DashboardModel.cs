@@ -33,7 +33,7 @@ public partial record DashboardModel
 
     public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
     public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
-    
+
 
     public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
 
@@ -67,26 +67,26 @@ public partial record DashboardModel
     public IState<string> SelectedOption => State<string>.Value(this, () => "FeedView + GridView XAML")
                                                          .ForEach(SwitchCodeSampleAsync);
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
-                                                           // .ForEach(SwitchCodeSampleAsync);
+    // .ForEach(SwitchCodeSampleAsync);
 
     public async ValueTask SwitchCodeSampleAsync(string? choice, CancellationToken ct = default)
-        {
+    {
         //  var choice = await CodeSampleOptions.GetSelectedItem(ct);
         Console.WriteLine("SwitchCodeSampleAsync called with parameter: {0}", choice);
-            _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
-            await CurrentCodeSample.SetAsync(choice switch
-            {
-                "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
-                "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),
-                "DI Service without Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-noResw.cs.txt"),
-                "C# Record" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageModel.cs.txt"),
-                "XAML DataTemplate" => await _storage.ReadPackageFileAsync("Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt"),
-                "FeedView + GridView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-GridView-Sample.xaml.txt"),
-                _ => string.Empty
-            },ct);
-        }
+        _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
+        await CurrentCodeSample.SetAsync(choice switch
+        {
+            "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
+            "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),
+            "DI Service without Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-noResw.cs.txt"),
+            "C# Record" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageModel.cs.txt"),
+            "XAML DataTemplate" => await _storage.ReadPackageFileAsync("Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt"),
+            "FeedView + GridView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-GridView-Sample.xaml.txt"),
+            _ => string.Empty
+        }, ct);
+    }
 
-  //public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ctk)
+    //public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ctk)
     //{
     //    await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
     //    return new List<string>
@@ -99,18 +99,18 @@ public partial record DashboardModel
     //                "FeedView + GridView XAML"
     //            }.ToImmutableList();
     //}
-  
+
     #endregion
 
- 
+
     #region ViewHeaderContent
-    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetGridViewHeaderAsync);
-    public async ValueTask<HeaderContent> GetGridViewHeaderAsync(CancellationToken ctk)
-    {
-        await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
-        var headerContent = new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["GridViewTitle"]);
-        return headerContent;
-    }
+    public IFeed<HeaderContent> ViewHeaderContent => Feed<HeaderContent>
+        .Async(async (ct) =>
+        {
+            await Task.Delay(1, ct);
+            return new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["GridViewTitle"]);
+        });
+
     #endregion
 }
 
