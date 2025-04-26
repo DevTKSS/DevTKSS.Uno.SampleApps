@@ -57,7 +57,6 @@
         
             <Expander.Header>
                 <utu:TabBar VerticalAlignment="Bottom"
-                            Style="{StaticResource TopTabBarStyle}"
                             ItemsSource="{Binding CodeSampleOptions}"
                             SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
                     <utu:TabBar.ItemTemplate>
