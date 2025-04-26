@@ -19,7 +19,7 @@
                 MediaContentTemplate="{StaticResource CardMediaContentTemplate}"/>
     </DataTemplate>
     <!--#region Card HeaderContent Template-->
-    <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardHeaderContentTemplate">
+    <DataTemplate x:Key="CardHeaderContentTemplate" x:DataType="gm:GalleryImageModel">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
             <TextBlock Text="{Binding }"
                    Style="{ThemeResource TitleLarge}"

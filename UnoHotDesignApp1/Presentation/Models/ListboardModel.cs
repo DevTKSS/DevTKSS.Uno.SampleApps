@@ -64,13 +64,12 @@ public partial record ListboardModel
     #endregion
 
     #region ViewHeaderContent
-    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetListViewHeaderAsync);
-    public async ValueTask<HeaderContent> GetListViewHeaderAsync(CancellationToken ctk)
-    {
-        await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
-        var headerContent = new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["ListViewTitle"]);
-        return headerContent;
-    }
+    public IFeed<HeaderContent> ViewHeaderContent => Feed<HeaderContent>
+        .Async(async (ct) =>
+        {
+            await Task.Delay(1, ct);
+            return new HeaderContent("Assets/Images/styled_logo.png", _stringLocalizer["ListViewTitle"]);
+        });
     #endregion
 }
 

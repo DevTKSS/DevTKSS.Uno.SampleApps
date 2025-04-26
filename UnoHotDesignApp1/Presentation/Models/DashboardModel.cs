@@ -38,17 +38,6 @@ public partial record DashboardModel
     public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
 
     #region CodeSample import
-    private readonly IImmutableList<string> _sampleOptions =
-                        new string[]
-                        {
-                            "FeedView + GridView XAML",
-                            "C# in Model",
-                            "DI Service Resw",
-                            "DI Service without Resw",
-                            "C# Record",
-                            "XAML DataTemplate"
-                        }
-                        .ToImmutableArray();
     public IListFeed<string> CodeSampleOptions => ListFeed.Async(
         static async (ct) =>
         {
