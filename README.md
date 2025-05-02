@@ -8,8 +8,8 @@ Example project which should show how different mvux ui controls and model bindi
 
   Not acceptable for me as final result since it had very poor performance and not relyable functionality
 
-- [ ] Restructuring, Refactoring applying SOC
-- [-] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app
+- [x] Restructuring, Refactoring applying SOC
+- [x] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app
   - [x] [Working State of DashboardPage](https://github.com/DevTKSS/UnoHotDesignApp1/commit/98fa25af8f23bb27c2dccac39d9248f3fc7254dd)
 - [ ] (Re)record the video to show a final step by step Guide to Beginners like me and simplify the start with uno.extensions with Mvux.
 
@@ -19,18 +19,79 @@ Example project which should show how different mvux ui controls and model bindi
 - FeedView + ListView
 - DataTemplate centralized Recource definition
 - Card
-- "ItemOverlayTemplate" DataTemplate layout replicated from WinUI 3 Gallery
+- `ItemOverlayTemplate` DataTemplate layout replicated from WinUI 3 Gallery
 
 ## Uno.Extensions to be explored here
 
-- Storage
-- Serialization
-- Localization
-- Configuration
 - Mvux
-- Navigation 
+  - Feed
+  - ListFeed
+  - State
+  - ListState
+
+  --> Almost every Model, detailed overview will follow.
+
+- Navigation
+  - via Xaml
+    - NavigationView
+      - MainPage.xaml
+  - Via Model
+    - (planned)
+
 - Hosting
-- DependencyInjection 
+  - App.xaml.cs
+
+- DependencyInjection
+  - Service Registration
+      - App.xaml.cs
+  - Service Definition
+    - CodeSampleService.cs
+    - (ICodeSampleService.cs) => to be extracted and added
+  - Data Model Definition
+    - SampleCode.cs#SampleCode
+    - CodeSampleOptions.cs
+    - CodeSampleOptionsConfiguration.cs
+
+- Serialization
+  - JsonSerializerContext of each DataModel
+    - [SampleCodeContext](SampleCode.cs#SampleCodeContext)
+    - [CodeSampleOptionsContext](CodeSampleOptions.cs#SampleCodeContext)
+    - [CodeSampleOptionsConfigurationContext] (CodeSampleOptionsConfiguration.cs#CodeSampleOptionsConfigurationContext)
+
+- Configuration
+  - Data for Serialization
+    - appsettings.json
+
+- Storage
+  - Via Model
+    - DashboardModel.cs
+  - Via Service
+    - CodeSampleService.cs
+  - Via StorageExtension
+    - Currently in private preview package
+  - Via Uno.Extensions.Storage.IStorage Interface extension
+    - added as PR to Uno.Extensions
+
+- Localization
+  - **IStringLocalizer**
+    - Resources Dictionarys
+      - en/.resw
+      - de/.resw
+    - Binding current value in`IState<string>` and to corresponding View
+      - DashboardModel.cs
+      - ListboardModel.cs
+      - MainModel.cs
+      - CounterModel.cs
+    - Requesting localized Items via FeedView
+      - Service Definition
+        - GalleryImageService.cs
+      - Data Model Definition
+        - GalleryImageModel.cs
+  - **ILocalizationService**
+    - Requesing current culture
+      - GalleryImageModel.cs
+    - Switching culture
+      - (planned)
 
 ## Fist Recording (uncut, without sound)
 
