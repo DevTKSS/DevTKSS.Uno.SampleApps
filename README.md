@@ -1,4 +1,4 @@
-# DevTKSS Uno Mvux Samples Gallery App
+# DevTKSS Mvux Samples Gallery App
 
 Example project which should show how different mvux ui controls and model binding can be done
 
