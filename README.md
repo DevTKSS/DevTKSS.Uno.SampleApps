@@ -1,4 +1,4 @@
-# Mvux meets HotDesign(TM) Sample App
+# DevTKSS Uno Mvux Samples Gallery App
 
 Example project which should show how different mvux ui controls and model binding can be done
 
