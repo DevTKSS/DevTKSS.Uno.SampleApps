@@ -1,0 +1,38 @@
+using Uno.Extensions.Storage;
+using Uno.Extensions.Localization;
+using DevTKSS.Uno.Samples.MvuxGallery.GeneralModels;
+
+...
+
+public partial record SomeModel
+{
+    private readonly INavigator _navigator;
+    private readonly ILocalizationService _localizationService;
+    private readonly IStringLocalizer _stringLocalizer;
+    private readonly IGalleryImageService _galleryImageService;
+
+    public SomeModel(
+        INavigator navigator,
+        ILocalizationService localizationService,
+        IStringLocalizer stringLocalizer,
+        IGalleryImageService galleryImageService)
+    {
+        this._navigator = navigator;
+        this._localizationService = localizationService;
+        this._stringLocalizer = stringLocalizer;
+        this._galleryImageService = galleryImageService;
+    }
+
+    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesAsync);
+    public IState<string> SomeTitle => State<string>.Value(this, () => _stringLocalizer["SomeTitle"]);
+
+    #region ViewHeaderContent
+    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetGridViewHeaderAsync);
+    public async ValueTask<HeaderContent> GetGridViewHeaderAsync(CancellationToken ctk)
+    {
+        await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
+        var headerContent = new HeaderContent("Assets/Images/logo.png", _stringLocalizer["GridViewTitle"]);
+        return headerContent;
+    }
+    #endregion
+}

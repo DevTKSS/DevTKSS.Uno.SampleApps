@@ -1,0 +1,3 @@
+namespace DevTKSS.Uno.Samples.MvuxGallery.GeneralModel;
+
+public partial record GalleryImageModel(string Title, string ImageLocation, string Description);

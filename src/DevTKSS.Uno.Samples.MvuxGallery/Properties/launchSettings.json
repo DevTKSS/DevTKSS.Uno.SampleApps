@@ -1,0 +1,30 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8080",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "DevTKSS MvuxGallery (WinAppSDK Unpackaged)": {
+      "commandName": "Project",
+      "compatibleTargetFramework": "windows"
+    },
+    "DevTKSS MvuxGallery (WinAppSDK Packaged)": {
+      "commandName": "MsixPackage",
+      "compatibleTargetFramework": "windows"
+    },
+    "DevTKSS MvuxGallery (Desktop)": {
+      "commandName": "Project",
+      "compatibleTargetFramework": "desktop"
+    },
+    "DevTKSS MvuxGallery (Desktop WSL2)": {
+      "commandName": "WSL2",
+      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/DevTKSS.Uno.Samples.MvuxGallery.dll",
+      "distributionName": "",
+      "compatibleTargetFramework": "desktop"
+    }
+  }
+}

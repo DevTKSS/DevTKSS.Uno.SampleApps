@@ -1,0 +1,23 @@
+xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+
+...
+
+<mvux:FeedView x:Name="LeftFeedView"
+                Grid.Row="1"
+                Source="{Binding GalleryImages}"
+                Margin="3">
+    <DataTemplate>
+        <ListView ItemsSource="{Binding Data}"
+                    ItemTemplate="{StaticResource GalleryImageOverlayTemplate}"
+                    Footer="{Binding CurrentCodeSample}"
+                    FooterTemplate="{StaticResource CodeSampleTemplate}"
+                    HeaderTemplate="{StaticResource ViewHeaderTemplate}"
+                    Header="{Binding ViewHeaderContent}"
+                    AllowDrop="False"
+                    CanDrag="False"
+                    CanReorderItems="False"
+                    SelectionMode="Single">
+
+        </ListView>
+    </DataTemplate>
+</mvux:FeedView>
