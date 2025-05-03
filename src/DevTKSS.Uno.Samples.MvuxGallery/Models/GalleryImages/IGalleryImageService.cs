@@ -1,4 +1,4 @@
-namespace DevTKSS.Uno.Samples.MvuxGallery.Models;
+namespace DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 
 public interface IGalleryImageService
 {

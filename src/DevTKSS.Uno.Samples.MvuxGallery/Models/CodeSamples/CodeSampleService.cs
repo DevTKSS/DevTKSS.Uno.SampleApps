@@ -3,8 +3,8 @@ using System.Runtime.CompilerServices;
 using Uno.Extensions.Reactive.Commands;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
-public class CodeSampleService
-{    
+public record CodeSampleService : ICodeSampleService
+{
     public CodeSampleService(
     IOptions<CodeSampleOptionsConfiguration>? options,
     ILogger<CodeSampleService> logger,
@@ -18,7 +18,7 @@ public class CodeSampleService
     private readonly IStorage _storage;
     private readonly ILogger<CodeSampleService> _logger;
     private readonly Dictionary<string, CodeSampleOption[]> _codeSampleDict;
-    
+
     public async ValueTask<ImmutableList<string>> GetCodeSampleOptions(string callerID, CancellationToken ct = default)
     {
         await Task.Delay(1, ct);
@@ -26,10 +26,10 @@ public class CodeSampleService
             .SelectToList(sampleOptions => sampleOptions.Identifyer)
             .ToImmutableList();
     }
-    
+
     public async Task<string> GetCodeSampleAsync(string callerID, string sampleID)
     {
-        if(_codeSampleDict.TryGetValue(callerID, out var sampleOptions))
+        if (_codeSampleDict.TryGetValue(callerID, out var sampleOptions))
         {
             var sampleOption = sampleOptions.FirstOrDefault(item => item.Identifyer == sampleID);
             return sampleOption == null
@@ -59,7 +59,7 @@ public class CodeSampleService
     /// overload:<br/>
     /// `params ReadOnlySpan<string> items` this takes in an (e.g.) array of generic typed values
     /// </remarks>
-    public static async ValueTask<IImmutableList<string>?> GetCodeSampleOptionsAsync<TOwner>(TOwner owner, CancellationToken ct = default)
+    public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync<TOwner>(TOwner owner, CancellationToken ct = default)
         where TOwner : class
     {
         await Task.Delay(1, ct);
@@ -119,7 +119,7 @@ public class CodeSampleService
                 "C# in CounterModel"
             ]);
         }
-        else return default;
+        else return ImmutableList<string>.Empty;
 
     }
 
@@ -132,10 +132,11 @@ public class CodeSampleService
     /// <remarks>
     /// Uses switch expression to select the correct code sample which provides better performance and less boilerplate code.
     /// </remarks>
-    public async ValueTask SwitchCodeSampleAsync(string? choice, CancellationToken ct = default)
+    public async ValueTask<string> SwitchCodeSampleAsync(string? choice, CancellationToken ct = default)
     {
         _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
-        return choice switch
+
+        string selectedSample = choice switch
         {
             "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
             "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),
@@ -144,6 +145,8 @@ public class CodeSampleService
             "XAML DataTemplate" => await _storage.ReadPackageFileAsync("Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt"),
             "FeedView + GridView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-GridView-Sample.xaml.txt"),
             _ => string.Empty
-        };
+        } ?? string.Empty;
+        return selectedSample;
     }
+
 }

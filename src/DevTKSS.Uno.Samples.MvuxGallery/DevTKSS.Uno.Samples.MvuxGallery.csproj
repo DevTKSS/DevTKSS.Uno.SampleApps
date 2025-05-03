@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-    <PackageReference Include="DevTKSS.Extensions.Uno"/>
+    <PackageReference Include="DevTKSS.Extensions.Uno" />
   </ItemGroup>
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />

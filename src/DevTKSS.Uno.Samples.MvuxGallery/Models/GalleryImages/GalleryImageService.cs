@@ -1,4 +1,4 @@
-namespace DevTKSS.Uno.Samples.MvuxGallery.Models;
+namespace DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 [Bindable]
 public partial class GalleryImageService : IGalleryImageService
 {
@@ -8,8 +8,8 @@ public partial class GalleryImageService : IGalleryImageService
         ILocalizationService localizationService,
         IStringLocalizer _stringLocalizer)
     {
-        this._localizationService = localizationService;
-        this._stringlocalizer = _stringLocalizer;
+        _localizationService = localizationService;
+        _stringlocalizer = _stringLocalizer;
     }
 
     public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithReswAsync(CancellationToken ct)
@@ -25,7 +25,6 @@ public partial class GalleryImageService : IGalleryImageService
             "en" => await GetENGalleryImagesAsync(ct),
             _ => await GetENGalleryImagesAsync(ct),
         };
-        await Task.Delay(TimeSpan.FromSeconds(1));
         return galleryImages;
     }
 

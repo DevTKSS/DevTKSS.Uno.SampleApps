@@ -9,6 +9,7 @@ global using DevTKSS.Uno.Samples.MvuxGallery.Presentation;
 global using DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 global using DevTKSS.Uno.Samples.MvuxGallery.Presentation.Views;
 global using DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
+global using DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 global using Microsoft.UI.Xaml.Data;
 global using System.Text.Json.Serialization;
 global using DevTKSS.Extensions.Uno.Storage;

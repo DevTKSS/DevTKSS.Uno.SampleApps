@@ -1,4 +1,5 @@
 using System.Text.Json;
+using DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 using Uno.Resizetizer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
@@ -71,7 +72,7 @@ public partial class App : Application
                         // TODO: Register your services
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
-                        .AddSingleton<CodeSampleService>()
+                        .AddSingleton<ICodeSampleService, CodeSampleService>()
                         .AddJsonTypeInfo(SampleCodeContext.Default.SampleCode)
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOption)
                         .AddJsonTypeInfo(CodeSampleOptionsConfigurationContext.Default.CodeSampleOptionsConfiguration)
