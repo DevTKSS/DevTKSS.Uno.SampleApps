@@ -21,7 +21,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <utu:NavigationBar x:Name="NavBar" 
+        <utu:NavigationBar x:Name="NavBar"
                            Grid.Row="0"
                            HorizontalAlignment="Stretch"
                            HorizontalContentAlignment="Center"
@@ -38,7 +38,7 @@
                               HorizontalContentAlignment="Center"/>
             </utu:NavigationBar.MainCommand>
         </utu:NavigationBar>
-        
+
         <NavigationView  x:Name="NavView"
                          IsBackButtonVisible="Collapsed"
                          IsPaneToggleButtonVisible="False"
@@ -47,29 +47,34 @@
                          uen:Region.Attached="True"
                          HorizontalAlignment="Stretch">
             <NavigationView.MenuItems>
-                <NavigationViewItem x:Name="NavItemDashboard" Content="Home"
+                <NavigationViewItem x:Name="NavItemDashboard"
+                                    Content="Home"
                                     uen:Region.Name="Dashboard"
                                     Icon="Home"/>
-                <NavigationViewItem x:Name="NavItemCounter" Content="Counter"
+                <NavigationViewItem x:Name="NavItemCounter"
+                                    Content="Counter"
                                     Icon="Calculator"
                                     uen:Region.Name="Counter"/>
-                
+
                 <NavigationViewItem  Content="List View"
                                      uen:Region.Name="Listboard"
                                      Icon="List"/>
+                <NavigationViewItem Content="Let's play Cards!"
+                                    uen:Region.Name="SimpleCards"
+                                    Icon="Card"/>
             </NavigationView.MenuItems>
-            
+
             <NavigationView.Content>
                 <Grid x:Name="NavigationViewContentGrid"
-                       uen:Region.Attached="True"
+                      uen:Region.Attached="True"
                       uen:Region.Navigator="Visibility"
                       Visibility="Visible">
-                    
-                   
+
+
                 </Grid>
             </NavigationView.Content>
         </NavigationView>
-            
+
     </Grid>
-  
+
 </Page>

@@ -62,10 +62,13 @@ public partial class App : Application
                     configBuilder
                         .EmbeddedSource<App>()
                         .Section<AppConfig>()
-                        .Section<CodeSampleOptionsConfiguration>()
+
+                        .EmbeddedSource<App>("sampledata")
                         .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
                         .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
                         .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
+                        .Section<CodeSampleOptionsConfiguration>("CounterSampleConfiguration")
+                        .Section<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration")
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
@@ -89,7 +92,7 @@ public partial class App : Application
         MainWindow.UseStudio();
 #endif
         MainWindow.SetWindowIcon();
-        
+
         Host = await builder.NavigateAsync<Shell>();
     }
 
@@ -113,10 +116,10 @@ public partial class App : Application
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
                             new ("Listboard", View: views.FindByViewModel<ListboardModel>()),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
-                           
+
                         ]
                     ),
-                    
+
                 ]
             )
         );

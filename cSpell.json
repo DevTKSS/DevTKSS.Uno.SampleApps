@@ -1,0 +1,17 @@
+{
+    // cSpell configuration file
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        // Add custom words here
+        "DevTKSS",
+        "Listboard"
+    ],
+    "ignoreWords": [],
+    "ignorePaths": [
+        // Add file paths to ignore here
+        "node_modules/**",
+        "dist/**",
+        "src/*"
+    ]
+}

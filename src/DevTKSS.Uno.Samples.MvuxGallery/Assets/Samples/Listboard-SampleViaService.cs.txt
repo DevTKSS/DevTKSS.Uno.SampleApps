@@ -1,11 +1,6 @@
-namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
-
-/// <summary>
-/// Represents the view model for the Listboard, providing data and functionality for the UI.
-/// </summary>
 public partial record ListboardModel
 {
-    #region Services
+
     /// <summary>
     /// Service for retrieving localized strings.
     /// </summary>
@@ -20,7 +15,6 @@ public partial record ListboardModel
     /// Service for retrieving gallery images.
     /// </summary>
     private readonly IGalleryImageService _galleryImageService;
-    #endregion
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ListboardModel"/> class.
@@ -38,17 +32,8 @@ public partial record ListboardModel
         this._codeSampleService = codeSampleService;
     }
 
-    /// <summary>
-    /// Gets a feed of gallery images to be displayed.
-    /// </summary>
-    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesWithoutReswAsync);
 
-    /// <summary>
-    /// Gets the title of the Listboard.
-    /// </summary>
-    public IState<string> ListboardTitle => State<string>.Value(this, () => _stringLocalizer["ListboardTitle"]);
 
-    #region CodeSample import
     /// <summary>
     /// Represents a static collection of code sample options to bind to.
     /// </summary>
@@ -56,8 +41,8 @@ public partial record ListboardModel
     /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
     /// </remarks>
     public IListFeed<string> CodeSampleOptions => ListFeed<string>
-                                                      .Async(_codeSampleService.GetCodeSampleOptionsAsync)
-                                                      .Selection(SelectedSampleOption);
+                                                        .Async(_codeSampleService.GetCodeSampleOptionsAsync)
+                                                        .Selection(SelectedSampleOption);
 
     /// <summary>
     /// Represents the selected code sample option.
@@ -81,46 +66,9 @@ public partial record ListboardModel
     /// <param name="selectedSampleOption">The selected code sample option.</param>
     /// <param name="ct">A cancellation token for the operation.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
-    /// <example>
-    /// <code>
-    /// public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
-    /// {
-    ///     string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
-    ///     await CurrentCodeSample.SetAsync(sample, ct);
-    /// }
-    /// </code>
-    /// </example>
     public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
     {
         string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
         await CurrentCodeSample.SetAsync(sample, ct);
     }
-    #endregion
-
-    #region ViewHeaderContent
-    /// <summary>
-    /// Gets the header content for the view, including an image and caption.
-    /// </summary>
-    /// <example>
-    /// <code>
-    /// public IState<HeaderContent> ViewHeaderContent =>
-    /// State<HeaderContent>
-    ///        .Value(owner: this,
-    ///               valueProvider: () =>
-    ///                 new HeaderContent(
-    ///                     ImageLocation: "Assets/Images/styled_logo.png",
-    ///                     Caption: _stringLocalizer["ListViewTitle"]));
-    /// </code>
-    /// </example>
-    public IState<HeaderContent> ViewHeaderContent =>
-        State<HeaderContent>
-            .Value(owner: this,
-                   valueProvider: () =>
-                        new HeaderContent(
-                            ImageLocation: "Assets/Images/styled_logo.png",
-                            Caption: _stringLocalizer["ListViewTitle"]));
-    #endregion
 }
-
-
-

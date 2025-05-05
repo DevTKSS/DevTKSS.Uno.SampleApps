@@ -46,9 +46,9 @@ public partial record DashboardModel
     public IState<HeaderContent> ViewHeaderContent =>
         State<HeaderContent>.Value(
             owner: this,
-            valueProvider:() => 
+            valueProvider: () =>
                 new HeaderContent(
-                    ImageLocation:"Assets/Images/styled_logo.png",
+                    ImageLocation: "Assets/Images/styled_logo.png",
                     Caption: _stringLocalizer["GridViewTitle"]));
     #endregion
 
@@ -98,7 +98,7 @@ public partial record DashboardModel
     /// </remarks>
     public static async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
-        
+
         await Task.Delay(1, ct);
 
         return ImmutableList.Create(
@@ -123,7 +123,7 @@ public partial record DashboardModel
     /// <remarks>
     /// Uses switch expression to select the correct code sample which provides better performance and less boilerplate code.
     /// </remarks>
-    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))]string? choice, CancellationToken ct = default)
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? choice, CancellationToken ct = default)
     {
         _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
         await CurrentCodeSample.SetAsync(choice switch

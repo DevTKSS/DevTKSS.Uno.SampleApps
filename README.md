@@ -3,7 +3,7 @@
 The samples in this Repository are meant to help other Developers, independent to their pre-knowledge, get an Idea of how to use the shown things.
 
 > [!TIP]
-> Check out the [Documentation](./doc/), for more a more detailed List and future coming Guides and Explanations.
+> Check out the [Documentation](./doc/articles/introduction.md), for more a more detailed List and future coming Guides and Explanations.
 
 ## Table of Contents
 
@@ -20,6 +20,7 @@ The samples in this Repository are meant to help other Developers, independent t
 ## Mvux Gallery
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples/DevTKSS.Uno.Samples.MvuxGallery) App.
+The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overview.md)
 
 ### Controls to be explored in this App
 
