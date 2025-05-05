@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
+topicHref: Overview.md
+items:
+- name: Overview
+  uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview
+  href: Overview.md

@@ -1,7 +1,8 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
-public record CodeSampleOptionsConfiguration()
+public record CodeSampleOptionsConfiguration
 {
-    public Dictionary<string, CodeSampleOption[]> Items { get; set; } = new();
+//    public string Identifyer { get; init; } = string.Empty;
+    public Dictionary<string, CodeSampleOption> Samples { get; set; } = new();
 }
 [JsonSerializable(typeof(CodeSampleOptionsConfiguration))]
 public partial class CodeSampleOptionsConfigurationContext : JsonSerializerContext

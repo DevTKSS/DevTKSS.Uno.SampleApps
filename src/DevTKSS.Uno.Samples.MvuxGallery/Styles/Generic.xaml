@@ -1,11 +1,12 @@
 ﻿<ResourceDictionary x:Name="MyStyleTemplates" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models"
+                    xmlns:gi="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
+                    xmlns:models="using:DevTKSS.Uno.Samples.MvuxGallery.Models"
                     xmlns:utu="using:Uno.Toolkit.UI"
                     xmlns:mvux="using:Uno.Extensions.Reactive.UI">
 
     <!--#region Card Template -->
-    <DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImageModel">
+    <DataTemplate x:Key="StyledCardTemplate" x:DataType="gi:GalleryImageModel">
         <utu:Card CornerRadius="20"
                 HorizontalContentAlignment="Stretch"
                 HeaderContent="{Binding Title}"
@@ -19,7 +20,7 @@
                 MediaContentTemplate="{StaticResource CardMediaContentTemplate}"/>
     </DataTemplate>
     <!--#region Card HeaderContent Template-->
-    <DataTemplate x:Key="CardHeaderContentTemplate" x:DataType="gm:GalleryImageModel">
+    <DataTemplate x:Key="CardHeaderContentTemplate" x:DataType="gi:GalleryImageModel">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
             <TextBlock Text="{Binding }"
                    Style="{ThemeResource TitleLarge}"
@@ -31,7 +32,7 @@
     <!--#endregion-->
     
     <!--#region Card SubHeaderContent Template-->
-    <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
+    <DataTemplate x:DataType="gi:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
             <TextBlock Text="{Binding  }"
                    Style="{ThemeResource BodySmall}"
@@ -43,7 +44,7 @@
     <!--#endregion-->
     
     <!--#region Card MediaContentTemplate-->
-    <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardMediaContentTemplate">
+    <DataTemplate x:DataType="gi:GalleryImageModel" x:Key="CardMediaContentTemplate">
         <Image Source="{Binding }"
            Stretch="Uniform"
            Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
@@ -53,7 +54,7 @@
     <!--#endregion Card Template -->
 
     <!--#region ListView and GridView Header Template binding to a FeedView to Refresh-->
-    <DataTemplate x:Key="ViewHeaderTemplate" x:DataType="gm:HeaderContent">
+    <DataTemplate x:Key="ViewHeaderTemplate" x:DataType="models:HeaderContent">
         <Grid Background="{ThemeResource SurfaceInverseBrush}"
               CornerRadius="10,10,0,0"
               Padding="10">
@@ -88,7 +89,7 @@
     <!-- This Sample is a simplifyed Template using a regular Grid with a unified Layout-->
     <!-- Reference used: WinUi 3 Gallery GridView "ItemOverlayTemplate" winui3gallery://item/GridView -->
     
-    <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gm:GalleryImageModel">
+    <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gi:GalleryImageModel">
         <Grid HorizontalAlignment="Stretch"
            VerticalAlignment="Stretch"
            CornerRadius="20"

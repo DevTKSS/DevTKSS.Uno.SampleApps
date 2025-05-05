@@ -14,7 +14,6 @@ public partial record DashboardModel
     private readonly IStorage _storage;
     private readonly ILogger _logger;
     #endregion
-
     public DashboardModel(
         INavigator navigator,
         ILocalizationService localizationService,
@@ -110,7 +109,7 @@ public partial record DashboardModel
                 "DI Service Resw",
                 "DI Service without Resw",
                 "C# Record",
-                "XAML DataTemplate"                
+                "XAML DataTemplate"
             ]);
 
     }

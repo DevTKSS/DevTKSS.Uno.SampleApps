@@ -1,5 +1,4 @@
 using System.Text.Json;
-using DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 using Uno.Resizetizer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
@@ -64,6 +63,9 @@ public partial class App : Application
                         .EmbeddedSource<App>()
                         .Section<AppConfig>()
                         .Section<CodeSampleOptionsConfiguration>()
+                        .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
+                        .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
+                        .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
@@ -73,14 +75,13 @@ public partial class App : Application
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
                         .AddSingleton<ICodeSampleService, CodeSampleService>()
-                        .AddJsonTypeInfo(SampleCodeContext.Default.SampleCode)
-                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOption)
-                        .AddJsonTypeInfo(CodeSampleOptionsConfigurationContext.Default.CodeSampleOptionsConfiguration)
-                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
-                .UseStorage()
-                .UseSerialization()
+                .UseSerialization((context, services) =>
+                    services
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOption)
+                        .AddJsonTypeInfo(CodeSampleOptionsConfigurationContext.Default.CodeSampleOptionsConfiguration)
+                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true }))
             );
         MainWindow = builder.Window;
 

@@ -6,38 +6,18 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 public record CodeSampleService : ICodeSampleService
 {
     public CodeSampleService(
-    IOptions<CodeSampleOptionsConfiguration>? options,
+    IOptions<CodeSampleOptionsConfiguration> options,
     ILogger<CodeSampleService> logger,
     IStorage storage)
     {
-        _codeSampleDict = options?.Value.Items ?? [];
+        _options = options.Value;
         _logger = logger;
         _storage = storage;
     }
 
     private readonly IStorage _storage;
     private readonly ILogger<CodeSampleService> _logger;
-    private readonly Dictionary<string, CodeSampleOption[]> _codeSampleDict;
-
-    public async ValueTask<ImmutableList<string>> GetCodeSampleOptions(string callerID, CancellationToken ct = default)
-    {
-        await Task.Delay(1, ct);
-        return _codeSampleDict.UnoGetValueOrDefault(callerID)
-            .SelectToList(sampleOptions => sampleOptions.Identifyer)
-            .ToImmutableList();
-    }
-
-    public async Task<string> GetCodeSampleAsync(string callerID, string sampleID)
-    {
-        if (_codeSampleDict.TryGetValue(callerID, out var sampleOptions))
-        {
-            var sampleOption = sampleOptions.FirstOrDefault(item => item.Identifyer == sampleID);
-            return sampleOption == null
-                ? throw new ArgumentException($"Sample option {sampleID} not found for {callerID}")
-                : await _storage.ReadLinesFromPackageFile(sampleOption.FilePath, sampleOption.LineRanges);
-        }
-        else return string.Empty;
-    }
+    private readonly CodeSampleOptionsConfiguration _options;
 
     /// <summary>
     /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
@@ -52,101 +32,22 @@ public record CodeSampleService : ICodeSampleService
     /// or to the Async Extension itself like `ListFeed.Async<IImutableList<string>` results in a type mismatch.<br/>
     /// <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs1503?f1url=%3FappId%3Droslyn%26k%3Dk(CS1503)">CS1503</see>
     /// </remarks>
-    /// </param>
-    /// <returns>The available Values to select from.</returns>
-    /// <remarks>
-    /// This uses the explicit `ImmutableList.Create` function (non generic!)<br/>
-    /// overload:<br/>
-    /// `params ReadOnlySpan<string> items` this takes in an (e.g.) array of generic typed values
-    /// </remarks>
-    public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync<TOwner>(TOwner owner, CancellationToken ct = default)
-        where TOwner : class
+    /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing a <see cref="ImmutableList{T}"/> of <see langword="string"/> with the Sample Names to select from</returns>
+    public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
-        await Task.Delay(1, ct);
-
-        if (owner is MainModel)
-        {
-            return ImmutableList.Create(
-                items:
-            [
-                "NavigationView XAML",
-                "C# in Model"
-            ]);
-        }
-        else if (owner is DashboardModel)
-        {
-            return ImmutableList.Create(
-            items:
-            [
-                "FeedView + GridView XAML",
-                "C# in DashboardModel",
-                "DI GalleryImageService Resw",
-                "DI GalleryImageService without Resw",
-                "C# GalleryImageModel Record",
-                "XAML DataTemplate"
-            ]);
-        }
-        else if (owner is ListboardModel)
-        {
-            return ImmutableList.Create(
-                items:
-            [
-                "FeedView + ListView XAML",
-                "C# in ListboardModel",
-                "DI Service Resw",
-                "DI Service without Resw",
-                "C# Record",
-                "XAML DataTemplate"
-            ]);
-        }
-        else if (owner is SimpleCardsModel)
-        {
-            return ImmutableList.Create(
-                items:
-            [
-                "Card Control XAML",
-                "C# in SimpleCardsModel",
-                "C# Record",
-                "XAML DataTemplate"
-            ]);
-        }
-        else if (owner is CounterModel)
-        {
-            return ImmutableList.Create(
-                items:
-            [
-                "View XAML",
-                "C# in CounterModel"
-            ]);
-        }
-        else return ImmutableList<string>.Empty;
-
+        await Task.Delay(1);
+        return _options.Samples.Keys.ToImmutableList(); 
     }
 
-    /// <summary>
-    /// Get the content of the selected item
-    /// </summary>
-    /// <param name="choice">The selected item</param>
-    /// <param name="ct">A cancellation token for the operation to update the <see cref="CurrentCodeSample"/></param>
-    /// <returns>A ValueTask to be awaited</returns>
-    /// <remarks>
-    /// Uses switch expression to select the correct code sample which provides better performance and less boilerplate code.
-    /// </remarks>
-    public async ValueTask<string> SwitchCodeSampleAsync(string? choice, CancellationToken ct = default)
+    public async ValueTask<string> GetCodeSampleAsync(string sampleID, CancellationToken ct = default)
     {
-        _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
-
-        string selectedSample = choice switch
+        if (_options.Samples.TryGetValue(sampleID, out CodeSampleOption? sampleOption))
         {
-            "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
-            "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),
-            "DI Service without Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-noResw.cs.txt"),
-            "C# Record" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageModel.cs.txt"),
-            "XAML DataTemplate" => await _storage.ReadPackageFileAsync("Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt"),
-            "FeedView + GridView XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/FeedView-GridView-Sample.xaml.txt"),
-            _ => string.Empty
-        } ?? string.Empty;
-        return selectedSample;
+            return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath, sampleOption.LineRanges);
+        }
+
+        _logger.LogWarning("Code sample with ID {sampleID} not found", sampleID);
+        return string.Empty;
     }
 
 }

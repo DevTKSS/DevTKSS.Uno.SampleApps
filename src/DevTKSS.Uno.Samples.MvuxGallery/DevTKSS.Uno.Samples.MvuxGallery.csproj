@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />
-    <Resource Include="Assets\Samples\*" />
+    <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PerserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
 
