@@ -6,7 +6,7 @@
         {
           "src": "../src",
           "files": [
-            "**/*.csproj"
+            "**/DevTKSS.*.csproj"
           ]
         }
       ],
@@ -39,7 +39,6 @@
     "markdownEngineProperties": {
       "markdigExtensions": [
         "yaml",
-        "listextras",
         "definitionlists",
         "bootstrap",
         "globalization",
