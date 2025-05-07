@@ -1,4 +1,4 @@
-﻿<Page x:Class="DevTKSS.Uno.Samples.MvuxGallery.Presentation.Views.MainPage"
+<Page x:Class="DevTKSS.Uno.Samples.MvuxGallery.Presentation.Views.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="using:DevTKSS.Uno.Samples.MvuxGallery.Presentation.Views"
@@ -16,7 +16,7 @@
     <Grid x:Name="MainContentGrid"
           uen:Region.Attached="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 

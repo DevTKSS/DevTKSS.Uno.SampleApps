@@ -1,5 +1,7 @@
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
 using Uno.Resizetizer;
+using Windows.Media.Capture.Frames;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
 public partial class App : Application
@@ -61,9 +63,9 @@ public partial class App : Application
                 .UseConfiguration(configure: configBuilder =>
                     configBuilder
                         .EmbeddedSource<App>()
+                        .EmbeddedSource<App>("sampledata")
                         .Section<AppConfig>()
 
-                        .EmbeddedSource<App>("sampledata")
                         .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
                         .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
                         .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
@@ -78,6 +80,7 @@ public partial class App : Application
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
                         .AddSingleton<ICodeSampleService, CodeSampleService>()
+
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>

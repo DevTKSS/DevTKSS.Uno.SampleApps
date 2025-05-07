@@ -1,7 +1,5 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 
-
-
 public record CodeSampleService : ICodeSampleService
 {
     public CodeSampleService(

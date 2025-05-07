@@ -56,5 +56,8 @@
     <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PerserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Remove="Assets\Samples\MainPage.xaml.txt" />
+  </ItemGroup>
 
 </Project>
