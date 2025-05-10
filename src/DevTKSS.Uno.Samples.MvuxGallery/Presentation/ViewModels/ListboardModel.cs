@@ -57,7 +57,7 @@ public partial record ListboardModel
     /// </remarks>
     public IListFeed<string> CodeSampleOptions => ListFeed<string>
                                                       .Async(_codeSampleService.GetCodeSampleOptionsAsync)
-                                                      .Selection(SelectedSampleOption);
+                                                      .Selection(SelectedOption);
 
     /// <summary>
     /// Represents the selected code sample option.
@@ -65,7 +65,7 @@ public partial record ListboardModel
     /// <remarks>
     /// Uses <see cref="string.Empty"/> as the default value to avoid null checks in the XAML.
     /// </remarks>
-    public IState<string> SelectedSampleOption => State<string>
+    public IState<string> SelectedOption => State<string>
                                                     .Value(this, () => string.Empty)
                                                     .ForEach(SwitchCodeSampleAsync);
 
@@ -90,9 +90,9 @@ public partial record ListboardModel
     /// }
     /// </code>
     /// </example>
-    public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
+    public async ValueTask SwitchCodeSampleAsync(string? selectedOption, CancellationToken ct = default)
     {
-        string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
+        string sample = await _codeSampleService.GetCodeSampleAsync(selectedOption ?? string.Empty);
         await CurrentCodeSample.SetAsync(sample, ct);
     }
     #endregion
