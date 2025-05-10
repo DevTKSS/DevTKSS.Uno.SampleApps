@@ -1,7 +1,5 @@
 using System.Text.Json;
-using Microsoft.Extensions.Configuration;
 using Uno.Resizetizer;
-using Windows.Media.Capture.Frames;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
 public partial class App : Application
@@ -63,14 +61,14 @@ public partial class App : Application
                 .UseConfiguration(configure: configBuilder =>
                     configBuilder
                         .EmbeddedSource<App>()
-                        .EmbeddedSource<App>("sampledata")
-                        .Section<AppConfig>()
+                            .Section<AppConfig>()
 
-                        .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
-                        .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
-                        .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
-                        .Section<CodeSampleOptionsConfiguration>("CounterSampleConfiguration")
-                        .Section<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration")
+                        .EmbeddedSource<App>("sampledata")
+                            .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
+                            .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
+                            .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
+                            .Section<CodeSampleOptionsConfiguration>("CounterSampleConfiguration")
+                            .Section<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration")
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
@@ -79,8 +77,21 @@ public partial class App : Application
                         // TODO: Register your services
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
-                        .AddSingleton<ICodeSampleService, CodeSampleService>()
 
+                        .AddOptions<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration").Services
+                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("ListboardSampleService")
+
+                        .AddOptions<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration").Services.
+                            AddNamedSingleton<ICodeSampleService, CodeSampleService>("SimpleCardsSampleService")
+
+                        .AddOptions<CodeSampleOptionsConfiguration>("CounterSampleConfiguration").Services
+                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("CounterSampleService")
+
+                        .AddOptions<CodeSampleOptionsConfiguration>("MainSampleConfiguration").Services
+                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("MainSampleService")
+
+                        .AddOptions<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration").Services
+                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("DashboardSampleService")
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>
@@ -106,7 +117,8 @@ public partial class App : Application
             new ViewMap<MainPage, MainModel>(),
             new ViewMap<CounterPage, CounterModel>(),
             new ViewMap<DashboardPage, DashboardModel>(),
-           new ViewMap<ListboardPage, ListboardModel>()
+           new ViewMap<ListboardPage, ListboardModel>(),
+           new ViewMap<SimpleCardsPage, SimpleCardsModel>()
         );
 
         routes.Register(
@@ -119,7 +131,7 @@ public partial class App : Application
                             new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault: true),
                             new ("Listboard", View: views.FindByViewModel<ListboardModel>()),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
-
+                            new ("SimpleCards", View: views.FindByViewModel<SimpleCardsModel>()),
                         ]
                     ),
 
