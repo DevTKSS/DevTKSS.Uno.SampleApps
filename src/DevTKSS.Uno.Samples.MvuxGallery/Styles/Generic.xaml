@@ -71,15 +71,18 @@
                         Style="{ThemeResource TitleMedium}"
                         Margin="16,14,16,0"
                         Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                        VerticalAlignment="Stretch"
+                        VerticalAlignment="Center"
                         HorizontalAlignment="Center"
                         TextAlignment="Center"
                         Grid.Column="1"
                         TextWrapping="WrapWholeWords"/>
-            <AppBarButton Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}"
+            <AppBarButton Style="{StaticResource FilledButtonStyle}"
+                          Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Stretch"
-                          Grid.Column="2" Icon="Refresh"/>
+                          Grid.Column="2">
+                <SymbolIcon Symbol="Refresh" />
+            </AppBarButton>
         </Grid>
     </DataTemplate>
 

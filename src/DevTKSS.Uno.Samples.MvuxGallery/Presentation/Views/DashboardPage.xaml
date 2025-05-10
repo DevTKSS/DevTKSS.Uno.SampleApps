@@ -55,7 +55,7 @@
         </mvux:FeedView>
         <Expander Grid.Row="2"
                   ExpandDirection="Down"
-                  MaxHeight="{x:Bind DevideByTwo(DashboardGrid.Height), Mode=OneWay}">
+                  MaxHeight="300">
 
             <Expander.Header>
                 <utu:TabBar VerticalAlignment="Bottom"

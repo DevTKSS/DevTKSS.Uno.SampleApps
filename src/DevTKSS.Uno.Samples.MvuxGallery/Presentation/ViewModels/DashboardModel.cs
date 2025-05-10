@@ -7,23 +7,17 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 public partial record DashboardModel
 {
     #region Services
-    private readonly INavigator _navigator;
-    private readonly ILocalizationService _localizationService;
     private readonly IStringLocalizer _stringLocalizer;
     private readonly IGalleryImageService _galleryImageService;
     private readonly IStorage _storage;
     private readonly ILogger _logger;
     #endregion
     public DashboardModel(
-        INavigator navigator,
-        ILocalizationService localizationService,
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
         IStorage storage,
         ILogger<DashboardModel> logger)
     {
-        this._navigator = navigator;
-        this._localizationService = localizationService;
         this._stringLocalizer = stringLocalizer;
         this._galleryImageService = galleryImageService;
         this._storage = storage;

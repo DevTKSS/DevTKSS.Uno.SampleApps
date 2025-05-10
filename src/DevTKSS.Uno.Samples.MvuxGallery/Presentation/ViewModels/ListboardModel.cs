@@ -27,15 +27,15 @@ public partial record ListboardModel
     /// </summary>
     /// <param name="stringLocalizer">The string localizer service.</param>
     /// <param name="galleryImageService">The gallery image service.</param>
-    /// <param name="codeSampleService">The code sample service.</param>
+    /// <param name="serviceProvider">The serviceProvider, to fetch the code sample service as NamedService from with correct configuration.</param>
     public ListboardModel(
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
-        ICodeSampleService codeSampleService)
+        IServiceProvider serviceProvider)
     {
         this._stringLocalizer = stringLocalizer;
         this._galleryImageService = galleryImageService;
-        this._codeSampleService = codeSampleService;
+        this._codeSampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("ListboardSampleService");
     }
 
     /// <summary>

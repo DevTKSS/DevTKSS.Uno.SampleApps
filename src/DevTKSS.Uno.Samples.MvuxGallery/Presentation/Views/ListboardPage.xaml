@@ -18,13 +18,16 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"
+                           MaxHeight="300" />
         </Grid.RowDefinitions>
 
-        <!--<TextBlock  TextAlignment="Center"
+        <TextBlock Grid.Row="0"
+                   TextAlignment="Center"
                     VerticalAlignment="Center"
                     Style="{StaticResource HeadlineMedium}"
                     Text="{Binding ListboardTitle}"
-                    Foreground="{ThemeResource OnSecondaryContainerBrush}"/>-->
+                    Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
 
         <mvux:FeedView x:Name="LeftFeedView"
                            Grid.Row="1"
@@ -37,7 +40,7 @@
                               Footer="{Binding CurrentCodeSample}"
                               FooterTemplate="{StaticResource CodeSampleTemplate}"
                               HeaderTemplate="{StaticResource ViewHeaderTemplate}"
-                              Header="{Binding ViewHeaderContent}"
+                              Header="{Binding Parent.ViewHeaderContent}"
                               AllowDrop="False"
                               CanDrag="False"
                               CanReorderItems="False"
@@ -47,5 +50,33 @@
                 </DataTemplate>
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
+        <Expander Grid.Row="2"
+                  ExpandDirection="Down"
+                  MaxHeight="300">
+
+            <Expander.Header>
+                <utu:TabBar VerticalAlignment="Bottom"
+                            ItemsSource="{Binding CodeSampleOptions}"
+                            SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+                    <utu:TabBar.ItemTemplate>
+                        <DataTemplate>
+                            <utu:TabBarItem Content="{Binding}"
+                                            Command="{Binding SwitchCodeSampleAsync}"
+                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
+                                            Style="{StaticResource MaterialTopTabBarItemStyle}"
+                                            Icon="Home" />
+                        </DataTemplate>
+                    </utu:TabBar.ItemTemplate>
+                </utu:TabBar>
+            </Expander.Header>
+            <Expander.Content>
+                <ScrollViewer>
+                    <TextBlock x:Name="CodeSampleBlock"
+                               Text="{Binding CurrentCodeSample}"
+                               TextWrapping="WrapWholeWords" />
+                </ScrollViewer>
+            </Expander.Content>
+
+        </Expander>
     </Grid>
 </Page>
