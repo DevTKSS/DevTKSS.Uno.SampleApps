@@ -1,6 +1,6 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
-internal partial record CounterModel
+public partial record CounterModel
 {
     private readonly IStringLocalizer _stringLocalizer;
     public CounterModel(IStringLocalizer stringLocalizer)

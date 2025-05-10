@@ -1,10 +1,12 @@
+using Microsoft.Extensions.Configuration;
+
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 public record CodeSampleService : ICodeSampleService
 {
     public CodeSampleService(
-    IOptions<CodeSampleOptionsConfiguration> options,
-    ILogger<CodeSampleService> logger,
-    IStorage storage)
+        IOptions<CodeSampleOptionsConfiguration> options,
+        ILogger<CodeSampleService> logger,
+        IStorage storage)
     {
         _options = options.Value;
         _logger = logger;

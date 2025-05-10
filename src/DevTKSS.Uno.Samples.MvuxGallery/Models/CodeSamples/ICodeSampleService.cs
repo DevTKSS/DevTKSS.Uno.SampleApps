@@ -3,7 +3,6 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 
 public interface ICodeSampleService
 {
-
     /// <summary>
     /// Get the content of a specific code sample asynchronously.
     /// </summary>
