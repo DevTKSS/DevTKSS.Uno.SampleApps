@@ -1,3 +1,5 @@
+using Uno.Extensions.Reactive.Commands;
+
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 /// <summary>
@@ -78,7 +80,7 @@ public partial record ListboardModel
     /// <summary>
     /// Switches the current code sample based on the selected option.
     /// </summary>
-    /// <param name="selectedSampleOption">The selected code sample option.</param>
+    /// <param name="choice">The selected code sample option.</param>
     /// <param name="ct">A cancellation token for the operation.</param>
     /// <returns>A task representing the asynchronous operation.</returns>
     /// <example>
@@ -90,9 +92,9 @@ public partial record ListboardModel
     /// }
     /// </code>
     /// </example>
-    public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedSampleOption))] string? choice, CancellationToken ct = default)
     {
-        string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
+        string sample = await _codeSampleService.GetCodeSampleAsync(choice ?? string.Empty);
         await CurrentCodeSample.SetAsync(sample, ct);
     }
     #endregion

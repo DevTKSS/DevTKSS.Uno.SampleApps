@@ -57,7 +57,7 @@
             <Expander.Header>
                 <utu:TabBar VerticalAlignment="Bottom"
                             ItemsSource="{Binding CodeSampleOptions}"
-                            SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+                            SelectedItem="{Binding SelectedSampleOption, Mode=TwoWay}">
                     <utu:TabBar.ItemTemplate>
                         <DataTemplate>
                             <utu:TabBarItem Content="{Binding}"
