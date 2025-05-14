@@ -7,7 +7,9 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 /// </summary>
 public partial record ListboardModel
 {
+
     #region Services
+    private readonly ILogger _logger;
     /// <summary>
     /// Service for retrieving localized strings.
     /// </summary>
@@ -33,8 +35,10 @@ public partial record ListboardModel
     public ListboardModel(
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
-        IServiceProvider serviceProvider)
+        IServiceProvider serviceProvider,
+        ILogger<ListboardModel> logger)
     {
+        _logger = logger;
         this._stringLocalizer = stringLocalizer;
         this._galleryImageService = galleryImageService;
         this._codeSampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("ListboardSampleService");
@@ -57,8 +61,7 @@ public partial record ListboardModel
     /// <remarks>
     /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
     /// </remarks>
-    public IListFeed<string> CodeSampleOptions => ListFeed<string>
-                                                      .Async(_codeSampleService.GetCodeSampleOptionsAsync)
+    public IListFeed<string> CodeSampleOptions => ListFeed.Async(_codeSampleService.GetCodeSampleOptionsAsync)
                                                       .Selection(SelectedOption);
 
     /// <summary>
@@ -67,36 +70,13 @@ public partial record ListboardModel
     /// <remarks>
     /// Uses <see cref="string.Empty"/> as the default value to avoid null checks in the XAML.
     /// </remarks>
-    public IState<string> SelectedOption => State<string>
-                                                    .Value(this, () => string.Empty)
-                                                    .ForEach(SwitchCodeSampleAsync);
+    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty);
 
     /// <summary>
     /// Represents the content of the currently selected code sample.
     /// </summary>
-    public IState<string> CurrentCodeSample => State<string>
-                                                    .Value(this, () => string.Empty);
+    public IFeed<string> CurrentCodeSample => SelectedOption.SelectAsync((sample, ct)=> _codeSampleService.GetCodeSampleAsync(sample, ct));
 
-    /// <summary>
-    /// Switches the current code sample based on the selected option.
-    /// </summary>
-    /// <param name="choice">The selected code sample option.</param>
-    /// <param name="ct">A cancellation token for the operation.</param>
-    /// <returns>A task representing the asynchronous operation.</returns>
-    /// <example>
-    /// <code>
-    /// public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
-    /// {
-    ///     string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
-    ///     await CurrentCodeSample.SetAsync(sample, ct);
-    /// }
-    /// </code>
-    /// </example>
-    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? choice, CancellationToken ct = default)
-    {
-        string sample = await _codeSampleService.GetCodeSampleAsync(choice ?? string.Empty);
-        await CurrentCodeSample.SetAsync(sample, ct);
-    }
     #endregion
 
     #region ViewHeaderContent

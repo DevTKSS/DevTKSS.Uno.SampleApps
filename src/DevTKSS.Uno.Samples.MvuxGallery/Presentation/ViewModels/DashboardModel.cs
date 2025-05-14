@@ -1,6 +1,4 @@
-using DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
 using Uno.Extensions.Reactive.Commands;
-using Uno.Extensions.Reactive.Config;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 

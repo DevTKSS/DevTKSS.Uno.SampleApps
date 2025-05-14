@@ -34,12 +34,13 @@ public record CodeSampleService : ICodeSampleService
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         await Task.Delay(1);
+        _logger.LogInformation("Options: {options}", _options.Samples.Keys.ToString());
         return _options.Samples.Keys.ToImmutableList(); 
     }
 
-    public async ValueTask<string> GetCodeSampleAsync(string sampleID, CancellationToken ct = default)
+    public async ValueTask<string> GetCodeSampleAsync(string? sampleID, CancellationToken ct = default)
     {
-        if (_options.Samples.TryGetValue(sampleID, out CodeSampleOption? sampleOption))
+        if (sampleID is not null && _options.Samples.TryGetValue(sampleID, out CodeSampleOption? sampleOption))
         {
             return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath, sampleOption.LineRanges);
         }
@@ -47,5 +48,10 @@ public record CodeSampleService : ICodeSampleService
         _logger.LogWarning("Code sample with ID {sampleID} not found", sampleID);
         return string.Empty;
     }
-
+    public async ValueTask<string> SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
+    {
+        string sample = await GetCodeSampleAsync(selectedSampleOption,ct);
+        _logger.LogInformation("Switched to code sample {sample}", selectedSampleOption);
+        return sample;
+    }
 }

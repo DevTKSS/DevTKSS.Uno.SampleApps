@@ -19,6 +19,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0"
@@ -49,33 +50,40 @@
                 </DataTemplate>
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
-        <Expander Grid.Row="2"
+        <!--<utu:TabBar Grid.Row="2"
+                    VerticalAlignment="Bottom"
+                    ItemsSource="{Binding CodeSampleOptions}"
+                    SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+            <utu:TabBar.ItemTemplate>
+                <DataTemplate>
+                    <utu:TabBarItem Content="{Binding}"
+                                    Command="{Binding SwitchCodeSampleAsync}"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
+                                    Style="{StaticResource MaterialTopTabBarItemStyle}"
+                                    Icon="Home" />
+                </DataTemplate>
+            </utu:TabBar.ItemTemplate>
+        </utu:TabBar>-->
+        <Expander Grid.Row="3"
                   ExpandDirection="Down"
-                  MaxHeight="300">
-
-            <Expander.Header>
-                <utu:TabBar VerticalAlignment="Bottom"
-                            ItemsSource="{Binding CodeSampleOptions}"
-                            SelectedItem="{Binding SelectedSampleOption, Mode=TwoWay}">
-                    <utu:TabBar.ItemTemplate>
-                        <DataTemplate>
-                            <utu:TabBarItem Content="{Binding}"
-                                            Command="{Binding SwitchCodeSampleAsync}"
-                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
-                                            Style="{StaticResource MaterialTopTabBarItemStyle}"
-                                            Icon="Home" />
-                        </DataTemplate>
-                    </utu:TabBar.ItemTemplate>
-                </utu:TabBar>
-            </Expander.Header>
-            <Expander.Content>
-                <ScrollViewer>
-                    <TextBlock x:Name="CodeSampleBlock"
-                               Text="{Binding CurrentCodeSample}"
-                               TextWrapping="WrapWholeWords" />
-                </ScrollViewer>
-            </Expander.Content>
-
+                  MaxHeight="400"
+                  Header="{Binding CodeSampleOptions,Mode=TwoWay}"
+                  Content="{Binding CurrentCodeSample, Mode=TwoWay}">
+            <Expander.ContentTemplate>
+                <DataTemplate>
+                    <ScrollViewer>
+                        <TextBlock Text="{Binding }"
+                                   TextWrapping="WrapWholeWords" />
+                    </ScrollViewer>
+                </DataTemplate>
+            </Expander.ContentTemplate>
+            <Expander.HeaderTemplate>
+                <DataTemplate>
+                    <utu:TabBar SelectedIndex="1" ItemsSource="{Binding }"
+                                Style="{StaticResource MaterialTopTabBarItemStyle}" />
+                </DataTemplate>
+            </Expander.HeaderTemplate>
         </Expander>
+        
     </Grid>
 </Page>
