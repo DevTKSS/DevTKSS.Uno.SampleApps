@@ -103,7 +103,6 @@ public partial record DashboardModel
                 "C# Record",
                 "XAML DataTemplate"
             ]);
-
     }
 
     /// <summary>

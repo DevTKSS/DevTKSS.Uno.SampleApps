@@ -10,34 +10,12 @@
 
     <Grid x:Name="CounterPageContentGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" x:Name="HeadlineRow"/>
             <RowDefinition Height="*" x:Name="ContentArea"/>
+            <RowDefinition Height="Auto" MaxHeight="500" />
         </Grid.RowDefinitions>
-        <Grid Height="85" x:Name="CounterHeader"
-              Grid.Row="0"
-              Margin="5"
-              CornerRadius="10"
-              Background="{ThemeResource SecondaryContainerBrush}">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock TextAlignment="Center"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Stretch"
-                       Grid.Column="0"
-                       Style="{StaticResource HeadlineMedium}"
-                       Text="{Binding Path=CounterTitle,Mode=OneWay}"
-                       Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
-               <Button Command="{Binding Path=ReloadCounterTitle}"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       Grid.Column="1" Margin="10">
-                   <SymbolIcon Symbol="Refresh"/>
-               </Button>
-        </Grid>
+
         <StackPanel x:Name="spCounterContent"
-                    Grid.Row="1"
+                    Grid.Row="0"
                     VerticalAlignment="Center">
 
             <Border CornerRadius="5"
@@ -45,23 +23,25 @@
                 <Image Source="Assets//Images//logo.png" Width="200"/>
             </Border>
 
-            <TextBox x:Name="txtBoxStepSize"
+            <TextBox 
                      TextAlignment="Center"
                      Width="{x:Bind spCounterContent.Width,Mode=OneWay}"
                      PlaceholderText="Increment by Step Size"
-                     Text="{Binding ViewModel.StepSize, Mode=TwoWay}"
+                     Text="{Binding Countable.Step, Mode=TwoWay}"
                      HorizontalAlignment="Center"
                      Margin="12" />
 
             <TextBlock TextAlignment="Center"
-                     Text="{Binding Path=Countable.Count}"
-                     Margin="12"
-                     Width="{x:Bind spCounterContent.Width,Mode=OneWay}"/>
+                       Margin="12"
+                       Width="{x:Bind spCounterContent.Width,Mode=OneWay}">
+                <Run Text="Counter:" /> <Run Text="{Binding Countable.Count}" />
+            </TextBlock>
 
             <Button Style="{StaticResource ButtonRevealStyle}" VerticalAlignment="Stretch"
                     Content="Increment Counter"
-                    Command="{Binding Path=IncrementCounter}"
+                    Command="{Binding IncrementCounter}"
                     HorizontalAlignment="Center"
+                    Padding="12"
                     Margin="12"
                     Width="{x:Bind spCounterContent.Width, Mode=OneWay}"/>
         </StackPanel>

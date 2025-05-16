@@ -3,6 +3,7 @@
                     xmlns:gi="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
                     xmlns:models="using:DevTKSS.Uno.Samples.MvuxGallery.Models"
                     xmlns:utu="using:Uno.Toolkit.UI"
+                    xmlns:um="using:Uno.Material"
                     xmlns:mvux="using:Uno.Extensions.Reactive.UI">
 
     <!--#region Card Template -->
@@ -69,7 +70,6 @@
                     Grid.Column="0"/>
             <TextBlock Text="{Binding Caption}"
                         Style="{ThemeResource TitleMedium}"
-                        Margin="16,14,16,0"
                         Foreground="{ThemeResource OnSurfaceInverseBrush}"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"

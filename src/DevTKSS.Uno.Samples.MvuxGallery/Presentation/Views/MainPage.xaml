@@ -4,6 +4,7 @@
       xmlns:local="using:DevTKSS.Uno.Samples.MvuxGallery.Presentation.Views"
       xmlns:uen="using:Uno.Extensions.Navigation.UI"
       xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:models="using:DevTKSS.Uno.Samples.MvuxGallery.Models"
       xmlns:um="using:Uno.Material"
       xmlns:ctk="using:CommunityToolkit.WinUI.Converters"
       uen:Region.Name="Main"
@@ -12,39 +13,22 @@
 
     <Page.Resources>
         <ctk:BoolNegationConverter x:Name="InvertBoolConv"/>
+        <!--<Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>-->
+        <!--Would expect this to be not needed when setting IsTitleBarAutoPaddingEnabled to false, but that does not do anything, so use this instead.
+        https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
     </Page.Resources>
     <Grid x:Name="MainContentGrid"
           uen:Region.Attached="True">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <utu:NavigationBar x:Name="NavBar"
-                           Grid.Row="0"
-                           HorizontalAlignment="Stretch"
-                           HorizontalContentAlignment="Center"
-                           VerticalContentAlignment="Center"
-                           VerticalAlignment="Top"
-                           Content="{Binding Path=AppTitle, Mode=OneWay}"
-                           MainCommandMode="Action"
-                           Background="{ThemeResource PrimaryContainerBrush}"
-                           Foreground="{ThemeResource OnPrimaryContainerBrush}">
-            <utu:NavigationBar.MainCommand>
-                <AppBarButton Icon="GlobalNavigationButton"
-                              Command="{x:Bind NavView.IsPaneOpen, Converter={StaticResource InvertBoolConv}}"
-                              Width="{x:Bind NavView.CompactPaneLength, Mode=OneWay}"
-                              HorizontalContentAlignment="Center"/>
-            </utu:NavigationBar.MainCommand>
-        </utu:NavigationBar>
-
-        <NavigationView  x:Name="NavView"
-                         IsBackButtonVisible="Collapsed"
+        <NavigationView  IsBackButtonVisible="Collapsed"
+                         IsTitleBarAutoPaddingEnabled="True"
                          IsPaneToggleButtonVisible="False"
-                         Grid.Row="1"
-                         PaneDisplayMode="LeftCompact"
+                        
+                         PaneDisplayMode="Auto"
                          uen:Region.Attached="True"
-                         HorizontalAlignment="Stretch">
+                         HorizontalAlignment="Stretch"
+                         Header="{Binding CurrentHeader}">
+
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="NavItemDashboard"
                                     Content="Home"
@@ -54,22 +38,27 @@
                                     Content="Counter"
                                     Icon="Calculator"
                                     uen:Region.Name="Counter" />
-
+                
                 <NavigationViewItem  Content="List View"
                                      uen:Region.Name="Listboard"
                                      Icon="List" />
+
                 <NavigationViewItem Content="Let's play Cards!"
-                                    uen:Region.Name="SimpleCards"
-                                    Icon="Page" />
+                                    uen:Region.Name="SimpleCards">
+                    <NavigationViewItem.Icon>
+                        <FontIcon x:Name="TaskView" Glyph="&#xEB91;" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
 
             <NavigationView.Content>
                 <Grid x:Name="NavigationViewContentGrid"
                       uen:Region.Attached="True"
                       uen:Region.Navigator="Visibility"
-                      Visibility="Visible"/>
+                      Visibility="Visible" />
             </NavigationView.Content>
         </NavigationView>
+
     </Grid>
 
 </Page>

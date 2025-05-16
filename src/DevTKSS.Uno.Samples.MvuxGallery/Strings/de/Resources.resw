@@ -150,7 +150,10 @@
   <data name="img_20240721_132103" xml:space="preserve">
     <value>Ein lebhafter Freigeist, der mit seinen lustigen Sprüngen und Hüpfern für pure Lebensfreude sorgt.</value>
   </data>
-  <data name="ApplicationName" xml:space="preserve">
+  <data name="WelcomeGreeting" xml:space="preserve">
     <value>Willkommen zu meiner Uno App!</value>
+  </data>
+  <data name="SimpleCardsTitle" xml:space="preserve">
+    <value>Definiere die Cards Elemente direkt im XAML der Seite</value>
   </data>
 </root>

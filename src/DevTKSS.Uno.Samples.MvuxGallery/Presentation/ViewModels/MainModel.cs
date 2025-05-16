@@ -1,21 +1,53 @@
+using System.Diagnostics.CodeAnalysis;
+using Microsoft.Extensions.Logging;
 using Uno.Extensions.Reactive;
+using Uno.Extensions.Reactive.Commands;
+using Uno.Extensions.Reactive.Config;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 public partial record MainModel
 {
+    private readonly INavigator _navigator;
     private readonly ILocalizationService _localizationService;
     private readonly IStringLocalizer _stringLocalizer;
-
+    private readonly IRouteNotifier _routeNotifier;
+    private readonly ILogger _logger;
     public MainModel(
         ILocalizationService localizationService,
-        IStringLocalizer stringLocalizer)
+        IStringLocalizer stringLocalizer,
+        INavigator navigator,
+        IRouteNotifier routeNotifier,
+        ILogger<MainModel> logger)
     {
+        _logger = logger;
+        _routeNotifier = routeNotifier;
+        _navigator = navigator;
         _localizationService = localizationService;
         _stringLocalizer = stringLocalizer;
+        _routeNotifier.RouteChanged += routeNotifier_RouteChanged;
 
     }
 
-    public IState<string> AppTitle => State<string>.Value(this, () => _stringLocalizer["ApplicationName"]);
+    public IState<string> CurrentNotifierRoute => State<string>.Value(this, () => string.Empty)
+                                                               .ForEach(UpdateCurrentHeaderAsync);
+    private async void routeNotifier_RouteChanged(object? sender, RouteChangedEventArgs e)
+    { 
+        var RouteName = e.Navigator?.Route?.ToString() ?? string.Empty;
+        _logger.LogDebug("Route was: {RouteAsString}", RouteName);
+        await this.CurrentNotifierRoute.SetAsync(RouteName);
+    }
 
+    public IState<string> CurrentHeader => State<string>.Value(this, () => string.Empty);
+
+    public ValueTask UpdateCurrentHeaderAsync([FeedParameter(nameof(CurrentNotifierRoute))] string? currentNotifierRoute, CancellationToken ct = default)
+    {
+        _logger.LogDebug("CurrentNotifierRoute was: {CurrentNotifierRoute}", currentNotifierRoute);
+        string newHeader = _stringLocalizer["WelcomeGreeting"];
+        if (!string.IsNullOrWhiteSpace(currentNotifierRoute))
+        {
+            newHeader = _stringLocalizer[currentNotifierRoute + "Title"];
+        }
+        return this.CurrentHeader.SetAsync(newHeader);
+    }
 }
 

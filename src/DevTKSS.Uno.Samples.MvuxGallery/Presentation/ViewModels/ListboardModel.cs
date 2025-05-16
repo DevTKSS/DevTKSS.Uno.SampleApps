@@ -1,5 +1,3 @@
-using Uno.Extensions.Reactive.Commands;
-
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 /// <summary>
