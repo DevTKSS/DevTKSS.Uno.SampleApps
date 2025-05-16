@@ -1,4 +1,6 @@
 using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Uno.Resizetizer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
@@ -64,11 +66,12 @@ public partial class App : Application
                             .Section<AppConfig>()
 
                         .EmbeddedSource<App>("sampledata")
-                            .Section<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration")
-                            .Section<CodeSampleOptionsConfiguration>("MainSampleConfiguration")
-                            .Section<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration")
-                            .Section<CodeSampleOptionsConfiguration>("CounterSampleConfiguration")
-                            .Section<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration")
+                            .Section<CodeSampleOptionsConfiguration>()
+                            .Section<DashboardCodeSampleOptions>()
+                            .Section<MainCodeSampleOptions>()
+                            .Section<ListboardCodeSampleOptions>()
+                            .Section<SimpleCardsCodeSampleOptions>()
+                            .Section<CounterCodeSampleOptions>()
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
@@ -78,30 +81,32 @@ public partial class App : Application
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
 
-                        .AddOptions<CodeSampleOptionsConfiguration>("ListboardSampleConfiguration").Services
-                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("ListboardSampleService")
+                        // .AddSingleton<ICodeSampleService<CodeSampleOptionsConfiguration>, CodeSampleService<CodeSampleOptionsConfiguration>>()
 
-                        .AddOptions<CodeSampleOptionsConfiguration>("SimpleCardsSampleConfiguration").Services.
-                            AddNamedSingleton<ICodeSampleService, CodeSampleService>("SimpleCardsSampleService")
-
-                        .AddOptions<CodeSampleOptionsConfiguration>("CounterSampleConfiguration").Services
-                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("CounterSampleService")
-
-                        .AddOptions<CodeSampleOptionsConfiguration>("MainSampleConfiguration").Services
-                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("MainSampleService")
-
-                        .AddOptions<CodeSampleOptionsConfiguration>("DashboardSampleConfiguration").Services
-                            .AddNamedSingleton<ICodeSampleService, CodeSampleService>("DashboardSampleService")
+                        .AddSingleton<ICodeSampleService<MainCodeSampleOptions>, CodeSampleService<MainCodeSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<ListboardCodeSampleOptions>,CodeSampleService<ListboardCodeSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<SimpleCardsCodeSampleOptions>, CodeSampleService<SimpleCardsCodeSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<CounterCodeSampleOptions>, CodeSampleService<CounterCodeSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<DashboardCodeSampleOptions>, CodeSampleService<DashboardCodeSampleOptions>>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>
                     services
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOption)
                         .AddJsonTypeInfo(CodeSampleOptionsConfigurationContext.Default.CodeSampleOptionsConfiguration)
-                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true }))
+
+                        // Following should get removed when NamedOptions can be used with DI Services and really getting values from the configuration
+                        .AddJsonTypeInfo(MainCodeSampleOptionsContext.Default.MainCodeSampleOptions)
+                        .AddJsonTypeInfo(ListboardCodeSampleOptionsContext.Default.ListboardCodeSampleOptions)
+                        .AddJsonTypeInfo(SimpleCardsCodeSampleOptionsContext.Default.SimpleCardsCodeSampleOptions)
+                        .AddJsonTypeInfo(CounterCodeSampleOptionsContext.Default.CounterCodeSampleOptions)
+                        .AddJsonTypeInfo(DashboardCodeSampleOptionsContext.Default.DashboardCodeSampleOptions)
+
+                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+                        )
             );
         MainWindow = builder.Window;
-
+        
 #if DEBUG
         MainWindow.UseStudio();
 #endif

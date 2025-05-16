@@ -13,27 +13,30 @@
 
     <Page.Resources>
         <ctk:BoolNegationConverter x:Name="InvertBoolConv"/>
-        <!--<Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>-->
+        <Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>
         <!--Would expect this to be not needed when setting IsTitleBarAutoPaddingEnabled to false, but that does not do anything, so use this instead.
         https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
     </Page.Resources>
     <Grid x:Name="MainContentGrid"
           uen:Region.Attached="True">
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" MaxHeight="400" />
+        </Grid.RowDefinitions>
         <NavigationView  IsBackButtonVisible="Collapsed"
                          IsTitleBarAutoPaddingEnabled="True"
-                         IsPaneToggleButtonVisible="False"
-                        
+                         IsPaneToggleButtonVisible="True"
                          PaneDisplayMode="Auto"
                          uen:Region.Attached="True"
                          HorizontalAlignment="Stretch"
                          Header="{Binding CurrentHeader}">
-
             <NavigationView.MenuItems>
+                
                 <NavigationViewItem x:Name="NavItemDashboard"
                                     Content="Home"
                                     uen:Region.Name="Dashboard"
                                     Icon="Home" />
+                
                 <NavigationViewItem x:Name="NavItemCounter"
                                     Content="Counter"
                                     Icon="Calculator"

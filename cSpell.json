@@ -1,11 +1,12 @@
 {
     // cSpell configuration file
     "version": "0.2",
-    "language": "en",
+    "language": "en,de",
     "words": [
         // Add custom words here
         "DevTKSS",
-        "Listboard"
+        "Listboard",
+        "Mvux"
     ],
     "ignoreWords": [],
     "ignorePaths": [

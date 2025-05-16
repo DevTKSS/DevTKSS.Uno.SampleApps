@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 /// <summary>
@@ -16,7 +18,7 @@ public partial record ListboardModel
     /// <summary>
     /// Service for managing code samples.
     /// </summary>
-    private readonly ICodeSampleService _codeSampleService;
+    private readonly ICodeSampleService<ListboardCodeSampleOptions> _codeSampleService;
 
     /// <summary>
     /// Service for retrieving gallery images.
@@ -34,12 +36,13 @@ public partial record ListboardModel
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
         IServiceProvider serviceProvider,
-        ILogger<ListboardModel> logger)
+        ILogger<ListboardModel> logger,
+        ICodeSampleService<ListboardCodeSampleOptions> sampleService)
     {
         _logger = logger;
         this._stringLocalizer = stringLocalizer;
         this._galleryImageService = galleryImageService;
-        this._codeSampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("ListboardSampleService");
+        _codeSampleService = sampleService;
     }
 
     /// <summary>
@@ -81,17 +84,6 @@ public partial record ListboardModel
     /// <summary>
     /// Gets the header content for the view, including an image and caption.
     /// </summary>
-    /// <example>
-    /// <code>
-    /// public IState<HeaderContent> ViewHeaderContent =>
-    /// State<HeaderContent>
-    ///        .Value(owner: this,
-    ///               valueProvider: () =>
-    ///                 new HeaderContent(
-    ///                     ImageLocation: "Assets/Images/styled_logo.png",
-    ///                     Caption: _stringLocalizer["ListViewTitle"]));
-    /// </code>
-    /// </example>
     public IState<HeaderContent> ViewHeaderContent =>
         State<HeaderContent>
             .Value(owner: this,

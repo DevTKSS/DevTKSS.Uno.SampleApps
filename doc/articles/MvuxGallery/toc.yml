@@ -4,3 +4,6 @@ items:
 - name: Overview
   uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview
   href: Overview.md
+- name: Xaml Navigation
+  uid: DevTKSS.Uno.SampleApps.MvuxGallery.XamlNavigation
+  href: How-To-XamlNavigation

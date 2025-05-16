@@ -1,21 +1,23 @@
 using Microsoft.Extensions.Configuration;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
-public record CodeSampleService : ICodeSampleService
+public record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOptions>
+    where SampleOptions : CodeSampleOptionsConfiguration
 {
     public CodeSampleService(
-        IOptions<CodeSampleOptionsConfiguration> options,
-        ILogger<CodeSampleService> logger,
+        IOptions<SampleOptions> options,
+        ILogger<CodeSampleService<SampleOptions>> logger,
         IStorage storage)
     {
         _options = options.Value;
+        
         _logger = logger;
         _storage = storage;
     }
 
     private readonly IStorage _storage;
-    private readonly ILogger<CodeSampleService> _logger;
-    private readonly CodeSampleOptionsConfiguration _options;
+    private readonly ILogger<CodeSampleService<SampleOptions>> _logger;
+    private readonly SampleOptions _options;
 
     /// <summary>
     /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
@@ -34,7 +36,7 @@ public record CodeSampleService : ICodeSampleService
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         await Task.Delay(1);
-        _logger.LogInformation("Options: {options}", _options.Samples.Keys.ToString());
+        _logger.LogInformation("Options: {options}", _options.Samples);
         return _options.Samples.Keys.ToImmutableList(); 
     }
 

@@ -22,13 +22,6 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0"
-                   TextAlignment="Center"
-                   VerticalAlignment="Center"
-                   Style="{StaticResource HeadlineMedium}"
-                   Text="{Binding ListboardTitle}"
-                   Foreground="{ThemeResource OnSecondaryContainerBrush}"/>
-
         <mvux:FeedView x:Name="LeftFeedView"
                        Grid.Row="1"
                        Source="{Binding GalleryImages}"
@@ -50,20 +43,8 @@
                 </DataTemplate>
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
-        <!--<utu:TabBar Grid.Row="2"
-                    VerticalAlignment="Bottom"
-                    ItemsSource="{Binding CodeSampleOptions}"
-                    SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
-            <utu:TabBar.ItemTemplate>
-                <DataTemplate>
-                    <utu:TabBarItem Content="{Binding}"
-                                    Command="{Binding SwitchCodeSampleAsync}"
-                                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
-                                    Style="{StaticResource MaterialTopTabBarItemStyle}"
-                                    Icon="Home" />
-                </DataTemplate>
-            </utu:TabBar.ItemTemplate>
-        </utu:TabBar>-->
+
+        
         <Expander Grid.Row="3"
                   ExpandDirection="Down"
                   MaxHeight="400"

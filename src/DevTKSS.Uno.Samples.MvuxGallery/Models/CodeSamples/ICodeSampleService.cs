@@ -1,7 +1,7 @@
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 
-public interface ICodeSampleService
+public interface ICodeSampleService<SampleOptions> where SampleOptions : class
 {
     /// <summary>
     /// Get the content of a specific code sample asynchronously.
