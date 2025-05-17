@@ -61,6 +61,7 @@
     <Resource Remove="Assets\Samples\CounterModel.cs.txt" />
     <Resource Remove="Assets\Samples\CounterPage.xaml.cs" />
     <Resource Remove="Assets\Samples\CounterPage.xaml.txt" />
+    <Resource Remove="assets\samples\Model-with-IRouteNotifyer.txt" />
     <Resource Remove="Assets\Samples\NavigationView-Sample.xaml.txt" />
   </ItemGroup>
 

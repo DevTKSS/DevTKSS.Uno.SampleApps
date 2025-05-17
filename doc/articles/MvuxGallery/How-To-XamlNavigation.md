@@ -25,15 +25,5 @@ Des weiteren benötigt eure App.xaml.cs Datei folgende Elemente:
 ![code-csharp[](../../../src/DevTKSS.Uno.Samples.MvuxGallery/App.xaml.cs?highlight=L19-L23,L96,L110,L113-L115,L124-L130)]
 
 Den Namespace, den wir in einer Xaml-basierten Navigation in einer Uno Anwendung benötigen, ist `Uno.Extensions.Navigation.UI`, meist mit dem xmlns Namespace Identifikator `xmlns:uen=` eurer Seite dann vorzufinden.
-<<<<<<< HEAD
-
 <!-- ## Navigation mittels NavigationView und Seiten
-
 [!Video [How-To-Uno-XamlNavigation](../images/How-To-Uno-XamlNavigation.mp4)] -->
-=======
-<!--
-## Navigation mittels NavigationView und Seiten
-
-[!Video [How-To-Uno-XamlNavigation](https://youtube.com/)]
--->
->>>>>>> 51f7212 (chore: update Navigation View Sample with IRouteNotifier)
