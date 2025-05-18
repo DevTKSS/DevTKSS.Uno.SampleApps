@@ -17,41 +17,34 @@
 
     <Grid x:Name="DashboardGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"
-                    MaxHeight="400"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock  TextAlignment="Center"
-                    VerticalAlignment="Center"
-                    Style="{StaticResource HeadlineMedium}"
-                    Text="{Binding Path=DashboardTitle,Mode=OneWay}"/>
-
-        <!--Right Side-->
-        <mvux:FeedView x:Name="GriddedFeedView"
-                       Grid.Row="1"
-                       Source="{Binding GalleryImages}"
+        <mvux:FeedView Source="{Binding GalleryImages}"
+                       Grid.Row="0"
                        Margin="3"
                        CanDrag="False"
                        AllowDrop="False">
-            <DataTemplate>
-                <GridView SelectedIndex="0"
-                        x:Name="ContentGridView"
-                          ItemsSource="{Binding Data}"
-                          ItemTemplate="{StaticResource StyledCardTemplate}"
-                          HeaderTemplate="{StaticResource ViewHeaderTemplate}"
-                          Header="{Binding Parent.ViewHeaderContent}"
-                          CanReorderItems="False"
-                          CanDragItems="False"
-                          IsItemClickEnabled="True"
-                          AllowDrop="False"
-                          SelectionMode="Single"
-                          HorizontalAlignment="Stretch"
-                          HorizontalContentAlignment="Stretch"
-                          VerticalContentAlignment="Center">
-                </GridView>
-            </DataTemplate>
+            <mvux:FeedView.ValueTemplate>
+                <DataTemplate>
+                    <GridView SelectedIndex="0"
+                              x:Name="ContentGridView"
+                              ItemsSource="{Binding Data}"
+                              ItemTemplate="{StaticResource StyledCardTemplate}"
+                              HeaderTemplate="{StaticResource ViewHeaderTemplate}"
+                              Header="{Binding Parent.ViewHeaderContent}"
+                              CanReorderItems="False"
+                              CanDragItems="False"
+                              IsItemClickEnabled="True"
+                              AllowDrop="False"
+                              SelectionMode="Single"
+                              HorizontalAlignment="Stretch"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalContentAlignment="Center">
+                    </GridView>
+                </DataTemplate>
+            </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
         <Expander Grid.Row="1"
                   MaxHeight="400"
