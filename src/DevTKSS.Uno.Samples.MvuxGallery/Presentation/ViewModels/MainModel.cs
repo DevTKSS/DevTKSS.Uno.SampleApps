@@ -1,28 +1,19 @@
-using System.Runtime.CompilerServices;
-using Uno.Extensions.Reactive.Commands;
-
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 public partial record MainModel
 {
-    private readonly INavigator _navigator;
-    private readonly ILocalizationService _localizationService;
     private readonly IStringLocalizer _stringLocalizer;
     private readonly IRouteNotifier _routeNotifier;
     private readonly ILogger _logger;
-    private readonly ICodeSampleService<MainCodeSampleOptions> _sampleService;
+    private readonly ICodeSampleService<MainSampleOptions> _sampleService;
 
     public MainModel(
-        ILocalizationService localizationService,
         IStringLocalizer stringLocalizer,
-        INavigator navigator,
         IRouteNotifier routeNotifier,
         ILogger<MainModel> logger,
-        ICodeSampleService<MainCodeSampleOptions> sampleService)
+        ICodeSampleService<MainSampleOptions> sampleService)
     {
         _logger = logger;
         _routeNotifier = routeNotifier;
-        _navigator = navigator;
-        _localizationService = localizationService;
         _stringLocalizer = stringLocalizer;
         _routeNotifier.RouteChanged += routeNotifier_RouteChanged;
         _sampleService = sampleService;
@@ -39,42 +30,40 @@ public partial record MainModel
 
     public IState<string> CurrentHeader => State<string>.Value(this, () => string.Empty);
 
-    public ValueTask UpdateCurrentHeaderAsync([FeedParameter(nameof(CurrentNotifierRoute))] string? currentNotifierRoute, CancellationToken ct = default)
+    public async ValueTask UpdateCurrentHeaderAsync([FeedParameter(nameof(CurrentNotifierRoute))] string? currentNotifierRoute, CancellationToken ct = default)
     {
         _logger.LogDebug("CurrentNotifierRoute was: {CurrentNotifierRoute}", currentNotifierRoute);
-        string newHeader = _stringLocalizer["WelcomeGreeting"];
+
         if (!string.IsNullOrWhiteSpace(currentNotifierRoute))
         {
-            newHeader = _stringLocalizer[currentNotifierRoute + "Title"];
+            await CurrentHeader.SetAsync(_stringLocalizer[currentNotifierRoute + "Title"]);
         }
-        return this.CurrentHeader.SetAsync(newHeader);
+        else
+        {
+            _logger.LogTrace("{CurrentNotifierRoute} was empty, setting default header using 'WelcomeGreeting' Key",nameof(currentNotifierRoute));
+            await CurrentHeader.SetAsync(_stringLocalizer["WelcomeGreeting"]);
+        }
     }
 
-    public IListFeed<string> CodeSampleOptions =>
-            ListFeed<string>.Async(GetCodeSampleOptionsAsync);
-    /// <summary>
-    /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
-    /// </summary>
-    /// <param name="ct">
-    /// A CancellationToken to make it compileable
-    /// </param>
-    /// <returns>The available Values to select from.</returns>
-    /// <remarks>
-    /// This uses the explicit `ImmutableList.Create` function (non generic!)<br/>
-    /// overload:<br/>
-    /// `params ReadOnlySpan<string> items` this takes in an (e.g.) array of generic typed values
-    /// </remarks>
-    public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
+    public IListFeed<string> CodeSampleOptions => ListFeed<string>.Async(_sampleService.GetCodeSampleOptionsAsync)
+                                                                  .Selection(SelectedOption);
+    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
+                                                         .ForEach(SwitchCodeSampleAsync);
+    public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
+
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
     {
-        await Task.Delay(1, ct);
-        return ImmutableList.Create(
-            items:
-            [
-                "IRouteNotifyer Event",
-                "Xaml Binding"
-                ]
-            );
-    }
+        _logger.LogTrace("{method} called with parameter: {selectedOption}",nameof(SwitchCodeSampleAsync), selectedOption);
 
+        if (string.IsNullOrWhiteSpace(selectedOption))
+        {
+            var options = await CodeSampleOptions;
+            selectedOption = options.FirstOrDefault(string.Empty);
+        }
+
+         var sample = await _sampleService.GetCodeSampleAsync(selectedOption, ct);
+
+        await CurrentCodeSample.SetAsync(sample, ct);
+    }
 }
 
