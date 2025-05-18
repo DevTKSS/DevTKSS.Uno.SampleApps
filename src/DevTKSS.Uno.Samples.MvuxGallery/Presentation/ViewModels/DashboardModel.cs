@@ -35,12 +35,8 @@ public partial record DashboardModel
     /// <remarks>
     /// uses <see cref="IStringLocalizer"/> to dynamically localize the caption
     /// </remarks>
-    public IState<HeaderContent> ViewHeaderContent =>
-        State<HeaderContent>.Value(
-            owner: this,
-            valueProvider: () =>
-                new HeaderContent(
-                    ImageLocation: "Assets/Images/styled_logo.png",
+    public IState<HeaderContent> ViewHeaderContent => State<HeaderContent>.Value(this,
+        () => new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
                     Caption: _stringLocalizer["GridViewTitle"]));
     #endregion
 

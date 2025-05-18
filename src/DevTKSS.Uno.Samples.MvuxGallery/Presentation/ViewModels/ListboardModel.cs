@@ -84,13 +84,17 @@ public partial record ListboardModel
     /// <summary>
     /// Gets the header content for the view, including an image and caption.
     /// </summary>
-    public IState<HeaderContent> ViewHeaderContent =>
-        State<HeaderContent>
-            .Value(owner: this,
-                   valueProvider: () =>
-                        new HeaderContent(
-                            ImageLocation: "Assets/Images/styled_logo.png",
-                            Caption: _stringLocalizer["ListViewTitle"]));
+    /// <remarks>
+    /// A Feed always needs a Async or Create function wich takes the cancellation token as parameter.<br/>
+    /// So this is using a Task.Delay to simulate a delay in the async function.
+    /// </remarks>
+    public IFeed<HeaderContent> ViewHeaderContent => Feed<HeaderContent>.Async(
+           valueProvider: async (ct) =>
+           {
+               await Task.Delay(1, ct);
+               return new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
+                              Caption: _stringLocalizer["ListViewTitle"]);
+           });
     #endregion
 }
 

@@ -26,13 +26,10 @@ public partial record SomeModel
     public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesAsync);
     public IState<string> SomeTitle => State<string>.Value(this, () => _stringLocalizer["SomeTitle"]);
 
-    #region ViewHeaderContent
-    public IFeed<HeaderContent> ViewHeaderContent => Feed.Async(GetGridViewHeaderAsync);
-    public async ValueTask<HeaderContent> GetGridViewHeaderAsync(CancellationToken ctk)
-    {
-        await Task.Delay(TimeSpan.FromMilliseconds(1), ctk);
-        var headerContent = new HeaderContent("Assets/Images/logo.png", _stringLocalizer["GridViewTitle"]);
-        return headerContent;
-    }
-    #endregion
+
+
+    public IState<HeaderContent> ViewHeaderContent => State<HeaderContent>.Value(this,
+           () => new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
+                                   Caption: _stringLocalizer["ListViewTitle"]));
+
 }
