@@ -10,20 +10,18 @@
     xmlns:utu="using:Uno.Toolkit.UI"
     xmlns:conv="using:CommunityToolkit.WinUI.Converters"
     xmlns:um="using:Uno.Material"
+    xmlns:models="using:DevTKSS.Uno.Samples.MvuxGallery.Models"
     xmlns:sys="using:System"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <mvux:FeedView x:Name="LeftFeedView"
-                       Grid.Row="1"
+        <mvux:FeedView Grid.Row="0"
                        Source="{Binding GalleryImages}"
                        Margin="3">
             <mvux:FeedView.ValueTemplate>
@@ -38,43 +36,33 @@
                               CanDrag="False"
                               CanReorderItems="False"
                               SelectionMode="Single">
-
                     </ListView>
                 </DataTemplate>
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
 
-        
-        <Expander Grid.Row="3"
-                  ExpandDirection="Down"
+        <Expander Grid.Row="1"
                   MaxHeight="400"
-                  Header="{Binding CodeSampleOptions,Mode=TwoWay}"
-                  Content="{Binding CurrentCodeSample, Mode=TwoWay}">
-            <Expander.ContentTemplate>
-                <DataTemplate>
-                    <ScrollViewer>
-                        <TextBlock Text="{Binding }"
-                                   TextWrapping="WrapWholeWords"/>
-                    </ScrollViewer>
-                </DataTemplate>
-            </Expander.ContentTemplate>
-            <Expander.HeaderTemplate>
-                <DataTemplate>
-                    <utu:TabBar SelectedIndex="1"
-                                ItemsSource="{Binding }"
-                                Style="{StaticResource MaterialTopTabBarItemStyle}">
-                        <utu:TabBar.ItemTemplate>
-                            <DataTemplate>
-                                <utu:TabBarItem Content="{Binding}"
-                                                Command="{Binding SwitchCodeSampleAsync}"
-                                                CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
-                                                Style="{StaticResource MaterialTopTabBarItemStyle}"
-                                                Icon="Home"/>
-                            </DataTemplate>
-                        </utu:TabBar.ItemTemplate>
-                    </utu:TabBar>
-                </DataTemplate>
-            </Expander.HeaderTemplate>
+                  ExpandDirection="Down"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  ContentTemplate="{StaticResource CodeSampleWrappedTextblock}"
+                  Content="{Binding CurrentCodeSample}">
+
+            <Expander.Header>
+                <utu:TabBar VerticalAlignment="Bottom"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            SelectionIndicatorTransitionMode="Slide"
+                            ItemsSource="{Binding CodeSampleOptions}"
+                            ItemTemplate="{StaticResource BottomTabBarItemTemplate}"
+                            utu:CommandExtensions.Command="{Binding SwitchCodeSampleAsync}"
+                            utu:CommandExtensions.CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=SelectedItem,UpdateSourceTrigger=PropertyChanged}">
+
+                </utu:TabBar>
+            </Expander.Header>
         </Expander>
     </Grid>
 </Page>

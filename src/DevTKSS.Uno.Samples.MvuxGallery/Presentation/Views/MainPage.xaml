@@ -18,18 +18,21 @@
         https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
     </Page.Resources>
     <Grid x:Name="MainContentGrid"
-          uen:Region.Attached="True">
+          uen:Region.Attached="True"
+          utu:SafeArea.Insets="VisibleBounds">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" MaxHeight="400" />
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <NavigationView  IsBackButtonVisible="Collapsed"
-                         IsTitleBarAutoPaddingEnabled="True"
-                         IsPaneToggleButtonVisible="True"
-                         PaneDisplayMode="Auto"
-                         uen:Region.Attached="True"
-                         HorizontalAlignment="Stretch"
-                         Header="{Binding CurrentHeader}">
+        <NavigationView Grid.Row="0"
+                        IsBackButtonVisible="Collapsed"
+                        IsTitleBarAutoPaddingEnabled="True"
+                        IsPaneToggleButtonVisible="True"
+                        PaneDisplayMode="Auto"
+                        uen:Region.Attached="True"
+                        HorizontalAlignment="Stretch"
+                        Header="{Binding CurrentHeader}"
+                        IsSettingsVisible="False">
             <NavigationView.MenuItems>
                 
                 <NavigationViewItem x:Name="NavItemDashboard"
@@ -61,7 +64,28 @@
                       Visibility="Visible" />
             </NavigationView.Content>
         </NavigationView>
+        <Expander Grid.Row="1"
+                  MaxHeight="400"
+                  ExpandDirection="Down"
+                  VerticalAlignment="Bottom"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  Content="{Binding CurrentCodeSample}"
+                  ContentTemplate="{StaticResource CodeSampleWrappedTextblock}">
 
+            <Expander.Header>
+                <utu:TabBar VerticalAlignment="Bottom"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center"
+                            SelectionIndicatorTransitionMode="Slide"
+                            ItemTemplate="{StaticResource BottomTabBarItemTemplate}"
+                            ItemsSource="{Binding CodeSampleOptions}"
+                            utu:CommandExtensions.Command="{Binding SwitchCodeSampleAsync}"
+                            utu:CommandExtensions.CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=SelectedItem,UpdateSourceTrigger=PropertyChanged}">
+                </utu:TabBar>
+            </Expander.Header>
+        </Expander>
     </Grid>
 
 </Page>
