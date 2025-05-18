@@ -27,7 +27,7 @@ At the [Mvux Gallery](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) you can exp
 - Navigation
   - via Xaml
     - NavigationView
-      - [MainPage.xaml](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/MainPage.xaml)
+      - [MainPage.xaml](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/MainPage.xaml) see [DE Tutorial](./How-To-XamlNavigation.md)
   - Via Model
     - (planned)
 
@@ -52,7 +52,7 @@ At the [Mvux Gallery](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) you can exp
 
 - Configuration
   - Data for Serialization  
-    - [appsettings.json](../../../src/DevTKSS.Uno.Samples.MvuxGallery/appsettings.json)
+    - [appsettings.sampledata.json](../../../src/DevTKSS.Uno.Samples.MvuxGallery/appsettings.sampledata.json)
 
 - Storage
   - Via Model
