@@ -15,4 +15,6 @@ Visit the [API Documentation](../api/) for a Reference created from the Sourceco
 
 To give you a quick overview of this Documentation, here is a List of quick links to the included Sample Apps. For future and more detailed Information, please lookup the depending Chapter via the Table of Contents.
 
-- [MvuxGallery](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview) see the [source code:](../src/DevTKSS.Uno.Samples.MvuxGallery/)
+- MvuxGallery
+  - [Docs](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview)
+  - [source code:](../src/DevTKSS.Uno.Samples.MvuxGallery/)
