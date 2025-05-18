@@ -22,18 +22,19 @@
 
         <NavigationView  IsBackButtonVisible="Collapsed"
                          IsTitleBarAutoPaddingEnabled="True"
-                         IsPaneToggleButtonVisible="False"
-                        
+                         IsPaneToggleButtonVisible="True"
                          PaneDisplayMode="Auto"
                          uen:Region.Attached="True"
                          HorizontalAlignment="Stretch"
-                         Header="{Binding CurrentHeader}">
+                         Header="{Binding CurrentHeader}"
+                         IsSettingsVisible="False">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem x:Name="NavItemDashboard"
                                     Content="Home"
                                     uen:Region.Name="Dashboard"
                                     Icon="Home" />
+
                 <NavigationViewItem x:Name="NavItemCounter"
                                     Content="Counter"
                                     Icon="Calculator"
@@ -52,8 +53,7 @@
             </NavigationView.MenuItems>
 
             <NavigationView.Content>
-                <Grid x:Name="NavigationViewContentGrid"
-                      uen:Region.Attached="True"
+                <Grid uen:Region.Attached="True"
                       uen:Region.Navigator="Visibility"
                       Visibility="Visible" />
             </NavigationView.Content>

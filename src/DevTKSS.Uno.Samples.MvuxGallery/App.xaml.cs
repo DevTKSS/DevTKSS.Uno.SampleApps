@@ -66,7 +66,7 @@ public partial class App : Application
                             .Section<AppConfig>()
 
                         .EmbeddedSource<App>("sampledata")
-                            .Section<DashboardSampleOptions>()
+                            //.Section<DashboardSampleOptions>()
                             .Section<MainSampleOptions>()
                             .Section<ListboardSampleOptions>()
                             .Section<SimpleCardsSampleOptions>()
@@ -84,7 +84,7 @@ public partial class App : Application
                         .AddSingleton<ICodeSampleService<ListboardSampleOptions>,CodeSampleService<ListboardSampleOptions>>()
                         .AddSingleton<ICodeSampleService<SimpleCardsSampleOptions>, CodeSampleService<SimpleCardsSampleOptions>>()
                         .AddSingleton<ICodeSampleService<CounterSampleOptions>, CodeSampleService<CounterSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<DashboardSampleOptions>, CodeSampleService<DashboardSampleOptions>>()
+                        //.AddSingleton<ICodeSampleService<DashboardSampleOptions>, CodeSampleService<DashboardSampleOptions>>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>
@@ -100,7 +100,7 @@ public partial class App : Application
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.ListboardSampleOptions)
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.SimpleCardsSampleOptions)
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.CounterSampleOptions)
-                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.DashboardSampleOptions)
+                        //.AddJsonTypeInfo(CodeSampleOptionContext.Default.DashboardSampleOptions)
 
                         .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
                         )
@@ -122,8 +122,8 @@ public partial class App : Application
             new ViewMap<MainPage, MainModel>(),
             new ViewMap<CounterPage, CounterModel>(),
             new ViewMap<DashboardPage, DashboardModel>(),
-           new ViewMap<ListboardPage, ListboardModel>(),
-           new ViewMap<SimpleCardsPage, SimpleCardsModel>()
+            new ViewMap<ListboardPage, ListboardModel>(),
+            new ViewMap<SimpleCardsPage, SimpleCardsModel>()
         );
 
         routes.Register(

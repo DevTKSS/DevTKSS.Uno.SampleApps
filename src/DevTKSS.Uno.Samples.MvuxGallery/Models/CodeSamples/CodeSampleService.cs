@@ -1,6 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using Windows.Networking.BackgroundTransfer;
-
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 public partial record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOptions>
     where SampleOptions : CodeSampleOptionsConfiguration

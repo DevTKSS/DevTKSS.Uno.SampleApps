@@ -14,8 +14,4 @@ public partial record CounterModel
     public ValueTask IncrementCounter()
         => Countable.UpdateAsync(c => c?.Increment());
 
-    public async Task ReloadCounterTitle()
-    {
-        await CounterTitle.SetAsync(_stringLocalizer["CounterTitle"]);
-    }
 }

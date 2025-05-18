@@ -19,20 +19,21 @@ public partial record SimpleCardsModel
     public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
                                                          .ForEach(SwitchCodeSampleAsync);
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
-   
-    public async ValueTask SwitchCodeSampleAsync(string? selectedOption,CancellationToken ct = default)
+
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
     {
-        _logger.LogTrace("{method} called with parameter: {selectedOption}", nameof(SwitchCodeSampleAsync), selectedOption);
+        _logger.LogTrace("{methodName} called with selectedOption: '{SelectedOption}'", nameof(SwitchCodeSampleAsync), selectedOption);
 
         if (string.IsNullOrWhiteSpace(selectedOption))
         {
+            _logger.LogTrace("selectedOption is null or whitespace. Attempting to get default from CodeSampleOptions.");
             var options = await CodeSampleOptions;
             selectedOption = options.FirstOrDefault(string.Empty);
+            _logger.LogTrace("selectedOption updated to: '{SelectedOption}' after fetching options.", selectedOption);
         }
-
-        var sample = await _sampleService.GetCodeSampleAsync(selectedOption, ct);
-
-        await CurrentCodeSample.SetAsync(sample, ct);
+        string codeSample = await _codeSampleService.GetCodeSampleAsync(selectedOption, ct);
+        _logger.LogTrace("Loaded code sample for option '{SelectedOption}': {CodeSample}", selectedOption, codeSample);
+        await CurrentCodeSample.SetAsync(codeSample, ct);
     }
     #endregion
 }

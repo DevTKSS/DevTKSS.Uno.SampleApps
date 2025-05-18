@@ -18,7 +18,7 @@ public record Lines
 [JsonSerializable(typeof(MainSampleOptions))]
 [JsonSerializable(typeof(CounterSampleOptions))]
 [JsonSerializable(typeof(SimpleCardsSampleOptions))]
-[JsonSerializable(typeof(DashboardSampleOptions))]
+//[JsonSerializable(typeof(DashboardSampleOptions))]
 public partial class CodeSampleOptionContext : JsonSerializerContext
 {
 }

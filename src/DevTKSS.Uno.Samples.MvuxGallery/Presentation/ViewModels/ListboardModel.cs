@@ -16,7 +16,7 @@ public partial record ListboardModel
     /// <summary>
     /// Service for managing code samples.
     /// </summary>
-    private readonly ICodeSampleService<ListboardSampleOptions> _codeSampleService;
+    private readonly ICodeSampleService<ListboardSampleOptions> _sampleService;
 
     /// <summary>
     /// Service for retrieving gallery images.
@@ -29,18 +29,18 @@ public partial record ListboardModel
     /// </summary>
     /// <param name="stringLocalizer">The string localizer service.</param>
     /// <param name="galleryImageService">The gallery image service.</param>
-    /// <param name="serviceProvider">The serviceProvider, to fetch the code sample service as NamedService from with correct configuration.</param>
+    /// <param name="logger">The logger instance for logging diagnostic and trace information.</param>
+    /// <param name="sampleService">The service responsible for providing code sample options and content.</param>
     public ListboardModel(
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
-        IServiceProvider serviceProvider,
         ILogger<ListboardModel> logger,
         ICodeSampleService<ListboardSampleOptions> sampleService)
     {
         _logger = logger;
-        this._stringLocalizer = stringLocalizer;
-        this._galleryImageService = galleryImageService;
-        _codeSampleService = sampleService;
+        _stringLocalizer = stringLocalizer;
+        _galleryImageService = galleryImageService;
+        _sampleService = sampleService;
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public partial record ListboardModel
     /// <remarks>
     /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
     /// </remarks>
-    public IListFeed<string> CodeSampleOptions => ListFeed.Async(_codeSampleService.GetCodeSampleOptionsAsync)
+    public IListFeed<string> CodeSampleOptions => ListFeed.Async(_sampleService.GetCodeSampleOptionsAsync)
                                                           .Selection(SelectedOption);
 
     /// <summary>
@@ -88,7 +88,7 @@ public partial record ListboardModel
             selectedOption = options.FirstOrDefault(string.Empty);
             _logger.LogTrace("selectedOption updated to: '{SelectedOption}' after fetching options.", selectedOption);
         }
-        string codeSample = await _codeSampleService.GetCodeSampleAsync(selectedOption, ct);
+        string codeSample = await _sampleService.GetCodeSampleAsync(selectedOption, ct);
         _logger.LogTrace("Loaded code sample for option '{SelectedOption}': {CodeSample}", selectedOption, codeSample);
         await CurrentCodeSample.SetAsync(codeSample, ct);
     }

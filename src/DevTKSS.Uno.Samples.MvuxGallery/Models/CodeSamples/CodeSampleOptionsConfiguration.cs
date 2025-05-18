@@ -22,7 +22,7 @@ public record SimpleCardsSampleOptions : CodeSampleOptionsConfiguration
 }
 
 
-public record DashboardSampleOptions : CodeSampleOptionsConfiguration
-{
-}
+//public record DashboardSampleOptions : CodeSampleOptionsConfiguration
+//{
+//}
 

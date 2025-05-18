@@ -131,7 +131,7 @@
         <ScrollViewer>
             <TextBlock Text="{Binding }"
                        TextWrapping="WrapWholeWords"
-                       HorizontalAlignment="Center" />
+                       HorizontalAlignment="Center"/>
         </ScrollViewer>
     </DataTemplate>
     <!--#endregion-->
@@ -139,7 +139,13 @@
     <!--#region TabBarItem Template-->
     <DataTemplate x:Key="BottomTabBarItemTemplate">
         <utu:TabBarItem Content="{Binding }"
-                        Style="{StaticResource BottomTabBarItemStyle}" />
+                        HorizontalAlignment="Center"
+                        HorizontalContentAlignment="Center"
+                        Style="{StaticResource BottomTabBarItemStyle}">
+            <utu:TabBarItem.Icon>
+                <FontIcon Glyph="&#xE943;" />
+            </utu:TabBarItem.Icon>
+        </utu:TabBarItem>
     </DataTemplate>
     <!--#endregion-->
 </ResourceDictionary>

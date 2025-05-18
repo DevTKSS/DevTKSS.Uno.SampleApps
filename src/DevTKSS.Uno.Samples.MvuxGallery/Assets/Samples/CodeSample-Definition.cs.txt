@@ -1,63 +1,100 @@
-namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 
 public record CodeSampleOptionsConfiguration
 {
-    public Dictionary<string, CodeSampleOption> Samples { get; init; } = new();
+    public CodeSampleOption[] Samples { get; init; } = Array.Empty<CodeSampleOption>();
 }
 
 public record CodeSampleOption
 {
+    public string SampleID { get; init; } = string.Empty;
     public string Description { get; init; } = string.Empty;
     public string FilePath { get; init; } = string.Empty;
-    public List<(int Start, int End)> LineRanges { get; init; } = [];
+    public Lines[] LineRanges { get; init; } = [];
 }
-
-namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
+public record Lines
+{
+    public int Start { get; init; }
+    public int End { get; init; }
+}
 
 [JsonSerializable(typeof(CodeSampleOptionsConfiguration))]
-public partial class CodeSampleOptionsConfigurationContext : JsonSerializerContext
-{
-}
-
 [JsonSerializable(typeof(CodeSampleOption))]
+[JsonSerializable(typeof(ListboardSampleOptions))]
+[JsonSerializable(typeof(MainSampleOptions))]
+[JsonSerializable(typeof(CounterSampleOptions))]
+[JsonSerializable(typeof(SimpleCardsSampleOptions))]
 public partial class CodeSampleOptionContext : JsonSerializerContext
 {
 }
 
+public record ListboardSampleOptions : CodeSampleOptionsConfiguration
 {
-  "ListboardSampleConfiguration": {
-    "FeedView + ListView XAML": {
-      "Description": "",
-      "FilePath": "Assets/Samples/FeedView-ListView-Sample.xaml.txt",
-      "LineRanges": []
-    },
-    "Use Service to load Data from Storage": {
-      "Description": "This sample shows how to use a service to load data from storage. The service is registered in the DI container and can be injected into the view model.",
-      "FilePath": "Assets/Samples/Listboard-SampleViaService.cs.txt",
-      "LineRanges": []
-    },
-    "DI Storage handling Service": {
-      "FilePath": "Assets/Samples/Listboard-StorageService.cs.txt",
-      "LineRanges": []
-    },
-    "Settings DataModel Definition": {
-      "Description": "While DataModels used to load Data via IOptions can not be fully immutable, using init instead of set allows us to set the properties only once, when the object is created.",
-      "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
-      "LineRanges": [ 1, 13 ]
-    },
-    "Settings DataModel JsonContext": {
-      "Description": "Define the JsonSerializerContext to load the code sample options configuration from the appsettings.json file.",
-      "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
-      "LineRanges": [ 15, 25 ]
-    },
-    "Settings Data in appsettings": {
-      "Description": "Settings to find storage Data, can easily be stored in appsettings.json, since we can update them via IWritableOptions.",
-      "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
-      "LineRanges": []
-    },
-    "XAML DataTemplate": {
-      "Description": "The DataTemplate is used to define how the data is displayed in the ListView. The DataTemplate is showing a Card Control from Uno.Toolkit.UI and is definied in a ResourcesDictionary loaded via MergedResourcesDictionaries.",
-      "FilePath": "Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt",
-      "LineRanges": []
-    },
-  },
+}
+
+ "ListboardSampleOptions": {
+    "Samples": [
+      {
+        "SampleID": "FeedView + ListView XAML",
+        "Description": "This sample shows how to use the FeedView control from Uno.Extensions.Reactive.UI. The FeedView usually is beeing used to let you bind to a Feed, ListFeed, State or ListState, which allows to Request a Refresh of the underlieing data. In this sample, we are using a ListView which then actually shows the Data, Binding to the depending Properties of the Records Definition. By default, if you dont explicitly tell the FeedView otherwhise, e.g. by <LoadingTemplate>, the DataTemplate defining the ListView, will be the <ValueTemplate> after fetching the Data.",
+        "FilePath": "Assets/Samples/FeedView-ListView-Sample.xaml.txt",
+        "LineRanges": []
+      },
+      {
+        "SampleID": "Load Data from Storage \n    (by Service)",
+        "Description": "This sample shows how to use a service to load data from storage. The service is registered in the DI container and can be injected into the view model.",
+        "FilePath": "Assets/Samples/Listboard-SampleViaService.cs.txt",
+        "LineRanges": []
+      },
+      {
+        "SampleID": "DI Storage handling Service",
+        "Description": "",
+        "FilePath": "Assets/Samples/CodeSampleService.cs.txt",
+        "LineRanges": []
+      },
+      {
+        "SampleID": "Settings DataModel Definition",
+        "Description": "While DataModels used to load Data via IOptions can not be fully immutable, using init instead of set allows us to set the properties only once, when the object is created.",
+        "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
+        "LineRanges": [
+          {
+            "Start": 1,
+            "End": 13
+          }
+        ]
+      },
+      {
+        "SampleID": "Settings DataModel JsonContext",
+        "Description": "Define the JsonSerializerContext to load the code sample options configuration from the appsettings.json file.",
+        "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
+        "LineRanges": [
+          {
+            "Start": 15,
+            "End": 32
+          }
+        ]
+      },
+      {
+        "SampleID": "Settings Data in appsettings",
+        "Description": "Settings to find storage Data, can easily be stored in appsettings.json, since we can update them via IWritableOptions.",
+        "FilePath": "Assets/Samples/CodeSample-Definition.cs.txt",
+        "LineRanges": [
+          {
+            "Start": 34,
+            "End": 70
+          }
+        ]
+      },
+      {
+        "SampleID": "XAML DataTemplate",
+        "Description": "The DataTemplate is used to define how the data is displayed in the ListView. The DataTemplate is showing a Card Control from Uno.Toolkit.UI and is definied in a ResourcesDictionary loaded via MergedResourcesDictionaries.",
+        "FilePath": "Assets/Samples/Card-GalleryImage.DataTemplate.xaml.txt",
+        "LineRanges": []
+      },
+      {
+        "SampleID": "Get GalleryImages via \n FeedList in Model",
+        "Description": "This sample shows how to use a model with properties that are bound to the view. The model is a simple class with properties that are used in the view.",
+        "FilePath": "Assets/Samples/ModelBinding-Sample.cs.txt",
+        "LineRanges": []
+      }
+    ]
+  }

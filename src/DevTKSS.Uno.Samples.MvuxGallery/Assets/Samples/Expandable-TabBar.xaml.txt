@@ -1,0 +1,33 @@
+xmlns:utu="using:Uno.Toolkit.UI"
+
+...
+
+<Expander   ExpandDirection="Down"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Stretch"
+            MaxHeight="400">
+
+    <Expander.Header>
+        <utu:TabBar VerticalAlignment="Bottom"
+                    ItemsSource="{Binding CodeSampleOptions}"
+                    SelectedItem="{Binding SelectedOption, Mode=TwoWay}">
+            <utu:TabBar.ItemTemplate>
+                <DataTemplate>
+                    <utu:TabBarItem Content="{Binding}"
+                                    Command="{Binding SwitchCodeSampleAsync}"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self}, Path=Content}"
+                                    Style="{StaticResource MaterialTopTabBarItemStyle}"
+                                    Icon="Home"/>
+                </DataTemplate>
+            </utu:TabBar.ItemTemplate>
+        </utu:TabBar>
+    </Expander.Header>
+    <Expander.Content>
+        <ScrollViewer>
+            <TextBlock x:Name="CodeSampleBlock"
+                        Text="{Binding CurrentCodeSample}"
+                        TextWrapping="WrapWholeWords"/>
+        </ScrollViewer>
+    </Expander.Content>
+
+</Expander>

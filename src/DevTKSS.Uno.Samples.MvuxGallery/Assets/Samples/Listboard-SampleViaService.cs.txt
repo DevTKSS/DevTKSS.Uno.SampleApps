@@ -1,74 +1,31 @@
 public partial record ListboardModel
 {
 
-    /// <summary>
-    /// Service for retrieving localized strings.
-    /// </summary>
-    private readonly IStringLocalizer _stringLocalizer;
+    private readonly ICodeSampleService<ListboardSampleOptions> _codeSampleService;
 
-    /// <summary>
-    /// Service for managing code samples.
-    /// </summary>
-    private readonly ICodeSampleService _codeSampleService;
-
-    /// <summary>
-    /// Service for retrieving gallery images.
-    /// </summary>
-    private readonly IGalleryImageService _galleryImageService;
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="ListboardModel"/> class.
-    /// </summary>
-    /// <param name="stringLocalizer">The string localizer service.</param>
-    /// <param name="galleryImageService">The gallery image service.</param>
-    /// <param name="codeSampleService">The code sample service.</param>
     public ListboardModel(
-        IStringLocalizer stringLocalizer,
-        IGalleryImageService galleryImageService,
-        ICodeSampleService codeSampleService)
+        ILogger<ListboardModel> logger,
+        ICodeSampleService<ListboardSampleOptions> sampleService)
     {
-        this._stringLocalizer = stringLocalizer;
-        this._galleryImageService = galleryImageService;
-        this._codeSampleService = codeSampleService;
+        _logger = logger;
+        _codeSampleService = sampleService;
     }
 
+    public IListFeed<string> CodeSampleOptions => ListFeed.Async(_codeSampleService.GetCodeSampleOptionsAsync)
+                                                                .Selection(SelectedOption);
 
+    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
+                                                                .ForEach(SwitchCodeSampleAsync);
 
-    /// <summary>
-    /// Represents a static collection of code sample options to bind to.
-    /// </summary>
-    /// <remarks>
-    /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
-    /// </remarks>
-    public IListFeed<string> CodeSampleOptions => ListFeed<string>
-                                                        .Async(_codeSampleService.GetCodeSampleOptionsAsync)
-                                                        .Selection(SelectedSampleOption);
+    public IState<string> CurrentCodeSample => State<string>.Value(this,() => string.Empty);
 
-    /// <summary>
-    /// Represents the selected code sample option.
-    /// </summary>
-    /// <remarks>
-    /// Uses <see cref="string.Empty"/> as the default value to avoid null checks in the XAML.
-    /// </remarks>
-    public IState<string> SelectedSampleOption => State<string>
-                                                    .Value(this, () => string.Empty)
-                                                    .ForEach(SwitchCodeSampleAsync);
-
-    /// <summary>
-    /// Represents the content of the currently selected code sample.
-    /// </summary>
-    public IState<string> CurrentCodeSample => State<string>
-                                                    .Value(this, () => string.Empty);
-
-    /// <summary>
-    /// Switches the current code sample based on the selected option.
-    /// </summary>
-    /// <param name="selectedSampleOption">The selected code sample option.</param>
-    /// <param name="ct">A cancellation token for the operation.</param>
-    /// <returns>A task representing the asynchronous operation.</returns>
-    public async ValueTask SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
     {
-        string sample = await _codeSampleService.GetCodeSampleAsync(selectedSampleOption ?? string.Empty);
-        await CurrentCodeSample.SetAsync(sample, ct);
+        if (string.IsNullOrWhiteSpace(selectedOption))
+        {
+            var options = await CodeSampleOptions;
+            selectedOption = options.FirstOrDefault(string.Empty);
+        }
+        string codeSample = await _codeSampleService.GetCodeSampleAsync(selectedOption, ct);
+        await CurrentCodeSample.SetAsync(codeSample, ct);
     }
-}

@@ -93,10 +93,10 @@ public partial record DashboardModel
             items:
             [
                 "FeedView + GridView XAML",
-                "C# in Model",
+                "Get GalleryImages via \n FeedList in Model",
                 "DI Service Resw",
                 "DI Service without Resw",
-                "C# Record",
+                "GalleryImage Record",
                 "XAML DataTemplate"
             ]);
     }
@@ -115,7 +115,7 @@ public partial record DashboardModel
         _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {selectedOption}", selectedOption);
         await CurrentCodeSample.SetAsync(selectedOption switch
         {
-            "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
+            "Get GalleryImages via \n FeedList in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
             "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),
             "DI Service without Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-noResw.cs.txt"),
             "C# Record" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageModel.cs.txt"),

@@ -2,8 +2,7 @@ xmlns:mvux="using:Uno.Extensions.Reactive.UI"
 
 ...
 
-<mvux:FeedView x:Name="LeftFeedView"
-                Grid.Row="1"
+<mvux:FeedView  Grid.Row="1"
                 Source="{Binding GalleryImages}"
                 Margin="3">
     <DataTemplate>

@@ -1,5 +1,5 @@
 xmlns:utu="using:Uno.UI.Toolkit"
-xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.GeneralModels"
+xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
 
 ...
 
@@ -16,7 +16,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.GeneralModels"
                 SubHeaderContentTemplate="{StaticResource CardSubHeaderContentTemplate}"
                 MediaContentTemplate="{StaticResource CardMediaContentTemplate}"/>
 </DataTemplate>
-<!--#region Card HeaderContent Template-->
+
 <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardHeaderContentTemplate">
     <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
         <TextBlock Text="{Binding }"
@@ -26,9 +26,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.GeneralModels"
                     TextWrapping="WrapWholeWords"/>
     </Border>
 </DataTemplate>
-<!--#endregion-->
-    
-<!--#region Card SubHeaderContent Template-->
+
 <DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
     <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
         <TextBlock Text="{Binding }"
@@ -38,13 +36,9 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.GeneralModels"
                     TextWrapping="WrapWholeWords"/>
     </Border>
 </DataTemplate>
-<!--#endregion-->
-    
-<!--#region Card MediaContentTemplate-->
+
 <DataTemplate x:Key="CardMediaContentTemplate" x:DataType="gm:GalleryImageModel">
     <Image Source="{Binding }"
             Stretch="Uniform"
             Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
 </DataTemplate>
-
-<!--#endregion-->
