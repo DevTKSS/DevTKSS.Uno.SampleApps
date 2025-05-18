@@ -2,10 +2,17 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 public partial record CounterModel
 {
+    private readonly ICodeSampleService<CounterSampleOptions> _sampleService;
     private readonly IStringLocalizer _stringLocalizer;
-    public CounterModel(IStringLocalizer stringLocalizer)
+    private readonly ILogger _logger;
+    public CounterModel(
+        IStringLocalizer stringLocalizer,
+        ICodeSampleService<CounterSampleOptions> sampleService,
+        ILogger<CounterModel> logger)
     {
-        this._stringLocalizer = stringLocalizer;
+        _logger = logger;
+        _sampleService = sampleService;
+        _stringLocalizer = stringLocalizer;
     }
 
     public IState<string> CounterTitle => State<string>.Value(this, () => _stringLocalizer["CounterTitle"]);

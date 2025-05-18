@@ -1,10 +1,15 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 public partial record SimpleCardsModel
 {
-    private readonly IStorage _storage;
-    public SimpleCardsModel(IStorage storage)
+    private readonly ICodeSampleService<SimpleCardsSampleOptions> _sampleService;
+    private readonly ILogger _logger;
+    public SimpleCardsModel(
+        ICodeSampleService<SimpleCardsSampleOptions> sampleService,
+        ILogger<SimpleCardsModel> logger
+        )
     {
-        _storage = storage;
+        _logger = logger;
+        _sampleService = sampleService;
     }
 
 

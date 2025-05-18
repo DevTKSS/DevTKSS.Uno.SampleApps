@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 /// <summary>
@@ -18,7 +16,7 @@ public partial record ListboardModel
     /// <summary>
     /// Service for managing code samples.
     /// </summary>
-    private readonly ICodeSampleService<ListboardCodeSampleOptions> _codeSampleService;
+    private readonly ICodeSampleService<ListboardSampleOptions> _codeSampleService;
 
     /// <summary>
     /// Service for retrieving gallery images.
@@ -37,7 +35,7 @@ public partial record ListboardModel
         IGalleryImageService galleryImageService,
         IServiceProvider serviceProvider,
         ILogger<ListboardModel> logger,
-        ICodeSampleService<ListboardCodeSampleOptions> sampleService)
+        ICodeSampleService<ListboardSampleOptions> sampleService)
     {
         _logger = logger;
         this._stringLocalizer = stringLocalizer;
