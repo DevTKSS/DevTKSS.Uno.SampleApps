@@ -66,12 +66,11 @@ public partial class App : Application
                             .Section<AppConfig>()
 
                         .EmbeddedSource<App>("sampledata")
-                            .Section<CodeSampleOptionsConfiguration>()
-                            .Section<DashboardCodeSampleOptions>()
-                            .Section<MainCodeSampleOptions>()
-                            .Section<ListboardCodeSampleOptions>()
-                            .Section<SimpleCardsCodeSampleOptions>()
-                            .Section<CounterCodeSampleOptions>()
+                            .Section<DashboardSampleOptions>()
+                            .Section<MainSampleOptions>()
+                            .Section<ListboardSampleOptions>()
+                            .Section<SimpleCardsSampleOptions>()
+                            .Section<CounterSampleOptions>()
                 )
                 // Enable localization (see appsettings.json for supported languages)
                 .UseLocalization()
@@ -81,26 +80,27 @@ public partial class App : Application
 
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
 
-                        // .AddSingleton<ICodeSampleService<CodeSampleOptionsConfiguration>, CodeSampleService<CodeSampleOptionsConfiguration>>()
-
-                        .AddSingleton<ICodeSampleService<MainCodeSampleOptions>, CodeSampleService<MainCodeSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<ListboardCodeSampleOptions>,CodeSampleService<ListboardCodeSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<SimpleCardsCodeSampleOptions>, CodeSampleService<SimpleCardsCodeSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<CounterCodeSampleOptions>, CodeSampleService<CounterCodeSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<DashboardCodeSampleOptions>, CodeSampleService<DashboardCodeSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<MainSampleOptions>, CodeSampleService<MainSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<ListboardSampleOptions>,CodeSampleService<ListboardSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<SimpleCardsSampleOptions>, CodeSampleService<SimpleCardsSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<CounterSampleOptions>, CodeSampleService<CounterSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<DashboardSampleOptions>, CodeSampleService<DashboardSampleOptions>>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>
                     services
                         .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOption)
-                        .AddJsonTypeInfo(CodeSampleOptionsConfigurationContext.Default.CodeSampleOptionsConfiguration)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.LinesArray)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.CodeSampleOptionsConfiguration)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.Int32)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.String)
 
                         // Following should get removed when NamedOptions can be used with DI Services and really getting values from the configuration
-                        .AddJsonTypeInfo(MainCodeSampleOptionsContext.Default.MainCodeSampleOptions)
-                        .AddJsonTypeInfo(ListboardCodeSampleOptionsContext.Default.ListboardCodeSampleOptions)
-                        .AddJsonTypeInfo(SimpleCardsCodeSampleOptionsContext.Default.SimpleCardsCodeSampleOptions)
-                        .AddJsonTypeInfo(CounterCodeSampleOptionsContext.Default.CounterCodeSampleOptions)
-                        .AddJsonTypeInfo(DashboardCodeSampleOptionsContext.Default.DashboardCodeSampleOptions)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.MainSampleOptions)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.ListboardSampleOptions)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.SimpleCardsSampleOptions)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.CounterSampleOptions)
+                        .AddJsonTypeInfo(CodeSampleOptionContext.Default.DashboardSampleOptions)
 
                         .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
                         )
