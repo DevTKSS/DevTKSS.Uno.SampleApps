@@ -53,29 +53,30 @@
 
     <!--#endregion-->
     <!--#endregion Card Template -->
-
+    
     <!--#region ListView and GridView Header Template binding to a FeedView to Refresh-->
     <DataTemplate x:Key="ViewHeaderTemplate" x:DataType="models:HeaderContent">
         <Grid Background="{ThemeResource SurfaceInverseBrush}"
               CornerRadius="10,10,0,0"
               Padding="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*" MinWidth="100"/>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*"
+                                  MinWidth="100" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <PersonPicture ProfilePicture="{Binding ImageLocation}"
-                    Width="60"
-                    Style="{StaticResource DefaultPersonPictureStyle}"
-                    Grid.Column="0"/>
+                           Width="60"
+                           Style="{StaticResource DefaultPersonPictureStyle}"
+                           Grid.Column="0" />
             <TextBlock Text="{Binding Caption}"
-                        Style="{ThemeResource TitleMedium}"
-                        Foreground="{ThemeResource OnSurfaceInverseBrush}"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        TextAlignment="Center"
-                        Grid.Column="1"
-                        TextWrapping="WrapWholeWords"/>
+                       Style="{ThemeResource TitleMedium}"
+                       Foreground="{ThemeResource OnSurfaceInverseBrush}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center"
+                       Grid.Column="1"
+                       TextWrapping="WrapWholeWords" />
             <AppBarButton Style="{StaticResource FilledButtonStyle}"
                           Command="{utu:AncestorBinding AncestorType=mvux:FeedView, Path=Refresh}"
                           HorizontalAlignment="Center"
@@ -85,9 +86,8 @@
             </AppBarButton>
         </Grid>
     </DataTemplate>
-
     <!--#endregion ListView and GridView Header Template-->
-
+    
     <!--#region Grid Template aka GalleryImageOverlay -->
     <!-- This Sample is a simplifyed Template using a regular Grid with a unified Layout-->
     <!-- Reference used: WinUi 3 Gallery GridView "ItemOverlayTemplate" winui3gallery://item/GridView -->
@@ -126,4 +126,20 @@
     </DataTemplate>
     <!--#endregion Grid Template aka GalleryImageOverlay-->
 
+    <!--#region Code Sample Expander Content-->
+    <DataTemplate x:Key="CodeSampleWrappedTextblock">
+        <ScrollViewer>
+            <TextBlock Text="{Binding }"
+                       TextWrapping="WrapWholeWords"
+                       HorizontalAlignment="Center" />
+        </ScrollViewer>
+    </DataTemplate>
+    <!--#endregion-->
+
+    <!--#region TabBarItem Template-->
+    <DataTemplate x:Key="BottomTabBarItemTemplate">
+        <utu:TabBarItem Content="{Binding }"
+                        Style="{StaticResource BottomTabBarItemStyle}" />
+    </DataTemplate>
+    <!--#endregion-->
 </ResourceDictionary>
