@@ -33,7 +33,7 @@ public partial class GalleryImageService : IGalleryImageService
     #region With resw
     private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromMicroseconds(1), ct);
+        await Task.Delay(TimeSpan.FromSeconds(2), ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
@@ -70,7 +70,8 @@ public partial class GalleryImageService : IGalleryImageService
     #region German gallery descriptions
     private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromMicroseconds(1),ct);
+        // Simulate a delay to mimic data fetching
+        await Task.Delay(TimeSpan.FromSeconds(2),ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
@@ -105,7 +106,8 @@ public partial class GalleryImageService : IGalleryImageService
     #region English gallery descriptions
     private async ValueTask<IImmutableList<GalleryImageModel>> GetENGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromMicroseconds(1), ct);
+        // Simulate a delay to mimic data fetching
+        await Task.Delay(TimeSpan.FromSeconds(2), ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(

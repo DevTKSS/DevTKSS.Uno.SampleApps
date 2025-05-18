@@ -31,7 +31,8 @@ public partial class GalleryImageService : IGalleryImageService
 
     private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromMicroseconds(1),ct);
+        // Simulate a delay to mimic an async operation (e.g., fetching from a database or API)
+        await Task.Delay(TimeSpan.FromSeconds(2),ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
@@ -68,7 +69,8 @@ public partial class GalleryImageService : IGalleryImageService
 
     private async ValueTask<IImmutableList<GalleryImageModel>> GetENGalleryImagesAsync(CancellationToken ct)
     {
-        await Task.Delay(TimeSpan.FromMicroseconds(1), ct);
+        // Simulate a delay to mimic an async operation (e.g., fetching from a database or API)
+        await Task.Delay(TimeSpan.FromSeconds(2), ct);
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
