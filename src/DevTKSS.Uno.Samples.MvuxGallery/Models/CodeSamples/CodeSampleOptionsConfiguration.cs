@@ -1,54 +1,28 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
 
-public record CodeSampleOptionsConfiguration()
+public record CodeSampleOptionsConfiguration
 {
-    public Dictionary<string, CodeSampleOption> Samples { get; init; } = new();
+    public CodeSampleOption[] Samples { get; init; } = Array.Empty<CodeSampleOption>();
 }
-[JsonSerializable(typeof(CodeSampleOptionsConfiguration))]
-public partial class CodeSampleOptionsConfigurationContext : JsonSerializerContext
+
+public record ListboardSampleOptions : CodeSampleOptionsConfiguration
 {
 }
 
-public record ListboardCodeSampleOptions : CodeSampleOptionsConfiguration
+public record MainSampleOptions : CodeSampleOptionsConfiguration
 {
 }
 
-[JsonSerializable(typeof(ListboardCodeSampleOptions))]
-public partial class ListboardCodeSampleOptionsContext : JsonSerializerContext
+public record CounterSampleOptions : CodeSampleOptionsConfiguration
 {
 }
 
-public record MainCodeSampleOptions : CodeSampleOptionsConfiguration
+public record SimpleCardsSampleOptions : CodeSampleOptionsConfiguration
 {
 }
 
-[JsonSerializable(typeof(MainCodeSampleOptions))]
-public partial class MainCodeSampleOptionsContext : JsonSerializerContext
+
+public record DashboardSampleOptions : CodeSampleOptionsConfiguration
 {
 }
 
-public record CounterCodeSampleOptions : CodeSampleOptionsConfiguration
-{
-}
-
-[JsonSerializable(typeof(CounterCodeSampleOptions))]
-public partial class CounterCodeSampleOptionsContext : JsonSerializerContext
-{
-}
-
-public record SimpleCardsCodeSampleOptions : CodeSampleOptionsConfiguration
-{
-}
-[JsonSerializable(typeof(SimpleCardsCodeSampleOptions))]
-public partial class SimpleCardsCodeSampleOptionsContext : JsonSerializerContext
-{
-}
-
-public record DashboardCodeSampleOptions : CodeSampleOptionsConfiguration
-{
-}
-
-[JsonSerializable(typeof(DashboardCodeSampleOptions))]
-public partial class DashboardCodeSampleOptionsContext : JsonSerializerContext
-{
-}

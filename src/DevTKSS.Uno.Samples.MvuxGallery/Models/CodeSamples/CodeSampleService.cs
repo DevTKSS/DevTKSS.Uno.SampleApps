@@ -1,7 +1,8 @@
 using Microsoft.Extensions.Configuration;
+using Windows.Networking.BackgroundTransfer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
-public record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOptions>
+public partial record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOptions>
     where SampleOptions : CodeSampleOptionsConfiguration
 {
     public CodeSampleService(
@@ -10,9 +11,21 @@ public record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOption
         IStorage storage)
     {
         _options = options.Value;
-        
         _logger = logger;
         _storage = storage;
+        if (_logger.IsEnabled(LogLevel.Trace))
+        { 
+            // Log LineRanges for each sample option
+            foreach (var sample in _options.Samples)
+            {
+                _logger.LogTrace("SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                    sample.SampleID,
+                    sample.Description,
+                    sample.FilePath,
+                    sample.LineRanges);
+                                 
+            }
+        }
     }
 
     private readonly IStorage _storage;
@@ -36,24 +49,29 @@ public record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOption
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         await Task.Delay(1);
-        _logger.LogInformation("Options: {options}", _options.Samples);
-        return _options.Samples.Keys.ToImmutableList(); 
+        var sampleOptions = _options.Samples.Select(sample => sample.SampleID).ToImmutableList();
+        _logger.LogInformation("Options:\n{options}", sampleOptions.JoinBy("," + Environment.NewLine));
+        return sampleOptions; 
     }
 
     public async ValueTask<string> GetCodeSampleAsync(string? sampleID, CancellationToken ct = default)
     {
-        if (sampleID is not null && _options.Samples.TryGetValue(sampleID, out CodeSampleOption? sampleOption))
+        if (_options.Samples.FirstOrDefault(sample => sample.SampleID == sampleID) is CodeSampleOption sampleOption)
         {
-            return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath, sampleOption.LineRanges);
+            if(_logger.IsEnabled(LogLevel.Trace))
+            {
+                _logger.LogTrace("SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                    sampleOption.SampleID,
+                    sampleOption.Description,
+                    sampleOption.FilePath,
+                    sampleOption.LineRanges);
+            }
+
+            return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath,sampleOption.LineRanges.Select(lr => (lr.Start, lr.End)));
         }
+        
 
         _logger.LogWarning("Code sample with ID {sampleID} not found", sampleID);
         return string.Empty;
-    }
-    public async ValueTask<string> SwitchCodeSampleAsync(string? selectedSampleOption, CancellationToken ct = default)
-    {
-        string sample = await GetCodeSampleAsync(selectedSampleOption,ct);
-        _logger.LogInformation("Switched to code sample {sample}", selectedSampleOption);
-        return sample;
     }
 }
