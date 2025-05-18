@@ -1,15 +1,17 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages;
-[Bindable]
 public partial class GalleryImageService : IGalleryImageService
 {
     private readonly ILocalizationService _localizationService;
     private readonly IStringLocalizer _stringlocalizer;
+    private readonly ILogger<GalleryImageService> _logger;
     public GalleryImageService(
         ILocalizationService localizationService,
-        IStringLocalizer _stringLocalizer)
+        IStringLocalizer _stringLocalizer,
+        ILogger<GalleryImageService> logger)
     {
         _localizationService = localizationService;
         _stringlocalizer = _stringLocalizer;
+        _logger = logger;
     }
 
     public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithReswAsync(CancellationToken ct)
@@ -19,6 +21,7 @@ public partial class GalleryImageService : IGalleryImageService
     public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
     {
         string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
+        _logger.LogTrace("Trying to get GalleryImages for Culture: {culture}", cultureString);
         var galleryImages = cultureString switch
         {
             "de" => await GetDEGalleryImagesAsync(ct),
@@ -33,7 +36,9 @@ public partial class GalleryImageService : IGalleryImageService
     #region With resw
     private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
     {
+        // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2), ct);
+        _logger.LogTrace("Trying to get GalleryImages from Resw");
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
@@ -72,6 +77,7 @@ public partial class GalleryImageService : IGalleryImageService
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2),ct);
+        _logger.LogTrace("Creating DE GalleryImages without resw");
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(
@@ -108,6 +114,7 @@ public partial class GalleryImageService : IGalleryImageService
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2), ct);
+        _logger.LogTrace("Creating EN GalleryImages without resw");
         var galleryImages = new GalleryImageModel[]
         {
             new GalleryImageModel(

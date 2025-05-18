@@ -11,17 +11,26 @@ public partial record CodeSampleService<SampleOptions> : ICodeSampleService<Samp
         _logger = logger;
         _storage = storage;
         if (_logger.IsEnabled(LogLevel.Trace))
+        {
+            _logger.LogTrace("Initializing options for {serviceName}...",
+                nameof(CodeSampleService<SampleOptions>));
+        }
+        if (_logger.IsEnabled(LogLevel.Debug))
         { 
             // Log LineRanges for each sample option
             foreach (var sample in _options.Samples)
             {
-                _logger.LogTrace("SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                _logger.LogDebug("\tSampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
                     sample.SampleID,
                     sample.Description,
                     sample.FilePath,
                     sample.LineRanges);
                                  
             }
+        }
+        else if (_logger.IsEnabled(LogLevel.Trace))
+        {
+            _logger.LogTrace("Gathered {count} Options", _options.Samples.Length);
         }
     }
 
@@ -46,8 +55,20 @@ public partial record CodeSampleService<SampleOptions> : ICodeSampleService<Samp
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         await Task.Delay(1);
+        _logger.LogTrace("Collecting available code sample options from appsettings.sampledata.json...");
         var sampleOptions = _options.Samples.Select(sample => sample.SampleID).ToImmutableList();
-        _logger.LogInformation("Options:\n{options}", sampleOptions.JoinBy("," + Environment.NewLine));
+        
+        if (_logger.IsEnabled(LogLevel.Debug))
+        {
+            // Log available options
+            _logger.LogDebug("Available Options:\n{options}", sampleOptions.JoinBy("," + Environment.NewLine));
+        }
+        else if (_logger.IsEnabled(LogLevel.Trace))
+        {
+            // Log available options
+            _logger.LogTrace("Gathered {count} Options", sampleOptions.Count);
+        }
+
         return sampleOptions; 
     }
 
@@ -57,7 +78,7 @@ public partial record CodeSampleService<SampleOptions> : ICodeSampleService<Samp
         {
             if(_logger.IsEnabled(LogLevel.Trace))
             {
-                _logger.LogTrace("SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                _logger.LogTrace("Fetching Storage Data for SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
                     sampleOption.SampleID,
                     sampleOption.Description,
                     sampleOption.FilePath,
@@ -66,9 +87,8 @@ public partial record CodeSampleService<SampleOptions> : ICodeSampleService<Samp
 
             return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath,sampleOption.LineRanges.Select(lr => (lr.Start, lr.End)));
         }
-        
 
-        _logger.LogWarning("Code sample with ID {sampleID} not found", sampleID);
+        _logger.LogError("Code sample with ID {sampleID} not found", sampleID);
         return string.Empty;
     }
 }
