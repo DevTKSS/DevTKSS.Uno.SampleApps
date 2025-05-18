@@ -32,18 +32,22 @@ The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overv
 - Grid
 - NavigationView
 - `ItemOverlayTemplate` DataTemplate layout replicated from WinUI 3 Gallery
+- TabBar & TabBarItem
 
 ### Uno.Extensions to be explored here
 
 - Mvux
+  - ListFeed
+  - State
 - Navigation
   - via Xaml
 - Hosting
 - DependencyInjection
 - Serialization
   - JsonSerializerContext of each DataModel
+  - Using multiple `JsonSerializable(typeof...)` Attributes to extend the `CodeSampleOptionsContext.Default.<...>` Items
 - Configuration
-  - Data for Serialization load from `appsettings.json`
+  - Data for Serialization load from separate `appsettings.sampledata.json`
 - Storage
   - Directly in the Model Definition
   - Via Service
@@ -75,18 +79,21 @@ The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overv
 - [x] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app  
   - [x] [Working State of DashboardPage](https://github.com/DevTKSS/UnoHotDesignApp1/commit/98fa25af8f23bb27c2dccac39d9248f3fc7254dd)  
   - [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes  
-  - [ ] Updating the Code Samples in Assets  
-- [ ] (Re)record the video to show a final step by step Guide to Beginners like me and simplify the start with uno.extensions with Mvux.  
+  - [x] Updating the Code Samples in Assets  
+- [ ] Record video guides in English and German Language to provide a step by step Guide for Beginners like me and simplify the start with uno.extensions with Mvux.
+  - [x] Xaml Navigation with NavigationView (pending release)
+    - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
+
 <!--markdownlint-disable MD026 -->
 ## Help Welcome!
 
-If you want to help out, please feel free to open an issue or PR.  
+If you want to help out, please feel free to open an [issue](./issues) or PR.
 
-Every helping hand is welcom and I will try to merge it as soon as possible.  
+Every helping hand is welcome and I will try to review and merge it as soon as possible.
 
-## See also  
+## See also
 
 - [Uno Platform](https://platform.uno/)  
-  - [Documentation Intro](https://platform.uno/docs/articles/intro.html)  
-  - [Mvux Documentation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)  
+  - [Documentation Intro](https://platform.uno/docs/articles/intro.html)
+  - [Mvux Documentation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
   - [FeedView Control](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/FeedView.html)

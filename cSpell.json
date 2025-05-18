@@ -6,7 +6,9 @@
         // Add custom words here
         "DevTKSS",
         "Listboard",
-        "Mvux"
+        "Mvux",
+        "appsettings",
+        "sampledata"
     ],
     "ignoreWords": [],
     "ignorePaths": [
