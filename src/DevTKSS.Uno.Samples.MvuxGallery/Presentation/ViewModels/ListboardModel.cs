@@ -46,7 +46,7 @@ public partial record ListboardModel
     /// <summary>
     /// Gets a feed of gallery images to be displayed.
     /// </summary>
-    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(this._galleryImageService.GetGalleryImagesWithoutReswAsync);
+    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
 
     /// <summary>
     /// Gets the title of the Listboard.
@@ -61,7 +61,7 @@ public partial record ListboardModel
     /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
     /// </remarks>
     public IListFeed<string> CodeSampleOptions => ListFeed.Async(_codeSampleService.GetCodeSampleOptionsAsync)
-                                                      .Selection(SelectedOption);
+                                                          .Selection(SelectedOption);
 
     /// <summary>
     /// Represents the selected code sample option.
@@ -69,13 +69,29 @@ public partial record ListboardModel
     /// <remarks>
     /// Uses <see cref="string.Empty"/> as the default value to avoid null checks in the XAML.
     /// </remarks>
-    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty);
+    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
+                                                         .ForEach(SwitchCodeSampleAsync);
 
     /// <summary>
     /// Represents the content of the currently selected code sample.
     /// </summary>
-    public IFeed<string> CurrentCodeSample => SelectedOption.SelectAsync((sample, ct)=> _codeSampleService.GetCodeSampleAsync(sample, ct));
+    public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
 
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
+    {
+        _logger.LogTrace("{methodName} called with selectedOption: '{SelectedOption}'",nameof(SwitchCodeSampleAsync), selectedOption);
+
+        if (string.IsNullOrWhiteSpace(selectedOption))
+        {
+            _logger.LogTrace("selectedOption is null or whitespace. Attempting to get default from CodeSampleOptions.");
+            var options = await CodeSampleOptions;
+            selectedOption = options.FirstOrDefault(string.Empty);
+            _logger.LogTrace("selectedOption updated to: '{SelectedOption}' after fetching options.", selectedOption);
+        }
+        string codeSample = await _codeSampleService.GetCodeSampleAsync(selectedOption, ct);
+        _logger.LogTrace("Loaded code sample for option '{SelectedOption}': {CodeSample}", selectedOption, codeSample);
+        await CurrentCodeSample.SetAsync(codeSample, ct);
+    }
     #endregion
 
     #region ViewHeaderContent

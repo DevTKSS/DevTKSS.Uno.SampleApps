@@ -37,7 +37,7 @@ public partial record DashboardModel
     /// </remarks>
     public IState<HeaderContent> ViewHeaderContent => State<HeaderContent>.Value(this,
         () => new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
-                    Caption: _stringLocalizer["GridViewTitle"]));
+                                Caption: _stringLocalizer["GridViewTitle"]));
     #endregion
 
     #region CodeSample import directly in the Model
@@ -104,16 +104,16 @@ public partial record DashboardModel
     /// <summary>
     /// Switches the <see cref="CurrentCodeSample"/> to the selected item in <see cref="CodeSampleOptions"/>
     /// </summary>
-    /// <param name="choice">The selected item, provide-able via CommandParameter, prefer to let it get it via the <see cref="FeedParameterAttribute"/></param>
+    /// <param name="selectedOption">The selected item, provide-able via CommandParameter, prefer to let it get it via the <see cref="FeedParameterAttribute"/></param>
     /// <param name="ct">A cancellation token for the operation to update the <see cref="CurrentCodeSample"/></param>
     /// <returns>A ValueTask to be awaited</returns>
     /// <remarks>
     /// Uses switch expression to select the correct code sample which provides better performance and less boilerplate code.
     /// </remarks>
-    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? choice, CancellationToken ct = default)
+    public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
     {
-        _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {choice}", choice);
-        await CurrentCodeSample.SetAsync(choice switch
+        _logger.LogTrace("SwitchCodeSampleAsync called with parameter: {selectedOption}", selectedOption);
+        await CurrentCodeSample.SetAsync(selectedOption switch
         {
             "C# in Model" => await _storage.ReadPackageFileAsync("Assets/Samples/ModelBinding-Sample.cs.txt"),
             "DI Service Resw" => await _storage.ReadPackageFileAsync("Assets/Samples/GalleryImageService-resw.cs.txt"),

@@ -14,17 +14,25 @@ public partial record SimpleCardsModel
 
 
     #region CodeSample import
+    public IListFeed<string> CodeSampleOptions => ListFeed<string>.Async(_sampleService.GetCodeSampleOptionsAsync)
+                                                                  .Selection(SelectedOption);
+    public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
+                                                         .ForEach(SwitchCodeSampleAsync);
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
-    public async Task GetCodeSampleAsync(object? content)
+   
+    public async ValueTask SwitchCodeSampleAsync(string? selectedOption,CancellationToken ct = default)
     {
-        string? CodeSample = content?.ToString() switch
-        {
-            "XAML" => await _storage.ReadPackageFileAsync("Assets/Samples/SimpleCardSample.xaml.txt"),
-            "C#" => await _storage.ReadPackageFileAsync("Assets/Samples/SimpleCardSample.cs.txt"),
-            _ => string.Empty
-        };
+        _logger.LogTrace("{method} called with parameter: {selectedOption}", nameof(SwitchCodeSampleAsync), selectedOption);
 
-        await CurrentCodeSample.SetAsync(CodeSample);
+        if (string.IsNullOrWhiteSpace(selectedOption))
+        {
+            var options = await CodeSampleOptions;
+            selectedOption = options.FirstOrDefault(string.Empty);
+        }
+
+        var sample = await _sampleService.GetCodeSampleAsync(selectedOption, ct);
+
+        await CurrentCodeSample.SetAsync(sample, ct);
     }
     #endregion
 }
