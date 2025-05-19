@@ -6,4 +6,4 @@ items:
   href: Overview.md
 - name: Xaml Navigation
   uid: DevTKSS.Uno.SampleApps.MvuxGallery.XamlNavigation
-  href: How-To-XamlNavigation
+  href: How-To-XamlNavigation.md

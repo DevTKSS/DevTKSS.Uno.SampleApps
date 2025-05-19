@@ -81,7 +81,7 @@ The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overv
   - [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes  
   - [x] Updating the Code Samples in Assets  
 - [ ] Record video guides in English and German Language to provide a step by step Guide for Beginners like me and simplify the start with uno.extensions with Mvux.
-  - [x] Xaml Navigation with NavigationView (pending release)
+  - [x] Video Tutorial Xaml Navigation with NavigationView --> pending release (German Language)
     - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
 
 <!--markdownlint-disable MD026 -->
