@@ -1,9 +1,8 @@
 using System.Text.Json;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Uno.Resizetizer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
+
 public partial class App : Application
 {
     /// <summary>
@@ -81,10 +80,10 @@ public partial class App : Application
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
 
                         .AddSingleton<ICodeSampleService<MainSampleOptions>, CodeSampleService<MainSampleOptions>>()
-                        .AddSingleton<ICodeSampleService<ListboardSampleOptions>,CodeSampleService<ListboardSampleOptions>>()
+                        .AddSingleton<ICodeSampleService<ListboardSampleOptions>, CodeSampleService<ListboardSampleOptions>>()
                         .AddSingleton<ICodeSampleService<SimpleCardsSampleOptions>, CodeSampleService<SimpleCardsSampleOptions>>()
                         .AddSingleton<ICodeSampleService<CounterSampleOptions>, CodeSampleService<CounterSampleOptions>>()
-                        //.AddSingleton<ICodeSampleService<DashboardSampleOptions>, CodeSampleService<DashboardSampleOptions>>()
+                //.AddSingleton<ICodeSampleService<DashboardSampleOptions>, CodeSampleService<DashboardSampleOptions>>()
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>
@@ -106,7 +105,7 @@ public partial class App : Application
                         )
             );
         MainWindow = builder.Window;
-        
+
 #if DEBUG
         MainWindow.UseStudio();
 #endif

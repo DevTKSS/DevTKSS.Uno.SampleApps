@@ -8,7 +8,12 @@
         "Listboard",
         "Mvux",
         "appsettings",
-        "sampledata"
+        "sampledata",
+        "Resizetizer"
+    ],
+    "dictionaries": [
+        "csharp",
+        "companies"
     ],
     "ignoreWords": [],
     "ignorePaths": [
