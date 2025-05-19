@@ -83,3 +83,13 @@ Den Namespace, den wir in einer Xaml-basierten Navigation in einer Uno Anwendung
 
 *Coming soon...*
 <!-- [!Video [How-To-Uno-XamlNavigation](../images/How-To-Uno-XamlNavigation.mp4)] -->
+
+## Future Readings
+
+### Uno Documentation links
+
+- [How-To: Navigate in Xaml](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
+- [How-To: Define Routes](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-DefineRoutes.html)
+- [How-To: Regions](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-Regions.html)
+- [How-To: Use NavigationView to Switch Views](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/Advanced/HowTo-UseNavigationView.html)
+- [How-To: IRouteNotifier](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/Advanced/HowTo-IRouteNotifier.html) (*möglicherweise fehlerhaft aktuell*)
