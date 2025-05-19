@@ -21,7 +21,7 @@ The samples in this Repository are meant to help other Developers, independent t
 
 ## Mvux Gallery
 
-![Mvux Gallery ShowCase](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/images/MvuxGallery-ShowCase.gif)
+![Mvux Gallery ShowCase](./doc/articles/images/MvuxGallery-ShowCase.gif)
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples/DevTKSS.Uno.Samples.MvuxGallery) App.
 The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overview.md)
