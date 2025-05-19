@@ -4,14 +4,18 @@ uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview
 
 ## Mvux Gallery
 
-At the [Mvux Gallery](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) you can explore the following features:
+The [Mvux Gallery (source link)](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) Tutorials are currently:
+
+- [How-To: Xaml Navigation mit NavigationView (deutschsprachig)](./How-To-XamlNavigation.md)
 
 ### Controls
 
+Here is a list of Controls and Features you can explore in the MvuxGallery App with links to their Source code in this Repository.
+
 - [Card](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/SimpleCardsPage.xaml)
 - [Counter](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/CounterPage.xaml) and [CounterModel](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/CounterModel.cs)
-- [FeedView + GridView](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml)and [Model](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
-- [FeedView + ListView](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/ListboardPage.xaml)and [Model](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
+- [FeedView + GridView](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) and [Model](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
+- [FeedView + ListView](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/ListboardPage.xaml) and [Model](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
 - [DataTemplate centralized Resource Definition](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml)
 - [`ItemOverlayTemplate` DataTemplate](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml) (*Layout replicated from WinUI 3 Gallery*)
 - [TabBar and TabBarItem](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) and [Model for Binding Items to ListFeed](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
@@ -50,35 +54,38 @@ At the [Mvux Gallery](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) you can exp
     - [CodeSampleOptionsContext](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleOptions.cs)
     - [CodeSampleOptionsConfiguration](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleOptionsConfiguration.cs)
 
+    > [!NOTE]
+    > Currently `ValueTuple<int,int>` and `Dictionary<string, CodeSampleOption>` Definitions of IOptions loaded Settings could'nt get successfully loaded, therefore this is defined as Array for Workaround.
+
 - Configuration
   - Data for Serialization  
     - [appsettings.sampledata.json](../../../src/DevTKSS.Uno.Samples.MvuxGallery/appsettings.sampledata.json)
+    - [`IOptions<CodeSampleOptionsConfiguration>` in Service](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleService.cs)
 
 - Storage
   - Via Model
     - [DashboardModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
   - Via Service
     - [CodeSampleService.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleService.cs)
-  - Via StorageExtension
-    - Currently in private preview package
-  - Via Uno.Extensions.Storage.IStorage Interface extension
+  - Via [own StorageExtensions](../../../src/DevTKSS.Extensions.Uno/StorageExtensions.cs) and [IEnumerableExtensions](../../../src/DevTKSS.Extensions.Uno/EnumerableExtensions.string.cs) (*temporary imported until PR might get merged or Package gets published*)
+  - Via Uno.Extensions.Storage.StorageExtensions
     - added as PR to Uno.Extensions [#2734](https://github.com/unoplatform/uno.extensions/pull/2734)
 
 - Localization
   - **IStringLocalizer**
-    - Resources Dictionaries
+    - Resources Dictionaries (*I recommend to lookup those links using Visual Studio 2022*)
       - [en](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Strings/en/)
       - [de](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Strings/de/)
-    - Binding current value in `IState<string>` and to corresponding View  
+    - Binding current value in `IState<string>` and to corresponding View
       - [DashboardModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
       - [ListboardModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
       - [MainModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/MainModel.cs)
-      - CounterModel.cs  
-    - Requesting localized Items via FeedView  
-      - Service Definition  
+      - [CounterModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/CounterModel.cs)
+    - Requesting localized Items via FeedView
+      - Service Definition
         - [GalleryImageService.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/GalleryImages/GalleryImageService.cs)
         - [IGalleryImageService.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/GalleryImages/IGalleryImageService.cs)
-      - Data Model Definition  
+      - Data Model Definition
         - [GalleryImageModel.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Models/GalleryImages/GalleryImageModel.cs)
   - **ILocalizationService**
     - Requesting current culture

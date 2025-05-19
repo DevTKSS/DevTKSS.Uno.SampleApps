@@ -3,13 +3,13 @@
     "version": "0.2",
     "language": "en,de",
     "words": [
-        // Add custom words here
+        "appsettings",
         "DevTKSS",
         "Listboard",
         "Mvux",
-        "appsettings",
-        "sampledata",
-        "Resizetizer"
+        "Resizetizer",
+        "resw",
+        "sampledata"
     ],
     "dictionaries": [
         "csharp",

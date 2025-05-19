@@ -8,13 +8,7 @@ Jede Anwendung, die mehr als eine einzige Seite umfasst oder eben nicht vollkomm
 Grundlegend enthält es die gleichen Bausteine wie man es von einer Navigation mittels Landkarte und Co kennt:
 
 - **Eine Sammlung von `ViewMap`'s**, mit der wir dem Navigator mitteilen, welche Seite mit welchen Daten zusammengehört. Das kann ein ViewModel oder auch spezifischen Daten sein, wobei es dann ein `DataViewMap` element zusätzlich wird.
-- **Eine hierarchisch aufgebaute `Routes` Sammlung**, mit der wir dem Navigator mitteilen, in welcher Relation die verschiedenen Routen zueinander stehen. Wenn wir keine Relation in dem Sinne haben, dann wäre es eine schlichte flache Liste, aber sagen wir mal, wir wollen eine seitliche Navigationsleiste (hierzu können wir bspw. TabBar oder NavigationView nutzen) haben, dann wird das oberste Element in dem eben diese Navigationssteuerelemente UI technisch definiert sind, zum hierarchisch übergeordneten Element auch in unseren Routes:
-
-    ```plaintext
-    - MainPage mit NavigationView
-        - SecondPage
-        - ThirdPage
-    ```
+- **Eine hierarchisch aufgebaute `Routes` Sammlung**, mit der wir dem Navigator mitteilen, in welcher Relation die verschiedenen Routen zueinander stehen. Wenn wir keine Relation in dem Sinne haben, dann wäre es eine schlichte flache Liste, aber sagen wir mal, wir wollen eine seitliche Navigationsleiste (hierzu können wir bspw. TabBar oder NavigationView nutzen) haben, dann wird das oberste Element in dem eben diese Navigationssteuerelemente UI technisch definiert sind, zum hierarchisch übergeordneten Element auch in unseren Routes, hierzu aber später mehr.
 
 ## Voraussetzungen erfüllen
 
@@ -22,7 +16,7 @@ Bevor es los geht, prüft bitte mit `Uno.Check` ob eure Entwicklungs-Umgebung st
 
 Solltet ihr schon eine existierende Uno Anwendung haben, prüft einfach mal in der .csproj Datei, ob ihr in der `UnoFeatures` Sammlung die Elemente `Hosting` und `Navigation` habt und fügt diese hinzu, wenn das nicht bereits der Fall sein sollte.
 
-Des weiteren benötigt eure App.xaml.cs Datei folgende Elemente:
+Des weiteren benötigt eure App.xaml.cs Datei folgende Elemente als Anfangs Inhalt:
 
 <!--![code-csharp[](../../../src/DevTKSS.Uno.Samples.MvuxGallery/App.xaml.cs?highlight=L19-L23,L96,L110,L113-L115,L124-L130)] TODO: uncomment as soon as the docs are DocFx generated-->
 ```diff
