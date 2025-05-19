@@ -31,7 +31,7 @@ public partial record SimpleCardsModel
             selectedOption = options.FirstOrDefault(string.Empty);
             _logger.LogTrace("selectedOption updated to: '{SelectedOption}' after fetching options.", selectedOption);
         }
-        string codeSample = await _codeSampleService.GetCodeSampleAsync(selectedOption, ct);
+        string codeSample = await _sampleService.GetCodeSampleAsync(selectedOption, ct);
         _logger.LogTrace("Loaded code sample for option '{SelectedOption}': {CodeSample}", selectedOption, codeSample);
         await CurrentCodeSample.SetAsync(codeSample, ct);
     }

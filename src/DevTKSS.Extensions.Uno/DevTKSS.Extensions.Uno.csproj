@@ -2,6 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
 	<OutputType>Library</OutputType>
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
 	<PropertyGroup>
 		<AssemblyName>DevTKSS.Extensions.Uno</AssemblyName>

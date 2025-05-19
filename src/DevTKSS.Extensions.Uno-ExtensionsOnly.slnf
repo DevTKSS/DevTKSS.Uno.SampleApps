@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "DevTKSS.Uno.Samples.sln",
+    "projects": [
+      "DevTKSS.Extensions.Uno\\DevTKSS.Extensions.Uno.csproj"
+    ]
+  }
+}
