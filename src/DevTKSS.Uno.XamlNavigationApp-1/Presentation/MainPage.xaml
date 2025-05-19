@@ -1,0 +1,37 @@
+﻿<Page x:Class="DevTKSS.Uno.XamlNavigationApp.Presentation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:DevTKSS.Uno.XamlNavigationApp.Presentation"
+      xmlns:uen="using:Uno.Extensions.Navigation.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:um="using:Uno.Material"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+    <Page.Resources>
+        <!--<Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>-->
+        <!--Would expect this to be not needed when setting IsTitleBarAutoPaddingEnabled to false, but that does not do anything, so use this instead.
+          https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
+    </Page.Resources>
+    <NavigationView uen:Region.Attached="True"
+                    Header="{Binding Title}"
+                    IsBackEnabled="False"
+                    IsBackButtonVisible="Collapsed"
+                    IsPaneToggleButtonVisible="True"
+                    PaneDisplayMode="Auto"
+                    IsSettingsVisible="False"
+                    IsTitleBarAutoPaddingEnabled="False">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home"
+                                uen:Region.Name="Dashboard"
+                                Icon="Home" />
+            <NavigationViewItem Content="Eine Liste"
+                                uen:Region.Name="Second"
+                                Icon="AddFriend" />
+        </NavigationView.MenuItems>
+        <NavigationView.Content>
+            <Grid uen:Region.Navigator="Visibility"
+                  uen:Region.Attached="True"
+                  Visibility="Visible" />
+        </NavigationView.Content>
+    </NavigationView>
+</Page>
