@@ -18,3 +18,8 @@ To give you a quick overview of this Documentation, here is a List of quick link
 - MvuxGallery
   - [Docs](./MvuxGallery/Overview.md)
   - [source code:](../src/DevTKSS.Uno.Samples.MvuxGallery/)
+
+## Next Steps
+
+- [Getting started!](./getting-started.md)
+
