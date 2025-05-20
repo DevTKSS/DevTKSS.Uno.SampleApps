@@ -16,16 +16,20 @@ The samples in this Repository are meant to help other Developers, independent t
     - [Uno.Extensions to be explored here](#unoextensions-to-be-explored-here)
     - [Known Issues](#known-issues)
   - [Tutorials](#tutorials)
-    - [German Language](#german-language) 
+    - [German Language](#german-language)
   - [Help Welcome!](#help-welcome)
   - [See also](#see-also)
 
 ## Mvux Gallery
 
+![Mvux Gallery Showcase Thumbnail](./doc/articles/images/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+
+**Wanna see a quick showcase, what to explore there?**
+
 ![Mvux Gallery ShowCase](./doc/articles/images/MvuxGallery-ShowCase.gif)
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples/DevTKSS.Uno.Samples.MvuxGallery) App.
-The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overview.md)
+The Overview about it and its Tutorials you can find [here](./doc/articles/MvuxGallery/Overview.md)
 
 ### Controls to be explored in this App
 
@@ -72,14 +76,17 @@ The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overv
 
 - [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes
 - [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](./issues/6))
-- [ ] Missing Information about how to use `NamedOptions` at the point they should get retuned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applyed. So in amiss of that, we need to create a derrived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic.
+- [ ] Missing Information about how to use `NamedOptions` at the point they should get returned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applied. So in amiss of that, we need to create a derived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic.
 
 ## Tutorials
 
 ### German Language
 
 - **Xaml Navigation with NavigationView**
-  - [ ] Video Tutorial (*pending release*)
+  - Video Tutorial Playlist I recommend to check out frequently:
+
+    https://www.youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX
+
   - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
 
   Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
