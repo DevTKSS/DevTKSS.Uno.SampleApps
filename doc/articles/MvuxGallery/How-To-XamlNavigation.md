@@ -81,10 +81,12 @@ Den Namespace, den wir in einer Xaml-basierten Navigation in einer Uno Anwendung
 
 ## Navigation mittels NavigationView und Seiten
 
-*Coming soon...*
-<!-- [!Video [How-To-Uno-XamlNavigation](../images/How-To-Uno-XamlNavigation.mp4)] -->
+**Intro mit Show Case der MvuxGallery als Beispiel:**
+[!Video https://www.youtube.com/embed/vVvnK02r2ug?si=aa3V7HhtglLyCuXd]
 
-## Future Readings
+(*weitere Video teile folgen!*)
+
+## Weitere interessante Informationen
 
 ### Uno Documentation links
 
