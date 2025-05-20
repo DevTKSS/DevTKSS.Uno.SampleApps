@@ -14,8 +14,9 @@ The samples in this Repository are meant to help other Developers, independent t
   - [Mvux Gallery](#mvux-gallery)
     - [Controls to be explored in this App](#controls-to-be-explored-in-this-app)
     - [Uno.Extensions to be explored here](#unoextensions-to-be-explored-here)
-    - [Fist Recording of Making-Of](#fist-recording-of-making-of)
-    - [Current state](#current-state)
+    - [Known Issues](#known-issues)
+  - [Tutorials](#tutorials)
+    - [German Language](#german-language) 
   - [Help Welcome!](#help-welcome)
   - [See also](#see-also)
 
@@ -67,27 +68,25 @@ The depending Documentation you can find [here](./doc/articles/MvuxGallery/Overv
   - **ILocalizationService**
     - Requesting current culture
 
-### Fist Recording of Making-Of
+### Known Issues
 
-> [!NOTE]
-> uncut, without sound, will be edited and re-recorded in the future, src at [this commit](https://github.com/DevTKSS/DevTKSS.MvuxSampleApps/commit/8d13dcee8107324e747d828700cfd8fcf780ca37)
->
-> This is showing the initial making of from this project at the first commits
+- [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes
+- [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](./issues/6))
+- [ ] Missing Information about how to use `NamedOptions` at the point they should get retuned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applyed. So in amiss of that, we need to create a derrived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic.
 
-<iframe src="https://technischekonstruktion.sharepoint.com/_layouts/15/embed.aspx?UniqueId=8e4c435c-50fd-4d69-82ef-a9f5bc571dd7&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Uno HotDesign App Making-Off.mp4"></iframe>
+## Tutorials
 
-### Current state
+### German Language
 
-- [x] Created a [first `working` state](https://github.com/DevTKSS/UnoHotDesignApp1/commit/9f6479fa37901a0478bbc9e1c3e92221223ce4d0)
-- [x] Restructuring, Refactoring applying SOC
-- [x] Implement SampleCode Presenting like Gallery to have the src code side by side in the running app
-  - [x] [Working State of DashboardPage](https://github.com/DevTKSS/UnoHotDesignApp1/commit/98fa25af8f23bb27c2dccac39d9248f3fc7254dd)
-  - [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes
-  - [x] Updating the Code Samples in Assets
-- [ ] Record video guides in English and German Language to provide a step by step Guide for Beginners like me and simplify the start with uno.extensions with Mvux.
-  - [x] Video Tutorial Xaml Navigation with NavigationView --> pending release (German Language)
-    - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
+- **Xaml Navigation with NavigationView**
+  - [ ] Video Tutorial (*pending release*)
+  - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
 
+  Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
+
+  ![Image of final XamlNavigationApp](./doc/articles/images/DevTKSS.Uno.XamlNavigationApp.png)
+
+  Source Code already available in the [DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/) Project.
 <!--markdownlint-disable MD026 -->
 ## Help Welcome!
 
