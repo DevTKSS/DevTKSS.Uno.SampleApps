@@ -49,12 +49,11 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-    <!--<PackageReference Include="DevTKSS.Extensions.Uno" /> -->
     <ProjectReference Include="..\DevTKSS.Extensions.Uno\DevTKSS.Extensions.Uno.csproj" />
   </ItemGroup>
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />
-    <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PerserveNewest" />
+    <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
 

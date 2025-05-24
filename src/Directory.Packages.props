@@ -9,13 +9,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="CommunityToolkit.WinUI.Converters" Version="8.2.250402" />
-    <PackageVersion Include="DevTKSS.Extensions.Uno" Version="1.0.0-preview.1.0.0" />
   </ItemGroup>
     
     <ItemGroup>
         <PackageVersion Include="Uno.Core" Version="4.1.1" />
         <PackageVersion Include="Uno.Core.Extensions" Version="4.1.1" />
         <PackageVersion Include="Uno.Core.Extensions.Collections" Version="4.1.1" />
-        <PackageVersion Include="Uno.Extensions.Storage" Version="5.2.7" />
-    </ItemGroup>
+        <PackageVersion Include="Uno.Extensions.Storage" Version="5.3.8" />
+  </ItemGroup>
 </Project>

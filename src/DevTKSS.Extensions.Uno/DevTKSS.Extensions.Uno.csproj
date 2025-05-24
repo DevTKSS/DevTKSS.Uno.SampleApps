@@ -7,11 +7,6 @@
 	<PropertyGroup>
 		<AssemblyName>DevTKSS.Extensions.Uno</AssemblyName>
 		<RootNamespace>DevTKSS.Extensions.Uno</RootNamespace>
-		<VersionPrefix>1.0.0</VersionPrefix>
-		<VersionSuffix>preview.1.0.0</VersionSuffix>
-		<PackageVersion>$(Version)</PackageVersion>
-		<PackageTags>Extensions</PackageTags>
-		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
 		<Description>Extensions that are extending Uno Platform functionallities</Description>
 	</PropertyGroup>
 	<ItemGroup>
