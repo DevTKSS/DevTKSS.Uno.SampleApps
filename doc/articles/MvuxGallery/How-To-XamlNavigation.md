@@ -14,6 +14,10 @@ Grundlegend enthält es die gleichen Bausteine wie man es von einer Navigation m
 
 Bevor es los geht, prüft bitte mit `Uno.Check` ob eure Entwicklungs-Umgebung startklar ist. Hierzu habe ich euch eine kurze Link Sammlung zu allen dahingehenden Dokumentations-Seiten im Bereich [Getting Started](../getting-started.md) erstellt.
 
+Hier findet ihr noch ein Video in dem wir alle  hierfür notwendigen Schritte für das Desktop Target durchlaufen, nachdem Visual Studio installiert ist:
+
+[!Video https://youtu.be/oI6IZVOeQBI?si=gpYxFPMMvKrVZiCp]
+
 Solltet ihr schon eine existierende Uno Anwendung haben, prüft einfach mal in der .csproj Datei, ob ihr in der `UnoFeatures` Sammlung die Elemente `Hosting` und `Navigation` habt und fügt diese hinzu, wenn das nicht bereits der Fall sein sollte.
 
 Des weiteren benötigt eure App.xaml.cs Datei folgende Elemente als Anfangs Inhalt:
