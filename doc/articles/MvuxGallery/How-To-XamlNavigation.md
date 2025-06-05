@@ -81,8 +81,15 @@ Den Namespace, den wir in einer Xaml-basierten Navigation in einer Uno Anwendung
 
 ## Navigation mittels NavigationView und Seiten
 
-**Intro mit Show Case der MvuxGallery als Beispiel:**
+### Intro mit Show Case
+
+Anhand der MvuxGallery:
+
 [!Video https://www.youtube.com/embed/vVvnK02r2ug?si=aa3V7HhtglLyCuXd]
+
+### Erstellen und Konfiguration der App mit dem Wizard
+
+[!Video https://youtu.be/UGKidrvdKpQ?si=wXszYWvbK4R7FCUc]
 
 (*weitere Video teile folgen!*)
 
