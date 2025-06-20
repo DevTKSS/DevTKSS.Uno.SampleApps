@@ -76,7 +76,7 @@ The Overview about it and its Tutorials you can find [here](./doc/articles/MvuxG
 
 - [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes
 - [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](./issues/6))
-- [ ] Missing Information about how to use `NamedOptions` at the point they should get returned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applied. So in amiss of that, we need to create a derived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic. Following this up on #9
+- [ ] Missing Information about how to use `NamedOptions` at the point they should get returned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applied. So in amiss of that, we need to create a derived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic. Following this up on [#9](./issues/9)
 
 ## Tutorials
 
