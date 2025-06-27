@@ -403,3 +403,43 @@ FodyWeavers.xsd
 solution-config.props
 # Publish Profiles
 !**/Properties/PublishProfiles/*.pubxml
+
+# Ignore common credentials/configuration files
+*.secrets.json
+*.secret.json
+*.env
+.env.*
+!.env.sample
+secrets.json
+appsettings.*.json
+# As this Repository is meant for Sampling usage, I will include this file. There will not be stored any valid credentials in this!
+!appsettings.development.json
+usersecrets.json
+*.pfx
+*.pem
+*.key
+*.crt
+*.cer
+*.jks
+*.keystore
+*.asc
+*.gpg
+*.pgp
+*.enc
+*.password
+*.passwd
+*.credentials
+*.config.local
+*.config.secret
+*.config.secrets
+*.vault.json
+*.token
+*.auth
+*.apikey
+*.api_key
+*.private
+*.ssh
+*.id_rsa
+*.id_dsa
+*.id_ecdsa
+*.id_ed25519

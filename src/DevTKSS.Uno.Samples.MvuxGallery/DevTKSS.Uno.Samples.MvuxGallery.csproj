@@ -56,5 +56,8 @@
     <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AppData\" />
+  </ItemGroup>
 
 </Project>

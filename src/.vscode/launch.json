@@ -13,13 +13,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/UnoHotDesignApp1/bin/Debug/net8.0-desktop/UnoHotDesignApp1.dll",
+      "program": "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.SampleApps.MvuxGallery.dll",
       "args": [],
-      "launchSettingsProfile": "UnoHotDesignApp1 (Desktop)",
+      "launchSettingsProfile": "DevTKSS.Uno.SampleApps.MvuxGallery (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/UnoHotDesignApp1",
+      "cwd": "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false

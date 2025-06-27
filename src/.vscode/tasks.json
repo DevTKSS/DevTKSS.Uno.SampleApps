@@ -7,9 +7,9 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/UnoHotDesignApp1/UnoHotDesignApp1.csproj",
+        "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/DevTKSS.Uno.SampleApps.MvuxGallery.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
+        "/property:TargetFramework=net9.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
@@ -20,9 +20,9 @@
       "type": "process",
       "args": [
         "publish",
-        "${workspaceFolder}/UnoHotDesignApp1/UnoHotDesignApp1.csproj",
+        "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/DevTKSS.Uno.SampleApps.MvuxGallery.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
+        "/property:TargetFramework=net9.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
