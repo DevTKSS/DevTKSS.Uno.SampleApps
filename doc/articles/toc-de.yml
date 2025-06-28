@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
+topicHref: Willkommen.md
+items:
+- name: Übersicht
+  href: Willkommen.md
+  uid: DevTKSS.Uno.SampleApps.Intro.de
+- name: Einrichten der Entwicklungsumgebung
+  uid: DevTKSS.Setup.DevelopmentEnvironment.de
+  href: HowTo-Einrichten-der-Entwicklungsumgebung.md
+- name: Tutorials
+  items:
+  - name: How To: Navigation mit einer NavigationView in Mvux
+    uid: DevTKSS.Mvux.XamlNavigation.HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml
+    href: Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md

@@ -2,15 +2,15 @@
 uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview
 ---
 
-## Mvux Gallery
+# Mvux Gallery Overview
 
-The [Mvux Gallery (source link)](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) Tutorials are currently:
+The [Mvux Gallery (source link)](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) should give you a impression of whats possible to achieve with the Mvux and Uno.Extensions packages in your Uno Platform App.
 
-- [How-To: Xaml Navigation mit NavigationView (deutschsprachig)](./How-To-XamlNavigation.md)
+As it contains already a lot of Controls and Features, I decided to create some Tutorials to guide you through the process of building this App with some Sample Apps and added Tutorials. Take a look at the Table of Contents and Navigationbar in these Docs to see what is already available.
 
-### Controls
+## Sampled Controls
 
-Here is a list of Controls and Features you can explore in the MvuxGallery App with links to their Source code in this Repository.
+Here is a list of Controls and Features you can explore in the MvuxGallery App with links to their Source code in the MvuxGallery App:
 
 - [Card](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/SimpleCardsPage.xaml)
 - [Counter](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/CounterPage.xaml) and [CounterModel](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/CounterModel.cs)
@@ -20,7 +20,7 @@ Here is a list of Controls and Features you can explore in the MvuxGallery App w
 - [`ItemOverlayTemplate` DataTemplate](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml) (*Layout replicated from WinUI 3 Gallery*)
 - [TabBar and TabBarItem](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) and [Model for Binding Items to ListFeed](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
 
-### Uno.Extensions
+## Sampled Uno.Extensions
 
 - Mvux
   - ListFeed

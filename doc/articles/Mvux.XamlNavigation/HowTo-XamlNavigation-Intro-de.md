@@ -1,5 +1,5 @@
 ---
-uid: DevTKSS.Uno.SamplesApps.MvuxGallery.XamlNavigation
+uid: DevTKSS.Mvux.XamlNavigation.Intro-de
 ---
 # Navigieren via Xaml in Uno Apps
 

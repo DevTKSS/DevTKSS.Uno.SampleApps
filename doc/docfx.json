@@ -6,7 +6,7 @@
         {
           "src": "../src",
           "files": [
-            "**/DevTKSS.*.csproj"
+            "**/DevTKSS.Uno.Samples.MvuxGallery.csproj"
           ]
         }
       ],
@@ -22,7 +22,8 @@
         "exclude": [
           "_site/**",
           "api/Uno.Resizetizer*.yml"
-        ]
+        ],
+        "dest": "docs"
       }
     ],
     "resource": [

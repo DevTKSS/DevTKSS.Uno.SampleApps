@@ -7,18 +7,21 @@ The samples in this Repository are meant to help other Developers, independent t
 > [!TIP]
 > Check out the [Documentation](./doc/articles/introduction.md), for more a more detailed List and future coming Guides and Explanations.
 
-## Table of Contents
+**Table of Contents** *(of this ReadMe)**
 
-- [DevTKSS Uno Samples](#devtkss-uno-samples)
-  - [Table of Contents](#table-of-contents)
+- Samples in this Repository:
   - [Mvux Gallery](#mvux-gallery)
-    - [Controls to be explored in this App](#controls-to-be-explored-in-this-app)
-    - [Uno.Extensions to be explored here](#unoextensions-to-be-explored-here)
+    - [Sampled Controls](#sampled-controls)
+    - [Uno.Extensions](#sampled-unoextensions)
     - [Known Issues](#known-issues)
-  - [Tutorials](#tutorials)
-    - [German Language](#german-language)
-  - [Help Welcome!](#help-welcome)
-  - [See also](#see-also)
+  - [Mvux.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/)
+  - [Tutorials](#tutorial-videos-and-used-samples)
+    - [Mvux XamlNavigation App](#mvuxxamlnavigationapp)
+
+Last but not least:
+
+- [Contributions Welcome!](#help-welcome)
+- [See also](#see-also)
 
 ## Mvux Gallery
 
@@ -29,9 +32,9 @@ The samples in this Repository are meant to help other Developers, independent t
 ![Mvux Gallery ShowCase](./doc/articles/images/MvuxGallery-ShowCase.gif)
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples/DevTKSS.Uno.Samples.MvuxGallery) App.
-The Overview about it and its Tutorials you can find [here](./doc/articles/MvuxGallery/Overview.md)
+[Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/MvuxGallery-Overview.md)
 
-### Controls to be explored in this App
+### Sampled Controls
 
 - FeedView combined with:
   - GridView
@@ -43,34 +46,18 @@ The Overview about it and its Tutorials you can find [here](./doc/articles/MvuxG
 - `ItemOverlayTemplate` DataTemplate layout replicated from WinUI 3 Gallery
 - TabBar & TabBarItem
 
-### Uno.Extensions to be explored here
+### Sampled Uno.Extensions
 
 - Mvux
-  - ListFeed
-  - State
 - Navigation
   - via Xaml
-- Hosting
-- DependencyInjection
+- Hosting (App Host Builder)
+- Dependency Injection
 - Serialization
-  - JsonSerializerContext of each DataModel
-  - Using multiple `JsonSerializable(typeof...)` Attributes to extend the `CodeSampleOptionsContext.Default.<...>` Items
 - Configuration
   - Data for Serialization load from separate `appsettings.sampledata.json`
 - Storage
-  - Directly in the Model Definition
-  - Via Service
-  - Via StorageExtension
-    - Referenced currently in private preview package
-  - Via Uno.Extensions.Storage.IStorage Interface extension
-    - added as PR to Uno.Extensions [#2734](https://github.com/unoplatform/uno.extensions/pull/2734)
 - Localization
-  - **IStringLocalizer**
-    - Resources Dictionaries
-    - Binding current value in `IState<string>` and to corresponding View
-    - Requesting localized Items via FeedView
-  - **ILocalizationService**
-    - Requesting current culture
 
 ### Known Issues
 
@@ -78,22 +65,27 @@ The Overview about it and its Tutorials you can find [here](./doc/articles/MvuxG
 - [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](./issues/6))
 - [ ] Missing Information about how to use `NamedOptions` at the point they should get returned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applied. So in amiss of that, we need to create a derived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic. Following this up on [#9](./issues/9)
 
-## Tutorials
+## Tutorial Videos and used Samples
 
-### German Language
+To show you how to get to the end result of the Mvux Gallery App, I created a Tutorial Video that will guide you through the process of building this App with the following Sample Apps and added Documentation.
 
-- **Xaml Navigation with NavigationView**
-  - Video Tutorial Playlist I recommend to check out frequently:
+### Mvux.XamlNavigationApp
 
-    https://www.youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX
+You want to use Mvux as your Presentation in Uno Platform Apps?
+You would like to use a NavigationView Control for the base Navigation Layout of your App?
+Your Markup is Xaml and you would like to get to know how the NavigationExtensions can help you to achieve this?
+Then this is the right Sample App for you, learning how to do this!
 
-  - [Documentation in German Language](./doc/articles/MvuxGallery/How-To-XamlNavigation.md)
+Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
 
-  Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
+![Image of final XamlNavigationApp](./doc/articles/images/DevTKSS.Uno.XamlNavigationApp.png)
 
-  ![Image of final XamlNavigationApp](./doc/articles/images/DevTKSS.Uno.XamlNavigationApp.png)
+Select your preferred Language for the Tutorial for this:
 
-  Source Code already available in the [DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/) Project.
+- [German Language](./doc/articles/Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)
+- [English Language](./doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
+
+[Source Code of the DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/) Project.
 <!--markdownlint-disable MD026 -->
 ## Help Welcome!
 

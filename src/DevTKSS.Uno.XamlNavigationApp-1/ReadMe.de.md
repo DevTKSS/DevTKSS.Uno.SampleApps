@@ -1,4 +1,8 @@
-# DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp-de
+---
+uid: DevTKSS.Uno.XamlNavigationApp-1
+---
+
+# DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp
 
 Willkommen bei der Uno Platform und insbesondere bei diesem Community-Tutorial-Beispiel!
 
@@ -14,8 +18,8 @@ Diese Beispiel-App ist Teil eines Community-Tutorials, das dich durch den Prozes
 
 Bitte wähle die Sprache deiner Wahl, um dem Tutorial zu folgen:
 
-- [Deutsche Version](../../doc/articles/Mvux.XamlNavigationApp/HowTo-XamlNavigation.md)
-- [Englische Version](../../doc/articles/Mvux.XamlNavigationApp/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
+- [Deutsche Version](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)
+- [Englische Version](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
 
 ## Mitwirken
 

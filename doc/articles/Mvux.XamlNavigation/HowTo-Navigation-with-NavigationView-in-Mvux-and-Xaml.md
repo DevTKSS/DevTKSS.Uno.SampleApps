@@ -1,8 +1,8 @@
 ---
-uid: Mvux.XamlNavigationApp.HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml
+uid: DevTKSS.Mvux.XamlNavigation.HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml
 ---
 
-## How-To: Navigating with a NavigationView in a XAML Markup + MVUX Presentation App
+# How-To: Navigating with a NavigationView in a XAML Markup + MVUX Presentation App
 
 This sample demonstrates how to use a `NavigationView` control to navigate between pages in a XAML Markup + MVUX Presentation App. The app is structured to allow for easy navigation and showcases the MVUX pattern, with focus on brevity and simplicity.
 
@@ -12,7 +12,7 @@ This sample demonstrates how to use a `NavigationView` control to navigate betwe
 - Routes defined in the `App.xaml` file.
 - A `MainPage.xaml` that serves as the entry point for navigation.
 - `DashboardPage` and `SecondPage` as example pages to navigate to.
-- Each of the pages binds to a string statefull property to demonstrate state management gatered by the MVUX.
+- Each of the pages binds to a string stateful property to demonstrate state management gathered by the MVUX.
 
 As this SampleApp is produces alongside a Community Tutorial Video on YouTube, you can follow along with the video to see how the app is built step-by-step.
 
@@ -21,7 +21,7 @@ As this SampleApp is produces alongside a Community Tutorial Video on YouTube, y
 > [!NOTE]
 > Currently, the Videos are only available in German Language, but there are Transcriptions added to the Video Description, which should be useable through YouTube's Auto-Translate feature. There are also plans to create English Videos for this SampleApp in the future.
 
-### Prerequisites
+## Prerequisites
 
 - Visual Studio 2022 or later with the Uno Platform extension installed.
 - `uno-check --tfm net9.0-desktop` command executed in the Terminal gives you green light for all applyable checks.
@@ -34,14 +34,14 @@ To configure the app using the Visual Studio Wizard, follow these steps:
 
 1. Create a new Uno Platform App:
 
-  1. Select the `recommended` Template.
-  1. Select the `net9.0` target framework.
-  1. Select `Xaml` as Markup.
-  1. Select `MVUX` as Presentation.
-  1. Select `Regions`, `Dependency Injection`,   as Extensions.
-  1. *Optional: `Toolkit` `Localization`, `Configuration`*
+   1. Select the `recommended` Template.
+   2. Select the `net9.0` target framework.
+   3. Select `Xaml` as Markup.
+   4. Select `MVUX` as Presentation.
+   5. Select `Regions`, `Dependency Injection`,   as Extensions.
+   6. *Optional: `Toolkit` `Localization`, `Configuration`*
 
-1. Click `Create` to generate the app.
+2. Click `Create` to generate the app.
 
 ### [Configuring the App using the CLI](#tab/cli)
 
@@ -67,4 +67,4 @@ Now you can get started with the navigation in your app! In this video, I will s
 
 [!Video [Navigation in Xaml und Mvux mit Navigation View](https://youtu.be/knt2oOjHH30?si=PNgis0v9ZTR4LRsF)]
 
-[Discover the Source Code](./)
+[Discover the Source Code](../../../src/DevTKSS.Uno.XamlNavigationApp-1/)

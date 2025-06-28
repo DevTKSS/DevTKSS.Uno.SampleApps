@@ -1,5 +1,5 @@
 ---
-uid: Mvux.XamlNavigationApp.HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml
+uid: DevTKSS.Mvux.XamlNavigation.HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml
 ---
 
 # How To: Navigation mit einer `NavigationView` in einer XAML-Markup + MVUX Präsentation Uno Platform App
@@ -31,7 +31,7 @@ Showcase-Video: [!Video [Navigation in Xaml und Mvux mit Navigation View (Showca
 
 ### 📺 Videoanleitung
 
-[!Video [How To: Einrichten unserer Uno Platform Entwicklungsumgebung](https://youtu.be/oI6IZVOeQBI)]]
+[!Video [How To: Einrichten unserer Uno Platform Entwicklungsumgebung](https://youtu.be/oI6IZVOeQBI)]
 
 ---
 

@@ -9,7 +9,9 @@
         "Mvux",
         "Resizetizer",
         "resw",
-        "sampledata"
+        "sampledata",
+        "dotnet",
+        "unoapp"
     ],
     "dictionaries": [
         "csharp",

@@ -19,14 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvux.XamlNavigationApp", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions.Uno.Storage", "DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj", "{0C51BF5A-7C98-4BE2-3ED6-A5796C06AB8E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
-	ProjectSection(SolutionItems) = preProject
-		DevTKSS.Uno.XamlNavigationApp-1\HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md = DevTKSS.Uno.XamlNavigationApp-1\HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md
-		DevTKSS.Uno.XamlNavigationApp-1\HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md = DevTKSS.Uno.XamlNavigationApp-1\HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md
-		DevTKSS.Uno.XamlNavigationApp-1\ReadMe.de.md = DevTKSS.Uno.XamlNavigationApp-1\ReadMe.de.md
-		DevTKSS.Uno.XamlNavigationApp-1\ReadMe.en.md = DevTKSS.Uno.XamlNavigationApp-1\ReadMe.en.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

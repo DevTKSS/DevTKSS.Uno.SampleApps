@@ -1,4 +1,8 @@
-# Getting Started
+---
+uid: DevTKSS.Setup.DevelopmentEnvironment.en
+---
+
+# How To: Setup your Development Environment for Uno Apps
 
 To setup your Development Environment for Uno Apps, please make sure, to follow the [Quick Start Guide](https://platform.uno/docs/articles/get-started.html) provided by Uno Platform which will include:
 
