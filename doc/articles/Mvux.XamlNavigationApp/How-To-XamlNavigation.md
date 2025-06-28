@@ -89,20 +89,6 @@ Den Namespace, den wir in einer Xaml-basierten Navigation in einer Uno Anwendung
 
 Anhand der MvuxGallery:
 
-[!Video https://www.youtube.com/embed/vVvnK02r2ug?si=aa3V7HhtglLyCuXd]
+[!Video [Showcase Video](https://www.youtube.com/embed/vVvnK02r2ug?si=aa3V7HhtglLyCuXd)]
 
-### Erstellen und Konfiguration der App mit dem Wizard
-
-[!Video https://youtu.be/UGKidrvdKpQ?si=wXszYWvbK4R7FCUc]
-
-(*weitere Video teile folgen!*)
-
-## Weitere interessante Informationen
-
-### Uno Documentation links
-
-- [How-To: Navigate in Xaml](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
-- [How-To: Define Routes](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-DefineRoutes.html)
-- [How-To: Regions](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-Regions.html)
-- [How-To: Use NavigationView to Switch Views](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/Advanced/HowTo-UseNavigationView.html)
-- [How-To: IRouteNotifier](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/Advanced/HowTo-IRouteNotifier.html) (*möglicherweise fehlerhaft aktuell*)
+[!INCLUDE [How-To Navigation mit NavigationView in einer Mvux Xaml App](HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)]
