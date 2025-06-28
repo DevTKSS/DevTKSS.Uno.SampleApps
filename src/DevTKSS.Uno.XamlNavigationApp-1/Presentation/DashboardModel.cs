@@ -1,4 +1,5 @@
-namespace DevTKSS.Uno.XamlNavigationApp.Presentation;
+namespace Mvux.XamlNavigationApp.Presentation;
+
 public partial record DashboardModel
 {
     public DashboardModel()

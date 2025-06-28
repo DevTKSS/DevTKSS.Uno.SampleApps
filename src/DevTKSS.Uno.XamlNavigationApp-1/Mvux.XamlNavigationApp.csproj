@@ -6,16 +6,16 @@
     <UnoSingleProject>true</UnoSingleProject>
 
     <!-- Display name -->
-    <ApplicationTitle>DevTKSS.Uno.XamlNavigationApp</ApplicationTitle>
+    <ApplicationTitle>Mvux XamlNavigationApp</ApplicationTitle>
     <!-- App Identifier -->
-    <ApplicationId>com.DevTKSS.XamlNavigationApp</ApplicationId>
+    <ApplicationId>DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp</ApplicationId>
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
     <!-- Package Publisher -->
-    <ApplicationPublisher>Sonja</ApplicationPublisher>
+    <ApplicationPublisher>DevTKSS</ApplicationPublisher>
     <!-- Package Description -->
-    <Description>DevTKSS XamlNavigationApp powered by Uno Platform.</Description>
+    <Description>DevTKSS Xaml NavigationApp using Mvux Presentation powered by Uno Platform.</Description>
 
     <!--
       UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.

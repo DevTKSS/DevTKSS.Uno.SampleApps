@@ -1,4 +1,4 @@
-namespace DevTKSS.Uno.XamlNavigationApp.Presentation;
+namespace Mvux.XamlNavigationApp.Presentation;
 
 public class ShellModel
 {

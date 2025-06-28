@@ -1,4 +1,4 @@
-namespace DevTKSS.Uno.XamlNavigationApp.Services.Endpoints;
+namespace Mvux.XamlNavigationApp.Services.Endpoints;
 
 internal class DebugHttpHandler : DelegatingHandler
 {
