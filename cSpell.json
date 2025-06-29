@@ -5,12 +5,14 @@
     "words": [
         "appsettings",
         "DevTKSS",
+        "dotnet",
         "Listboard",
         "Mvux",
+        "Mvvm",
+        "MVVM",
         "Resizetizer",
         "resw",
         "sampledata",
-        "dotnet",
         "unoapp"
     ],
     "dictionaries": [

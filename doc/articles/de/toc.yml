@@ -9,6 +9,6 @@ items:
   href: HowTo-Einrichten-der-Entwicklungsumgebung.md
 - name: Tutorials
   items:
-  - name: How To: Navigation mit einer NavigationView in Mvux
+  - name: "How To: Navigation mit einer NavigationView in Mvux"
     uid: DevTKSS.Mvux.XamlNavigation.HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml
     href: Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md

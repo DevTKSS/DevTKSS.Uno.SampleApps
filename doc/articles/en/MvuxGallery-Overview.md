@@ -4,6 +4,8 @@ uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview
 
 # Mvux Gallery Overview
 
+![MvuxGallery](../.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+
 The [Mvux Gallery (source link)](../../../src/DevTKSS.Uno.Samples.MvuxGallery/) should give you a impression of whats possible to achieve with the Mvux and Uno.Extensions packages in your Uno Platform App.
 
 As it contains already a lot of Controls and Features, I decided to create some Tutorials to guide you through the process of building this App with some Sample Apps and added Tutorials. Take a look at the Table of Contents and Navigationbar in these Docs to see what is already available.

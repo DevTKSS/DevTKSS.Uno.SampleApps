@@ -12,6 +12,12 @@ Die Tutorials helfen dir – unabhängig von deinem Vorwissen – die gezeigten 
 
 ---
 
+## Erste Schritte
+
+👉 [Umgebung einrichten für Uno Platform App-Entwicklung](./HowTo-Setup-DevelopmentEnvironment.md)
+
+---
+
 ## Aktuelle Beispiel-Apps
 
 Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos findest du jeweils im zugehörigen Kapitel des Inhaltsverzeichnisses.
@@ -25,12 +31,6 @@ Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos 
 
 - 📄 [NavigationView in MVUX + XAML](./Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)  
 - 🧩 [Zum Quellcode](../../src/DevTKSS.Uno.Samples.Mvux.XamlNavigationApp/)
-
----
-
-## Was du als Nächstes tun kannst
-
-👉 [Umgebung einrichten für Uno Platform App-Entwicklung](./HowTo-Setup-DevelopmentEnvironment.md)
 
 ---
 
