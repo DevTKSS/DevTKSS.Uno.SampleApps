@@ -157,6 +157,6 @@
     <value>Definiere die Cards Elemente direkt im XAML der Seite</value>
   </data>
   <data name="SimpleListTitle" xml:space="preserve">
-    <value>Hier gibts nur eine ListView ohne FeedView zu sehen</value>
+    <value>Hier gibt's nur eine ListView ohne FeedView zu sehen</value>
   </data>
 </root>
