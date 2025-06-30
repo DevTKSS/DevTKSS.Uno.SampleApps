@@ -7,8 +7,31 @@ items:
 - name: Einrichten der Entwicklungsumgebung
   uid: DevTKSS.Setup.DevelopmentEnvironment.de
   href: HowTo-Einrichten-der-Entwicklungsumgebung.md
-- name: Tutorials
+- name: "Dependency Injection im Konstruktor"
+  uid: DevTKSS.Uno.Setup.AddingNewClass
+  href: HowTo-Using-DI-in-ctor.md
+- name: Navigation Intro
+  uid: DevTKSS.Uno.Navigation.Intro
+  href: Navigation-Intro.md
+- name: "Uno Extensions Navigation Tutorials"
+  topicHref: DevTKSS.Uno.ExtensionsNavigation.Overview
   items:
-  - name: "How To: Navigation mit einer NavigationView in Mvux"
-    uid: DevTKSS.Mvux.XamlNavigation.HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml
-    href: Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md
+    - name:  Übersicht
+      uid: DevTKSS.Uno.ExtensionsNavigation.Overview
+      href: Mvux-Navigation/Extensions-Navigation.md
+    - name: "App erstellen (Wizard/CLI)"
+      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp
+      href: Mvux-Navigation/HowTo-CreateApp.md
+    - name: "UI mit NavigationView definieren"
+      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI
+      href: Mvux-Navigation/HowTo-Defining-UI-NavigationView.md
+    - name: "Model/ViewModel für Navigation definieren"
+      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel
+      href: Mvux-Navigation/HowTo-ModelDefinition.md
+    - name: "Routen registrieren"
+      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes
+      href: Mvux-Navigation/HowTo-RegisterRoutes.md
+    - name: "Eine bestehende App upgraden"
+      uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp
+      href: Mvux-Navigation/HowTo-UpgradeExistingApp.md
+

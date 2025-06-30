@@ -23,15 +23,15 @@
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Home"
                                 uen:Region.Name="Dashboard"
-                                Icon="Home" />
-            <NavigationViewItem Content="Eine Liste"
+                                Icon="Home"/>
+            <NavigationViewItem Content="Some View"
                                 uen:Region.Name="Second"
-                                Icon="AddFriend" />
+                                Icon="AddFriend"/>
         </NavigationView.MenuItems>
         <NavigationView.Content>
             <Grid uen:Region.Navigator="Visibility"
                   uen:Region.Attached="True"
-                  Visibility="Visible" />
+                  Visibility="Visible"/>
         </NavigationView.Content>
     </NavigationView>
 </Page>

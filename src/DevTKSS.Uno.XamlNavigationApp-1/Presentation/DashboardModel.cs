@@ -4,7 +4,7 @@ public partial record DashboardModel
 {
     public DashboardModel()
     {
-        
+
     }
     private async ValueTask<IImmutableList<string>> GetMembers(CancellationToken ct) => _listMembers;
     

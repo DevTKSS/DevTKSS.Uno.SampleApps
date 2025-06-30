@@ -2,7 +2,7 @@
 uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes
 ---
 
-# Registrieren und Verwalten von Routen
+# Anleitung: Registrieren und Verwalten von Routen
 
 Mit der `Uno.Extensions.Navigation` wird dies über eine zentrale Definition der **Routen Registrierung** in der App Klasse [`App.xaml.cs`(source link)](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs) gehandhabt, was man sich vereinfacht schlichtweg wie eine Landkarte vorstellen kann.
 
@@ -56,6 +56,12 @@ Nun wollen wir aber auf der `MainPage` vielleicht eine TabBar, NavigationBar, ei
 [!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L91-L104?highlight=96-101)]
 
 Hier siehst du, dass ich eine weitere Seite hinzugefügt habe, die `DashboardPage` und ein Model dazu erstellt habe namens `DashboardModel`. Außerdem habe ich die Route `Second` in die `RouteMap` der `Main`-Route verschachtelt.
+
+## Nützliche Informationen
+
+Bei der Benennung macht es immer Sinn, die Routen- und Seiten Element-Namen gleich zu halten. Eine `DashboardPage` würde somit klassisch `Dashboard` als Routen-Namen erhalten.
+
+Wenn du anstelle von **MVVM** das **MVUX** verwendest, solltest du darauf achten, das zur Seite oder `View` zugehörige **Model** nicht fälschlicherweise `DashboardViewModel` für die `DashboardPage` zu nennen, sondern `DashboardModel`, da der Mvux Source Code Generator das für dich erstellte `DashboardViewModel` genau so nennen wird und es sonst zu unerwarteten Problemen kommen kann.
 
 ## Nächste Schritte
 

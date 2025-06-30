@@ -1,15 +1,15 @@
 ---
-uid: DevTKSS.Setup.DevelopmentEnvironment.de
+uid: DevTKSS.Uno.Setup.DevelopmentEnvironment
 ---
 
 # 🛠️ Anleitung: Entwicklungsumgebung für Uno Platform Apps einrichten
 
-> Um mit der Entwicklung von Uno Platform Apps zu starten, werden ein paar Workloads benötigt.
+*[CLI]: Command Line Interface
 
-Als ich das (in englischer Sprache) Ende 2024, wo ich selber mit C# und der App Entwicklung mit Uno Platform begann, las da sank meine Motivation schon ungemein. Und realistisch würde wohl keiner diese dann auch noch jedes mal vor Beginn der täglichen Software Entwicklungsarbeit dann auch nochmal auf Aktualität prüfen wollen, oder?
+Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung für die Anwendungsentwicklung mit Uno Platform kinderleicht einrichten kann, beziehungsweise das CLI Tool `dotnet tool uno-check` diese Routineaufgabe für uns erledigen lassen kann.
 
-Gut dass es Uno Check gibt, welches seit dem v6 Release direkt auch in der Visual Studio Uno Platform Extension inkludiert ist, welches genau diese Routineaufgabe für uns übernimmt!
-
+> [!TIP]
+> Seit dem v6 Release von Uno (SDK & Extension) ist dieses von vorne herein auch in der Visual Studio Uno Platform Extension inkludiert!
 > [!TIP]
 > Solltest du bei der Ausführung des Tools Probleme haben, kannst du hier den zugehörigen [Offiziellen Guide zu Uno-Check von Uno Platform](https://platform.uno/docs/articles/external/uno.check/doc/using-uno-check.html) finden.
 

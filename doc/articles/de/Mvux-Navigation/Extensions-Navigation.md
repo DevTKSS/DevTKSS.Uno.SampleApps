@@ -47,6 +47,22 @@ Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
 
 - [Tutorial Routen Registrieren](HowTo-RegisterRoutes.md)
 
+## Das User Interface mit einer NavigationView erstellen
+
+- [Tutorial: Erstellen des UI mit einer NavigationView in Xaml](./HowTo-Defining-UI-NavigationView.md)
+
+## Das Model bzw. ViewModel erstellen
+
+- [Anleitung: Navigation im Model oder ViewModel](./HowTo-ModelDefinition.md)
+
+---
+
+## 📺 Tutorial Video: Navigation mit `NavigationView` in MVUX und XAML
+
+In diesem Video zeige ich dir, wie du das `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden.
+
+[!Video [Navigation in Xaml und Mvux mit Navigation View](https://youtu.be/knt2oOjHH30)]
+
 ---
 
 [Hier geht's zum Source Code der verwendeten Beispiel Anwendung XamlNavigationApp](../../../src/DevTKSS.Uno.XamlNavigationApp-1/)
