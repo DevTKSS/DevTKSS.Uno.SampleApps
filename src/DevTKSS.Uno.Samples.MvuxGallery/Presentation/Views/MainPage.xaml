@@ -55,6 +55,9 @@
                         <FontIcon x:Name="TaskView" Glyph="&#xEB91;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Simple List"
+                                    uen:Region.Name="SimpleList"
+                                    Icon="List" />
             </NavigationView.MenuItems>
 
             <NavigationView.Content>

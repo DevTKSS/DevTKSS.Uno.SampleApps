@@ -56,5 +56,15 @@
     <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Presentation\Views\SimpleListPage.xaml.cs">
+      <DependentUpon>SimpleListPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Presentation\Views\SimpleListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 
 </Project>

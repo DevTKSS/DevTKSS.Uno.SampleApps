@@ -151,9 +151,12 @@
     <value>Ein lebhafter Freigeist, der mit seinen lustigen Sprüngen und Hüpfern für pure Lebensfreude sorgt.</value>
   </data>
   <data name="WelcomeGreeting" xml:space="preserve">
-    <value>Willkommen zu meiner Uno App!</value>
+    <value>Willkommen zu meiner MvuxGallery App!</value>
   </data>
   <data name="SimpleCardsTitle" xml:space="preserve">
     <value>Definiere die Cards Elemente direkt im XAML der Seite</value>
+  </data>
+  <data name="SimpleListTitle" xml:space="preserve">
+    <value>Hier gibt's nur eine ListView ohne FeedView zu sehen</value>
   </data>
 </root>

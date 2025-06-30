@@ -122,7 +122,8 @@ public partial class App : Application
             new ViewMap<CounterPage, CounterModel>(),
             new ViewMap<DashboardPage, DashboardModel>(),
             new ViewMap<ListboardPage, ListboardModel>(),
-            new ViewMap<SimpleCardsPage, SimpleCardsModel>()
+            new ViewMap<SimpleCardsPage, SimpleCardsModel>(),
+            new ViewMap<SimpleListPage, SimpleListModel>()
         );
 
         routes.Register(
@@ -136,6 +137,7 @@ public partial class App : Application
                             new ("Listboard", View: views.FindByViewModel<ListboardModel>()),
                             new ("Counter", View: views.FindByViewModel<CounterModel>()),
                             new ("SimpleCards", View: views.FindByViewModel<SimpleCardsModel>()),
+                            new ("SimpleList", View: views.FindByViewModel<SimpleListModel>()),
                         ]
                     ),
 
