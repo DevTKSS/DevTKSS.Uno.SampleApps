@@ -151,9 +151,12 @@
     <value>A lively free spirit who bounces around spreading cheer and fun.</value>
   </data>
   <data name="WelcomeGreeting" xml:space="preserve">
-    <value>Welcome to my first Uno HotDesign App!</value>
+    <value>Welcome to the MvuxGallery App!</value>
   </data>
   <data name="SimpleCardsTitle" xml:space="preserve">
     <value>Define the Cards Elements direkty in the XAML of your Page</value>
+  </data>
+  <data name="SimpleListTitle" xml:space="preserve">
+    <value>The only one you can see here is a ListView without a FeedView.</value>
   </data>
 </root>
