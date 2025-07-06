@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
-- name: Documentation and Tutorials (en)
-  href: articles/toc-en.yml
-- name: Documentation und Tutorials (de)
-  href: articles/toc-de.yml
+- name: "Documentation & Tutorials"
+  href: articles/
+  topicHref: articles/de/Introduction-de.md
 - name: API
-  href: api/toc.yml
+  href: api/

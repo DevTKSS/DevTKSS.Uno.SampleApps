@@ -1,37 +1,24 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
-topicHref: Willkommen.md
-items:
-- name: Übersicht
-  href: Willkommen.md
+- name: Willkommen
   uid: DevTKSS.Uno.SampleApps.Intro.de
+  href: Introduction-de.md
+- name: Mvux Gallery Übersicht
+  uid: DevTKSS.Uno.Samples.MvuxGallery.Overview.de
+  href: MvuxGallery-Overview-de.md
 - name: Einrichten der Entwicklungsumgebung
   uid: DevTKSS.Setup.DevelopmentEnvironment.de
-  href: HowTo-Einrichten-der-Entwicklungsumgebung.md
+  href: HowTo-Setup-DevelopmentEnvironment-de.md
 - name: "Dependency Injection im Konstruktor"
-  uid: DevTKSS.Uno.Setup.AddingNewClass
-  href: HowTo-Using-DI-in-ctor.md
-- name: Navigation Intro
-  uid: DevTKSS.Uno.Navigation.Intro
-  href: Navigation-Intro.md
+  uid: DevTKSS.Uno.Setup.AddingNewClass.de
+  href: HowTo-Using-DI-in-ctor-de.md
+- name: "Hinzufügen von Seiten"
+  uid: DevTKSS.Uno.Setup.AddingNewPages.de
+  href: HowTo-Adding-New-Pages-de.md
+- name: "Aus Klassen ein ViewModel oder Model erstellen"
+  uid: DevTKSS.Uno.Setup.AddingNewVmClass.de
+  href: HowTo-Adding-New-VM-Class-de.md
+- name: Intro zur Navigation in Uno Apps
+  uid: DevTKSS.Uno.Navigation.Intro.de
+  href: Navigation-Intro-de.md
 - name: "Uno Extensions Navigation Tutorials"
-  topicHref: DevTKSS.Uno.ExtensionsNavigation.Overview
-  items:
-    - name:  Übersicht
-      uid: DevTKSS.Uno.ExtensionsNavigation.Overview
-      href: Mvux-Navigation/Extensions-Navigation.md
-    - name: "App erstellen (Wizard/CLI)"
-      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp
-      href: Mvux-Navigation/HowTo-CreateApp.md
-    - name: "UI mit NavigationView definieren"
-      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI
-      href: Mvux-Navigation/HowTo-Defining-UI-NavigationView.md
-    - name: "Model/ViewModel für Navigation definieren"
-      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel
-      href: Mvux-Navigation/HowTo-ModelDefinition.md
-    - name: "Routen registrieren"
-      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes
-      href: Mvux-Navigation/HowTo-RegisterRoutes.md
-    - name: "Eine bestehende App upgraden"
-      uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp
-      href: Mvux-Navigation/HowTo-UpgradeExistingApp.md
-
+  href: Navigation/toc.yml

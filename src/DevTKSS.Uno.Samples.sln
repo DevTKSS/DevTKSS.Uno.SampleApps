@@ -15,13 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Uno.Samples.MvuxGallery", "DevTKSS.Uno.Samples.MvuxGallery\DevTKSS.Uno.Samples.MvuxGallery.csproj", "{541B1686-7761-9408-94BD-1E25D46AAC83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvux.XamlNavigationApp", "DevTKSS.Uno.XamlNavigationApp-1\Mvux.XamlNavigationApp.csproj", "{AE75474D-B5FC-3152-7897-AB178447428A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Uno.XamlNavigationApp", "DevTKSS.Uno.XamlNavigationApp-1\DevTKSS.Uno.XamlNavigationApp.csproj", "{AE75474D-B5FC-3152-7897-AB178447428A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions.Uno.Storage", "DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj", "{0C51BF5A-7C98-4BE2-3ED6-A5796C06AB8E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoolUnoApp", "CoolUnoApp", "{416DB81A-62EF-0614-5B96-80A085628B65}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolUnoApp", "CoolUnoApp\CoolUnoApp\CoolUnoApp.csproj", "{85EC19F3-F10F-42E1-935B-D08065E7F9E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,18 +65,6 @@ Global
 		{88A95F19-AAAB-6B45-A5D7-8BABCE37F25C}.Release|x64.Build.0 = Release|Any CPU
 		{88A95F19-AAAB-6B45-A5D7-8BABCE37F25C}.Release|x86.ActiveCfg = Release|Any CPU
 		{88A95F19-AAAB-6B45-A5D7-8BABCE37F25C}.Release|x86.Build.0 = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|x64.Build.0 = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Debug|x86.Build.0 = Debug|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|x64.ActiveCfg = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|x64.Build.0 = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|x86.ActiveCfg = Release|Any CPU
-		{85EC19F3-F10F-42E1-935B-D08065E7F9E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

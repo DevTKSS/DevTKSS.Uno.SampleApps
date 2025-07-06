@@ -1,66 +1,95 @@
 {
-  "$schemas": [
-    "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json"
-  ],
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
   "metadata": [
     {
       "src": [
         {
-          "src": "../src",
           "files": [
-            "**/DevTKSS.Uno.Samples.MvuxGallery.csproj"
+            "**/DevTKSS.**.csproj"
+          ],
+          "src": "../src",
+          "exclude":[
+            "**/obj/**",
+            "**/Uno.**"
           ]
         }
       ],
-      "output": "api"
+      "dest": "api",
+      "disableDefaultFilter": false,
+      "categoryLayout": "nested",
+      "memberLayout": "separatePages",
+      "noRestore": true
     }
   ],
   "build": {
+      "globalMetadata": {
+      "_appTitle": "DevTKSS Sample Apps & Tutorials for Uno Platform Development",
+      "_appName": "DevTKSS.Uno.SampleApps",
+      "_appFaviconPath": "images/styled-logo.ico",
+      "_appLogoPath": "images/styled-logo-small.png",
+      "_copyrightFooter": "© 2025 Sonja Schweitzer, DevTKSS, TKSS Development, All rights reserved.",
+      "_enableSearch": true,
+      "pdf": false
+    },
     "content": [
       {
+        "files":[
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
         "files": [
-          "articles/**.{md,yml}"
-        ],
-        "exclude": [
-          "_site/**",
-          "api/Uno.Resizetizer*.yml"
+          "articles/**.{md,yml}",
+          "toc.yml"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/logo/*.{png,ico}",
+          "articles/.attachments/*.png"
+        ],
+        "dot": true
+      }
+    ],
+    "overwrite": [
+      {
+        "files":[
+          "api/**.md",
+          "api/**.yml",
+          "articles/**.md",
+          "articles/**.yml"
+        ],
+        "exclude":[
+          "obj/**",
+          "_site/**"
         ]
       }
     ],
-    "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/singulinkfx"
     ],
+    "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
     "markdownEngineProperties": {
       "markdigExtensions": [
         "yaml",
         "definitionlists",
         "diagrams",
-        "bootstrap",
-        "globalization",
         "advanced",
         "abbreviations",
         "autolinks",
-        "alertblocks",
-        "emoji",
+        "alerts",
+        "emojis",
+        "footers",
         "footnotes",
         "gridtables",
-        "media"
+        "medialinks"
       ]
     },
-    "globalMetadata": {
-      "_appTitle": "DevTKSS Sample Apps & Tutorials for Uno Platform Development",
-      "_appName": "DevTKSS.Uno.SampleApps",
-      "_enableSearch": true,
-      "pdf": false
-    }
+    "output": "_site"
   }
 }

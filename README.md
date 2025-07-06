@@ -1,11 +1,11 @@
 # DevTKSS Uno Samples
 
-Welcome to this Samples Repository! ❤️
+Welcome to this Samples and Tutorials Library! ❤️
 
-The samples in this Repository are meant to help other Developers, independent to their pre-knowledge, get an Idea of how to use the shown things.
+The samples and Tutorials in this Repository are meant to help other Developers, also German Developers like me, independent to their pre-knowledge, get an Idea of how to use the shown things.
 
 > [!TIP]
-> Check out the [Documentation](./doc/articles/introduction.md), for more a more detailed List and future coming Guides and Explanations.
+> Check out the [Documentation](./doc/en/articles/introduction.md), for more a more detailed List and future coming Guides and Explanations.
 
 **Table of Contents** *(of this ReadMe)**
 
@@ -25,14 +25,14 @@ Last but not least:
 
 ## Mvux Gallery
 
-![Mvux Gallery Showcase Thumbnail](./doc/articles/images/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+![Mvux Gallery Showcase Thumbnail](./doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
 
 **Wanna see a quick showcase, what to explore there?**
 
-![Mvux Gallery ShowCase](./doc/articles/images/MvuxGallery-ShowCase.gif)
+![Mvux Gallery ShowCase](./doc/articles/.attachments/MvuxGallery-ShowCase.gif)
 
-Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples/DevTKSS.Uno.Samples.MvuxGallery) App.
-[Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/MvuxGallery-Overview.md)
+Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples.MvuxGallery/) App.
+[Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/de/MvuxGallery-Overview.md)
 
 ### Sampled Controls
 
@@ -48,20 +48,20 @@ Following list provides you a quick Overview, what you can find in the [Mvux Gal
 
 ### Sampled Uno.Extensions
 
-- Mvux
-- Navigation
-  - via Xaml
+- [Mvux](./src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
+- [Navigation](./doc/articles/en/Navigation-Intro.md)
+  - [via Xaml](./doc/articles/en/Navigation/Extensions-Navigation.md)
 - Hosting (App Host Builder)
 - Dependency Injection
 - Serialization
 - Configuration
-  - Data for Serialization load from separate `appsettings.sampledata.json`
+  - Data for Serialization load from separate [`appsettings.sampledata.json`](./src/DevTKSS.Uno.Samples.MvuxGallery/appsettings.sampledata.json) file.
 - Storage
 - Localization
 
 ### Known Issues
 
-- [ ] Fixing ThemeResource Styled that are not seeming to listen to Theme changes
+- [ ] [ThemeResource Styled are not listening to Theme changes](./issues/13)
 - [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](./issues/6))
 - [ ] Missing Information about how to use `NamedOptions` at the point they should get returned by the IConfiguration to Configure the Service because Uno did remove the Microsoft own `.Configure<...>` which would be known, but is missing a documentation about those Changes applied. So in amiss of that, we need to create a derived Record for each of them to get the correct JsonSerializable Type and makes us need to define the CodeSampleService Generic. Following this up on [#9](./issues/9)
 
@@ -78,20 +78,29 @@ Then this is the right Sample App for you, learning how to do this!
 
 Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
 
-![Image of final XamlNavigationApp](./doc/articles/images/DevTKSS.Uno.XamlNavigationApp.png)
+![Image of final XamlNavigationApp](./doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
 Select your preferred Language for the Tutorial for this:
 
-- [German Language](./doc/articles/Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)
+- [German Language](./doc/articles/de/Navigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
 - [English Language](./doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
 
 [Source Code of the DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/) Project.
 <!--markdownlint-disable MD026 -->
 ## Help Welcome!
 
-If you want to help out, please feel free to open an [issue](./issues) or PR.
+If you want to help out, please feel free to open an [issue](./issues) or [PR](./pulls).
 
 Every helping hand is welcome and I will try to review and merge it as soon as possible.
+
+**Current Documentation State:**
+
+Currently, the Docs deployment is needed to be served with `docfx serve doc/_site/` and then navigate manually to the start page: `articles/de/Introduction-de.html` because there is no option to set the default language or startup page, if its in a localized documentation not one right on the doc root path, in the `docfx.json` file, so as the Uno docs themselves are only available in english, so making the default language to german enables new learning developers to get started with the Uno Platform and Mvux in their native language.
+
+As this is no show able result if the Page breaks, this will have to get fixed before getting published.
+
+> [!IMPORTANT]
+> As DocFx currently also loads explicitly excluded files from the `**/obj/**` folder, the Uno Platform provided and generated files from Uno.Resizetizer are shown as part of the API, when deploying the API documentation also, therefore the API documentation will be excluded from deployment after this Commit, so this can get investigated, from the appropriate Developer Team, but will not get included until then into the published documentation.
 
 ## See also
 

@@ -1,4 +1,4 @@
-namespace Mvux.XamlNavigationApp.Presentation;
+namespace DevTKSS.Uno.XamlNavigationApp.Presentation;
 
 public sealed partial class Shell : UserControl, IContentControlProvider
 {

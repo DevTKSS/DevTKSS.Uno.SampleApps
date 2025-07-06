@@ -1,6 +1,6 @@
 using Uno.Resizetizer;
 
-namespace Mvux.XamlNavigationApp;
+namespace DevTKSS.Uno.XamlNavigationApp;
 public partial class App : Application
 {
     /// <summary>

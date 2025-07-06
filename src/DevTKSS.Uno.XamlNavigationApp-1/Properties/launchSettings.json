@@ -8,13 +8,13 @@
     }
   },
   "profiles": {
-    "Mvux.XamlNavigationApp (Desktop)": {
+    "DevTKSS.Uno.XamlNavigationApp (Desktop)": {
       "commandName": "Project",
       "compatibleTargetFramework": "desktop"
     },
-    "Mvux.XamlNavigationApp (Desktop WSL2)": {
+    "DevTKSS.Uno.XamlNavigationApp (Desktop WSL2)": {
       "commandName": "WSL2",
-      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/Mvux.XamlNavigationApp.dll",
+      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/DevTKSS.Uno.XamlNavigationApp.dll",
       "distributionName": "",
       "compatibleTargetFramework": "desktop"
     }

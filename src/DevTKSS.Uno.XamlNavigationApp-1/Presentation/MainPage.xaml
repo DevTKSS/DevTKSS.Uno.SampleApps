@@ -1,7 +1,7 @@
-﻿<Page x:Class="Mvux.XamlNavigationApp.Presentation.MainPage"
+﻿<Page x:Class="DevTKSS.Uno.XamlNavigationApp.Presentation.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="using:Mvux.XamlNavigationApp.Presentation"
+      xmlns:local="using:DevTKSS.Uno.XamlNavigationApp.Presentation"
       xmlns:uen="using:Uno.Extensions.Navigation.UI"
       xmlns:utu="using:Uno.Toolkit.UI"
       xmlns:um="using:Uno.Material"
@@ -23,15 +23,15 @@
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Home"
                                 uen:Region.Name="Dashboard"
-                                Icon="Home"/>
-            <NavigationViewItem Content="Some View"
+                                Icon="Home" />
+            <NavigationViewItem Content="Eine Liste"
                                 uen:Region.Name="Second"
-                                Icon="AddFriend"/>
+                                Icon="AddFriend" />
         </NavigationView.MenuItems>
         <NavigationView.Content>
             <Grid uen:Region.Navigator="Visibility"
                   uen:Region.Attached="True"
-                  Visibility="Visible"/>
+                  Visibility="Visible" />
         </NavigationView.Content>
     </NavigationView>
 </Page>

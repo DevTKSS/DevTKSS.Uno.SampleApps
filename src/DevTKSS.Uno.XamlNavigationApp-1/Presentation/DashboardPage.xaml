@@ -1,12 +1,13 @@
-﻿<Page x:Class="Mvux.XamlNavigationApp.Presentation.DashboardPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:local="using:Mvux.XamlNavigationApp.Presentation"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:utu="using:Uno.Toolkit.UI"
-      mc:Ignorable="d"
-      Background="{ThemeResource BackgroundBrush}">
+﻿<Page
+    x:Class="DevTKSS.Uno.XamlNavigationApp.Presentation.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevTKSS.Uno.XamlNavigationApp.Presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:utu="using:Uno.Toolkit.UI"
+    mc:Ignorable="d"
+    Background="{ThemeResource BackgroundBrush}">
 
     <Grid RowSpacing="10" Padding="15" 
           utu:SafeArea.Insets="VisibleBounds">

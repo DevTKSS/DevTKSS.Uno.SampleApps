@@ -1,5 +1,5 @@
 using Uno.UI.Hosting;
-using Mvux.XamlNavigationApp;
+using DevTKSS.Uno.XamlNavigationApp;
 
 var host = UnoPlatformHostBuilder.Create()
     .App(() => new App())

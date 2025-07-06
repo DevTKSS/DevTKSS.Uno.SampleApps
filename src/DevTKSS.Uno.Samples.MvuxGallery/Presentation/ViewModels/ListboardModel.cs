@@ -54,7 +54,9 @@ public partial record ListboardModel
     /// Represents a static collection of code sample options to bind to.
     /// </summary>
     /// <remarks>
-    /// The ListFeed is generic (`ListFeed<string>.Async`) and the service function returns a collection of strings.
+    /// The `CodeSampleOptions` property provides a feed of selectable code sample options.
+    /// It uses the `ListFeed.Async` method to asynchronously retrieve the options from the sample service.
+    /// The selected option is projected to <see cref="SelectedOption"/> for further processing.
     /// </remarks>
     public IListFeed<string> CodeSampleOptions => ListFeed.Async(_sampleService.GetCodeSampleOptionsAsync)
                                                           .Selection(SelectedOption);
