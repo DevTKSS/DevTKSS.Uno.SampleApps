@@ -1,6 +1,5 @@
 ---
 uid: DevTKSS.Uno.SampleApps.Intro.de
-_layout: landing
 ---
 <!--markdownlint-disable MD026-->
 # Willkommen zu Dokumentation & Tutorials!

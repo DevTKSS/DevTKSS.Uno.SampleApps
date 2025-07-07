@@ -58,13 +58,13 @@ To configure the app using the CLI, follow these steps:
 <!--
 Here is a Video so you can follow along with the steps:
 
-[!Video [Navigation in Xaml und Mvux mit Navigation View]()] // add link to the english localized video here, when available
+![Navigation in Xaml und Mvux mit Navigation View]()] // add link to the english localized video here, when available
 -->
 
 ### Tutorial Video: Navigation with `NavigationView` in MVUX and XAML
 
 Now you can get started with the navigation in your app! In this video, I will show you how to set up and use the `NavigationView` control in a XAML Markup + MVUX Presentation App. We will implement navigation between different pages while applying the MVUX principles.
 
-[!Video [Navigation in Xaml und Mvux mit Navigation View](https://youtu.be/knt2oOjHH30?si=PNgis0v9ZTR4LRsF)]
+![Navigation in Xaml und Mvux mit Navigation View](https://youtu.be/knt2oOjHH30?si=PNgis0v9ZTR4LRsF)
 
 [Discover the Source Code](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/)

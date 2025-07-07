@@ -6,7 +6,7 @@
   uid: DevTKSS.Uno.Samples.MvuxGallery.Overview.de
   href: MvuxGallery-Overview-de.md
 - name: Einrichten der Entwicklungsumgebung
-  uid: DevTKSS.Setup.DevelopmentEnvironment.de
+  uid: DevTKSS.Uno.Setup.DevelopmentEnvironment.de
   href: HowTo-Setup-DevelopmentEnvironment-de.md
 - name: "Dependency Injection im Konstruktor"
   uid: DevTKSS.Uno.Setup.AddingNewClass.de

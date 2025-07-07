@@ -15,8 +15,6 @@
         }
       ],
       "dest": "api",
-      "disableDefaultFilter": false,
-      "categoryLayout": "nested",
       "memberLayout": "separatePages",
       "noRestore": true
     }
@@ -25,8 +23,8 @@
       "globalMetadata": {
       "_appTitle": "DevTKSS Sample Apps & Tutorials for Uno Platform Development",
       "_appName": "DevTKSS.Uno.SampleApps",
-      "_appFaviconPath": "images/styled-logo.ico",
-      "_appLogoPath": "images/styled-logo-small.png",
+      "_appFaviconPath": "images/logo/styled-logo.ico",
+      "_appLogoPath": "images/logo/styled-logo-small.png",
       "_copyrightFooter": "© 2025 Sonja Schweitzer, DevTKSS, TKSS Development, All rights reserved.",
       "_enableSearch": true,
       "pdf": false
@@ -80,13 +78,10 @@
         "definitionlists",
         "diagrams",
         "advanced",
-        "abbreviations",
-        "autolinks",
         "alerts",
         "emojis",
         "footers",
         "footnotes",
-        "gridtables",
         "medialinks"
       ]
     },

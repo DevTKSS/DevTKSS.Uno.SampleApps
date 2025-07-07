@@ -1,6 +1,5 @@
 ---
 uid: DevTKSS.Uno.SampleApps.Intro.en
-_layout: landing
 ---
 
 # Hello and Welcome to the Documentation and Tutorials

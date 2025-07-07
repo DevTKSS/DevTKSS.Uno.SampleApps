@@ -8,7 +8,7 @@ Solltest du schon eine existierende Uno Anwendung haben, kannst du die Extension
 
 In der Projektdatei, zu erkennen an der Endung `.csproj`, brauchst du dafür neben dem `Uno.Sdk` folgende `UnoFeatures` Elemente:
 
-## [UnoFeatures in Mvux](#tab/mvux)
+# [Mvux](#tab/mvux)
 
 ```xml
 <UnoFeatures>
@@ -18,7 +18,7 @@ In der Projektdatei, zu erkennen an der Endung `.csproj`, brauchst du dafür neb
 </UnoFeatures>
 ```
 
-## [UnoFeatures in Mvvm](#tab/mvvm)
+# [Mvvm](#tab/mvvm)
 
 ```xml
 <UnoFeatures>
@@ -29,9 +29,7 @@ In der Projektdatei, zu erkennen an der Endung `.csproj`, brauchst du dafür neb
 </UnoFeatures>
 ```
 
----
-
-## [On Launched](#tab/mvux/on-launched)
+# [On Launched](#tab/mvux/on-launched)
 
 Füge deiner Datei `App.xaml.cs` folgenden Inhalt hinzu, wenn nicht bereits enthalten:
 
@@ -56,7 +54,7 @@ Füge deiner Datei `App.xaml.cs` folgenden Inhalt hinzu, wenn nicht bereits enth
     }
 ```
 
-## [On Launched](#tab/mvvm/on-launched)
+# [On Launched](#tab/mvvm/on-launched)
 
 Füge deiner Datei `App.xaml.cs` folgenden Inhalt hinzu, wenn nicht bereits enthalten:
 

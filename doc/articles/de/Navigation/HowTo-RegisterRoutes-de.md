@@ -10,7 +10,7 @@ Mit der `Uno.Extensions.Navigation` wird dies über eine zentrale Definition der
 
 Füge die dafür benötigte Methode wie folgt in deine App Klasse unterhalb der `OnLaunched` Methode ein:
 
-[code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
 
 ## Definieren der `ViewMap`'s
 

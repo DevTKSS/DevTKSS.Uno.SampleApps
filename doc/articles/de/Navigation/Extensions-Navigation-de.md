@@ -16,7 +16,7 @@ uid: DevTKSS.Uno.ExtensionsNavigation.Overview.de
 
 Da diese Beispiel-App im Rahmen eines Community-Tutorial-Videos auf YouTube erstellt wurde, kannst du dem Video folgen und den Aufbau der App Schritt für Schritt nachvollziehen. Dort sind auch Transkripte hinzugefügt, da es in Deutscher Sprache aufgenommen wurde.
 
-🔗 [Zur Playlist auf YouTube](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX&si=qHkpAUMSW9s8GZCO)
+- [Zur Playlist auf YouTube](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX&si=qHkpAUMSW9s8GZCO)
 
 ## Kurzer Showcase
 
@@ -24,7 +24,7 @@ Lass uns zuerst einmal schauen, was man beispielsweise in einer Xaml-basierten U
 
 **Showcase-Video:**
 
-[!Video[Navigation in Xaml und Mvux mit Navigation View (Showcase)](https://youtu.be/vVvnK02r2ug)]
+![MvuxGallery Showcase](https://youtu.be/vVvnK02r2ug)
 
 ---
 
@@ -63,7 +63,7 @@ Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
 
 In diesem Video zeige ich dir, wie du das `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden.
 
-[!Video[Navigation in Xaml und Mvux mit Navigation View](https://youtu.be/knt2oOjHH30)]
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtu.be/knt2oOjHH30)
 
 ---
 
