@@ -5,16 +5,16 @@
       "src": [
         {
           "files": [
-            "**/DevTKSS.**.csproj"
+            "**/DevTKSS.Extensions.Uno.Extensions.csproj",
+            "**/DevTKSS.Uno.Samples.MvuxGallery.csproj"
           ],
-          "src": "../src",
-          "exclude":[
-            "**/obj/**",
-            "**/Uno.**"
-          ]
+          "src": "../src"
         }
       ],
-      "dest": "api",
+      "disableDefaultFilter": false,
+      "filter": "Resources/filterConfig.yml",
+      "codeSourceBasePath": "../src",
+      "output": "api",
       "memberLayout": "separatePages",
       "noRestore": true
     }

@@ -1,0 +1,5 @@
+# YAML-Language Server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/filterconfig.schema.json
+apiRules:
+  - exclude:
+      uidRegex: ^Uno\.Resizetizer$
+      type: namespace
