@@ -4,7 +4,7 @@ uid: DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp
 
 # DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp.en
 
-Welcome to the Uno Platform and particulary this Community Tutorial Sample!
+Welcome to the Uno Platform and particularly this Community Tutorial Sample!
 
 ## Getting Started
 
