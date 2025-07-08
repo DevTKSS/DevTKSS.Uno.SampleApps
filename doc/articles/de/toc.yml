@@ -5,17 +5,19 @@
 - name: Mvux Gallery Übersicht
   uid: DevTKSS.Uno.Samples.MvuxGallery.Overview.de
   href: MvuxGallery-Overview-de.md
-- name: Einrichten der Entwicklungsumgebung
-  uid: DevTKSS.Uno.Setup.DevelopmentEnvironment.de
-  href: HowTo-Setup-DevelopmentEnvironment-de.md
-- name: "Dependency Injection im Konstruktor"
-  uid: DevTKSS.Uno.Setup.AddingNewClass.de
-  href: HowTo-Using-DI-in-ctor-de.md
-- name: "Hinzufügen von Seiten"
-  uid: DevTKSS.Uno.Setup.AddingNewPages.de
-  href: HowTo-Adding-New-Pages-de.md
-- name: "Aus Klassen ein ViewModel oder Model erstellen"
-  uid: DevTKSS.Uno.Setup.AddingNewVmClass.de
-  href: HowTo-Adding-New-VM-Class-de.md
+- name: "Erste Schritte & Basics"
+  items:
+  - name: Einrichten der Entwicklungsumgebung
+    uid: DevTKSS.Uno.Setup.DevelopmentEnvironment.de
+    href: HowTo-Setup-DevelopmentEnvironment-de.md
+  - name: "Erstellen einer neuen Uno App"
+    uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.de
+    href: HowTo-CreateApp-de.md
+  - name: "Hinzufügen von Seiten"
+    uid: DevTKSS.Uno.Setup.AddingNewPages.de
+    href: HowTo-Adding-New-Pages-de.md
+  - name: "Neue Klassen oder Record ViewModel's definieren"
+    uid: DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.de
+    href: HowTo-Adding-New-VM-Class-Record-de.md
 - name: "Navigation in Uno Apps"
   href: Navigation/toc.yml

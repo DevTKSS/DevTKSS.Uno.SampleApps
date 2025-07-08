@@ -1,8 +1,8 @@
 ---
-uid: DevTKSS.Uno.XamlNavigationApp-1
+uid: DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp
 ---
 
-# DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp
+# DevTKSS.Uno.SampleApps.Mvux.XamlNavigationApp.de
 
 Willkommen bei der Uno Platform und insbesondere bei diesem Community-Tutorial-Beispiel!
 
@@ -12,14 +12,14 @@ Wie du mit deiner neuen App loslegst: [Link zur Uno Doku `Getting Started`](http
 
 Weitere Informationen zur Verwendung des Uno.Sdk oder zum Aktualisieren der Uno Platform-Pakete in deiner Lösung: [Das Uno.Sdk benutzen](https://aka.platform.uno/using-uno-sdk)
 
-## Tutorial zur Verwendung dieses Beispiels
+## Tutorial zum Mitmachen
 
-Diese Beispiel-App ist Teil eines Community-Tutorials, das dich durch den Prozess des Aufbaus einer XAML-Navigations-App mit der Uno Platform führt.
+Diese Beispiel-App ist Teil eines Community-Tutorial-Videos, das dich durch den Prozess des Aufbaus einer XAML-Navigations-App mit der Uno Platform führt.
 
 Bitte wähle die Sprache deiner Wahl, um dem Tutorial zu folgen:
 
-- [Deutsche Version](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)
-- [Englische Version](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
+- [Deutsch](../../doc/articles/de/Navigation/Extensions-Navigation-de.md)
+- [Englisch](../../doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
 
 ## Mitwirken
 

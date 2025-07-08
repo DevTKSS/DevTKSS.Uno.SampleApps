@@ -1,8 +1,8 @@
 ---
 uid: DevTKSS.Uno.SampleApps.Intro.de
 ---
-<!--markdownlint-disable MD026-->
-# Willkommen in der Dokumentation & Tutorials!
+
+# Dokumentation & Tutorials
 
 Hier findest du praktische Anleitungen und Einblicke zu verschiedenen Beispiel-Apps, die mit der **Uno Platform** entwickelt wurden.
 Die Tutorials helfen dir – unabhängig von deinem Vorwissen – die gezeigten Konzepte schnell zu verstehen und direkt umzusetzen.
@@ -24,12 +24,12 @@ Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos 
 ### MvuxGallery
 
 - 📄 [Dokumentation ansehen](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.de)
-- 🧩 [Zum Quellcode](../../../src/DevTKSS.Uno.Samples.MvuxGallery/)
+- 🧩 [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
 
 ### XamlNavigationApp (Mvux)
 
 - 📄 [NavigationView in MVUX oder MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de)
-- 🧩 [Zum Quellcode](../../../src/DevTKSS.Uno.XamlNavigationApp-1/)
+- 🧩 [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
 
 ---
 

@@ -10,13 +10,11 @@ Nun wollen wir uns einmal anschauen, wie wir passend zur Uno Extensions Navigati
 
 1. Erstelle hierfür zu aller erst ein Model bzw. ViewModel Element.
 
-   > [!TIP]
-   > Wenn du noch nicht weißt, wie das geht, habe ich hier eine [Anleitung zur Erstellung eines grundlegenden Model bzw. ViewModels](xref:DevTKSS.Uno.Setup.HowTo-AddingNewVmClass.de) vorbereitet.
+   [!INCLUDE [Anleitung zur Erstellung eines grundlegenden Model bzw. ViewModels](../HowTo-Adding-New-VM-Class-Record-de.md)]
 
 2. Füge nun noch den `INavigator` als **DependencyInjection** Konstruktor Parameter hinzu.
 
-   > [!TIP]
-   > Hierfür kannst du diese [Anleitung: Nutze Konstruktor Parameter für DependencyInjection](xref:DevTKSS.Uno.Setup.AddingNewClass.de) verwenden.
+   [!INCLUDE [Anleitung: Nutze Konstruktor Parameter für DependencyInjection](../HowTo-Using-DI-in-ctor-de.md)]
 
 ## Navigation im Xaml
 
@@ -24,7 +22,15 @@ Grundsätzlich benötigst du tatsächlich nicht unbedingt einen Navigations-Code
 
 In diesem Fall wären es klassischerweise nur dann die Title Eigenschaften oder andere, die du von View zu ViewModel bindest und du wärst fertig. Und genau das ist auch ein großer Vorteil dieser Extension meiner Meinung nach.
 
-### Binden der View UI Steuerelemente an Eigenschaften im ViewModel bzw. Model
+## Binden der View UI Steuerelemente an Eigenschaften im ViewModel bzw. Model
+
+Nun haben wir zuvor den `Title` der NavigationView manuell festgelegt, aber wie sieht es mit anderen Eigenschaften aus, die wir in der View binden wollen? Und du hast in der Template App vielleicht auch den `Name` gesehen, der in der `Dashboard(View)Model` definiert ist.
+
+Wenn du nicht vom Template startest, füge diese Eigenschaft hinzu, um sie in der View zu binden.
+
+```csharp
+public string? Name { get; set; }
+```
 
 ### [Mvvm](#tab/mvvm)
 

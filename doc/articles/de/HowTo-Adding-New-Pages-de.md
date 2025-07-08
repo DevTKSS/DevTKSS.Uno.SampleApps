@@ -2,7 +2,7 @@
 uid: DevTKSS.Uno.Setup.HowTo-AddingNewPages.de
 ---
 
-# Anleitung: Hinzufügen einer Seite
+## Anleitung: Hinzufügen einer Seite
 
 In dieser Anleitung werden wir zusammen eine neue Seite mit Beispielinhalt zu unserer Uno App hinzufügen.
 
@@ -19,7 +19,7 @@ In dieser Anleitung werden wir zusammen eine neue Seite mit Beispielinhalt zu un
 
    ![Hinzufügen-neues-Element-Seite](../.attachments/Adding-new-Item-Page-de.png)
 
-## Hinzufügen von Beispiel Inhalt
+### Hinzufügen von Beispiel Inhalt
 
 Um nun auf der Seite, auch zu sehen, dass wir uns auch auf der gewünschten Seite befinden, fügen wir nun noch einen einfachen Beispiel Inhalt hinzu:
 

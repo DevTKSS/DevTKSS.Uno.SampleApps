@@ -9,30 +9,26 @@ The here contained samples and Tutorials are meant to help Developers, independe
 
 This is a collection of Sample Apps and Tutorials for the [Uno Platform](https://platform.uno/), aiming to fill the gap of missing ***German Localized*** learning Content.
 
-**Page - Table of Contents**
+### Page - Table of Contents
 
-- Samples in this Repository:
+- **Samples in this Repository:**
   - [Mvux Gallery](#mvux-gallery)
-    - [Sampled Controls](#sampled-controls)
-    - [Uno.Extensions](#sampled-unoextensions)
-    - [Known Issues](#known-issues)
-  - [Mvux.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/)
-  - [Tutorials](#tutorial-videos-and-used-samples)
-    - [Mvux XamlNavigation App](#mvuxxamlnavigationapp)
-      - [Content of the Tutorial](#content-of-the-tutorial)
-      - [Select your preferred Language](#select-your-preferred-language)
+  - [XamlNavigationApp](#xaml-navigation-app)- Localized Tutorial available in German!
+
+- [**Tutorials**](#tutorial-videos-and-used-samples)
+
 - [Feedback, Issues and Contributing](#feedback-issues-and-contributing)
 
 > [!TIP]
-> Check out the [Documentation & Tutorials](./doc/articles/de/Introduction-de.md), for more a more detailed List and future coming Guides and Explanations.
+> Check out the [Documentation & Tutorials](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/), for more a more detailed List and future coming Guides and Explanations.
 
 ## Mvux Gallery
 
-![Mvux Gallery Showcase Thumbnail](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/main/doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+![Mvux Gallery Showcase Thumbnail](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
 
 **Wanna see a quick showcase, what to explore there?**
 
-![Mvux Gallery ShowCase](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/main/doc/articles/.attachments/MvuxGallery-ShowCase.gif)
+![Mvux Gallery ShowCase](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/MvuxGallery-ShowCase.gif)
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples.MvuxGallery/) App.
 [Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/de/MvuxGallery-Overview.md)
@@ -58,7 +54,7 @@ Following list provides you a quick Overview, what you can find in the [Mvux Gal
 - Dependency Injection
 - Serialization
 - Configuration
-  - Data for Serialization load from separate [`appsettings.sampledata.json`](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/main/appsettings.sampledata.json) file.
+  - Data for Serialization load from separate [`appsettings.sampledata.json`](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/master/appsettings.sampledata.json) file.
 - Storage
 - Localization
 
@@ -67,14 +63,15 @@ Following list provides you a quick Overview, what you can find in the [Mvux Gal
 - [ ] [ThemeResource Styled are not listening to Theme changes](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/13)
 - [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/6))
 - [ ] Unclear how to use `NamedOptions` using Uno.Extensions with IConfigBuilder Following this up on [#9](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/9) and hoping to get a solution and Documentation for this in the future.
+- [ ] docfx fails to resolve source code links for e.g. included code snippets
 
 ## Tutorial Videos and used Samples
 
 To show you how to get to the end result of the Mvux Gallery App, I created a Tutorial Video that will guide you through the process of building this App with the following Sample Apps and added Documentation.
 
-### Mvux.XamlNavigationApp
+### Xaml Navigation App
 
-![Image of final XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/main/doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
+![Image of final Xaml Navigation App](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
 #### Content of the Tutorial
 
@@ -82,14 +79,14 @@ To show you how to get to the end result of the Mvux Gallery App, I created a Tu
 - [Uno.Extensions.Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
 - [Xaml Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
 
-[Discover the Source Code of the DevTKSS.Uno.XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/src/DevTKSS.Uno.XamlNavigationApp-1/)
+[Discover the Source Code of the DevTKSS.Uno.XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
 
 ## Feedback, Issues and Contributing
 
 Let me know if you have any questions or feedback!
 
-If you find any issues or have suggestions for improvements, please open an [issue](./issues) or [discussion](./discussions).
+If you find any issues or have suggestions for improvements, please open an [issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) or [discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions).
 
-In case you want to contribute, check out the [Contributing Guidelines](./CONTRIBUTING.md) for more information on how to get started.
+In case you want to contribute, check out the [Contributing Guidelines](CONTRIBUTING.md) for more information on how to get started.
 
 You are missing a feature or have an idea for a new Sample App? Please open a [discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions/new) to share your thoughts!

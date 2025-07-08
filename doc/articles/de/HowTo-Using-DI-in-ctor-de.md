@@ -1,7 +1,7 @@
 ---
-uid: DevTKSS.Uno.Setup.AddingNewClass.de
+uid: DevTKSS.Uno.Setup.Using-DI-in-ctor.de
 ---
-# Anleitung: Nutze Konstruktor Parameter für DependencyInjection
+## Anleitung: Nutze Konstruktor Parameter für DependencyInjection
 
 Diese Anleitung baut darauf auf, dass du bereits ein Model, ViewModel oder eine Service Klasse erstellt hast. Solltest du das noch nicht getan haben, ist hier eine [Anleitung um das zu tun](xref:DevTKSS.Uno.Setup.HowTo-AddingNewVmClass.de)
 

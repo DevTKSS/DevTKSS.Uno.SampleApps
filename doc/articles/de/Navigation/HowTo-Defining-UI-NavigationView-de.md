@@ -6,11 +6,17 @@ uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de
 
 In diesem Teil des Tutorials, wollen wir uns anschauen, wie man eine einfache Seitennavigation mittels einer `NavigationView` erstellen kann.
 
-## Voraussetzungen
+**Was zuvor geschah...**
 
-Dieses Tutorial geht davon aus, dass du bereits erfolgreich deine Anwendung für Uno Extensions Navigation mithilfe bspw. der [Anleitung: Erstellen einer Uno Platform Anwendung für Extensions Navigation](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp.de) erstellt hast oder der [Anleitung: Erweitern einer bestehenden Anwendung mit Extensions Navigation](xref:DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de) gefolgt bist.
+Wir haben uns nun zuvor im Intro angeschaut, was wir mit der `Uno.Extensions.Navigation` und der `NavigationView` alles machen können und im anschluss das Setup der Anwendung angepasst oder diese erstellt. Nun wollen wir uns anschauen wie man dann dann auch umsetzen kann!
 
-## Basis Implementierung der NavigationView
+## Tutorial Video: Navigation mit `NavigationView` in MVUX und XAML
+
+In diesem Video werden wir uns zusammen anschauen, wie du ein `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden. Den Code kannst du dabei direkt aus dem Code hierunter kopieren und in deine Anwendung einfügen, wenn du möchtest, aber aus eigener Erfahrung heraus hilft es dir mehr, den Code selber zu schreiben und dabei zuzuschauen, wie es funktioniert. So kannst du auch besser verstehen, was du tust und warum.
+
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/knt2oOjHH30)
+
+## Implementierung der NavigationView
 
 Wir werden zuerst einmal eine einfache `NavigationView` hierfür auf der `MainPage` der Anwendung hinzufügen. Dort sollte bisher bereits ein `Grid` mit einem `StackPanel` sein, wenn du eine Anwendung vom Template erstellt hast.
 
@@ -135,5 +141,6 @@ Nun wollen wir die von der Extension ermöglichten Eigenschaften, sogenannte `At
 
 ## Nächste Schritte
 
-- [Füge Neue Seiten Elemente zu deiner Anwendung hinzu](xref:DevTKSS.Uno.Setup.HowTo-AddingNewPages.de)
-- [Das **Model** oder **ViewModel** Definieren](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel.de)
+Nun haben wir die `NavigationView` eingerichtet und können diese nun auch verwenden, um zwischen den Seiten zu navigieren. Im nächsten Schritt werden wir uns anschauen, wie wir die Routen definieren und die Navigation zwischen den Seiten implementieren können.
+
+[**Routen definieren und Navigation implementieren**](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.de)

@@ -16,10 +16,10 @@ To give you a quick overview of this Documentation, here is a List of quick link
 
 - MvuxGallery
   - [Docs](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.en)
-  - [source code](../../../src/DevTKSS.Uno.Samples.MvuxGallery/)
+  - [source code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
 - Mvux.XamlNavigationApp
   - [Docs](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.en)
-  - [source code](../../../src/DevTKSS.Uno.XamlNavigationApp-1/)
+  - [source code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
 
 ## Next Steps
 

@@ -1,8 +1,8 @@
 ---
-uid: DevTKSS.Uno.Setup.HowTo-AddingNewVmClass.de
+uid: DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.de
 ---
 
-# Anleitung: Aus Klassen ein ViewModel oder Model erstellen
+## Anleitung: Aus Klassen ein ViewModel oder Model erstellen
 
 In dieser Anleitung wollen wir uns einmal anschauen, wie man in Visual Studio ein neues Klassen-Element erstellen kann und anschließend entweder ein ViewModel oder ein Model für die Verwendung in einer Uno Platform Anwendung mit **MVUX** erstellen kann.
 
@@ -26,7 +26,7 @@ Für die folgenden Schritte, nehmen wir einmal an, die Seite, zu der das zu erst
 
    ![Hinzufügen-neues-Element-Klasse](../.attachments/Adding-new-Item-Class.png)
 
-## [Ein Model erstellen **Mvux**](#tab/create-mvux-model)
+### [Ein Model erstellen **Mvux**](#tab/create-mvux-model)
 
 Um ein für Mvux passendes Model zu erstellen:
 
@@ -36,7 +36,7 @@ Um ein für Mvux passendes Model zu erstellen:
 
 ![Umbenennen-Klasse-zu-Mvux-Model](../.attachments/renaming-class-to-record-mvux.png)
 
-## [Ein ViewModel erstellen](#tab/create-mvvm-viewmodel)
+### [Ein ViewModel erstellen](#tab/create-mvvm-viewmodel)
 
 Um ein für Mvvm passendes ViewModel zu erstellen:
 

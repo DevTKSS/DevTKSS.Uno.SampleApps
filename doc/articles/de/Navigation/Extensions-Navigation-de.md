@@ -18,58 +18,37 @@ Da diese Beispiel-App im Rahmen eines Community-Tutorial-Videos auf YouTube erst
 
 - [Zur Playlist auf YouTube](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX&si=qHkpAUMSW9s8GZCO)
 
-## Kurzer Showcase
+## Vorstellung der Möglichkeiten
 
 Lass uns zuerst einmal schauen, was man beispielsweise in einer Xaml-basierten Uno Anwendung damit erstellen kann, am beispiel der MvuxGallery.
-
-**Showcase-Video:**
 
 ![MvuxGallery Showcase](https://youtu.be/vVvnK02r2ug)
 
 ---
 
-## Step by Step Anleitung
+## Voraussetzungen
 
-Im folgenden findest du Schritt für Schritt Anleitungen, mit welchen du lernen kannst, wie man in einer Uno Platform Anwendung eine Navigation mithilfe des Uno Feature `Navigation`, also des `Uno.Extensions.Navigation` NuGet implementieren kann.
+Diese Tutorial Reihe baut darauf auf, dass deine Entwicklungsumgebung bereits vollständig eingerichtet ist und der Befehl `uno-check --tfm net9.0-desktop` ausgeführt in deinem Terminal grünes Licht gibt. Hier kannst du diese auch noch einmal nachschauen:
 
-### Einrichten der Entwicklungsumgebung
+- [Tutorial: Einrichten der Entwicklungsumgebung](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.de)
 
-Dieses Tutorial baut darauf auf, dass deine Entwicklungsumgebung bereits vollständig eingerichtet ist und der Befehl `uno-check --tfm net9.0-desktop` ausgeführt in deinem Terminal grünes Licht gibt.
+## Nächste Schritte
 
-Eine Anleitung und weitere nützliche Links hierzu findest du im [Tutorial: Einrichten der Entwicklungsumgebung](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.de)
+In den nächsten Schritten findest du Anleitungen, mit welchen du lernen kannst, wie man in einer Uno Platform Anwendung eine Navigation mithilfe des Uno Feature `Navigation`, also des `Uno.Extensions.Navigation` NuGet implementieren kann. Hierfür kannst du einfach die Fußleisten Navigation verwenden, um die einzelnen Schritte zu durchlaufen.
 
-## App erstellt oder konfiguriert
+**Ich starte mit...**
 
-Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
+[**Einer neuen Uno Platform App**](xref:DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.de) | [**Einer bestehenden Uno Platform App**](xref:DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de)
 
-- [Erstellen einer Uno App mit Extensions Navigation](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp.de)
-- [Upgrade einer existierenden Uno App](xref:DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de)
+Wenn du diesen Schritt abgeschlossen hast, fahren wir mit der Implementierung der Navigation mittels des `NavigationView` Steuerelements fort.
 
-## Die Routen registrieren
-
-- [Tutorial Routen Registrieren](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.de)
-
-## Das User Interface mit einer NavigationView erstellen
-
-- [Tutorial: Erstellen des UI mit einer NavigationView in Xaml](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de)
-
-## Das Model bzw. ViewModel erstellen
-
-- [Anleitung: Erstellen eines ViewModel oder Model](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel.de)
+[**Implementierung der Navigation via NavigationView**](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de)
 
 ---
 
-## 📺 Tutorial Video: Navigation mit `NavigationView` in MVUX und XAML
+- [Hier geht's zum Source Code der verwendeten Beispiel Anwendung XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1)
 
-In diesem Video zeige ich dir, wie du das `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden.
-
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/knt2oOjHH30)
-
----
-
-[Hier geht's zum Source Code der verwendeten Beispiel Anwendung XamlNavigationApp](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/)
-
-### Uno Documentation links
+### Uno Dokumentation Links
 
 - [How-To: Navigate in Xaml](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
 - [How-To: Define Routes](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-DefineRoutes.html)

@@ -11,8 +11,4 @@ In Uno Apps können wir hierfür zwei Arten der Navigation verwenden:
 - `Frame`-Navigation (wie in WinUI Apps)
 - `Regions`, also unter Verwendung der `Uno.Extensions.Navigation`
 
-## Liste der Tutorials
-
-Um einen Überblick über die Möglichkeiten der Navigation in Uno Apps zu bekommen, findest du hier eine Liste der Tutorials zu dem Thema:
-
-- [`Uno.Extensions.Navigation` in Xaml Markup und am Beispiel einer NavigationView](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de)
+Um einen guten Überblick zu bekommen über die Möglichkeiten, die dir die `Uno.Extensions.Navigation` bietet, kannst du dir das [Tutorial: Navigation mit Uno Extensions](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de) zum beispiel anschauen. Dort werden wir uns anschauen, wie man mit der `Uno.Extensions.Navigation` und der `NavigationView` in einer Xaml-basierten Uno Anwendung umgeht bzw. diese implementiert.

@@ -18,8 +18,8 @@ This sample app is part of a Community Tutorial Video that will guide you throug
 
 Please select the language of your choice to follow along:
 
-- [English](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
-- [German](../../doc/articles/Mvux.XamlNavigation/HowTo-Navigation-mit-NavigationView-in-Mvux-und-Xaml.md)
+- [English](../../doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
+- [German](../../doc/articles/de/Navigation/Extensions-Navigation-de.md)
 
 ## Contributing
 

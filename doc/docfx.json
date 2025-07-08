@@ -14,7 +14,7 @@
       "includeExplicitInterfaceImplementations": false,
       "disableDefaultFilter": false,
       "filter": "Resources/filterConfig.yml",
-      "codeSourceBasePath": "../",
+      // "codeSourceBasePath": "../",
       "noRestore": true,
       "output": "api",
       "memberLayout": "samePage",
@@ -97,6 +97,9 @@
         "medialinks"
       ]
     },
-    "output": "_site"
+    "output": "_site",
+    "sitemap": {
+      "baseUrl": "https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/"
+    }
   }
 }

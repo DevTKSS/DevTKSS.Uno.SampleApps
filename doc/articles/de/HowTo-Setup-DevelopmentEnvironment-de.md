@@ -72,16 +72,10 @@ Sieh dir den [Troubleshooting Guide](https://platform.uno/docs/articles/external
 
 ### Nächste Schritte
 
-Sobald deine Umgebung eingerichtet ist, kannst du beispielsweise mit dem [Counter Workshop](https://platform.uno/docs/articles/getting-started/counterapp/get-started-counter.html) diese Grundlagen lernen:
+Sobald deine Umgebung eingerichtet ist, kannst du neben den Tutorials hier, auch beispielsweise mit dem [Counter Workshop](https://platform.uno/docs/articles/getting-started/counterapp/get-started-counter.html) starten und diese Grundlagen lernen:
 
 - 📁 Die Struktur einer Uno-App
 - 🖼️ Den Umgang mit Assets (Bilder/Icons) über **`Uno.Resizetizer`**
 - 🔗 Die Verwendung von Commands und Bindings
-
-> [!TIP]
-> Abhängig vom Tutorial, das du anschließend machen möchtest, solltest du im Workshop die passende Variante auswählen:
->
-> - Wähle zwischen **XAML** oder **C#** als Markup
-> - Und zwischen **MVVM** oder **MVUX** als `Presentation` deiner Anwendung.
 
 ---
