@@ -39,7 +39,7 @@
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp",
+      "cwd": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp-1",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
