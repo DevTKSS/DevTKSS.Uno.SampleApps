@@ -17,8 +17,5 @@
 - name: "Aus Klassen ein ViewModel oder Model erstellen"
   uid: DevTKSS.Uno.Setup.AddingNewVmClass.de
   href: HowTo-Adding-New-VM-Class-de.md
-- name: Intro zur Navigation in Uno Apps
-  uid: DevTKSS.Uno.Navigation.Intro.de
-  href: Navigation-Intro-de.md
-- name: "Uno Extensions Navigation Tutorials"
+- name: "Navigation in Uno Apps"
   href: Navigation/toc.yml

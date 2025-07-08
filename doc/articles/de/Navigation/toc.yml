@@ -1,5 +1,8 @@
 items:
-  - name: Übersicht
+  - name: Möglichkeiten für die Navigation in einer Uno App
+    uid: DevTKSS.Uno.Navigation.Navigation-Options.de
+    href: Navigation-Intro-de.md
+  - name: Navigation mit Uno Extensions
     uid: DevTKSS.Uno.ExtensionsNavigation.Overview.de
     href: Extensions-Navigation-de.md
   - name: Erstellen oder upgraden

@@ -8,6 +8,7 @@
         "definitionlists",
         "DevTKSS",
         "dotnet",
+        "docfx",
         "gridtables",
         "Listboard",
         "markdig",
@@ -34,6 +35,7 @@
         "dist/**",
         "src/*",
         "**.gitignore",
-        "doc/templates/**"
+        "doc/templates/**",
+        "LICENSE.md"
     ]
 }

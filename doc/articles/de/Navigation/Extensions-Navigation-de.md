@@ -2,9 +2,9 @@
 uid: DevTKSS.Uno.ExtensionsNavigation.Overview.de
 ---
 
-# Navigation mit Uno Extensions Navigation
+# Tutorial: Navigation mit Uno Extensions
 
-![Mvux XamlNavigationApp](../.attachments/DevTKSS.Uno.XamlNavigationApp.png)
+![Mvux XamlNavigationApp](../../.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
 ## Inhalt dieses Tutorials
 
@@ -28,11 +28,11 @@ Lass uns zuerst einmal schauen, was man beispielsweise in einer Xaml-basierten U
 
 ---
 
-## Links zu den Tutorial-Teilen
+## Step by Step Anleitung
 
 Im folgenden findest du Schritt für Schritt Anleitungen, mit welchen du lernen kannst, wie man in einer Uno Platform Anwendung eine Navigation mithilfe des Uno Feature `Navigation`, also des `Uno.Extensions.Navigation` NuGet implementieren kann.
 
-## Einrichten der Entwicklungsumgebung
+### Einrichten der Entwicklungsumgebung
 
 Dieses Tutorial baut darauf auf, dass deine Entwicklungsumgebung bereits vollständig eingerichtet ist und der Befehl `uno-check --tfm net9.0-desktop` ausgeführt in deinem Terminal grünes Licht gibt.
 

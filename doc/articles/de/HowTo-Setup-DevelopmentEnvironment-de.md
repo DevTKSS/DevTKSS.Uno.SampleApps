@@ -1,8 +1,8 @@
 ---
 uid: DevTKSS.Uno.Setup.DevelopmentEnvironment.de
 ---
-<!--markdownlint-disable MD028-->
-# Anleitung: Entwicklungsumgebung für Uno Platform Apps einrichten
+<!--markdownlint-disable MD028 MD041-->
+## Anleitung: Entwicklungsumgebung für Uno Platform Apps einrichten
 
 Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung für die Anwendungsentwicklung mit Uno Platform kinderleicht einrichten kann, beziehungsweise das Command Line Interface (**CLI**) Tool `dotnet tool uno-check` diese Routineaufgabe für uns erledigen lassen kann.
 
@@ -12,7 +12,7 @@ Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung
 > [!TIP]
 > Solltest du bei der Ausführung des Tools Probleme haben, kannst du hier den zugehörigen [Offiziellen Guide zu Uno-Check von Uno Platform](https://platform.uno/docs/articles/external/uno.check/doc/using-uno-check.html) finden.
 
-## 📺 Videoanleitung
+### 📺 Videoanleitung
 
 ![How To: Einrichten unserer Uno Platform Entwicklungsumgebung](https://youtu.be/oI6IZVOeQBI)
 
@@ -21,7 +21,7 @@ Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung
 
 ---
 
-## Schritt für Schritt Anleitung zur Einrichtung
+### Schritt für Schritt Anleitung zur Einrichtung
 
 1. **Wähle und installiere deine bevorzugte IDE**
 
@@ -54,7 +54,7 @@ Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung
 
    ![Finde das Uno Extensions Menü in den Visual Studio](../.attachments/Finding-Uno-VS2022-Extension-Menu-de.png)
 
-## Optionen zur Konfiguration von Uno Check
+### Optionen zur Konfiguration von Uno Check
 
 Wenn du nur für bestimmte `Targets`, also Endgeräte deine Anwendungen entwickeln möchtest und dem entsprechend auch nicht alle anderen Workloads benötigst, also bspw. für das [XamlNavigation Tutorial](./Navigation/Extensions-Navigation-de.md)
 
@@ -64,13 +64,13 @@ Wenn du nur für bestimmte `Targets`, also Endgeräte deine Anwendungen entwicke
 > [!NOTE]
 > Weitere Infos zu den Konfigurationsmöglichkeiten, kannst du in der [Uno.Check Dokumentation](https://platform.uno/docs/articles/external/uno.check/doc/configuring-uno-check.html) finden!
 
-## **Probleme bei der Einrichtung?**
+### **Probleme bei der Einrichtung?**
 
 Sieh dir den [Troubleshooting Guide](https://platform.uno/docs/articles/external/uno.check/doc/troubleshooting-uno-check.html) an.
 
 ---
 
-## Nächste Schritte
+### Nächste Schritte
 
 Sobald deine Umgebung eingerichtet ist, kannst du beispielsweise mit dem [Counter Workshop](https://platform.uno/docs/articles/getting-started/counterapp/get-started-counter.html) diese Grundlagen lernen:
 
@@ -85,7 +85,3 @@ Sobald deine Umgebung eingerichtet ist, kannst du beispielsweise mit dem [Counte
 > - Und zwischen **MVVM** oder **MVUX** als `Presentation` deiner Anwendung.
 
 ---
-
-Viel Spaß bei den weiteren Tutorials! 🚀
-
-- [Navigation in einer Uno App](xref:DevTKSS.Uno.Navigation.Intro.de)

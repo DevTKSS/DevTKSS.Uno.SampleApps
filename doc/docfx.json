@@ -11,12 +11,14 @@
           "src": "../src"
         }
       ],
+      "includeExplicitInterfaceImplementations": false,
       "disableDefaultFilter": false,
       "filter": "Resources/filterConfig.yml",
-      "codeSourceBasePath": "../src",
+      "codeSourceBasePath": "../",
       "noRestore": true,
       "output": "api",
-      "memberLayout": "separatePages"
+      "memberLayout": "samePage",
+      "outputFormat": "apiPage"
     }
   ],
   "build": {
@@ -33,7 +35,7 @@
       "_disableBreadcrumb": false,
       "_disableNextArticle": false,
       "_disableTocFilter": false,
-      "_lang": "csharp",
+      "_lang": "csharp", // this gets unrecognized for metadata somehow
       "pdf": false
     },
     "content": [
@@ -47,7 +49,8 @@
         "files": [
           "articles/**.{md,yml}",
           "toc.yml",
-          "index.md"
+          "index.md",
+          "../README.md"
         ]
       }
     ],
@@ -77,8 +80,8 @@
     ],
     "template": [
       "default",
-      "modern",
-      "templates/singulinkfx"
+      "modern"//,
+      // "templates/singulinkfx"
     ],
     "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
     "markdownEngineProperties": {
