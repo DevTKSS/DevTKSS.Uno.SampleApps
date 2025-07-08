@@ -20,7 +20,7 @@ Here is a list of Controls and Features you can explore in the MvuxGallery App w
 - [FeedView + ListView](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/ListboardPage.xaml)
 - [DataTemplate centralized Resource Definition](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml)
 - [`ItemOverlayTemplate` DataTemplate](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml) (*Layout replicated from WinUI 3 Gallery*)
-- [TabBar and TabBarItem](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) and [Model for Binding Items to ListFeed](xref:DevTKSS.Uno.Samples.MvuxGallery.ViewModels.DashboardModel)
+- [TabBar and TabBarItem](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) and [Model for Binding Items to ListFeed](../../../src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml.cs)
 
 ## Sampled Uno.Extensions
 
@@ -38,7 +38,7 @@ Here is a list of Controls and Features you can explore in the MvuxGallery App w
     - (planned)
 
 - Hosting
-  - [App.xaml.cs](xref:DevTKSS.Uno.Samples.MvuxGallery.App)
+  - [App.xaml.cs](../../../src/DevTKSS.Uno.Samples.MvuxGallery/App.xaml.cs)
 
 - DependencyInjection
   - Service Registration

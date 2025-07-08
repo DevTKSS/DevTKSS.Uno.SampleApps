@@ -33,6 +33,7 @@
         "node_modules/**",
         "dist/**",
         "src/*",
-        "**.gitignore"
+        "**.gitignore",
+        "doc/templates/**"
     ]
 }

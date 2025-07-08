@@ -307,7 +307,7 @@ span.sidebar-item {
     animation: hideThat .5s forwards
 }
 
-@media (min-width:1024px) {
+@media only screen and (min-width:1024px) {
     nav {
         position: fixed;
         left: 0!important;
@@ -465,7 +465,7 @@ legend,pre {
     display: none
 }
 
-@media (max-width:1023.98px) {
+@media only screen and (max-width:1023.98px) {
     .mobile-hide {
         display: none
     }
@@ -529,7 +529,7 @@ body {
     font-size: var(--base-font-size)
 }
 
-@media (max-width:1024px) {
+@media only screen and (max-width:1024px) {
     body {
         font-size: var(--smalldevice-base-font-size)
     }
@@ -615,7 +615,7 @@ a.brand .brand-title {
     padding: 0 0 0 .4em
 }
 
-@media (min-width:1024px) {
+@media only screen and (min-width:1024px) {
     a.brand .brand-title {
         font-size: 1.55em
     }
@@ -642,7 +642,7 @@ a.brand .logomark {
     top: 60px
 }
 
-@media (max-width:1023.98px) {
+@media only screen and (max-width:1023.98px) {
     .navbar-nav {
         margin-top: 0
     }
@@ -654,7 +654,7 @@ nav {
     left: calc(var(--sidebar-width)*-1)
 }
 
-@media (max-width:1023.98px) {
+@media only screen and (max-width:1023.98px) {
     nav {
         top: 60px
     }
@@ -871,7 +871,7 @@ ul.level4>li>a,ul.level4>li>a.sidebar-item {
     padding: 20px
 }
 
-@media (min-width:1024px) {
+@media only screen and (min-width:1024px) {
     .main-panel {
         margin-bottom: 0;
         margin-left: var(--sidebar-width);

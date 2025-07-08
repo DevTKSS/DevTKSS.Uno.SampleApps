@@ -3,3 +3,9 @@ apiRules:
   - exclude:
       uidRegex: ^Uno\.Resizetizer$
       type: namespace
+  - exclude:
+      uidRegex: ^DevTKSS\.Uno\.Samples\.MvuxGallery\.ReactiveViewModelMappings$
+      type: namespace
+  - exclude:
+      uidRegex: ^__Reactive$
+      type: method

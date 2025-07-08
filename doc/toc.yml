@@ -1,4 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
+- name: Home
+  href: index.md
 - name: "Documentation & Tutorials"
   href: articles/
 - name: API

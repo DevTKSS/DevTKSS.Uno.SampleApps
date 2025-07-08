@@ -43,7 +43,7 @@ Eine Anleitung und weitere nützliche Links hierzu findest du im [Tutorial: Einr
 Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
 
 - [Erstellen einer Uno App mit Extensions Navigation](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp.de)
-- [Upgrade einer existierenden Uno App](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-UpgradeExistingApp.de)
+- [Upgrade einer existierenden Uno App](xref:DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de)
 
 ## Die Routen registrieren
 
@@ -51,7 +51,7 @@ Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
 
 ## Das User Interface mit einer NavigationView erstellen
 
-- [Tutorial: Erstellen des UI mit einer NavigationView in Xaml](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI-NavigationView.de)
+- [Tutorial: Erstellen des UI mit einer NavigationView in Xaml](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de)
 
 ## Das Model bzw. ViewModel erstellen
 
@@ -63,7 +63,7 @@ Des hier lernst du, wie man Anwendung erstellt oder passend konfiguriert:
 
 In diesem Video zeige ich dir, wie du das `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden.
 
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtu.be/knt2oOjHH30)
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/knt2oOjHH30)
 
 ---
 

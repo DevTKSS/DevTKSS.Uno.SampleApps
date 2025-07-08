@@ -13,7 +13,7 @@ Die Tutorials helfen dir – unabhängig von deinem Vorwissen – die gezeigten 
 
 ## Erste Schritte
 
-👉 [Umgebung einrichten für Uno Platform App-Entwicklung](xref:DevTKSS.Setup.DevelopmentEnvironment.de)
+👉 [Umgebung einrichten für Uno Platform App-Entwicklung](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.de)
 
 ---
 

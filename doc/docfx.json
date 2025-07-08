@@ -14,9 +14,9 @@
       "disableDefaultFilter": false,
       "filter": "Resources/filterConfig.yml",
       "codeSourceBasePath": "../src",
+      "noRestore": true,
       "output": "api",
-      "memberLayout": "separatePages",
-      "noRestore": true
+      "memberLayout": "separatePages"
     }
   ],
   "build": {
@@ -26,7 +26,14 @@
       "_appFaviconPath": "images/logo/styled-logo.ico",
       "_appLogoPath": "images/logo/styled-logo-small.png",
       "_copyrightFooter": "© 2025 Sonja Schweitzer, DevTKSS, TKSS Development, All rights reserved.",
+      "_ownerName": "TKSS Development",
+      "_githubProfileLink": "https://github.com/DevTKSS",
       "_enableSearch": true,
+      "_disableAffix": false,
+      "_disableBreadcrumb": false,
+      "_disableNextArticle": false,
+      "_disableTocFilter": false,
+      "_lang": "csharp",
       "pdf": false
     },
     "content": [
@@ -39,7 +46,8 @@
       {
         "files": [
           "articles/**.{md,yml}",
-          "toc.yml"
+          "toc.yml",
+          "index.md"
         ]
       }
     ],
@@ -58,7 +66,8 @@
           "api/**.md",
           "api/**.yml",
           "articles/**.md",
-          "articles/**.yml"
+          "articles/**.yml",
+          "index.md"
         ],
         "exclude":[
           "obj/**",

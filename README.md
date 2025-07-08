@@ -1,11 +1,13 @@
 # DevTKSS Uno Samples
 
-Welcome to this Samples and Tutorials Library! ❤️
+## Welcome to this Samples and Tutorials Library! ❤️
 
-The samples and Tutorials in this Repository are meant to help other Developers, also German Developers like me, independent to their pre-knowledge, get an Idea of how to use the shown things.
+The here contained samples and Tutorials are meant to help Developers, independent to their pre-knowledge, to get an Idea of:
 
-> [!TIP]
-> Check out the [Documentation](./doc/en/articles/introduction.md), for more a more detailed List and future coming Guides and Explanations.
+- How to get started with the [Uno Platform](https://platform.uno/)
+- How the Sampled Features and Controls can be used inside of our Applications
+
+ Because of the Uno Platform own provided Samples and guides are only English localized, I created this Sample Apps and Tutorials to help German speaking Developers, like myself, to get started with the Uno Platform in their native language.
 
 **Table of Contents** *(of this ReadMe)**
 
@@ -22,6 +24,15 @@ Last but not least:
 
 - [Contributions Welcome!](#help-welcome)
 - [See also](#see-also)
+
+Let me know if you have any questions or feedback!
+
+In case you want to contribute, please feel free to open an [issue](./issues), [PR](./pulls) or [discussion](./discussions)!
+
+If you would like the samples to be available in your language and you are willing to help out with the translation, please let me know as well!
+
+> [!TIP]
+> Check out the [Documentation & Tutorials](/doc/articles/de/Introduction-de.md), for more a more detailed List and future coming Guides and Explanations.
 
 ## Mvux Gallery
 
@@ -71,21 +82,24 @@ To show you how to get to the end result of the Mvux Gallery App, I created a Tu
 
 ### Mvux.XamlNavigationApp
 
-You want to use Mvux as your Presentation in Uno Platform Apps?
-You would like to use a NavigationView Control for the base Navigation Layout of your App?
-Your Markup is Xaml and you would like to get to know how the NavigationExtensions can help you to achieve this?
-Then this is the right Sample App for you, learning how to do this!
-
-Here is a sneak peak of the end Result of the Xaml Navigation Tutorial you can explore 😍
-
 ![Image of final XamlNavigationApp](./doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
-Select your preferred Language for the Tutorial for this:
+#### Content of the Tutorial
+
+- [Uno.Extensions.Reactive also known as `Mvux`](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
+- [Uno.Extensions.Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
+- [Xaml Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
+
+[Discover the Source Code of the DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/)
+
+#### Select your preferred Language
 
 - [German Language](./doc/articles/de/Navigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
 - [English Language](./doc/articles/Mvux.XamlNavigation/HowTo-Navigation-with-NavigationView-in-Mvux-and-Xaml.md)
 
-[Source Code of the DevTKSS.Uno.XamlNavigationApp](./src/DevTKSS.Uno.XamlNavigationApp-1/) Project.
+> [!NOTE]
+> The Tutorial Video is available in German Language only, but there are subtitles available, which should work using auto translation to your preferred language.
+
 <!--markdownlint-disable MD026 -->
 ## Help Welcome!
 

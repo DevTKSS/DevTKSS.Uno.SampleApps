@@ -1,2 +1,5 @@
+---
+redirect_url: 'articles/de/Introduction-de.html'
+---
 <!-- markdownlint-disable MD041 MD033-->
-<meta http-equiv="refresh" content="0; url='articles/de/Introduction-de.md'" />
+<!-- <meta http-equiv="refresh" content="0; url='articles/de/Introduction-de.html'" /> -->
