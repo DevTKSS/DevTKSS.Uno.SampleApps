@@ -3,6 +3,7 @@ public partial record SimpleCardsModel
 {
     private readonly ICodeSampleService<SimpleCardsSampleOptions> _sampleService;
     private readonly ILogger _logger;
+
     public SimpleCardsModel(
         ICodeSampleService<SimpleCardsSampleOptions> sampleService,
         ILogger<SimpleCardsModel> logger

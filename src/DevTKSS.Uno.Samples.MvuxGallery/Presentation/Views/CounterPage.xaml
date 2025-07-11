@@ -34,6 +34,7 @@
             <TextBlock TextAlignment="Center"
                        Margin="12"
                        Width="{x:Bind spCounterContent.Width,Mode=OneWay}">
+                <!-- Using `Run` is until now not supported using Hot Design-->
                 <Run Text="Counter:" /> <Run Text="{Binding Countable.Count}" />
             </TextBlock>
 

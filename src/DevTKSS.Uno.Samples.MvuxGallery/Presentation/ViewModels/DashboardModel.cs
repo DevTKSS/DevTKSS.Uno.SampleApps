@@ -25,21 +25,6 @@ public partial record DashboardModel
     public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
     public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
 
-
-    public IState<string> DashboardTitle => State<string>.Value(this, () => _stringLocalizer["DashboardTitle"]);
-
-    #region ViewHeaderContent
-    /// <value>
-    /// Represents the header content of the view
-    /// </value>
-    /// <remarks>
-    /// uses <see cref="IStringLocalizer"/> to dynamically localize the caption
-    /// </remarks>
-    public IState<HeaderContent> ViewHeaderContent => State<HeaderContent>.Value(this,
-        () => new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
-                                Caption: _stringLocalizer["GridViewTitle"]));
-    #endregion
-
     #region CodeSample import directly in the Model
     /// <value>
     /// Holds a static Collection of <see langword="string"/> to bind to

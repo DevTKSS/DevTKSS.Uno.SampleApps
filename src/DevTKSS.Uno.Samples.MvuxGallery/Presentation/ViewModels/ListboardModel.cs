@@ -48,10 +48,6 @@ public partial record ListboardModel
     /// </summary>
     public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
 
-    /// <summary>
-    /// Gets the title of the Listboard.
-    /// </summary>
-    public IState<string> ListboardTitle => State<string>.Value(this, () => _stringLocalizer["ListboardTitle"]);
 
     #region CodeSample import
     /// <summary>

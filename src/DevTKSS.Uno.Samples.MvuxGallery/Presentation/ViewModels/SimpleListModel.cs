@@ -20,9 +20,6 @@ public partial record SimpleListModel
 
     public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
 
-
-    public IState<string> SimpleListTitle => State<string>.Value(this, () => _stringLocalizer["SimpleListTitle"]);
-
 }
 
 

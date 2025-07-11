@@ -16,13 +16,11 @@ public partial record CounterModel
         _stringLocalizer = stringLocalizer;
     }
 
-    public IState<string> CounterTitle => State<string>.Value(this, () => _stringLocalizer["CounterTitle"]);
-
     public IState<Countable> Countable => State.Value(this, () => new Countable(0, 1));
     public ValueTask IncrementCounter()
         => Countable.UpdateAsync(c => c?.Increment());
 
-
+    #region Code Sample Selection
     public IListFeed<string> CodeSampleOptions => ListFeed<string>.Async(_sampleService.GetCodeSampleOptionsAsync)
                                                                   .Selection(SelectedOption);
     public IState<string> SelectedOption => State<string>.Value(this, () => string.Empty)
@@ -43,4 +41,5 @@ public partial record CounterModel
         _logger.LogTrace("Loaded code sample for option '{SelectedOption}': {CodeSample}", selectedOption, codeSample);
         await CurrentCodeSample.SetAsync(codeSample, ct);
     }
+    #endregion
 }
