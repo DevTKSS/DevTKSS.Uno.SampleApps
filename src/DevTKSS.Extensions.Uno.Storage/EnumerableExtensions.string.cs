@@ -18,7 +18,7 @@ public static class EnumerableExtensions
     /// If <c>true</c>, the start and end indices are treated as 0-based; otherwise, they are treated as 1-based.
     /// </param>
     /// <returns>
-    /// An enumerable collection of strings, where each string represents the items within a specified range.
+    /// An <see cref="IEnumerable{string}"/> where each string represents the items within a specified range.
     /// If a range is invalid (e.g. start is greater than the last one), an empty string is returned for that range.
     /// </returns>
     public static IEnumerable<string> SelectItemsByRanges(this IEnumerable<string> source, IEnumerable<(int Start, int End)> ranges, bool isNullBased = true)
@@ -44,7 +44,7 @@ public static class EnumerableExtensions
     /// <summary>
     /// Retrieves the concatenated items within the specified range as one single <see langword="string"/> joined by <see cref="Environment.NewLine"/> character.
     /// </summary>
-    /// <param name="source">The <see cref="IEnumerable{TData}"/> to select from.</param>
+    /// <param name="sourceItems">The <see cref="IEnumerable{TData}"/> to select from.</param>
     /// <param name="range">
     /// A tuple containing the start and end indices of the range as <see langword="int"/>.
     /// The start index specifies the first item to include, and the end index specifies the last item to include.
@@ -54,28 +54,30 @@ public static class EnumerableExtensions
     /// If <c>true</c>, the start and end indices are treated as 0-based; otherwise, they are treated as 1-based.
     /// </param>
     /// <returns>
-    /// A string containing the string typed items of <paramref name="source"/> within the specified range, joined by the system's newline character.
+    /// A <see langword="string"/> containing the Items of <paramref name="sourceItems"/> within the specified range, joined by <see cref="Environment.NewLine"/
+    /// >.
     /// </returns>
-    public static string GetItemsWithinRange(this IEnumerable<string> source, (int Start, int End) range, bool isNullBased = true) // TODO: Consider to limit int to min 0 value instead of implicit allowing negative.
+    public static string GetItemsWithinRange(this IEnumerable<string> sourceItems, (int Start, int End) range, bool isNullBased = true) // TODO: Consider to limit int to min 0 value instead of implicit allowing negative.
     {
-        if (source is null)
+        if (sourceItems is null)
         {
             return string.Empty;
         }
 
-        var list = source as IList<string> ?? [.. source];
+        var list = sourceItems as IList<string> ?? [.. sourceItems];
         if (list.Count == 0)
         {
             return string.Empty;
         }
 
+        var baseItem = isNullBased ? 0 : 1;
         var startIndex = Math.Clamp(
-            value: range.Start - (isNullBased ? 0 : 1),
-            min: 0,
+            value: range.Start - baseItem,
+            min: baseItem,
             max: list.Count);
 
         var endIndex = Math.Clamp(
-            value: range.End - (isNullBased ? 0 : 1),
+            value: range.End - baseItem,
             min: startIndex,
             max: list.Count); // Ensure 'End' does not exceed available lines
 

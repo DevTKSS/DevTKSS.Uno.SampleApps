@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Uno.Samples.MvuxGal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Uno.XamlNavigationApp", "DevTKSS.Uno.XamlNavigationApp-1\DevTKSS.Uno.XamlNavigationApp.csproj", "{AE75474D-B5FC-3152-7897-AB178447428A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions.Uno", "DevTKSS.Extensions.Uno\DevTKSS.Extensions.Uno.csproj", "{88A95F19-AAAB-6B45-A5D7-8BABCE37F25C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTKSS.Extensions.Uno.Storage", "DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj", "{88A95F19-AAAB-6B45-A5D7-8BABCE37F25C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
