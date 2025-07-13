@@ -2,6 +2,9 @@
 - name: Willkommen
   uid: DevTKSS.Uno.SampleApps.Intro.de
   href: Introduction-de.md
+- name: Link-Sammlung zu Uno Platform
+  uid: DevTKSS.Uno.ResourcesLookup.de
+  href: Uno-resources-lookup-de.md
 - name: Mvux Gallery Übersicht
   uid: DevTKSS.Uno.Samples.MvuxGallery.Overview.de
   href: MvuxGallery-Overview-de.md
