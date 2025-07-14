@@ -67,7 +67,8 @@
                       Visibility="Visible" />
             </NavigationView.Content>
         </NavigationView>
-        <Expander Grid.Row="1"
+        <Expander x:Name="CodeSampleExpander"
+                  Grid.Row="1"
                   MaxHeight="400"
                   ExpandDirection="Down"
                   VerticalAlignment="Bottom"
@@ -77,7 +78,8 @@
                   ContentTemplate="{StaticResource CodeSampleWrappedTextblock}">
 
             <Expander.Header>
-                <utu:TabBar VerticalAlignment="Bottom"
+                <utu:TabBar x:Name="CodeSampleTabBar"
+                            VerticalAlignment="Bottom"
                             Orientation="Horizontal"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Center"

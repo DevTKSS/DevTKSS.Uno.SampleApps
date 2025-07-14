@@ -49,22 +49,14 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-    <ProjectReference Include="..\DevTKSS.Extensions.Uno\DevTKSS.Extensions.Uno.csproj" />
   </ItemGroup>
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />
-    <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PreserveNewest" />
+      <Resource Include="Assets\Samples\*.txt" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Presentation\Views\SimpleListPage.xaml.cs">
-      <DependentUpon>SimpleListPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Presentation\Views\SimpleListPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj" />
   </ItemGroup>
 
 </Project>

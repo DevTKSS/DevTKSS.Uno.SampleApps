@@ -46,7 +46,8 @@
                     Margin="12"
                     Width="{x:Bind spCounterContent.Width, Mode=OneWay}"/>
         </StackPanel>
-        <Expander Grid.Row="1"
+        <Expander x:Name="CodeSampleExpander"
+                  Grid.Row="1"
                   MaxHeight="400"
                   ExpandDirection="Down"
                   VerticalAlignment="Bottom"
@@ -55,21 +56,19 @@
                   ContentTemplate="{StaticResource CodeSampleWrappedTextblock}"
                   Content="{Binding CurrentCodeSample}">
 
-            <Expander.HeaderTemplate>
-                <DataTemplate>
-                    <utu:TabBar VerticalAlignment="Bottom"
-                                HorizontalAlignment="Stretch"
-                                Orientation="Horizontal"
-                                HorizontalContentAlignment="Stretch"
-                                SelectionIndicatorTransitionMode="Slide"
-                                ItemsSource="{Binding CodeSampleOptions, Mode=TwoWay}"
-                                ItemTemplate="{StaticResource BottomTabBarItemTemplate}"
-                                utu:CommandExtensions.Command="{Binding SwitchCodeSampleAsync}"
-                                utu:CommandExtensions.CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}">
-                    </utu:TabBar>
-                </DataTemplate>
-            </Expander.HeaderTemplate>
-
+            <Expander.Header>
+                <utu:TabBar x:Name="CodeSampleTabBar"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Stretch"
+                            Orientation="Horizontal"
+                            HorizontalContentAlignment="Stretch"
+                            SelectionIndicatorTransitionMode="Slide"
+                            ItemsSource="{Binding CodeSampleOptions, Mode=TwoWay}"
+                            ItemTemplate="{StaticResource BottomTabBarItemTemplate}"
+                            utu:CommandExtensions.Command="{Binding SwitchCodeSampleAsync}"
+                            utu:CommandExtensions.CommandParameter="{Binding RelativeSource={RelativeSource Mode=Self},Path=SelectedItem, UpdateSourceTrigger=PropertyChanged}">
+                </utu:TabBar>
+            </Expander.Header>
         </Expander>
     </Grid>
 </Page>

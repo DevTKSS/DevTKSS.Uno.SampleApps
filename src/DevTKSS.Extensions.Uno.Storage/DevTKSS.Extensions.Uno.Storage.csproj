@@ -10,9 +10,7 @@
 		<Description>Extensions that are extending Uno Platform functionallities</Description>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.Core" />
-		<PackageReference Include="Uno.Core.Extensions" />
-		<PackageReference Include="Uno.Core.Extensions.Collections" />
+        <PackageReference Include="Uno.Core.Extensions" />
 		<PackageReference Include="Uno.Extensions.Storage" />
 	</ItemGroup>
 </Project>

@@ -125,7 +125,7 @@ public partial record DashboardModel
            {
                await Task.Delay(1, ct);
                return new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
-                              Caption: _stringLocalizer["ListViewTitle"]);
+                              Caption: _stringLocalizer["GridViewTitle"]);
            });
     #endregion
 
