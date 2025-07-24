@@ -29,7 +29,6 @@
             <mvux:FeedView.ValueTemplate>
                 <DataTemplate>
                     <GridView SelectedIndex="0"
-                              x:Name="ContentGridView"
                               ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource StyledCardTemplate}"
                               HeaderTemplate="{StaticResource ViewHeaderTemplate}"
