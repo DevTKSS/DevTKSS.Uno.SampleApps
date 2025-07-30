@@ -29,7 +29,6 @@
             <mvux:FeedView.ValueTemplate>
                 <DataTemplate>
                     <GridView SelectedIndex="0"
-                              x:Name="ContentGridView"
                               ItemsSource="{Binding Data}"
                               ItemTemplate="{StaticResource StyledCardTemplate}"
                               HeaderTemplate="{StaticResource ViewHeaderTemplate}"
@@ -46,7 +45,8 @@
                 </DataTemplate>
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
-        <Expander Grid.Row="1"
+        <Expander x:Name="CodeSampleExpander"
+                  Grid.Row="1"
                   MaxHeight="400"
                   ExpandDirection="Down"
                   VerticalAlignment="Bottom"
@@ -56,7 +56,8 @@
                   ContentTemplate="{StaticResource CodeSampleWrappedTextblock}">
 
             <Expander.Header>
-                <utu:TabBar VerticalAlignment="Bottom"
+                <utu:TabBar x:Name="CodeSampleTabBar"
+                            VerticalAlignment="Bottom"
                             Orientation="Horizontal"
                             HorizontalAlignment="Stretch"
                             SelectionIndicatorTransitionMode="Slide"

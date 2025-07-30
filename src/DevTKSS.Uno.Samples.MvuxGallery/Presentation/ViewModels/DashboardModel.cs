@@ -1,3 +1,5 @@
+using System.Reflection.Metadata;
+using Newtonsoft.Json;
 using Uno.Extensions.Reactive.Commands;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
@@ -49,28 +51,22 @@ public partial record DashboardModel
     /// </value>
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
 
+
     /// <summary>
     /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
     /// </summary>
     /// <param name="ct">
-    /// A CancellationToken to make it compileable
-    /// <remarks>
-    /// since `ListFeed.Async` requires a CancellationToken even if Uno Documentation remarks this parameter to be optional.<br/>
-    /// <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0411?f1url=%3FappId%3Droslyn%26k%3Dk(CS0411)">CS0411</see><br/>
-    /// <br/>
-    /// adding then the type string or IImmutableList<string> to the ListFeed like `ListFeed<string>.Async(...)`,
-    /// or to the Async Extension itself like `ListFeed.Async<IImutableList<string>` results in a type mismatch.<br/>
-    /// <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs1503?f1url=%3FappId%3Droslyn%26k%3Dk(CS1503)">CS1503</see>
-    /// </remarks>
+    /// A <see cref="CancellationToken"/> as the FeedList.Async requires a CancellationToken
     /// </param>
     /// <returns>The available Values to select from.</returns>
-    /// <remarks>
-    /// This uses the explicit `ImmutableList.Create` function (non generic!)<br/>
-    /// overload:<br/>
-    /// `params ReadOnlySpan<string> items` this takes in an (e.g.) array of generic typed values
-    /// </remarks>
     public static async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
+        // since `ListFeed.Async` requires a CancellationToken even if Uno Documentation remarks this parameter to be optional.< br />
+        // <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0411?f1url=%3FappId%3Droslyn%26k%3Dk(CS0411)">CS0411</see><br/>
+        // 
+        // adding then the type string or IImmutableList<string> to the ListFeed like `ListFeed<string>.Async(...)`,
+        // or to the Async Extension itself like `ListFeed.Async<IImutableList<string>` results in a type mismatch.<br/>
+        // <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs1503?f1url=%3FappId%3Droslyn%26k%3Dk(CS1503)">CS1503</see>
 
         await Task.Delay(1, ct);
 
@@ -125,7 +121,7 @@ public partial record DashboardModel
            {
                await Task.Delay(1, ct);
                return new HeaderContent(ImageLocation: "Assets/Images/styled_logo.png",
-                              Caption: _stringLocalizer["ListViewTitle"]);
+                              Caption: _stringLocalizer["GridViewTitle"]);
            });
     #endregion
 

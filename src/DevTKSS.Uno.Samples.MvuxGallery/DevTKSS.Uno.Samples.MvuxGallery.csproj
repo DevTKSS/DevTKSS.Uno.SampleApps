@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0-desktop</TargetFrameworks> <!--;net9.0-windows10.0.26100-->
+    <TargetFrameworks>net9.0-desktop;net9.0-windows10.0.26100</TargetFrameworks>
     <!-- <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>-->
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
@@ -49,22 +49,14 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
-    <ProjectReference Include="..\DevTKSS.Extensions.Uno\DevTKSS.Extensions.Uno.csproj" />
   </ItemGroup>
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />
-    <Resource Include="Assets\Samples\*" CopyToOutputDirectory="PreserveNewest" />
+      <Resource Include="Assets\Samples\*.txt" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Presentation\Views\SimpleListPage.xaml.cs">
-      <DependentUpon>SimpleListPage.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Presentation\Views\SimpleListPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj" />
   </ItemGroup>
 
 </Project>

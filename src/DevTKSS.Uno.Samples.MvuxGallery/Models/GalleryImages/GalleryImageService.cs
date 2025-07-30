@@ -18,21 +18,8 @@ public partial class GalleryImageService : IGalleryImageService
     {
        return await GetGalleryImagesAsync(ct);
     }
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
-    {
-        string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
-        _logger.LogTrace("Trying to get GalleryImages for Culture: {culture}", cultureString);
-        var galleryImages = cultureString switch
-        {
-            "de" => await GetDEGalleryImagesAsync(ct),
-            "en" => await GetENGalleryImagesAsync(ct),
-            _ => await GetENGalleryImagesAsync(ct),
-        };
-        return galleryImages;
-    }
-
+ 
     #region Get culture specific gallery imageDescription
-
     #region With resw
     private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
     {
@@ -71,7 +58,19 @@ public partial class GalleryImageService : IGalleryImageService
 
     #endregion
     
-    #region Without resw
+    #region Without resw 
+    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
+    {
+        string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
+        _logger.LogTrace("Trying to get GalleryImages for Culture: {culture}", cultureString);
+        var galleryImages = cultureString switch
+        {
+            "de" => await GetDEGalleryImagesAsync(ct),
+            "en" => await GetENGalleryImagesAsync(ct),
+            _ => await GetENGalleryImagesAsync(ct),
+        };
+        return galleryImages;
+    }
     #region German gallery descriptions
     private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
     {

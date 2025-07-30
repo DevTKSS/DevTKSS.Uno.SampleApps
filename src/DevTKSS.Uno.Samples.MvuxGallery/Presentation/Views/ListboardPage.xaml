@@ -41,7 +41,8 @@
             </mvux:FeedView.ValueTemplate>
         </mvux:FeedView>
 
-        <Expander Grid.Row="1"
+        <Expander x:Name="CodeSampleExpander"
+                  Grid.Row="1"
                   MaxHeight="400"
                   ExpandDirection="Down"
                   VerticalAlignment="Bottom"
@@ -51,7 +52,8 @@
                   Content="{Binding CurrentCodeSample}">
 
             <Expander.Header>
-                <utu:TabBar VerticalAlignment="Bottom"
+                <utu:TabBar x:Name="CodeSampleTabBar"
+                            VerticalAlignment="Bottom"
                             Orientation="Horizontal"
                             HorizontalAlignment="Stretch"
                             HorizontalContentAlignment="Center"

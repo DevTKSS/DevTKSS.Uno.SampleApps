@@ -56,7 +56,7 @@
     
     <!--#region ListView and GridView Header Template binding to a FeedView to Refresh-->
     <DataTemplate x:Key="ViewHeaderTemplate" x:DataType="models:HeaderContent">
-        <Grid Background="{ThemeResource SurfaceInverseBrush}"
+        <Grid Background="{ThemeResource SurfaceInverseBrush}"  
               CornerRadius="10,10,0,0"
               Padding="10">
             <Grid.ColumnDefinitions>
