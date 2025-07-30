@@ -1,23 +1,27 @@
-using DevTKSS.Uno.XamlNavigationApp.Models;
-
 namespace DevTKSS.Uno.XamlNavigationApp.Presentation;
 
 public partial record MainModel
 {
-    private INavigator _navigator;
+    private readonly INavigator _navigator;
+    private readonly IRouteNotifier _routeNotifier;
 
     public MainModel(
         IStringLocalizer localizer,
         IOptions<AppConfig> appInfo,
-        INavigator navigator)
+        INavigator navigator,
+        IRouteNotifier routeNotifier)
     {
         _navigator = navigator;
-        Title = "Main";
-        Title += $" - {localizer["ApplicationName"]}";
-        Title += $" - {appInfo?.Value?.Environment}";
+        _routeNotifier = routeNotifier;
+        _routeNotifier.RouteChanged += Main_OnRouteChanged;
     }
 
-    public string? Title { get; }
+    private async void Main_OnRouteChanged(object? sender, RouteChangedEventArgs e)
+    {
+        await Title.SetAsync(e.Navigator?.Route?.ToString());
+    }
+
+    public IState<string> Title => State<string>.Value(this, () => _navigator.Route?.ToString() ?? string.Empty);
 
     public IState<string> Name => State<string>.Value(this, () => string.Empty);
 
