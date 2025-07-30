@@ -6,12 +6,29 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:utu="using:Uno.Toolkit.UI"
+    xmlns:mvux="using:Uno.Extensions.Reactive.UI"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 
-    <Grid utu:SafeArea.Insets="VisibleBounds">
+    <Grid RowSpacing="10" Padding="15" 
+          utu:SafeArea.Insets="VisibleBounds">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <TextBlock Text="{Binding DashboardTitle}"
                    HorizontalTextAlignment="Center"
                    VerticalAlignment="Center" />
+
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center">
+            <Run Text="Selected Name:" /> <Run Text="{Binding SelectedMember}" />
+        </TextBlock>
+
+        <ListView Grid.Row="2"
+                  ItemsSource="{Binding DashboardList}" />
+
     </Grid>
 </Page>
