@@ -3,16 +3,16 @@ namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 public partial record CounterModel
 {
-    private readonly ICodeSampleService<CounterSampleOptions> _sampleService;
+    private readonly ICodeSampleService _sampleService;
     private readonly IStringLocalizer _stringLocalizer;
     private readonly ILogger _logger;
     public CounterModel(
         IStringLocalizer stringLocalizer,
-        ICodeSampleService<CounterSampleOptions> sampleService,
+        IServiceProvider serviceProvider,
         ILogger<CounterModel> logger)
     {
         _logger = logger;
-        _sampleService = sampleService;
+        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("CounterSamples");
         _stringLocalizer = stringLocalizer;
     }
 

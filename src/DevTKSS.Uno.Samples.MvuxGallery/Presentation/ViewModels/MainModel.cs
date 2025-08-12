@@ -4,19 +4,19 @@ public partial record MainModel
     private readonly IStringLocalizer _stringLocalizer;
     private readonly IRouteNotifier _routeNotifier;
     private readonly ILogger _logger;
-    private readonly ICodeSampleService<MainSampleOptions> _sampleService;
+    private readonly ICodeSampleService _sampleService;
 
     public MainModel(
         IStringLocalizer stringLocalizer,
         IRouteNotifier routeNotifier,
         ILogger<MainModel> logger,
-        ICodeSampleService<MainSampleOptions> sampleService)
+        IServiceProvider serviceProvider)
     {
         _logger = logger;
         _routeNotifier = routeNotifier;
         _stringLocalizer = stringLocalizer;
         _routeNotifier.RouteChanged += routeNotifier_RouteChanged;
-        _sampleService = sampleService;
+        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("NavigationSamples");
     }
 
     public IState<string> CurrentNotifierRoute => State<string>.Value(this, () => string.Empty)

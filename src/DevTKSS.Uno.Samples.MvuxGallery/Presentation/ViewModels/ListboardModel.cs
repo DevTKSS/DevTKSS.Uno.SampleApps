@@ -16,7 +16,7 @@ public partial record ListboardModel
     /// <summary>
     /// Service for managing code samples.
     /// </summary>
-    private readonly ICodeSampleService<ListboardSampleOptions> _sampleService;
+    private readonly ICodeSampleService _sampleService;
 
     /// <summary>
     /// Service for retrieving gallery images.
@@ -35,12 +35,12 @@ public partial record ListboardModel
         IStringLocalizer stringLocalizer,
         IGalleryImageService galleryImageService,
         ILogger<ListboardModel> logger,
-        ICodeSampleService<ListboardSampleOptions> sampleService)
+        IServiceProvider serviceProvider)
     {
         _logger = logger;
         _stringLocalizer = stringLocalizer;
         _galleryImageService = galleryImageService;
-        _sampleService = sampleService;
+        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("ListboardSamples");
     }
 
     /// <summary>

@@ -1,42 +1,36 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
-public partial record CodeSampleService<SampleOptions> : ICodeSampleService<SampleOptions>
-    where SampleOptions : CodeSampleOptionsConfiguration
-{
-    public CodeSampleService(
-        IOptions<SampleOptions> options,
-        ILogger<CodeSampleService<SampleOptions>> logger,
+public partial record CodeSampleService : ICodeSampleService
+{ 
+    private readonly IStorage _storage;
+    private readonly ILogger<CodeSampleService> _logger;
+    private readonly string _serviceName;
+    private CodeSampleOptions _options;
+    public CodeSampleService(string serviceName,
+        IOptionsMonitor<CodeSampleOptions> options,
+        ILogger<CodeSampleService> logger,
         IStorage storage)
     {
-        _options = options.Value;
-        _logger = logger;
+        _serviceName = serviceName;
+        _options = options.Get(_serviceName);
+         _logger = logger;
         _storage = storage;
-        if (_logger.IsEnabled(LogLevel.Trace))
-        {
-            _logger.LogTrace("Initializing options for {serviceName}...",
-                nameof(CodeSampleService<SampleOptions>));
-        }
-        if (_logger.IsEnabled(LogLevel.Debug))
-        { 
-            // Log LineRanges for each sample option
-            foreach (var sample in _options.Samples)
-            {
-                _logger.LogDebug("\tSampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
-                    sample.SampleID,
-                    sample.Description,
-                    sample.FilePath,
-                    sample.LineRanges);
-                                 
-            }
-        }
-        else if (_logger.IsEnabled(LogLevel.Trace))
-        {
-            _logger.LogTrace("Gathered {count} Options", _options.Samples.Length);
-        }
+
+        options.OnChange(UpdateOptions);
+        
     }
 
-    private readonly IStorage _storage;
-    private readonly ILogger<CodeSampleService<SampleOptions>> _logger;
-    private readonly SampleOptions _options;
+   public void UpdateOptions(CodeSampleOptions newOptions, string? changedOption)
+    {
+        if (_logger.IsEnabled(LogLevel.Debug))
+        {
+            _logger.LogDebug("CodeSampleOptions changed for {name}", changedOption);
+        }
+        if (changedOption == _serviceName)
+        {
+            _logger.LogInformation("Updating CodeSampleOptions for {serviceName}", _serviceName);
+            _options = newOptions;
+        }
+    }
 
     /// <summary>
     /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
@@ -74,7 +68,7 @@ public partial record CodeSampleService<SampleOptions> : ICodeSampleService<Samp
 
     public async ValueTask<string> GetCodeSampleAsync(string? sampleID, CancellationToken ct = default)
     {
-        if (_options.Samples.FirstOrDefault(sample => sample.SampleID == sampleID) is CodeSampleOption sampleOption)
+        if (_options.Samples.FirstOrDefault(sample => sample.SampleID == sampleID) is CodeSample sampleOption)
         {
             if(_logger.IsEnabled(LogLevel.Trace))
             {

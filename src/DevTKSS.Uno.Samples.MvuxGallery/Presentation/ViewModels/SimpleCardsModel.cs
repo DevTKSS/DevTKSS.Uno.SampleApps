@@ -1,16 +1,16 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 public partial record SimpleCardsModel
 {
-    private readonly ICodeSampleService<SimpleCardsSampleOptions> _sampleService;
+    private readonly ICodeSampleService _sampleService;
     private readonly ILogger _logger;
 
     public SimpleCardsModel(
-        ICodeSampleService<SimpleCardsSampleOptions> sampleService,
+        IServiceProvider serviceProvider,
         ILogger<SimpleCardsModel> logger
         )
     {
         _logger = logger;
-        _sampleService = sampleService;
+        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("SimpleCardsSamples");
     }
 
 
