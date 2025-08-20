@@ -78,6 +78,32 @@
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-desktop MvuxListApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/MvuxListApp/MvuxListApp.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net9.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish-desktop MvuxListApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/MvuxListApp/MvuxListApp.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net9.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
     }
   ]
 }

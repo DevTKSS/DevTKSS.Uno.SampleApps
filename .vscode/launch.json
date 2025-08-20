@@ -41,6 +41,26 @@
       "console": "internalConsole",
       "stopAtEntry": false
     },
+    {
+      // Use IntelliSense to find out which attributes exist for C# debugging
+      // Use hover for the description of the existing attributes
+      // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+      "name": "Uno Platform Desktop Debug (MvuxListApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-desktop",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/MvuxListApp/bin/Debug/net9.0-desktop/MvuxListApp.dll",
+      "args": [],
+      "launchSettingsProfile": "MvuxListApp (Desktop)",
+      "env": {
+        "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
+      },
+      "cwd": "${workspaceFolder}/MvuxListApp",
+      // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+      "console": "internalConsole",
+      "stopAtEntry": false
+    },
      {
       "name": "Uno Platform Desktop Debug (SimpleMemberSelectionApp)",
       "type": "coreclr",
