@@ -2,7 +2,7 @@
   "solution": {
     "path": "DevTKSS.Uno.Samples.sln",
     "projects": [
-      "DevTKSS.Uno.XamlNavigationApp-1\\Mvux.XamlNavigationApp.csproj"
+      "DevTKSS.Uno.XamlNavigationApp-1\\DevTKSS.Uno.XamlNavigationApp.csproj"
     ]
   }
 }
