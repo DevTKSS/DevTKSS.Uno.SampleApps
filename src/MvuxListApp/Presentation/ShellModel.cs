@@ -1,4 +1,4 @@
-namespace MvuxListApp.Presentation;
+namespace DevTKSS.Uno.MvuxListApp.Presentation;
 
 public class ShellModel
 {

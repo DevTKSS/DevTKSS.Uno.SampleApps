@@ -1,6 +1,6 @@
 using Uno.UI.Hosting;
 
-namespace MvuxListApp;
+namespace DevTKSS.Uno.MvuxListApp.Platforms.Desktop;
 internal class Program
 {
     [STAThread]

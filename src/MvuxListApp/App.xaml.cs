@@ -1,6 +1,8 @@
+using DevTKSS.Uno.MvuxListApp.Models;
+using DevTKSS.Uno.MvuxListApp.Presentation;
 using Uno.Resizetizer;
 
-namespace MvuxListApp;
+namespace DevTKSS.Uno.MvuxListApp;
 public partial class App : Application
 {
     /// <summary>

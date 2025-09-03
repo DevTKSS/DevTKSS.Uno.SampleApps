@@ -8,13 +8,13 @@
     }
   },
   "profiles": {
-    "MvuxListApp (Desktop)": {
+    "DevTKSS.Uno.MvuxListApp (Desktop)": {
       "commandName": "Project",
       "compatibleTargetFramework": "desktop"
     },
-    "MvuxListApp (Desktop WSL2)": {
+    "DevTKSS.Uno.MvuxListApp (Desktop WSL2)": {
       "commandName": "WSL2",
-      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/MvuxListApp.dll",
+      "commandLineArgs": "{ProjectDir}/bin/Debug/net9.0-desktop/DevTKSS.Uno.MvuxListApp.dll",
       "distributionName": "",
       "compatibleTargetFramework": "desktop"
     }

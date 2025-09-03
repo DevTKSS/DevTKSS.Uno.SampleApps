@@ -6,9 +6,9 @@
     <UnoSingleProject>true</UnoSingleProject>
 
     <!-- Display name -->
-    <ApplicationTitle>MvuxListApp</ApplicationTitle>
+    <ApplicationTitle>Mvux List App</ApplicationTitle>
     <!-- App Identifier -->
-    <ApplicationId>com.companyname.MvuxListApp</ApplicationId>
+    <ApplicationId>com.DevTKSS.MvuxListApp</ApplicationId>
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>

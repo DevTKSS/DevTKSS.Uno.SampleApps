@@ -1,8 +1,6 @@
-using System.Data;
-using Uno.Equality;
 using Uno.Extensions.Reactive.Commands;
 
-namespace MvuxListApp.Presentation;
+namespace DevTKSS.Uno.MvuxListApp.Presentation;
 
 public partial record MainModel
 {
@@ -53,8 +51,8 @@ public partial record MainModel
         
         string replaceMeItem = await SelectedMember ?? string.Empty;
         string modifyedItem = await ModifyedMemberName ?? string.Empty;
-        _logger.LogInformation("Modifyed MemberName ist:" + modifyedItem);
-        _logger.LogInformation("SelectedMemeber ist:" + replaceMeItem);
+        _logger.LogInformation("Modifyed MemberName ist: {modifyedItem}", modifyedItem);
+        _logger.LogInformation("SelectedMemeber ist: {selectedMember}", replaceMeItem);
 
         await DashboardList.RemoveAllAsync(item => item == replaceMeItem);
 
