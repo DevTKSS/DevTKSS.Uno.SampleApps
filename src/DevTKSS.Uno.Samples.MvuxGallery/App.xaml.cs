@@ -1,7 +1,4 @@
-using System.Runtime.CompilerServices;
 using System.Text.Json;
-using Microsoft.Extensions.Configuration;
-using Uno.Resizetizer;
 
 namespace DevTKSS.Uno.Samples.MvuxGallery;
 
