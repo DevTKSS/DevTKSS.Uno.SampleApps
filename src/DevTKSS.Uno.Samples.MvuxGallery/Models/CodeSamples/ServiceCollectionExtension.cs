@@ -13,16 +13,18 @@ public static class ServiceCollectionExtension
     /// <param name="sectionName">The optional configuration section name. If not provided, <paramref name="serviceName"/> is used.</param>
     /// <returns>The <see cref="IServiceCollection"/> for chaining.</returns>
     /// <remarks>
-    /// This method binds <see cref="CodeSampleOptions"/> to the configuration section "CodeSamples:{sectionName}" and registers
-    /// a named singleton <see cref="ICodeSampleService"/> using the configured options.
+    /// This method assumes configuration for the named <see cref="CodeSampleOptions"/> is provided (e.g., via UseConfiguration().Section<T>()).
+    /// It registers a keyed singleton <see cref="ICodeSampleService"/> that consumes those named options.
     /// </remarks>
-    public static IServiceCollection AddNamedConfiguredSingletonCodeService(this IServiceCollection services, string serviceName, string? sectionName = null)
+    public static IServiceCollection AddKeyedSingletonCodeService(this IServiceCollection services, string serviceName, string? sectionName = null)
     {
-        Console.WriteLine($"ServiceName: {serviceName}");
-        Console.WriteLine($"SectionName: {sectionName}");
-       // services.AddOptions<CodeSampleOptions>(sectionName ?? serviceName).BindConfiguration<CodeSampleOptions>(sectionName ?? serviceName);
-        services.AddNamedSingleton<ICodeSampleService, CodeSampleService>(serviceName, sp => sp
-                .ConfigureCodeSampleService(sectionName ?? serviceName));
+        var name = sectionName ?? serviceName;
+        Console.WriteLine($"ServiceName (registration): {serviceName}");
+        Console.WriteLine($"Effective section/name: {name}");
+
+        // Register the keyed service instance that will consume the named options
+        services.AddKeyedSingleton<ICodeSampleService>(serviceName, (serviceProvider,_) =>
+            serviceProvider.ConfigureCodeSampleService(name));
 
         return services;
     }

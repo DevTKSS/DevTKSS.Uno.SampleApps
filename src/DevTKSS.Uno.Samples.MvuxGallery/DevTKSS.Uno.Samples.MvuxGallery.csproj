@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net9.0-desktop</TargetFrameworks>  <!--;net9.0-windows10.0.26100-->
+    <TargetFrameworks>net9.0-desktop;net9.0</TargetFrameworks>  <!--;net9.0-windows10.0.26100-->
     <!-- BUG: Windows target unable to build when using ResourcesDictionary imported in App.xaml see https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues/15 for more information-->
     <!-- <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>-->
     <OutputType>Exe</OutputType>

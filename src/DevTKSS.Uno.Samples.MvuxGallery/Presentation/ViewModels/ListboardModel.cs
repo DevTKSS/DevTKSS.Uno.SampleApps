@@ -40,7 +40,7 @@ public partial record ListboardModel
         _logger = logger;
         _stringLocalizer = stringLocalizer;
         _galleryImageService = galleryImageService;
-        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("ListboardSamples");
+        _sampleService = serviceProvider.GetRequiredKeyedService<ICodeSampleService>("ListboardSamples");
     }
 
     /// <summary>
@@ -107,6 +107,7 @@ public partial record ListboardModel
            });
     #endregion
 }
+
 
 
 

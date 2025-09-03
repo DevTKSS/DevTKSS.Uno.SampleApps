@@ -1,4 +1,3 @@
-
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
 
 public partial record CounterModel
@@ -12,7 +11,7 @@ public partial record CounterModel
         ILogger<CounterModel> logger)
     {
         _logger = logger;
-        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("CounterSamples");
+        _sampleService = serviceProvider.GetRequiredKeyedService<ICodeSampleService>("CounterSamples");
         _stringLocalizer = stringLocalizer;
     }
 

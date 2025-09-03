@@ -6,16 +6,12 @@ public record CodeSample
     public string FilePath { get; init; } = string.Empty;
     public Lines[] LineRanges { get; init; } = [];
 }
-public record Lines
-{
-    public int Start { get; init; }
-    public int End { get; init; }
-}
 
 [JsonSerializable(typeof(CodeSampleOptions))]
 [JsonSerializable(typeof(CodeSample))]
 [JsonSerializable(typeof(Lines))]
 [JsonSerializable(typeof(CodeSample[]))]
+[JsonSerializable(typeof(IEnumerable<CodeSample>))]
 public partial class CodeSampleOptionsContext : JsonSerializerContext
 {
 }

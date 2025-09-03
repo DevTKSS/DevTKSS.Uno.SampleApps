@@ -16,7 +16,7 @@ public partial record MainModel
         _routeNotifier = routeNotifier;
         _stringLocalizer = stringLocalizer;
         _routeNotifier.RouteChanged += routeNotifier_RouteChanged;
-        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("NavigationSamples");
+        _sampleService = serviceProvider.GetRequiredKeyedService<ICodeSampleService>("NavigationSamples");
     }
 
     public IState<string> CurrentNotifierRoute => State<string>.Value(this, () => string.Empty)

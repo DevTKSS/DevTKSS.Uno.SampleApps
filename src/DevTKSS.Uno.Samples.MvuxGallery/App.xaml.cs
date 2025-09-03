@@ -74,7 +74,7 @@ public partial class App : Application
                             //.Section<CodeSampleOptions>("DashboardSamples")
                             .Section<CodeSampleOptions>("NavigationSamples")
                             .Section<CodeSampleOptions>("ListboardSamples")
-                            .Section<CodeSampleOptions>("SimpleCardsSamples")
+                            .Section<CodeSampleOptions>("SimpleCardSamples")
                             .Section<CodeSampleOptions>("CounterSamples");
 
                 })
@@ -87,10 +87,10 @@ public partial class App : Application
                         .AddSingleton<IGalleryImageService, GalleryImageService>()
 
                         //.AddNamedConfiguredSingletonCodeService("DashboardSamples")
-                        .AddNamedConfiguredSingletonCodeService("NavigationSamples")
-                        .AddNamedConfiguredSingletonCodeService("ListboardSamples")
-                        .AddNamedConfiguredSingletonCodeService("SimpleCardsSamples")
-                        .AddNamedConfiguredSingletonCodeService("CounterSamples")
+                        .AddKeyedSingletonCodeService("NavigationSamples")
+                        .AddKeyedSingletonCodeService("ListboardSamples")
+                        .AddKeyedSingletonCodeService("SimpleCardSamples")
+                        .AddKeyedSingletonCodeService("CounterSamples")
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
                 .UseSerialization((context, services) =>

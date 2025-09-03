@@ -6,11 +6,11 @@ public partial record SimpleCardsModel
 
     public SimpleCardsModel(
         IServiceProvider serviceProvider,
-        ILogger<SimpleCardsModel> logger
-        )
+        ILogger<SimpleCardsModel> logger)
+        
     {
         _logger = logger;
-        _sampleService = serviceProvider.GetRequiredNamedService<ICodeSampleService>("SimpleCardsSamples");
+        _sampleService = serviceProvider.GetRequiredKeyedService<ICodeSampleService>("SimpleCardSamples");
     }
 
 

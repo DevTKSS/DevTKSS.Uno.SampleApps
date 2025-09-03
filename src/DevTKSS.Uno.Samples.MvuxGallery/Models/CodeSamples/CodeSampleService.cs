@@ -3,31 +3,37 @@ public partial record CodeSampleService : ICodeSampleService
 { 
     private readonly IStorage _storage;
     private readonly ILogger<CodeSampleService> _logger;
-    private readonly string _serviceName;
+   
     private CodeSampleOptions _options;
-    public CodeSampleService(string serviceName,
+    
+    public string Name { get; init; }
+
+    public CodeSampleService(
+        string name,
         IOptionsMonitor<CodeSampleOptions> options,
         ILogger<CodeSampleService> logger,
         IStorage storage)
     {
-        _serviceName = serviceName;
-        _options = options.Get(_serviceName);
-         _logger = logger;
-        _storage = storage;
+        _logger = logger;
+        _storage = storage; 
+        Name = name;
+        _options = options.Get(Name);
+        if (_logger.IsEnabled(LogLevel.Information))
+        {
+            _logger.LogInformation("CodeSampleService created for '{ServiceName}', loaded {SampleCount} samples", Name, _options.Samples.Length);
+        }
 
         options.OnChange(UpdateOptions);
-        
     }
-
-   public void UpdateOptions(CodeSampleOptions newOptions, string? changedOption)
+    public void UpdateOptions(CodeSampleOptions newOptions, string? changedOption)
     {
         if (_logger.IsEnabled(LogLevel.Debug))
         {
             _logger.LogDebug("CodeSampleOptions changed for {name}", changedOption);
         }
-        if (changedOption == _serviceName)
+        if (changedOption == Name)
         {
-            _logger.LogInformation("Updating CodeSampleOptions for {serviceName}", _serviceName);
+            _logger.LogInformation("Updating CodeSampleOptions for {serviceName}", Name);
             _options = newOptions;
         }
     }
@@ -48,19 +54,19 @@ public partial record CodeSampleService : ICodeSampleService
     /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing a <see cref="ImmutableList{T}"/> of <see langword="string"/> with the Sample Names to select from</returns>
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
-        await Task.Delay(1);
-        _logger.LogTrace("Collecting available code sample options from appsettings.sampledata.json...");
+        await Task.Delay(1, ct);
+        _logger.LogTrace("Collecting available code sample options for '{ServiceName}' from configuration...", Name );
         var sampleOptions = _options.Samples.Select(sample => sample.SampleID).ToImmutableList();
         
         if (_logger.IsEnabled(LogLevel.Debug))
         {
             // Log available options
-            _logger.LogDebug("Available Options:\n{options}", sampleOptions.JoinBy("," + Environment.NewLine));
+            _logger.LogDebug("Available Options for '{ServiceName}':\n{options}", Name, sampleOptions.JoinBy("," + Environment.NewLine));
         }
         else if (_logger.IsEnabled(LogLevel.Trace))
         {
             // Log available options
-            _logger.LogTrace("Gathered {count} Options", sampleOptions.Count);
+            _logger.LogTrace("Gathered {count} Options for '{ServiceName}'", sampleOptions.Count, Name);
         }
 
         return sampleOptions; 
@@ -72,7 +78,8 @@ public partial record CodeSampleService : ICodeSampleService
         {
             if(_logger.IsEnabled(LogLevel.Trace))
             {
-                _logger.LogTrace("Fetching Storage Data for SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                _logger.LogTrace("Fetching Storage Data for Service '{service}', SampleID: {sampleID},\nDescription: {description},\nFilePath: {filePath},\nLineRanges: {lineRanges}",
+                    Name,
                     sampleOption.SampleID,
                     sampleOption.Description,
                     sampleOption.FilePath,
@@ -82,7 +89,7 @@ public partial record CodeSampleService : ICodeSampleService
             return await _storage.ReadLinesFromPackageFile(sampleOption.FilePath,sampleOption.LineRanges.Select(lr => (lr.Start, lr.End)));
         }
 
-        _logger.LogError("Code sample with ID {sampleID} not found", sampleID);
+        _logger.LogError("Code sample with ID {sampleID} not found for service '{service}'", sampleID, Name);
         return string.Empty;
     }
 }
