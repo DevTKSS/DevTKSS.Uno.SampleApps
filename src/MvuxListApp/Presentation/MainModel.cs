@@ -43,21 +43,21 @@ public partial record MainModel
 
     public IState<string> SelectedMember => State<string>.Value(this,() => string.Empty);
 
-    public IState<string> ModifyedMemberName => State<string>.Empty(this)
+    public IState<string> ModifiedMemberName => State<string>.Empty(this)
                                                              .ForEach(RenameMemberAsync);
     
-    public async ValueTask RenameMemberAsync([FeedParameter(nameof(ModifyedMemberName))]string? modifyedName, CancellationToken ct)
+    public async ValueTask RenameMemberAsync([FeedParameter(nameof(ModifiedMemberName))]string? modifiedName, CancellationToken ct)
     {
         
         string replaceMeItem = await SelectedMember ?? string.Empty;
-        string modifyedItem = await ModifyedMemberName ?? string.Empty;
-        _logger.LogInformation("Modifyed MemberName ist: {modifyedItem}", modifyedItem);
+        string modifiedItem = await ModifiedMemberName ?? string.Empty;
+        _logger.LogInformation("Modified MemberName ist: {modifiedItem}", modifiedItem);
         _logger.LogInformation("SelectedMemeber ist: {selectedMember}", replaceMeItem);
 
         await DashboardList.RemoveAllAsync(item => item == replaceMeItem);
 
-        await DashboardList.AddAsync(modifyedItem,ct);
+        await DashboardList.AddAsync(modifiedItem,ct);
 
-        await DashboardList.TrySelectAsync(modifyedItem,ct);
+        await DashboardList.TrySelectAsync(modifiedItem,ct);
     }
 }
