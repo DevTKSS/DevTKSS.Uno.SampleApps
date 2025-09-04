@@ -28,7 +28,7 @@
         <ListView HorizontalAlignment="Center" MinWidth="200" Grid.Row="2"
                   ItemsSource="{Binding DashboardList}" />
 
-        <TextBox PlaceholderText="Ändere hier Namen des Mitglieds:"
+        <TextBox PlaceholderText="Ändere hier den Namen des Mitglieds:"
                  Text="{Binding ModifyedMemberName, Mode=TwoWay}"/>
         <Button Content="Ändere Namen"
                 Command="{Binding Path=RenameMemberAsync}" />
