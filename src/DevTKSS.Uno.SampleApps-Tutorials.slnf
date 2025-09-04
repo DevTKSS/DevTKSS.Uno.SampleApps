@@ -3,7 +3,7 @@
     "path": "..\\DevTKSS.Uno.SampleApps.slnx",
     "projects": [
       "DevTKSS.Uno.XamlNavigationApp\\DevTKSS.Uno.XamlNavigationApp.csproj",
-      "MvuxListApp\\MvuxListApp.csproj"
+      "MvuxListApp\\DevTKSS.Uno.MvuxListApp.csproj"
     ]
   }
 }
