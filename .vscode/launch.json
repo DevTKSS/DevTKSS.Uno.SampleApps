@@ -50,13 +50,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/MvuxListApp/bin/Debug/net9.0-desktop/MvuxListApp.dll",
+      "program": "${workspaceFolder}/MvuxListApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.MvuxListApp.dll",
       "args": [],
-      "launchSettingsProfile": "MvuxListApp (Desktop)",
+      "launchSettingsProfile": "DevTKSS.Uno.MvuxListApp (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/MvuxListApp",
+      "cwd": "${workspaceFolder}/DevTKSS.Uno.MvuxListApp",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
