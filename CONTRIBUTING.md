@@ -2,10 +2,6 @@
 
 Thank you for your interest in contributing to this project! We welcome contributions from the community.
 
-## Code of Conduct
-
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to foster a welcoming and respectful community.
-
 ## How to Contribute
 
 1. **Fork the repository** and create your branch from `main`.
@@ -15,11 +11,11 @@ Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to foster a wel
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [Apache License 2.0](LICENSE.md).
+By contributing, you agree that your contributions will be licensed under the [Apache License 2.0](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/LICENSE.md).
 
 ## Reporting Issues
 
-If you find a bug or have a feature request, please [open an issue](../../issues).
+If you find a bug or have a feature request, please [open an issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues)
 
 ## Development Guidelines
 

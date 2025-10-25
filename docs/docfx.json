@@ -99,7 +99,7 @@
     },
     "output": "_site",
     "sitemap": {
-      "baseUrl": "https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/"
+      "baseUrl": "https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/"
     }
   }
 }

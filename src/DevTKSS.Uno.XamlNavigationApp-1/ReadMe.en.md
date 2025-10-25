@@ -18,8 +18,8 @@ This sample app is part of a Community Tutorial Video that will guide you throug
 
 Please select the language of your choice to follow along:
 
-- [English](../../doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
-- [German](../../doc/articles/de/Navigation/Extensions-Navigation-de.md)
+- [English](../../docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
+- [German](../../docs/articles/de/Navigation/Extensions-Navigation-de.md)
 
 ## Contributing
 
