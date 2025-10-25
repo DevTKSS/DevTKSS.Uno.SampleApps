@@ -4,10 +4,10 @@ apiRules:
       uidRegex: ^Uno\.Resizetizer$
       type: Namespace
   - exclude:
-      uidRegex: ^DevTKSS\.Uno\.Samples\.MvuxGallery\.ReactiveViewModelMappings$
+      uidRegex: ReactiveViewModelMappings$
       type: Type
   - exclude:
-      uidRegex: ^DevTKSS\.Uno\.Samples\.MvuxGallery\.GlobalStaticResources$
+      uidRegex: GlobalStaticResources$
       type: Type
   # Exclude all auto-generated ViewModel types (end with ViewModel suffix)
   - exclude:
