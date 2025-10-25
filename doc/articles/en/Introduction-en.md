@@ -23,4 +23,4 @@ To give you a quick overview of this Documentation, here is a List of quick link
 
 ## Next Steps
 
-- [How To: Setup Development Environment for Uno Platform App Development](xref:DevTKSS.Setup.DevelopmentEnvironment.en)
+- [How To: Setup Development Environment for Uno Platform App Development](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.en)

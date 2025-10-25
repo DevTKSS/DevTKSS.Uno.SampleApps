@@ -2,80 +2,148 @@
 uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.en
 ---
 
-# How-To: Navigating with a NavigationView in a XAML Markup + MVUX Presentation App
+# How To: Create the UI with a `NavigationView` in XAML
 
-This sample demonstrates how to use a `NavigationView` control to navigate between pages in a XAML Markup + MVUX Presentation App. The app is structured to allow for easy navigation and showcases the MVUX pattern, with focus on brevity and simplicity.
+In this part of the tutorial, we will look at how to create simple page navigation using a `NavigationView`.
 
-**The sample includes:**
+**Previously in this tutorial...**
 
-- A `NavigationView` control for navigation.
-- Routes defined in the `App.xaml` file.
-- A `MainPage.xaml` that serves as the entry point for navigation.
-- `DashboardPage` and `SecondPage` as example pages to navigate to.
-- Each of the pages binds to a string stateful property to demonstrate state management gathered by the MVUX.
+We have previously looked at what we can do with `Uno.Extensions.Navigation` and the `NavigationView` in the intro, and then adjusted the setup of the application or created it. Now we want to see how to actually implement it!
 
-As this SampleApp is produces alongside a Community Tutorial Video on YouTube, you can follow along with the video to see how the app is built step-by-step.
+## Tutorial Video: Navigation with `NavigationView` in MVUX and XAML
 
-- [Link to the Playlist](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX&si=qHkpAUMSW9s8GZCO)
+In this video, we will look together at how to set up and use a `NavigationView` control in a XAML Markup App. We will implement navigation between different pages while applying MVUX principles. You can copy the code directly from the code below and paste it into your application if you want, but from personal experience, it helps you more to write the code yourself and watch how it works. This way you can also better understand what you are doing and why.
 
 > [!NOTE]
-> Currently, the Videos are only available in German Language, but there are Transcriptions added to the Video Description, which should be useable through YouTube's Auto-Translate feature. There are also plans to create English Videos for this SampleApp in the future.
+> This video is currently only available in German, but transcriptions have been added to the video description, which should be usable through YouTube's auto-translate feature. You can also enable auto-translated subtitles in YouTube to follow along in your preferred language.
 
-## Prerequisites
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/knt2oOjHH30)
 
-- Visual Studio 2022 or later with the Uno Platform extension installed.
-- `uno-check --tfm net9.0-desktop` command executed in the Terminal gives you green light for all applicable checks.
+## Implementing the NavigationView
 
-For more information on how to set up your development environment, refer to the [Uno Platform documentation](https://platform.uno/docs/articles/external/uno.check/doc/using-uno-check.html).
+We will first add a simple `NavigationView` to the `MainPage` of the application. There should already be a `Grid` with a `StackPanel` if you created an application from the template.
 
-### [Configuring the App using the VS Wizard](#tab/vs-wizard)
+From this starting point, first remove the `StackPanel` including the controls it contains and add this simple definition of the `NavigationView` instead:
 
-To configure the app using the Visual Studio Wizard, follow these steps:
+```xml
+<Grid utu:SafeArea.Insets="VisibleBounds">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <NavigationView Header="{Binding Title}"
+                    IsPaneToggleButtonVisible="True"
+                    PaneDisplayMode="Auto">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Home"
+                                Icon="Home" />
+            <NavigationViewItem Content="Some View"
+                                Icon="AddFriend" />
+        </NavigationView.MenuItems>
+        <NavigationView.Content>
+            <Grid />
+        </NavigationView.Content>
+    </NavigationView>
+</Grid>
+```
 
-1. Create a new Uno Platform App:
+> [!NOTE]
+> If your application does not include the Uno Toolkit feature, you can simply remove or omit `utu:SafeArea.Insets="VisibleBounds">` in the first line.
 
-   1. Select the `recommended` Template.
-   2. Select the `net9.0` target framework.
-   3. Select `Xaml` as Markup.
-   4. Select `MVUX` as Presentation.
-   5. Select `Regions`, `Dependency Injection`,   as Extensions.
-   6. *Optional: `Toolkit` `Localization`, `Configuration`*
+## Namespaces and Extended Properties
 
-2. Click `Create` to generate the app.
+Now we want to add the properties enabled by the extension, so-called `Attached Properties`.
 
-### [Configuring the App using the CLI](#tab/cli)
+1. To do this, first add `xmlns:uen="using:Uno.Extensions.Navigation.UI` to the collection at the top of your page.
+2. Then add the property `uen:Region.Attached="True"` to the properties of the `Grid`, as well as to those of the `NavigationView` itself, but also in the `Grid` in the `Content` area of the `NavigationView`. With this, we tell the navigator that a navigation route or nested navigation display is expected and should be used within this control.
 
-To configure the app using the CLI, follow these steps:
+    This should then look like this:
 
-1. Open a terminal and navigate to the directory where you want to create the app.
-1. Run the following command to create a new Uno Platform App:
+    ```diff
+    +<Grid uen:Region.Attached="True"
+        utu:SafeArea.Insets="VisibleBounds">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+    + <NavigationView uen:Region.Attached="True"
+                    Header="{Binding Title}" <-- Optional binding to the Title property in the ViewModel
+                    IsPaneToggleButtonVisible="True"
+                    PaneDisplayMode="Auto">
+    <NavigationView.MenuItems>
+        <NavigationViewItem Content="Home"
+                            Icon="Home" />
+        <NavigationViewItem Content="Some View"
+                            Icon="AddFriend" />
+    </NavigationView.MenuItems>
+        <NavigationView.Content>
+    +     <Grid uen:Region.Attached="True" />
+        </NavigationView.Content>
+    </NavigationView>
+    </Grid>
+    ```
 
-  ```bash
-  dotnet new unoapp -o UnoApp2 -preset "recommended" -platforms "desktop" -config False -http "none" -loc False -dsp False -theme-service False
-  ```
+3. Now we add a few route identifier names using `uen:Region.Name="..."`.
 
----
-<!--
-Here is a Video so you can follow along with the steps:
+    ```diff
+    <Grid uen:Region.Attached="True"
+        utu:SafeArea.Insets="VisibleBounds">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <NavigationView uen:Region.Attached="True"
+                    Header="{Binding Title}"
+                    IsPaneToggleButtonVisible="True"
+                    PaneDisplayMode="Auto">
+    <NavigationView.MenuItems>
+        <NavigationViewItem Content="Home"
+    +                       uen:Region.Name="Dashboard"
+                            Icon="Home" />
+        <NavigationViewItem Content="Some View"
+    +                       uen:Region.Name="Second"
+                            Icon="AddFriend" />
+    </NavigationView.MenuItems>
+            <NavigationView.Content>
+                <Grid uen:Region.Attached="True" />
+            </NavigationView.Content>
+        </NavigationView>
+    ```
 
-![Navigation in Xaml und Mvux mit Navigation View]()] // add link to the english localized video here, when available
--->
+4. Finally, the `Grid` that we want to use for the navigation of the `NavigationView` content now needs two more very important properties set, without which it is quite possible that our plan will fail.
 
-### Tutorial Video: Navigation with `NavigationView` in MVUX and XAML
+   We need to:
 
-Now you can get started with the navigation in your app! In this video, I will show you how to set up and use the `NavigationView` control in a XAML Markup + MVUX Presentation App. We will implement navigation between different pages while applying the MVUX principles.
+   1. Append `uen:Region.Navigator="Visibility"`
+   2. Set the `Visibility` property to visible
 
-[Video [Navigation in Xaml und Mvux mit Navigation View](https://youtube.com/embed/knt2oOjHH30?si=PNgis0v9ZTR4LRsF)]
+   And this is how:
 
-> [!TIP]
-> To get the English subtitles, you can enable the auto-translate feature in YouTube. This will allow you to follow along with the video in your preferred language.
+    ```diff
+    <NavigationView.Content>
+    <Grid uen:Region.Attached="True"
+    +      uen:Region.Navigator="Visibility"
+            Visibility="Visible" />
+    </NavigationView.Content>
+    ```
 
-[Discover the Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
+   **As a brief explanation of the properties added there:**
 
-## Additional Resources
+   - **The `Visibility` property:**
 
-- [Uno Platform Homepage](https://platform.uno/)
-  - [Documentation Intro](https://platform.uno/docs/articles/intro.html)
-  - [Uno Navigation Extensions](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
-  - [Mvux Documentation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
-  - [FeedView Control](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/FeedView.html)
+     By setting this, we ensure that the content of this route is initially visible.
+
+   - **The Navigator identifier name:**
+
+     With this, we tell the functions provided by the extension that we want to make the elements marked with this visible and invisible when we call the associated navigation route.
+
+     *The naming is by no means a coincidence!*
+
+     >[!NOTE]
+     > The "Visibility" navigator is the available identifier for this property according to the documentation.
+
+## Next Steps
+
+Now we have set up the `NavigationView` and can use it to navigate between pages. In the next step, we will look at how we can define routes and implement navigation between pages.
+
+[**Define Routes and Implement Navigation**](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.en)

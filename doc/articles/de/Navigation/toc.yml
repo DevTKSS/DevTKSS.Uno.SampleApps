@@ -8,7 +8,7 @@ items:
   - name: Erstellen oder upgraden
     items:
     - name: "App erstellen (Wizard/CLI)"
-      uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-CreateApp.de
+      uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.de
       href: ../HowTo-CreateApp-de.md
     - name: "Eine bestehende App upgraden"
       uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de
@@ -22,3 +22,6 @@ items:
   - name: Definieren einer Navigation im Model oder ViewModel
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel.de
     href: HowTo-ModelDefinition-de.md
+  - name: Reagieren auf Routen Änderungen
+    uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-ChangeRoutes.de
+    href: HowTo-ChangeRoutes-de.md

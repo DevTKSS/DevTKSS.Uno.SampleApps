@@ -1,4 +1,27 @@
 items:
-  - name: "How To: Navigation with NavigationView in Xaml and Mvux"
+  - name: "Navigation Options in an Uno App"
+    uid: DevTKSS.Uno.Navigation.Navigation-Options.en
+    href: Navigation-Options-en.md
+  - name: "Navigation with Uno Extensions"
+    uid: DevTKSS.Uno.ExtensionsNavigation.Overview.en
+    href: Extensions-Navigation-en.md
+  - name: Create or Upgrade
+    items:
+    - name: "Create App (Wizard/CLI)"
+      uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.en
+      href: ../HowTo-CreateApp-en.md
+    - name: "Upgrade an Existing App"
+      uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.en
+      href: HowTo-UpgradeExistingApp-en.md
+  - name: "Define UI with NavigationView"
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.en
     href: HowTo-Defining-UI-NavigationView-en.md
+  - name: "Register Routes"
+    uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.en
+    href: HowTo-RegisterRoutes-en.md
+  - name: "Define Navigation in Model or ViewModel"
+    uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel.en
+    href: HowTo-ModelDefinition-en.md
+  - name: "React to Route Changes"
+    uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-ChangeRoutes.en
+    href: HowTo-ChangeRoutes-en.md

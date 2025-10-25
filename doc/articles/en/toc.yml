@@ -1,12 +1,26 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
-- name: Introduction
+- name: Welcome
   uid: DevTKSS.Uno.SampleApps.Intro.en
   href: Introduction-en.md
+- name: Uno Platform Resource Collection
+  uid: DevTKSS.Uno.ResourcesLookup.en
+  href: Uno-resources-lookup-en.md
 - name: Mvux Gallery Overview
   uid: DevTKSS.Uno.SampleApps.MvuxGallery.Overview.en
   href: MvuxGallery-Overview-en.md
-- name: Getting Started
-  uid: DevTKSS.Setup.DevelopmentEnvironment.en
-  href: HowTo-Setup-DevelopmentEnvironment-en.md
-- name: Tutorials
+- name: "Getting Started & Basics"
+  items:
+  - name: Set Up Development Environment
+    uid: DevTKSS.Uno.Setup.DevelopmentEnvironment.en
+    href: HowTo-Setup-DevelopmentEnvironment-en.md
+  - name: "Create a New Uno App"
+    uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.en
+    href: HowTo-CreateApp-en.md
+  - name: "Add Pages"
+    uid: DevTKSS.Uno.Setup.HowTo-AddingNewPages.en
+    href: HowTo-Adding-New-Pages-en.md
+  - name: "Define New Class or Record ViewModels"
+    uid: DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.en
+    href: HowTo-Adding-New-VM-Class-Record-en.md
+- name: "Navigation in Uno Apps"
   href: Navigation/toc.yml
