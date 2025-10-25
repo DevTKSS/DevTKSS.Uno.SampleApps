@@ -60,7 +60,7 @@ jobs:
       - name: Prepare publish folder (gh-pages/docs)
         run: |
           New-Item -ItemType Directory -Force -Path public/docs | Out-Null
-          robocopy "docs/_site" "public/docs" /E /NFL /NDL /NJH /NJS /NC /NS | Out-Null
+          Copy-Item -Path "docs/_site/*" -Destination "public/docs" -Recurse -Force
           if (Test-Path "docs/.nojekyll") { Copy-Item -Force "docs/.nojekyll" "public/docs/.nojekyll" }
         shell: pwsh
 
