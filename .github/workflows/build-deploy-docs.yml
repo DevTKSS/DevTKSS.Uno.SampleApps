@@ -42,9 +42,9 @@ jobs:
           dotnet --info
           dotnet restore ./src/DevTKSS.Uno.Samples.sln
 
-      - name: Install DocFX 2.78.3
+      - name: Install DocFX as .NET tool
         run: |
-          choco install docfx --version=2.78.3 -y
+          dotnet tool install -g docfx --version 2.78.3
           docfx --version
 
       - name: Build metadata
