@@ -56,9 +56,6 @@ Hier ist eine Liste von Steuerelementen und Funktionen, die Sie in der MvuxGalle
     - [CodeSampleOptionsContext](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleOptions.cs)
     - [CodeSampleOptionsConfiguration](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Models/CodeSamples/CodeSampleOptionsConfiguration.cs)
 
-    > [!NOTE]
-    > Derzeit konnten `ValueTuple<int,int>` und `Dictionary<string, CodeSampleOption>` Definitionen von IOptions geladenen Einstellungen nicht erfolgreich geladen werden, daher ist dies als Array für Workaround definiert.
-
 - Konfiguration
   - Daten für Serialization
     - [appsettings.sampledata.json](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/appsettings.sampledata.json)

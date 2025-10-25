@@ -34,7 +34,6 @@ Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos 
 
 ---
 
-<!-- Optional: später aktivieren
-## 🔍 Weitere Ressourcen
+## Weitere Ressourcen
 
-📚 [API-Dokumentation](./api/) -->
+- [API-Dokumentation](./api/)

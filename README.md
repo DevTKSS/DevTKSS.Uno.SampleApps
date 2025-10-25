@@ -24,11 +24,11 @@ This is a collection of Sample Apps and Tutorials for the [Uno Platform](https:/
 
 ## Mvux Gallery
 
-![Mvux Gallery Showcase Thumbnail](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+![Mvux Gallery Showcase Thumbnail](./doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
 
 **Wanna see a quick showcase, what to explore there?**
 
-![Mvux Gallery ShowCase](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/MvuxGallery-ShowCase.gif)
+![Mvux Gallery ShowCase](./doc/articles/.attachments/MvuxGallery-ShowCase.gif)
 
 Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples.MvuxGallery/) App.
 [Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/de/MvuxGallery-Overview.md)
@@ -47,22 +47,20 @@ Following list provides you a quick Overview, what you can find in the [Mvux Gal
 
 ### Sampled Uno.Extensions
 
-- [Mvux](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
+- [Mvux](./src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
 - Navigation
-  - [via Xaml](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
+  - [via Xaml](./src/DevTKSS.Uno.Samples.MvuxGallery/doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
 - Hosting (App Host Builder)
 - Dependency Injection
 - Serialization
 - Configuration
-  - Data for Serialization load from separate [`appsettings.sampledata.json`](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/master/appsettings.sampledata.json) file.
+  - Data for Serialization load from separate [`appsettings.sampledata.json`](./src/DevTKSS.Uno.Samples.MvuxGallery/master/appsettings.sampledata.json) file.
 - Storage
 - Localization
 
 ### Known Issues on the Mvux Gallery
 
 - [ ] [ThemeResource Styled are not listening to Theme changes](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/13)
-- [ ] Getting `IOptions` with JsonTypeInfo Typed to Dictionary or Tuples does not work as expected and only returns null values. (see [#6](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/6))
-- [ ] Unclear how to use `NamedOptions` using Uno.Extensions with IConfigBuilder Following this up on [#9](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/9) and hoping to get a solution and Documentation for this in the future.
 - [ ] docfx fails to resolve source code links for e.g. included code snippets
 
 ## Tutorial Videos and used Samples
