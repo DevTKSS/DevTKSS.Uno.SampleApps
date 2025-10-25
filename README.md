@@ -1,90 +1,129 @@
 # DevTKSS Uno Samples
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/LICENSE.md)
+[![Documentation](https://img.shields.io/badge/docs-online-green.svg)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/)
+[![Uno Platform](https://img.shields.io/badge/Uno%20Platform-5.5+-purple.svg)](https://platform.uno/)
+
 ## Welcome to this Samples and Tutorials Library! ❤️
 
-The here contained samples and Tutorials are meant to help Developers, independent to their pre-knowledge, to get an Idea of:
+This is a collection of Sample Apps and Tutorials for the [Uno Platform](https://platform.uno/), created to fill the gap of missing **German-localized** learning content. Most tutorials are available in both **German** (primary) and **English**.
+
+**Quick Links:** [Get Started](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/) | [Video Tutorials (German)](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX) | [Discussions](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions)
+
+---
+
+## About This Repository
+
+This repository aims to help developers, regardless of their prior knowledge, learn:
 
 - How to get started with the [Uno Platform](https://platform.uno/)
-- How the Sampled Features and Controls can be used inside of our Applications
+- How to use featured controls and patterns in real applications
+- Best practices for MVUX, Navigation, and other Uno.Extensions
 
-This is a collection of Sample Apps and Tutorials for the [Uno Platform](https://platform.uno/), aiming to fill the gap of missing ***German Localized*** learning Content.
+### Prerequisites
 
-### Page - Table of Contents
+Before diving into the samples, make sure you have:
 
-- **Samples in this Repository:**
-  - [Mvux Gallery](#mvux-gallery)
-  - [XamlNavigationApp](#xaml-navigation-app)- Localized Tutorial available in German!
-
-- [**Tutorials**](#tutorial-videos-and-used-samples)
-
-- [Feedback, Issues and Contributing](#feedback-issues-and-contributing)
+- **.NET 9.0 SDK** or later
+- **Visual Studio 2022** (17.8+) with Uno Platform extension, **Rider**, or **VS Code**
+- **Uno.Check** tool installed and verified (run `uno-check`)
 
 > [!TIP]
-> Check out the [Documentation & Tutorials](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/), for more a more detailed List and future coming Guides and Explanations.
+> For detailed setup instructions, see our [Development Environment Setup Guide](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html).
 
-## Mvux Gallery
+---
+
+## Sample Applications
+
+### Mvux Gallery
 
 ![Mvux Gallery Showcase Thumbnail](./doc/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
 
-**Wanna see a quick showcase, what to explore there?**
+**Want to see a quick showcase of what you can explore?**
 
 ![Mvux Gallery ShowCase](./doc/articles/.attachments/MvuxGallery-ShowCase.gif)
 
-Following list provides you a quick Overview, what you can find in the [Mvux Gallery](./src/DevTKSS.Uno.Samples.MvuxGallery/) App.
-[Detailed and linked Overview about the Mvux Gallery Contents](./doc/articles/de/MvuxGallery-Overview.md)
+The [Mvux Gallery](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.Samples.MvuxGallery/) demonstrates modern Uno Platform development patterns with a comprehensive example application.
 
-### Sampled Controls
+**[View Detailed Mvux Gallery Overview](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/MvuxGallery-Overview-en.html)**
 
-- FeedView combined with:
-  - GridView
-  - ListView
-- DataTemplate centralized Resource definition
-- Card
-- Grid
-- NavigationView
-- `ItemOverlayTemplate` DataTemplate layout replicated from WinUI 3 Gallery
-- TabBar & TabBarItem
+#### Featured Controls
 
-### Sampled Uno.Extensions
+- **FeedView** combined with GridView and ListView
+- **DataTemplate** centralized resource definitions
+- **Card**, **Grid**, **NavigationView**
+- **ItemOverlayTemplate** (replicated from WinUI 3 Gallery)
+- **TabBar & TabBarItem**
 
-- [Mvux](./src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
-- Navigation
-  - [via Xaml](./src/DevTKSS.Uno.Samples.MvuxGallery/doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
-- Hosting (App Host Builder)
-- Dependency Injection
-- Serialization
-- Configuration
-  - Data for Serialization load from separate [`appsettings.sampledata.json`](./src/DevTKSS.Uno.Samples.MvuxGallery/master/appsettings.sampledata.json) file.
-- Storage
-- Localization
+#### Demonstrated Uno.Extensions
 
-### Known Issues on the Mvux Gallery
+- **[MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)** - Model-View-Update-eXtended pattern
+- **Navigation**
+  - [Navigation via XAML](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
+  - [React to Route Changes with IRouteNotifier](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/Navigation/HowTo-ChangeRoutes-en.html)
+- **Hosting** - App Host Builder pattern
+- **Dependency Injection** - Constructor injection
+- **Serialization** - JSON data handling
+- **Configuration** - Data loaded from `appsettings.json`
+- **Storage** - Local data persistence
+- **Localization** - Multi-language support
 
-- [ ] [ThemeResource Styled are not listening to Theme changes](https://github.com/DevTKSS/DevTKSS.Uno.Samples.MvuxGallery/issues/13)
-- [ ] docfx fails to resolve source code links for e.g. included code snippets
+#### Known Issues
 
-## Tutorial Videos and used Samples
+- ThemeResource styles are not listening to theme changes ([Issue #13](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues/13))
+- DocFX fails to resolve source code links for included code snippets
 
-To show you how to get to the end result of the Mvux Gallery App, I created a Tutorial Video that will guide you through the process of building this App with the following Sample Apps and added Documentation.
+---
 
 ### Xaml Navigation App
 
 ![Image of final Xaml Navigation App](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
-#### Content of the Tutorial
+A complete tutorial application demonstrating navigation patterns with MVUX and XAML.
 
-- [Uno.Extensions.Reactive also known as `Mvux`](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
+#### Tutorial Content
+
+- [Uno.Extensions.Reactive (MVUX)](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
 - [Uno.Extensions.Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
-- [Xaml Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
+- [XAML Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
 
-[Discover the Source Code of the DevTKSS.Uno.XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
+**Available Resources:**
+
+- **[Tutorial Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/Navigation/Extensions-Navigation-en.html)** - Step-by-step guide (🇩🇪 German | 🇬🇧 English)
+- **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
+- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp-1/)** - Browse the implementation
+
+---
+
+## Documentation & Tutorials
+
+You can access all tutorials and guides in both English and German. Use the table below to quickly jump to the documentation in your preferred language:
+
+| Section                  | English                                                                 | German                                                                  |
+|--------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| Getting Started          | [Guide (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Anleitung (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/de/HowTo-Setup-DevelopmentEnvironment-de.html) |
+| Mvux Gallery Overview    | [Overview (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/MvuxGallery-Overview-en.html) | [Übersicht (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/de/MvuxGallery-Overview-de.html) |
+| Navigation Tutorials     | [Navigation (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/en/Navigation/Extensions-Navigation-en.html) | [Navigation (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/articles/de/Navigation/Extensions-Navigation-de.html) |
+| All Docs Index           | [Docs Home (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/) | [Docs Home (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/index.html?lang=de) |
+
+Most content is available in both German (original) and English (translated).
+
+---
 
 ## Feedback, Issues and Contributing
 
-Let me know if you have any questions or feedback!
+We welcome your feedback and contributions!
 
-If you find any issues or have suggestions for improvements, please open an [issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) or [discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions).
+- **Questions?** Start a [Discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions)
+- **Found a bug?** Open an [Issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues)
+- **Want to contribute?** Check out our [Contributing Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)
+- **Have an idea?** Share it in [Discussions](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions/new)
 
-In case you want to contribute, check out the [Contributing Guidelines](CONTRIBUTING.md) for more information on how to get started.
+---
 
-You are missing a feature or have an idea for a new Sample App? Please open a [discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions/new) to share your thoughts!
+### Helpful Resources
+
+- [Uno Platform Homepage](https://platform.uno/)
+- [Uno Platform Documentation](https://platform.uno/docs/articles/intro.html)
+- [Uno Platform Discord Community](https://discord.gg/eBHZSKG)
+- [Uno Platform on GitHub](https://github.com/unoplatform/uno)
