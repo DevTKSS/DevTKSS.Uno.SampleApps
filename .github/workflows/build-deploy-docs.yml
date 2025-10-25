@@ -1,0 +1,98 @@
+name: Build and Deploy DocFX
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - 'README.md'
+      - '.github/workflows/build-deploy-docs.yml'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'docs/**'
+      - 'src/**'
+      - 'README.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build DocFX site
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK (9.x)
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore solution (fetch Uno.Sdk and packages)
+        run: |
+          dotnet --info
+          dotnet restore ./src/DevTKSS.Uno.Samples.sln
+
+      - name: Install DocFX 2.78.3
+        run: |
+          choco install docfx --version=2.78.3 -y
+          docfx --version
+
+      - name: Build metadata
+        working-directory: docs
+        run: |
+          docfx metadata docfx.json --logLevel Verbose
+
+      - name: Build site
+        working-directory: docs
+        run: |
+          docfx build docfx.json --logLevel Verbose
+
+      - name: Prepare publish folder (gh-pages/docs)
+        run: |
+          New-Item -ItemType Directory -Force -Path public/docs | Out-Null
+          robocopy "docs/_site" "public/docs" /E /NFL /NDL /NJH /NJS /NC /NS | Out-Null
+          if (Test-Path "docs/.nojekyll") { Copy-Item -Force "docs/.nojekyll" "public/docs/.nojekyll" }
+        shell: pwsh
+
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docfx-site
+          path: public/docs
+
+  deploy:
+    if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' }}
+    name: Deploy to GitHub Pages (gh-pages/docs)
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docfx-site
+          path: public/docs
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: public
+          keep_files: false
+          force_orphan: true
