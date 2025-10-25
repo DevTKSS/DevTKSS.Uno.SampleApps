@@ -56,11 +56,6 @@ public partial record DashboardModel
     /// </summary>
     /// <param name="ct">A <see cref="CancellationToken"/> to make the method compileable.</param>
     /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing an <see cref="ImmutableList{T}"/> of <see langword="string"/> with the sample names to select from.</returns>
-    /// <remarks>
-    /// Since `ListFeed.Async` requires a <see cref="CancellationToken"/> even if Uno documentation remarks this parameter to be optional,
-    /// adding the type <see cref="string"/> or <see cref="IImmutableList{T}"/> to the `ListFeed` like `ListFeed<string>.Async(...)`,
-    /// or to the Async extension itself like `ListFeed.Async<IImmutableList{string}>` results in a type mismatch.
-    /// </remarks>
     public static async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         // since `ListFeed.Async` requires a CancellationToken even if Uno Documentation remarks this parameter to be optional.< br />

@@ -58,7 +58,7 @@
       {
         "files": [
           "images/logo/*.{png,ico}",
-          "articles/.attachments/*.png"
+          "articles/.attachments/*.{png,gif}"
         ],
         "dot": true
       }
