@@ -24,16 +24,16 @@ Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos 
 
 ### MvuxGallery
 
-- 📄 [Dokumentation ansehen](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.de)
-- 🧩 [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
+- [Dokumentation ansehen](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.de)
+- [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
 
 ### XamlNavigationApp (Mvux)
 
-- 📄 [NavigationView in MVUX oder MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de)
-- 🧩 [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
+- [NavigationView in MVUX oder MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de)
+- [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
 
 ---
 
 ## Weitere Ressourcen
 
-- [API-Dokumentation](./api/)
+- [API-Dokumentation](~/api/index.md)

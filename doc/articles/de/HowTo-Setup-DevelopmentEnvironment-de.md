@@ -12,7 +12,7 @@ Im folgenden werden wir uns zusammen anschauen, wie man die Entwicklungsumgebung
 > [!TIP]
 > Solltest du bei der Ausführung des Tools Probleme haben, kannst du hier den zugehörigen [Offiziellen Guide zu Uno-Check von Uno Platform](https://platform.uno/docs/articles/external/uno.check/doc/using-uno-check.html) finden.
 
-### 📺 Videoanleitung
+### Videoanleitung
 
 ![How To: Einrichten unserer Uno Platform Entwicklungsumgebung](https://youtu.be/oI6IZVOeQBI)
 
@@ -74,8 +74,8 @@ Sieh dir den [Troubleshooting Guide](https://platform.uno/docs/articles/external
 
 Sobald deine Umgebung eingerichtet ist, kannst du neben den Tutorials hier, auch beispielsweise mit dem [Counter Workshop](https://platform.uno/docs/articles/getting-started/counterapp/get-started-counter.html) starten und diese Grundlagen lernen:
 
-- 📁 Die Struktur einer Uno-App
-- 🖼️ Den Umgang mit Assets (Bilder/Icons) über **`Uno.Resizetizer`**
-- 🔗 Die Verwendung von Commands und Bindings
+- Die Struktur einer Uno-App
+- Den Umgang mit Assets (Bilder/Icons) über **`Uno.Resizetizer`**
+- Die Verwendung von Commands und Bindings
 
 ---

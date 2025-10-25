@@ -10,11 +10,11 @@ Nun wollen wir uns einmal anschauen, wie wir passend zur Uno Extensions Navigati
 
 1. Erstelle hierfür zu aller erst ein Model bzw. ViewModel Element.
 
-   [!INCLUDE [Anleitung zur Erstellung eines grundlegenden Model bzw. ViewModels](xref:DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.de)]
+    [!INCLUDE [Anleitung zur Erstellung eines grundlegenden Model bzw. ViewModels](../HowTo-Adding-New-VM-Class-Record-de.md)]
 
 2. Füge nun noch den `INavigator` als **DependencyInjection** Konstruktor Parameter hinzu.
 
-   [!INCLUDE [Anleitung: Nutze Konstruktor Parameter für DependencyInjection](xref:DevTKSS.Uno.Setup.Using-DI-in-ctor.de)]
+    [!INCLUDE [Anleitung: Nutze Konstruktor Parameter für DependencyInjection](../HowTo-Using-DI-in-ctor-de.md)]
 
 ## Navigation im Xaml
 
