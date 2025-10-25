@@ -1,3 +1,3 @@
-# Welcome to the API Reference for the SampleApps
+# DevTKSS.Uno.Samples.MvuxGallery API Documentation
 
-Use the Side TOC to navigate through the API documentation.
+Use the table of contents to browse API documentation for the `DevTKSS.Uno.Samples` library.

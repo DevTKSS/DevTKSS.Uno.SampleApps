@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build-desktop",
+      "label": "build-desktop MvuxGallery",
       "command": "dotnet",
       "type": "process",
       "args": [
@@ -15,12 +15,38 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "publish-desktop",
+      "label": "publish-desktop MvuxGallery",
       "command": "dotnet",
       "type": "process",
       "args": [
         "publish",
         "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/DevTKSS.Uno.SampleApps.MvuxGallery.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net9.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "build-desktop XamlNavigationApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp-1/DevTKSS.Uno.XamlNavigationApp.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net9.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish-desktop XamlNavigationApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp-1/DevTKSS.Uno.XamlNavigationApp.csproj",
         "/property:GenerateFullPaths=true",
         "/property:TargetFramework=net9.0-desktop",
         "/consoleloggerparameters:NoSummary"

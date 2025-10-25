@@ -1,4 +1,5 @@
 namespace DevTKSS.Uno.Samples.MvuxGallery.Presentation.ViewModels;
+
 public partial record MainModel
 {
     private readonly IStringLocalizer _stringLocalizer;
@@ -40,7 +41,7 @@ public partial record MainModel
         }
         else
         {
-            _logger.LogTrace("{CurrentNotifierRoute} was empty, setting default header using 'WelcomeGreeting' Key",nameof(currentNotifierRoute));
+            _logger.LogTrace("{CurrentNotifierRoute} was empty, setting default header using 'WelcomeGreeting' Key", nameof(currentNotifierRoute));
             await CurrentHeader.SetAsync(_stringLocalizer["WelcomeGreeting"]);
         }
     }

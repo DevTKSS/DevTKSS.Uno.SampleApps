@@ -13,7 +13,7 @@ public static class ServiceCollectionExtension
     /// <param name="sectionName">The optional configuration section name. If not provided, <paramref name="serviceName"/> is used.</param>
     /// <returns>The <see cref="IServiceCollection"/> for chaining.</returns>
     /// <remarks>
-    /// This method assumes configuration for the named <see cref="CodeSampleOptions"/> is provided (e.g., via UseConfiguration().Section<T>()).
+    /// This method assumes configuration for the named <see cref="CodeSampleOptions"/> is provided (e.g., via UseConfiguration().Section&lt;T&gt;()).
     /// It registers a keyed singleton <see cref="ICodeSampleService"/> that consumes those named options.
     /// </remarks>
     public static IServiceCollection AddKeyedSingletonCodeService(this IServiceCollection services, string serviceName, string? sectionName = null)

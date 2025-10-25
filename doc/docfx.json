@@ -4,53 +4,102 @@
     {
       "src": [
         {
-          "src": "../src",
           "files": [
-            "**/DevTKSS.*.csproj"
-          ]
+            "**/DevTKSS.Extensions.Uno.Extensions.csproj",
+            "**/DevTKSS.Uno.Samples.MvuxGallery.csproj"
+          ],
+          "src": "../src"
         }
       ],
-      "output": "api"
+      "includeExplicitInterfaceImplementations": false,
+      "disableDefaultFilter": false,
+      "filter": "Resources/filterConfig.yml",
+      // "codeSourceBasePath": "../",
+      "noRestore": true,
+      "output": "api",
+      "memberLayout": "samePage",
+      "outputFormat": "apiPage"
     }
   ],
   "build": {
+      "globalMetadata": {
+      "_appTitle": "DevTKSS Sample Apps & Tutorials for Uno Platform Development",
+      "_appName": "DevTKSS.Uno.SampleApps",
+      "_appFaviconPath": "images/logo/styled-logo.ico",
+      "_appLogoPath": "images/logo/styled-logo-small.png",
+      "_copyrightFooter": "© 2025 Sonja Schweitzer, DevTKSS, TKSS Development, All rights reserved.",
+      "_ownerName": "TKSS Development",
+      "_githubProfileLink": "https://github.com/DevTKSS",
+      "_enableSearch": true,
+      "_disableAffix": false,
+      "_disableBreadcrumb": false,
+      "_disableNextArticle": false,
+      "_disableTocFilter": false,
+      "_lang": "csharp", // this gets unrecognized for metadata somehow
+      "pdf": false
+    },
     "content": [
       {
+        "files":[
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
         "files": [
-          "**/*.{md,yml}"
-        ],
-        "exclude": [
-          "_site/**",
-          "api/Uno.Resizetizer*.yml"
+          "articles/**.{md,yml}",
+          "toc.yml",
+          "index.md",
+          "../README.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/logo/*.{png,ico}",
+          "articles/.attachments/*.{png,gif}"
+        ],
+        "dot": true
+      }
+    ],
+    "overwrite": [
+      {
+        "files":[
+          "api/**.md",
+          // "api/**.yml",
+          "articles/**.md",
+          "articles/**.yml",
+          "index.md"
+        ],
+        "exclude":[
+          "obj/**",
+          "_site/**"
         ]
       }
     ],
-    "output": "_site",
     "template": [
       "default",
-      "modern"
+      "modern"//,
+      // "templates/singulinkfx"
     ],
+    "xref": [ "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json" ],
     "markdownEngineProperties": {
       "markdigExtensions": [
         "yaml",
         "definitionlists",
-        "bootstrap",
-        "globalization",
-        "advanced"
+        "diagrams",
+        "advanced",
+        "alerts",
+        "emojis",
+        "footers",
+        "footnotes",
+        "medialinks"
       ]
     },
-    "globalMetadata": {
-      "_appName": "DevTKSS.Uno.SampleApps",
-      "_appTitle": "DevTKSS.Uno.SampleApps",
-      "_enableSearch": false,
-      "pdf": false
+    "output": "_site",
+    "sitemap": {
+      "baseUrl": "https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc/"
     }
   }
 }

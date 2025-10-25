@@ -3,13 +3,26 @@
     "version": "0.2",
     "language": "en,de",
     "words": [
+        "alertblocks",
         "appsettings",
+        "definitionlists",
         "DevTKSS",
+        "dotnet",
+        "docfx",
+        "gridtables",
         "Listboard",
+        "markdig",
+        "medialinks",
         "Mvux",
+        "Mvvm",
+        "MVVM",
         "Resizetizer",
         "resw",
-        "sampledata"
+        "sampledata",
+        "singulinkfx",
+        "TKSS",
+        "unoapp",
+        "upgraden"
     ],
     "dictionaries": [
         "csharp",
@@ -21,6 +34,8 @@
         "node_modules/**",
         "dist/**",
         "src/*",
-        "**.gitignore"
+        "**.gitignore",
+        "doc/templates/**",
+        "LICENSE.md"
     ]
 }

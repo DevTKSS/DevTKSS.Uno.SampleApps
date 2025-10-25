@@ -1,0 +1,4 @@
+<div class="footer">
+  {{{_appFooter}}}
+  {{^_appFooter}}<strong>Powered by<a href='https://dotnet.github.io/docfx/'>DocFX</a> + <a href="{{_githubProfileLink}}">{{ _ownerName }}</a></strong>{{/_appFooter}}
+</div>

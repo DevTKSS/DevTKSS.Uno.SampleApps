@@ -70,14 +70,14 @@ public static class EnumerableExtensions
             return string.Empty;
         }
 
-        var baseItem = isNullBased ? 0 : 1;
+        var resultBase = isNullBased ? 0 : 1;
         var startIndex = Math.Clamp(
-            value: range.Start - baseItem,
-            min: baseItem,
+            value: range.Start - resultBase,
+            min: 0,
             max: list.Count);
 
         var endIndex = Math.Clamp(
-            value: range.End - baseItem,
+            value: range.End - resultBase,
             min: startIndex,
             max: list.Count); // Ensure 'End' does not exceed available lines
 

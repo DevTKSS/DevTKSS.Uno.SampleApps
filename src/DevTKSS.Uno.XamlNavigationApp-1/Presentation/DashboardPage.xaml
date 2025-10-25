@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:utu="using:Uno.Toolkit.UI"
-    xmlns:mvux="using:Uno.Extensions.Reactive.UI"
     mc:Ignorable="d"
     Background="{ThemeResource BackgroundBrush}">
 

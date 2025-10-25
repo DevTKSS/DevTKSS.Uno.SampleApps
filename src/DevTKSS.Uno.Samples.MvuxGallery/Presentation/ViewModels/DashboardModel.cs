@@ -27,37 +27,35 @@ public partial record DashboardModel
     public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
 
     #region CodeSample import directly in the Model
-    /// <value>
+    /// <summary>
     /// Holds a static Collection of <see langword="string"/> to bind to
-    /// </value>
+    /// </summary>
     /// <remarks>
     /// Projects the selected item to <see cref="SelectedOption"/>
     /// </remarks>
     public IListFeed<string> CodeSampleOptions => ListFeed.Async(GetCodeSampleOptionsAsync)
                                                           .Selection(SelectedOption);
 
-    /// <value>
+    /// <summary>
     /// Represents the selected item in the <see cref="CodeSampleOptions"/>
-    /// </value>
+    /// </summary>
     /// <remarks>
     /// Executes <see cref="SwitchCodeSampleAsync"/> when the selected item changes
     /// </remarks>
     public IState<string> SelectedOption => State<string>.Value(this, () => "FeedView + GridView XAML")
                                                          .ForEach(SwitchCodeSampleAsync);
 
-    /// <value>
+    /// <summary>
     /// Represents the currently selected code sample to bind to and default to an empty string
-    /// </value>
+    /// </summary>
     public IState<string> CurrentCodeSample => State<string>.Value(this, () => string.Empty);
 
 
     /// <summary>
-    /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
+    /// Retrieves a static collection of values for <see cref="CodeSampleOptions"/>.
     /// </summary>
-    /// <param name="ct">
-    /// A <see cref="CancellationToken"/> as the FeedList.Async requires a CancellationToken
-    /// </param>
-    /// <returns>The available Values to select from.</returns>
+    /// <param name="ct">A <see cref="CancellationToken"/> to make the method compileable.</param>
+    /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing an <see cref="ImmutableList{T}"/> of <see langword="string"/> with the sample names to select from.</returns>
     public static async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         // since `ListFeed.Async` requires a CancellationToken even if Uno Documentation remarks this parameter to be optional.< br />
@@ -89,6 +87,9 @@ public partial record DashboardModel
     /// <returns>A ValueTask to be awaited</returns>
     /// <remarks>
     /// Uses switch expression to select the correct code sample which provides better performance and less boilerplate code.
+    /// <para>
+    /// The switch expression maps the selected option to the corresponding code sample file path. If the selected option does not match any predefined cases, it defaults to an empty string.
+    /// </para>
     /// </remarks>
     public async ValueTask SwitchCodeSampleAsync([FeedParameter(nameof(SelectedOption))] string? selectedOption, CancellationToken ct = default)
     {

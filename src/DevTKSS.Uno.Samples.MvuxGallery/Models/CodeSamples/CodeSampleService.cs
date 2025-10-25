@@ -39,25 +39,16 @@ public partial record CodeSampleService : ICodeSampleService
     }
 
     /// <summary>
-    /// Get a static Collection of Values for <see cref="CodeSampleOptions"/>
+    /// Retrieves a static collection of values for <see cref="CodeSampleOptions"/>.
     /// </summary>
-    /// <param name="ct">
-    /// A CancellationToken to make it compileable
-    /// <remarks>
-    /// since `ListFeed.Async` requires a CancellationToken even if Uno Documentation remarks this parameter to be optional.<br/>
-    /// <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs0411?f1url=%3FappId%3Droslyn%26k%3Dk(CS0411)">CS0411</see><br/>
-    /// <br/>
-    /// adding then the type string or IImmutableList<string> to the ListFeed like `ListFeed<string>.Async(...)`,
-    /// or to the Async Extension itself like `ListFeed.Async<IImutableList<string>` results in a type mismatch.<br/>
-    /// <see href="https://learn.microsoft.com/en-us/dotnet/csharp/misc/cs1503?f1url=%3FappId%3Droslyn%26k%3Dk(CS1503)">CS1503</see>
-    /// </remarks>
-    /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing a <see cref="ImmutableList{T}"/> of <see langword="string"/> with the Sample Names to select from</returns>
+    /// <param name="ct">A <see cref="CancellationToken"/> to make the method compileable.</param>
+    /// <returns>An awaitable <see cref="ValueTask{TResult}"/> providing an <see cref="ImmutableList{T}"/> of <see langword="string"/> with the sample names to select from.</returns>
     public async ValueTask<IImmutableList<string>> GetCodeSampleOptionsAsync(CancellationToken ct = default)
     {
         await Task.Delay(1, ct);
         _logger.LogTrace("Collecting available code sample options for '{ServiceName}' from configuration...", Name );
         var sampleOptions = _options.Samples.Select(sample => sample.SampleID).ToImmutableList();
-        
+
         if (_logger.IsEnabled(LogLevel.Debug))
         {
             // Log available options
@@ -72,6 +63,12 @@ public partial record CodeSampleService : ICodeSampleService
         return sampleOptions; 
     }
 
+    /// <summary>
+    /// Retrieves the code sample content based on the provided sample ID.
+    /// </summary>
+    /// <param name="sampleID">The unique identifier for the code sample to fetch.</param>
+    /// <param name="ct">A cancellation token for the operation.</param>
+    /// <returns>An awaitable <see cref="ValueTask{string}"/> containing the code sample content as a <see langword="string"/>.</returns>
     public async ValueTask<string> GetCodeSampleAsync(string? sampleID, CancellationToken ct = default)
     {
         if (_options.Samples.FirstOrDefault(sample => sample.SampleID == sampleID) is CodeSample sampleOption)

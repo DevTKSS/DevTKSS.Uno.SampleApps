@@ -1,0 +1,24 @@
+# YAML-Language Server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/filterconfig.schema.json
+apiRules:
+  - exclude:
+      uidRegex: ^Uno\.Resizetizer$
+      type: Namespace
+  - exclude:
+      uidRegex: ReactiveViewModelMappings$
+      type: Type
+  - exclude:
+      uidRegex: GlobalStaticResources$
+      type: Type
+  # Exclude all auto-generated ViewModel types (end with ViewModel suffix)
+  - exclude:
+      uidRegex: ViewModel$
+      type: Type
+  # Exclude all types with BindableAttribute (catches generated Bindable*ViewModel types)
+  - exclude:
+      hasAttribute:
+        uid: Uno.Extensions.Reactive.BindableAttribute
+      type: Type
+  # Exclude __Reactive methods
+  - exclude:
+      uidRegex: __Reactive(\(.*\))?$
+      type: Member
