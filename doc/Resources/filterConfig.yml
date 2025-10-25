@@ -2,10 +2,23 @@
 apiRules:
   - exclude:
       uidRegex: ^Uno\.Resizetizer$
-      type: namespace
+      type: Namespace
   - exclude:
       uidRegex: ^DevTKSS\.Uno\.Samples\.MvuxGallery\.ReactiveViewModelMappings$
-      type: namespace
+      type: Type
   - exclude:
-      uidRegex: ^__Reactive$
-      type: method
+      uidRegex: ^DevTKSS\.Uno\.Samples\.MvuxGallery\.GlobalStaticResources$
+      type: Type
+  # Exclude all auto-generated ViewModel types (end with ViewModel suffix)
+  - exclude:
+      uidRegex: ViewModel$
+      type: Type
+  # Exclude all types with BindableAttribute (catches generated Bindable*ViewModel types)
+  - exclude:
+      hasAttribute:
+        uid: Uno.Extensions.Reactive.BindableAttribute
+      type: Type
+  # Exclude __Reactive methods
+  - exclude:
+      uidRegex: __Reactive(\(.*\))?$
+      type: Member

@@ -67,7 +67,7 @@
       {
         "files":[
           "api/**.md",
-          "api/**.yml",
+          // "api/**.yml",
           "articles/**.md",
           "articles/**.yml",
           "index.md"
