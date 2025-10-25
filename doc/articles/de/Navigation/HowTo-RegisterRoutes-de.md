@@ -22,7 +22,7 @@ Bevor du mit der Routen Registrierung beginnst, brauchst du noch zwei Dinge:
 
 Füge die dafür benötigte Methode wie folgt in deine App Klasse unterhalb der `OnLaunched` Methode ein:
 
-[!code-csharp[](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
 
 ## Definieren der `ViewMap`'s
 
@@ -40,7 +40,7 @@ Wenn zusätzliche Daten Objekte bei der Navigation dieser Route erforderlich sin
 
 So sieht das zum Beispiel dann in der XamlNavigationApp aus, wo ich `Entity` nicht mehr benötigt habe und diese Route entsprechend zurück konvertiert habe:
 
-[!code-csharp[](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L83-L89)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L83-L89)]
 
 ## Hierarchisch aufgebaute `RoutesMap`'s
 
@@ -65,7 +65,7 @@ Nun wollen wir aber auf der `MainPage` vielleicht eine TabBar, NavigationBar, ei
 
 **Das machen wir beispielsweise so:**
 
-[!code-csharp[](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L96-L101)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L96-L101)]
 
 Hier siehst du, dass ich eine weitere Seite hinzugefügt habe, die `DashboardPage` und ein Model dazu erstellt habe namens `DashboardModel`. Außerdem habe ich die Route `Second` in die `RouteMap` der `Main`-Route verschachtelt.
 
