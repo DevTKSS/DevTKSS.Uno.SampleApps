@@ -1,14 +1,14 @@
 # DevTKSS Uno Samples
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/LICENSE.md)
-[![Documentation](https://img.shields.io/badge/docs-online-green.svg)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/)
+[![Documentation](https://img.shields.io/badge/docs-online-green.svg)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/)
 [![Uno.Sdk](https://img.shields.io/badge/Uno.Sdk-6.3.28+-purple.svg)](https://platform.uno/)
 
 ## Welcome to this Samples and Tutorials Library! ❤️
 
 This is a collection of Sample Apps and Tutorials for the [Uno Platform](https://platform.uno/), created to fill the gap of missing **German-localized** learning content. Most tutorials are available in both **German** (primary) and **English**.
 
-**Quick Links:** [Get Started](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/) | [Video Tutorials (German)](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX) | [Discussions](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions)
+**Quick Links:** [Get Started](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/) | [Video Tutorials (German)](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX) | [Discussions](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions)
 
 ---
 
@@ -29,7 +29,7 @@ Before diving into the samples, make sure you have:
 - **Uno.Check** tool installed and verified (run `uno-check`)
 
 > [!TIP]
-> For detailed setup instructions, see our [Development Environment Setup Guide](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html).
+> For detailed setup instructions, see our [Development Environment Setup Guide](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html).
 
 ---
 
@@ -37,15 +37,15 @@ Before diving into the samples, make sure you have:
 
 ### Mvux Gallery
 
-![Mvux Gallery Showcase Thumbnail](./docs/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
+![Mvux Gallery Showcase Thumbnail](https://raw.githubusercontent.com/DevTKSS/DevTKSS.Uno.SampleApps/master/docs/articles/.attachments/DevTKSS%20Uno%20Mvux%20Samples%20Gallery%20App-Thumbnail.png)
 
 **Want to see a quick showcase of what you can explore?**
 
-![Mvux Gallery ShowCase](./docs/articles/.attachments/MvuxGallery-ShowCase.gif)
+![Mvux Gallery ShowCase](https://raw.githubusercontent.com/DevTKSS/DevTKSS.Uno.SampleApps/master/docs/articles/.attachments/MvuxGallery-ShowCase.gif)
 
 The [Mvux Gallery](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.Samples.MvuxGallery/) demonstrates modern Uno Platform development patterns with a comprehensive example application.
 
-**[View Detailed Mvux Gallery Overview](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/MvuxGallery-Overview-en.html)**
+**[View Detailed Mvux Gallery Overview](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/MvuxGallery-Overview-en.html)**
 
 #### Featured Controls
 
@@ -59,8 +59,8 @@ The [Mvux Gallery](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master
 
 - **[MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)** - Model-View-Update-eXtended pattern
 - **Navigation**
-  - [Navigation via XAML](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
-  - [React to Route Changes with IRouteNotifier](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/Navigation/HowTo-ChangeRoutes-en.html)
+  - [Navigation via XAML](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
+  - [React to Route Changes with IRouteNotifier](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-ChangeRoutes-en.html)
 - **Hosting** - App Host Builder pattern
 - **Dependency Injection** - Constructor injection
 - **Serialization** - JSON data handling
@@ -77,7 +77,7 @@ The [Mvux Gallery](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master
 
 ### Xaml Navigation App
 
-![Image of final Xaml Navigation App](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/doc/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
+![Image of final Xaml Navigation App](https://raw.githubusercontent.com/DevTKSS/DevTKSS.Uno.SampleApps/master/docs/articles/.attachments/DevTKSS.Uno.XamlNavigationApp.png)
 
 A complete tutorial application demonstrating navigation patterns with MVUX and XAML.
 
@@ -89,7 +89,7 @@ A complete tutorial application demonstrating navigation patterns with MVUX and 
 
 **Available Resources:**
 
-- **[Tutorial Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/Navigation/Extensions-Navigation-en.html)** - Step-by-step guide (🇩🇪 German | 🇬🇧 English)
+- **[Tutorial Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/Extensions-Navigation-en.html)** - Step-by-step guide (🇩🇪 German | 🇬🇧 English)
 - **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
 - **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp-1/)** - Browse the implementation
 
@@ -101,10 +101,10 @@ You can access all tutorials and guides in both English and German. Use the tabl
 
 | Section                  | English                                                                 | German                                                                  |
 |--------------------------|------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| Getting Started          | [Guide (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Anleitung (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/de/HowTo-Setup-DevelopmentEnvironment-de.html) |
-| Mvux Gallery Overview    | [Overview (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/MvuxGallery-Overview-en.html) | [Übersicht (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/de/MvuxGallery-Overview-de.html) |
-| Navigation Tutorials     | [Navigation (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/en/Navigation/Extensions-Navigation-en.html) | [Navigation (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/articles/de/Navigation/Extensions-Navigation-de.html) |
-| All Docs Index           | [Docs Home (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/) | [Docs Home (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/docs/index.html?lang=de) |
+| Getting Started          | [Guide (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/HowTo-Setup-DevelopmentEnvironment-en.html) | [Anleitung (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/HowTo-Setup-DevelopmentEnvironment-de.html) |
+| Mvux Gallery Overview    | [Overview (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/MvuxGallery-Overview-en.html) | [Übersicht (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/MvuxGallery-Overview-de.html) |
+| Navigation Tutorials     | [Navigation (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/Extensions-Navigation-en.html) | [Navigation (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Navigation/Extensions-Navigation-de.html) |
+| All Docs Index           | [Docs Home (EN)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/) | [Docs Home (DE)](https://devtkss.github.io/DevTKSS.Uno.SampleApps/index.html?lang=de) |
 
 Most content is available in both German (original) and English (translated).
 

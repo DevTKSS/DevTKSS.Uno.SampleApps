@@ -17,15 +17,19 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
-    name: Build DocFX site
+  publish-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: windows-latest
 
     steps:
@@ -44,55 +48,18 @@ jobs:
 
       - name: Install DocFX as .NET tool
         run: |
-          dotnet tool install -g docfx --version 2.78.3
+          dotnet tool update -g docfx
           docfx --version
 
-      - name: Build metadata
+      - name: Build DocFX site
         working-directory: docs
-        run: |
-          docfx metadata docfx.json --logLevel Verbose
+        run: docfx docfx.json
 
-      - name: Build site
-        working-directory: docs
-        run: |
-          docfx build docfx.json --logLevel Verbose
-
-      - name: Prepare publish folder (gh-pages/docs)
-        run: |
-          New-Item -ItemType Directory -Force -Path public/docs | Out-Null
-          Copy-Item -Path "docs/_site/*" -Destination "public/docs" -Recurse -Force
-          if (Test-Path "docs/.nojekyll") { Copy-Item -Force "docs/.nojekyll" "public/docs/.nojekyll" }
-        shell: pwsh
-
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: docfx-site
-          path: public/docs
+          path: 'docs/_site'
 
-  deploy:
-    if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' }}
-    name: Deploy to GitHub Pages (gh-pages/docs)
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Download site artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: docfx-site
-          path: public/docs
-
-      - name: Publish to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: public
-          keep_files: false
-          force_orphan: true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

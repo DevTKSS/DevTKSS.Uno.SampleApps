@@ -6,19 +6,22 @@ uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.en
 
 If you already have an existing Uno application, you can of course add Extensions Navigation.
 
+## Adding UnoFeatures
+
 In the project file, recognizable by the `.csproj` extension, you need the following `UnoFeatures` elements in addition to the `Uno.Sdk`:
 
-# [Mvux](#tab/mvux)
+### [Mvux](#tab/mvux)
 
 ```xml
 <UnoFeatures>
     Hosting;
     Mvux;
     Navigation;
+    Toolkit;
 </UnoFeatures>
 ```
 
-# [Mvvm](#tab/mvvm)
+### [Mvvm](#tab/mvvm)
 
 ```xml
 <UnoFeatures>
@@ -29,9 +32,16 @@ In the project file, recognizable by the `.csproj` extension, you need the follo
 </UnoFeatures>
 ```
 
-# [On Launched](#tab/mvux/on-launched)
+***
+
+> [!TIP]
+> The `Toolkit` feature is only required to use navigation controls like `TabBar` or `DrawerControl`.
+
+## App.xaml.cs Configuration
 
 Add the following content to your `App.xaml.cs` file if not already included:
+
+### [Mvux](#tab/mvux-on-launched)
 
 ```diff
 +    protected async override void OnLaunched(LaunchActivatedEventArgs args)
@@ -54,9 +64,7 @@ Add the following content to your `App.xaml.cs` file if not already included:
     }
 ```
 
-# [On Launched](#tab/mvvm/on-launched)
-
-Add the following content to your `App.xaml.cs` file if not already included:
+### [Mvvm](#tab/mvvm-on-launched)
 
 ```diff
 +    protected async override void OnLaunched(LaunchActivatedEventArgs args)
@@ -79,7 +87,7 @@ Add the following content to your `App.xaml.cs` file if not already included:
     }
 ```
 
----
+***
 
 ## Next Steps
 
