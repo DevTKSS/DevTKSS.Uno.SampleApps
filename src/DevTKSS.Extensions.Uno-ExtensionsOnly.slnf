@@ -2,7 +2,7 @@
   "solution": {
     "path": "..\\DevTKSS.Uno.SampleApps.slnx",
     "projects": [
-      "DevTKSS.Extensions.Uno\\DevTKSS.Extensions.Uno.csproj"
+      "DevTKSS.Extensions.Uno.Storage\\DevTKSS.Extensions.Uno.Storage.csproj"
     ]
   }
 }
