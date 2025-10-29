@@ -17,14 +17,12 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  publish-docs:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: windows-latest
+  build-docs:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -54,6 +52,15 @@ jobs:
         with:
           path: 'docs/_site'
 
+  deploy-docs:
+    needs: build-docs
+    if: ${{ needs.build-docs.result == 'success' && github.ref == 'refs/heads/master' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
