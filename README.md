@@ -49,7 +49,7 @@ The [Mvux Gallery](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master
 
 #### Featured Controls
 
-- **FeedView** combined with GridView and ListView
+- **FeedView** combined with **GridView** and **ListView**
 - **DataTemplate** centralized resource definitions
 - **Card**, **Grid**, **NavigationView**
 - **ItemOverlayTemplate** (replicated from WinUI 3 Gallery)
@@ -99,8 +99,15 @@ A complete tutorial application demonstrating navigation patterns with MVUX and 
 
 A basic application demonstrating selection and display of member names in a `ListView` bound to a `ListState<string>` in the Model using MVUX.
 
+**Tutorial Documentation available:**
+
+- **MVUX State Management Tutorials** - Learn how to use `ListState` and `ListFeed` alongside with `ListView` and `Button.Command`-Binding (🇩🇪 [German](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Mvux-StateManagement/Overview-de.html) | 🇬🇧 [English](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Mvux-StateManagement/HowTo-Binding-ListState-and-ListFeed-de.md))
+
+**Video Tutorials available:**
+
 - **[Video Tutorial - How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic)** - Step-by-step guide (🇩🇪 German)
-- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.SimpleMemberSelectionApp/)**
+- **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
+- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp-1/)** - Browse the implementation
 
 ---
 

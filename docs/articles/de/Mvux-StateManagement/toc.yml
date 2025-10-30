@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/dotnet/docfx/main/schemas/toc.schema.json
+- name: Übersicht: ListState und ListFeed
+  uid: DevTKSS.Uno.Mvux-StateManagement.Overview.de
+  href: HowTo-Binding-ListState-and-ListFeed-de.md
+- name: Binding von ListState mit Selection
+  uid: DevTKSS.Uno.MvuxStateManagement.ListState.Selection.de
+  href: HowTo-Binding-ListState-Selection-de.md
+- name: Aktualisierung von ListState Items
+  uid: DevTKSS.Uno.MvuxStateManagement.ListState.UpdateItems.de
+  href: HowTo-Update-ListState-Items-de.md
