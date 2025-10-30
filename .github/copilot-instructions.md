@@ -161,6 +161,139 @@ Apps declare capabilities via `<UnoFeatures>`: Material, MVUX, Navigation, Hosti
 - Supported cultures in `appsettings.json`: `LocalizationConfiguration.Cultures`
 - Inject `IStringLocalizer` for translated strings
 - Documentation exists in `docs/articles/en/` and `docs/articles/de/`
+- **German documentation style**: Use informal "Du" form (duzen) instead of formal "Sie" form. Address readers directly and personally (e.g., "du kannst", "dein Model", "wenn du"). German docs should feel like peer-to-peer communication, not formal instruction.
+
+## Documentation Guidelines
+
+### DocFX Markdown Best Practices
+
+#### Code Snippets and Regions
+- Use `<!-- #region RegionName -->` and `<!-- #endregion -->` in XAML files for DocFX code snippet references
+- Reference snippets in markdown: `[!code-xaml[](../../../../src/ProjectName/File.xaml#RegionName)]`
+- Use relative paths from the markdown file location (e.g., `../../../../src/...`) or tilde notation (`~/src/...`)
+- Never use `#region-Name` or `<!--region: Name-->` syntax - these are incorrect
+- Highlight specific lines: `[!code-xaml[](path#RegionName?highlight=15,18,22)]` where line numbers are relative to the region
+
+#### Images and Attachments
+- Store images in `docs/articles/.attachments/` folder
+- Reference images using relative paths from the markdown file: `![](./.attachments/ImageName.png)`
+- **Always verify image paths are correct** relative to the markdown file location, not from `docfx.json`
+- DocFX resolves image paths relative to the markdown file itself, not from a central config
+
+#### Formatting Rules
+- **Never use emoji in documentation** (✅, ❌, etc.) - DocFX may not render them correctly
+- Use plain markdown bullets, numbered lists, or bold text instead
+- **Never add inline comments in code samples** - they may not render properly in DocFX
+- Always place code explanations in separate text sections below code blocks
+- **Tab heading indentation**: When using DocFX tabs (`#### [Tab Name](#tab/tabid)`), ensure the tab heading level is **one level deeper** than its parent section heading
+  - Example: If the parent section is `### Section Name`, tab headings should be `#### [Tab Name](#tab/tabid)`
+  - Example: If the parent section is `## Section Name`, tab headings should be `### [Tab Name](#tab/tabid)`
+- **Markdown linting**: Pay attention to proper markdown formatting
+  - Avoid extra blank lines between sections (use single blank line)
+  - Ensure proper spacing around lists (blank line before and after list blocks)
+  - No trailing whitespace at end of lines
+  - Files should end with a single newline character
+  - **MD028 - No blank lines between alert boxes**: When using consecutive alert boxes (e.g., `> [!WARNING]`, `> [!NOTE]`), do NOT add blank lines between them
+    - Correct: Alert boxes directly after each other without blank lines
+    - Incorrect: Blank line separating consecutive alert boxes
+    - Example:
+      ```markdown
+      > [!WARNING]
+      > First warning message
+      > [!NOTE]
+      > Following note without blank line between
+      ```
+- Example:
+  ```markdown
+  ```csharp
+  public IState<string> Name => State.Value(this, () => "default");
+  ```
+  
+  This state holds the user's name with a default value.
+  ```
+
+#### Alert Boxes (Callouts)
+Use alert boxes strategically to highlight important information without creating "rainbow docs":
+
+- **When to use alert boxes:**
+  - `> [!WARNING]` - Critical pitfalls that will cause errors or crashes (e.g., ListView ItemClickCommand conflicts)
+  - `> [!TIP]` - Decision-making guidance or useful features (e.g., "When to use Value vs Async", FeedParameter benefits)
+  - `> [!NOTE]` - Important design rationale or context (e.g., why button-triggered vs ForEach callbacks)
+  - `> [!IMPORTANT]` - Essential requirements or prerequisites
+
+- **When NOT to use alert boxes:**
+  - For general explanations (use regular text)
+  - For every bullet list (reserve for truly important items)
+  - More than 3-4 alert boxes per tutorial page (avoid "rainbow docs")
+
+- **Best practices:**
+  - Limit to 3-4 strategically placed alert boxes per document
+  - Use WARNING for errors/crashes, TIP for choices/features, NOTE for rationale
+  - Convert existing bold text lists to alert boxes only if they represent critical decisions or warnings
+  - Keep the content inside concise and focused
+
+#### Tutorial Structure Pattern
+When creating tutorial documentation, follow this consistent structure:
+
+1. **Overview Section**
+   - Brief description of what will be built
+   - Bullet list of key features/learning goals
+   - Explanation of why this pattern/approach is needed
+
+2. **Prerequisites Section**
+   - List required prior knowledge or tutorials that should be completed first
+   - Link to previous tutorials in the learning path using xref links (e.g., "Complete [Tutorial Name](xref:uid-of-tutorial) first")
+   - For "getting started" tutorials at the beginning of a new chapter: link to general app setup guides
+   - Use language-appropriate links: English docs (`/en/`) link to English guides, German docs (`/de/`) link to German guides
+   - Prefer `xref:` links for internal documentation references instead of relative paths
+   - Example: "Before starting this tutorial, ensure you have completed [How to: Basic MVUX Setup](xref:howto-basic-mvux-setup)"
+
+**Common Getting Started Docs to Link:**
+
+- **Root-level basics** (in `docs/articles/en/` or `docs/articles/de/`):
+  - `HowTo-Setup-DevelopmentEnvironment-*.md` (UID: `DevTKSS.Uno.Setup.DevelopmentEnvironment.en` or `.de`) - For first-time setup prerequisites
+  - `HowTo-CreateApp-*.md` (UID: `DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.en` or `.de`) - For app creation fundamentals
+  - `HowTo-Adding-New-Pages-*.md` (UID: `DevTKSS.Uno.Setup.HowTo-AddingNewPages.en` or `.de`) - For basic page creation
+  - `HowTo-Adding-New-VM-Class-Record-*.md` (UID: `DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.en` or `.de`) - For MVUX Model creation basics
+  - `HowTo-Using-DI-in-ctor-*.md` (UID: `DevTKSS.Uno.Setup.Using-DI-in-ctor.en` or `.de`) - For dependency injection fundamentals
+  - `Introduction-*.md` (UID: `DevTKSS.Uno.SampleApps.Intro.en` or `.de`) - For general project introduction
+
+- **Topic-specific getting started** (in subdirectories like `Navigation/`, `Mvux-StateManagement/`):
+  - `Navigation/Extensions-Navigation-*.md` - For navigation system fundamentals
+  - `Navigation/HowTo-RegisterRoutes-*.md` - For route registration basics
+  - `Navigation/HowTo-UpgradeExistingApp-*.md` - For adding navigation to existing apps
+  - Link to these when starting a tutorial within that specific topic area
+  - Check the `uid:` field in each markdown file's front matter for the correct xref link
+
+3. **Visual Reference** (if available)
+   - Screenshot or diagram showing the end result
+   - Place after prerequisites, before implementation details
+
+4. **Model/Backend Setup**
+   - Show the data layer first (Model, services, states)
+   - Use tabbed sections for alternative approaches (e.g., `.Async()` vs `.Value()`)
+   - Explain key elements with bullet points below code samples
+
+5. **View/UI Implementation**
+   - Show XAML/UI code after the model is defined
+   - Highlight key binding lines in code snippets
+   - Add warning callouts for common pitfalls
+   - Explain bindings in bullet points
+
+6. **Command/Logic Implementation**
+   - Show methods that handle user interactions
+   - Explain the "why" behind design decisions
+   - Use bullet points to highlight key API usage
+
+7. **Advanced Topics** (optional)
+   - Attributes, optimization techniques, alternatives
+   - Show code variations with explanations
+
+8. **Summary Section**
+   - Numbered list of what was demonstrated (no emojis)
+   - Key takeaway or pattern reinforcement
+
+This flow follows: **Prerequisites → See what we're building → Build the foundation → Connect the UI → Add behavior → Master advanced techniques**
 
 ## Build & Development
 
