@@ -41,7 +41,8 @@ public partial record MainModel
                                                           .Selection(SelectedMember);
 
     public IState<string> SelectedMember => State<string>.Value(this, () => string.Empty);
-#endregion
+    #endregion
+    #region MembersView-Update
     public IState<string> ModifiedMemberName => State<string>.Empty(this);
 
     public async ValueTask RenameMemberAsync(
@@ -61,7 +62,7 @@ public partial record MainModel
             ct: ct
         );
 
-        await Members.TrySelectAsync(modName, ct);
+       // await Members.TrySelectAsync(modName, ct);
     }
-
+    #endregion
 }
