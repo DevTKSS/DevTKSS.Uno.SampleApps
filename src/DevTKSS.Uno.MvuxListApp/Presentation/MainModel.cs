@@ -5,7 +5,7 @@ namespace DevTKSS.Uno.MvuxListApp.Presentation;
 public partial record MainModel
 {
     private readonly ILogger _logger;
-    private INavigator _navigator;
+    private readonly INavigator _navigator;
     private readonly IRouteNotifier _routeNotifier;
     public MainModel(
         IOptions<AppConfig> appInfo,
@@ -19,13 +19,13 @@ public partial record MainModel
         _logger = logger;
     }
 
-
-
     public IState<string> Title => State<string>.Value(this, () => _navigator.Route?.ToString() ?? string.Empty);
+    private async void Main_OnRouteChanged(object? sender, RouteChangedEventArgs e)
+    {
+        await Title.SetAsync(e.Navigator?.Route?.ToString());
+    }
 
-    private async ValueTask<IImmutableList<string>> GetMembersAsync(CancellationToken ct)
-        => _listMembers;
-
+    #region MembersView-Value
     private readonly IImmutableList<string> _listMembers = ImmutableList.Create(
         [
             "Hans",
@@ -33,22 +33,20 @@ public partial record MainModel
             "Anke",
             "Tom"
         ]);
-    private async void Main_OnRouteChanged(object? sender, RouteChangedEventArgs e)
-    {
-        await Title.SetAsync(e.Navigator?.Route?.ToString());
-    }
 
-    public IListState<string> DashboardList => ListState<string>.Async(this,GetMembersAsync)
-                                                                .Selection(SelectedMember);
+    private async ValueTask<IImmutableList<string>> GetMembersAsync(CancellationToken ct)
+        => _listMembers;
 
-    public IState<string> SelectedMember => State<string>.Value(this,() => string.Empty);
+    public IListState<string> Members => ListState<string>.Async(this, GetMembersAsync)
+                                                          .Selection(SelectedMember);
 
+    public IState<string> SelectedMember => State<string>.Value(this, () => string.Empty);
+#endregion
     public IState<string> ModifiedMemberName => State<string>.Empty(this);
-                                                             //.ForEach(RenameMemberAsync);
 
     public async ValueTask RenameMemberAsync(
-        [FeedParameter(nameof(ModifiedMemberName))]string? modName,
-        [FeedParameter(nameof(SelectedMember))]string? replaceMember,
+        [FeedParameter(nameof(ModifiedMemberName))] string? modName,
+        [FeedParameter(nameof(SelectedMember))] string? replaceMember,
         CancellationToken ct)
     {
 
@@ -57,12 +55,13 @@ public partial record MainModel
         if (string.IsNullOrWhiteSpace(modName))
             return;
 
-        await DashboardList.UpdateAllAsync(
+        await Members.UpdateAllAsync(
             match: item => item == replaceMember,
             updater: _ => modName,
             ct: ct
         );
 
-        await DashboardList.TrySelectAsync(modName, ct);
+        await Members.TrySelectAsync(modName, ct);
     }
+
 }

@@ -7,12 +7,15 @@
       xmlns:um="using:Uno.Material"
       NavigationCacheMode="Required"
       Background="{ThemeResource BackgroundBrush}">
-  <ScrollViewer IsTabStop="True">
+  <ScrollViewer>
+    <!-- #region MembersView -->
     <Grid utu:SafeArea.Insets="VisibleBounds">
+
       <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
         <RowDefinition />
       </Grid.RowDefinitions>
+
       <utu:NavigationBar Content="{Binding Title}" />
 
       <StackPanel Grid.Row="1"
@@ -20,19 +23,24 @@
                   VerticalAlignment="Center"
                   Spacing="16">
 
-        <TextBlock Grid.Row="1"
-                 HorizontalAlignment="Center"
-                 TextAlignment="Center"
-                 Text="{Binding Path=SelectedMember,Mode=OneWay}" />
+        <TextBlock x:Name="SelectedMemberTextBlock"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   Text="{Binding Path=SelectedMember, Mode=OneWay}" />
 
-        <ListView HorizontalAlignment="Center" MinWidth="200" Grid.Row="2"
-                  ItemsSource="{Binding DashboardList}" />
+        <ListView x:Name="MembersListView"
+                  HorizontalAlignment="Center"
+                  MinWidth="200"
+                  ItemsSource="{Binding Path=Members}" />
 
-        <TextBox PlaceholderText="Change the Name of the selected Member:"
-                 Text="{Binding ModifiedMemberName, Mode=TwoWay}"/>
+        <TextBox x:Name="ModifiableMemberNameBox"
+                 PlaceholderText="Change the Name of the selected Member:"
+                 Text="{Binding Path=ModifiedMemberName, Mode=TwoWay}"/>
+
         <Button Content="Change Name"
                 Command="{Binding Path=RenameMemberAsync}" />
       </StackPanel>
     </Grid>
+    <!-- #endregion -->
   </ScrollViewer>
 </Page>
