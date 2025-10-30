@@ -23,14 +23,14 @@
         <TextBlock Grid.Row="1"
                  HorizontalAlignment="Center"
                  TextAlignment="Center"
-                 Text="{Binding SelectedMember}" />
+                 Text="{Binding Path=SelectedMember,Mode=OneWay}" />
 
         <ListView HorizontalAlignment="Center" MinWidth="200" Grid.Row="2"
                   ItemsSource="{Binding DashboardList}" />
 
-        <TextBox PlaceholderText="Ändere hier den Namen des Mitglieds:"
-                 Text="{Binding ModifyedMemberName, Mode=TwoWay}"/>
-        <Button Content="Ändere Namen"
+        <TextBox PlaceholderText="Change the Name of the selected Member:"
+                 Text="{Binding ModifiedMemberName, Mode=TwoWay}"/>
+        <Button Content="Change Name"
                 Command="{Binding Path=RenameMemberAsync}" />
       </StackPanel>
     </Grid>

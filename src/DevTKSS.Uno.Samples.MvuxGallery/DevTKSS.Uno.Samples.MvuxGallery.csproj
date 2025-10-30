@@ -34,27 +34,30 @@
       https://aka.platform.uno/singleproject-features
     -->
     <UnoFeatures>
-        Material;
-        Dsp;
-        Toolkit;
-        Logging;
-        MVUX;
-        Configuration;
-        Localization;
-        Navigation;
-        ThemeService;
-        Serialization;
-        Storage;
+		  Material;
+		  Dsp;
+		  Toolkit;
+		  Logging;
+		  MVUX;
+		  Configuration;
+		  Localization;
+		  Navigation;
+		  ThemeService;
+		  Serialization;
+		  Storage;
     </UnoFeatures>
   </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.WinUI.Converters" />
   </ItemGroup>
+
   <ItemGroup>
     <UnoImage Include="Assets\Images\*" />
     <Resource Include="Assets\Samples\*.txt" CopyToOutputDirectory="PreserveNewest" />
     <UnoSplashScreen Include="Assets\SplashScreens\*" />
   </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\DevTKSS.Extensions.Uno.Storage\DevTKSS.Extensions.Uno.Storage.csproj" />
   </ItemGroup>

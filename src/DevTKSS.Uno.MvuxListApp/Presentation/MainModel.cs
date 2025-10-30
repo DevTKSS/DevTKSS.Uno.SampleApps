@@ -39,25 +39,30 @@ public partial record MainModel
     }
 
     public IListState<string> DashboardList => ListState<string>.Async(this,GetMembersAsync)
-                                                      .Selection(SelectedMember);
+                                                                .Selection(SelectedMember);
 
     public IState<string> SelectedMember => State<string>.Value(this,() => string.Empty);
 
-    public IState<string> ModifiedMemberName => State<string>.Empty(this)
-                                                             .ForEach(RenameMemberAsync);
-    
-    public async ValueTask RenameMemberAsync([FeedParameter(nameof(ModifiedMemberName))]string? modifiedName, CancellationToken ct)
+    public IState<string> ModifiedMemberName => State<string>.Empty(this);
+                                                             //.ForEach(RenameMemberAsync);
+
+    public async ValueTask RenameMemberAsync(
+        [FeedParameter(nameof(ModifiedMemberName))]string? modName,
+        [FeedParameter(nameof(SelectedMember))]string? replaceMember,
+        CancellationToken ct)
     {
-        
-        string replaceMeItem = await SelectedMember ?? string.Empty;
-        string modifiedItem = await ModifiedMemberName ?? string.Empty;
-        _logger.LogInformation("Modified MemberName ist: {modifiedItem}", modifiedItem);
-        _logger.LogInformation("SelectedMemeber ist: {selectedMember}", replaceMeItem);
 
-        await DashboardList.RemoveAllAsync(item => item == replaceMeItem);
+        _logger.LogInformation("Modified MemberName ist: {modifiedName}", modName);
+        _logger.LogInformation("SelectedMember ist: {selectedMember}", replaceMember);
+        if (string.IsNullOrWhiteSpace(modName))
+            return;
 
-        await DashboardList.AddAsync(modifiedItem,ct);
+        await DashboardList.UpdateAllAsync(
+            match: item => item == replaceMember,
+            updater: _ => modName,
+            ct: ct
+        );
 
-        await DashboardList.TrySelectAsync(modifiedItem,ct);
+        await DashboardList.TrySelectAsync(modName, ct);
     }
 }

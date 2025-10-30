@@ -3,7 +3,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
 
 ...
 
-<DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImageModel">
+<DataTemplate x:Key="StyledCardTemplate" x:DataType="gm:GalleryImage">
     <utu:Card CornerRadius="20"
                 HorizontalContentAlignment="Stretch"
                 HeaderContent="{Binding Title}"
@@ -17,7 +17,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
                 MediaContentTemplate="{StaticResource CardMediaContentTemplate}"/>
 </DataTemplate>
 
-<DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardHeaderContentTemplate">
+<DataTemplate x:DataType="gm:GalleryImage" x:Key="CardHeaderContentTemplate">
     <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
         <TextBlock Text="{Binding }"
                     Style="{ThemeResource TitleLarge}"
@@ -27,7 +27,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
     </Border>
 </DataTemplate>
 
-<DataTemplate x:DataType="gm:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
+<DataTemplate x:DataType="gm:GalleryImage" x:Key="CardSubHeaderContentTemplate">
     <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
         <TextBlock Text="{Binding }"
                     Style="{ThemeResource BodySmall}"
@@ -37,7 +37,7 @@ xmlns:gm="using:DevTKSS.Uno.Samples.MvuxGallery.Models.GalleryImages"
     </Border>
 </DataTemplate>
 
-<DataTemplate x:Key="CardMediaContentTemplate" x:DataType="gm:GalleryImageModel">
+<DataTemplate x:Key="CardMediaContentTemplate" x:DataType="gm:GalleryImage">
     <Image Source="{Binding }"
             Stretch="Uniform"
             Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
