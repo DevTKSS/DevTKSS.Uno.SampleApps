@@ -140,4 +140,4 @@ Dieses Beispiel demonstriert:
 
 Im nächsten Tutorial lernst du, wie du die ausgewählten Elemente bearbeiten und aktualisieren kannst.
 
-- [Nächstes Tutorial: Aktualisierung von ListState Items](xref:DevTKSS.Uno.MvuxStateManagement.ListState.UpdateItems.de)]
+- [Nächstes Tutorial: Aktualisierung von ListState Items](xref:DevTKSS.Uno.MvuxStateManagement.ListState.UpdateItems.de)
