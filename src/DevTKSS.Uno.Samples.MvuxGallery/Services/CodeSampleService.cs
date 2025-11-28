@@ -1,16 +1,16 @@
-namespace DevTKSS.Uno.Samples.MvuxGallery.Models.CodeSamples;
+namespace DevTKSS.Uno.Samples.MvuxGallery.Services;
 public partial record CodeSampleService : ICodeSampleService
 { 
     private readonly IStorage _storage;
     private readonly ILogger<CodeSampleService> _logger;
    
-    private CodeSampleOptions _options;
+    private readonly CodeSampleOptions _options;
     
     public string Name { get; init; }
 
     public CodeSampleService(
         string name,
-        IOptionsMonitor<CodeSampleOptions> options,
+        IOptionsSnapshot<CodeSampleOptions> options,
         ILogger<CodeSampleService> logger,
         IStorage storage)
     {
@@ -21,20 +21,6 @@ public partial record CodeSampleService : ICodeSampleService
         if (_logger.IsEnabled(LogLevel.Information))
         {
             _logger.LogInformation("CodeSampleService created for '{ServiceName}', loaded {SampleCount} samples", Name, _options.Samples.Length);
-        }
-
-        options.OnChange(UpdateOptions);
-    }
-    public void UpdateOptions(CodeSampleOptions newOptions, string? changedOption)
-    {
-        if (_logger.IsEnabled(LogLevel.Debug))
-        {
-            _logger.LogDebug("CodeSampleOptions changed for {name}", changedOption);
-        }
-        if (changedOption == Name)
-        {
-            _logger.LogInformation("Updating CodeSampleOptions for {serviceName}", Name);
-            _options = newOptions;
         }
     }
 

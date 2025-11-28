@@ -7,7 +7,7 @@
                     xmlns:mvux="using:Uno.Extensions.Reactive.UI">
 
     <!--#region Card Template -->
-    <DataTemplate x:Key="StyledCardTemplate" x:DataType="gi:GalleryImageModel">
+    <DataTemplate x:Key="StyledCardTemplate" x:DataType="gi:GalleryImage">
         <utu:Card CornerRadius="20"
                 HorizontalContentAlignment="Stretch"
                 HeaderContent="{Binding Title}"
@@ -21,7 +21,7 @@
                 MediaContentTemplate="{StaticResource CardMediaContentTemplate}"/>
     </DataTemplate>
     <!--#region Card HeaderContent Template-->
-    <DataTemplate x:Key="CardHeaderContentTemplate" x:DataType="gi:GalleryImageModel">
+    <DataTemplate x:Key="CardHeaderContentTemplate" x:DataType="gi:GalleryImage">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
             <TextBlock Text="{Binding }"
                    Style="{ThemeResource TitleLarge}"
@@ -33,7 +33,7 @@
     <!--#endregion-->
     
     <!--#region Card SubHeaderContent Template-->
-    <DataTemplate x:DataType="gi:GalleryImageModel" x:Key="CardSubHeaderContentTemplate">
+    <DataTemplate x:DataType="gi:GalleryImage" x:Key="CardSubHeaderContentTemplate">
         <Border Background="{ThemeResource SurfaceInverseBrush}" Opacity=".7">
             <TextBlock Text="{Binding  }"
                    Style="{ThemeResource BodySmall}"
@@ -45,7 +45,7 @@
     <!--#endregion-->
     
     <!--#region Card MediaContentTemplate-->
-    <DataTemplate x:DataType="gi:GalleryImageModel" x:Key="CardMediaContentTemplate">
+    <DataTemplate x:DataType="gi:GalleryImage" x:Key="CardMediaContentTemplate">
         <Image Source="{Binding }"
            Stretch="Uniform"
            Width="{utu:AncestorBinding AncestorType=utu:Card, Path=Width}" />
@@ -92,7 +92,7 @@
     <!-- This Sample is a simplifyed Template using a regular Grid with a unified Layout-->
     <!-- Reference used: WinUi 3 Gallery GridView "ItemOverlayTemplate" winui3gallery://item/GridView -->
     
-    <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gi:GalleryImageModel">
+    <DataTemplate x:Key="GalleryImageOverlayTemplate" x:DataType="gi:GalleryImage">
         <Grid HorizontalAlignment="Stretch"
            VerticalAlignment="Stretch"
            CornerRadius="20"
@@ -137,14 +137,22 @@
     <!--#endregion-->
 
     <!--#region TabBarItem Template-->
-    <DataTemplate x:Key="BottomTabBarItemTemplate">
-        <utu:TabBarItem Content="{Binding }"
-                        HorizontalAlignment="Center"
-                        HorizontalContentAlignment="Center"
-                        Style="{StaticResource BottomTabBarItemStyle}">
-            <utu:TabBarItem.Icon>
-                <FontIcon Glyph="&#xE943;" />
-            </utu:TabBarItem.Icon>
+
+  <DataTemplate x:Key="SelectorDropDown">
+    <ComboBox ItemsSource="{Binding }"
+              HorizontalContentAlignment="Center"
+              HorizontalAlignment="Stretch" />
+
+  </DataTemplate>
+  <DataTemplate x:Key="BottomTabBarItemTemplate">
+    
+      <utu:TabBarItem Content="{Binding }"
+                      HorizontalAlignment="Center"
+                      HorizontalContentAlignment="Center"
+                      Style="{StaticResource BottomTabBarItemStyle}">
+          <utu:TabBarItem.Icon>
+        <FontIcon Glyph="&#xE943;" />
+      </utu:TabBarItem.Icon>
         </utu:TabBarItem>
     </DataTemplate>
     <!--#endregion-->
