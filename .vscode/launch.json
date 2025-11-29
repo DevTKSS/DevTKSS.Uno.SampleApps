@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Uno Platform MvuxGallery Desktop Debug",
+      "type": "Uno",
+      "request": "launch",
+      // any Uno* task will do, this is simply to satisfy vscode requirement when a launch.json is present
+      "preLaunchTask": "Uno: net9.0-desktop | Debug"
+    },
+    {
       // Use IntelliSense to find out which attributes exist for C# debugging
       // Use hover for the description of the existing attributes
       // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/main/debugger-launchjson.md
@@ -13,13 +20,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop-MvuxGallery",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/src/DevTKSS.Uno.SampleApps.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.SampleApps.MvuxGallery.dll",
+      "program": "${workspaceFolder}/src/DevTKSS.Uno.Samples.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.Samples.MvuxGallery.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS MvuxGallery (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/src/DevTKSS.Uno.SampleApps.MvuxGallery",
+      "cwd": "${workspaceFolder}/src/DevTKSS.Uno.Samples.MvuxGallery",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
@@ -48,7 +55,7 @@
       "name": "Uno Platform Desktop Debug (MvuxListApp)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build-desktop",
+      "preLaunchTask": "build-desktop-MvuxListApp",
       // If you have changed target frameworks, make sure to update the program path.
       "program": "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.MvuxListApp.dll",
       "args": [],

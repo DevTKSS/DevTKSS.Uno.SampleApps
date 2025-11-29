@@ -90,17 +90,6 @@ public partial class App : Application
                         .AddKeyedSingletonCodeService("CounterSamples")
                 )
                 .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, RegisterRoutes)
-                .UseSerialization((context, services) =>
-                    services
-                        .AddContentSerializer(context)
-                        .AddJsonTypeInfo(CodeSampleOptionsContext.Default.CodeSample)
-                        .AddJsonTypeInfo(CodeSampleOptionsContext.Default.Lines)
-                        .AddJsonTypeInfo(CodeSampleOptionsContext.Default.CodeSampleArray)
-                        .AddJsonTypeInfo(CodeSampleOptionsContext.Default.LinesArray)
-                        .AddJsonTypeInfo(CodeSampleOptionsContext.Default.CodeSampleOptions)
-
-                        .AddSingleton(new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
-                        )
             );
         MainWindow = builder.Window;
 
