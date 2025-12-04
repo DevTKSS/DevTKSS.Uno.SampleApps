@@ -23,7 +23,7 @@ Also, dann lass uns das doch mal genauer betrachten. Was bedeutet das denn nun?
   In diesem Fall wären es dann nur zum beispiel die anzuzeigende Eigenschaft, wie die `string`-Property `Title`, die du entsprechend in deiner `Page`, also deiner `View` zum `ViewModel` bzw. `Model` bindest und schon bist du fertig damit!
 
   > [!TIP]
-  > Mit der Attached Property `uen:Navi` kannst du den Titel der Seite in der NavigationView setzen.
+  > Mit der `Attached Property` `uen:Navigation.Request` bzw. `uen:Navigation.Data` kannst du übrigens auch Daten an die Navigation übergeben, wie [in der Uno Dokumentation gut anhand von `Widget`-Elementen erklärt wird](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html#2-navigationdata) hierfür benötigst du dann bspw. aber wieder `DataViewMap`-Definitionen in der Routen Registrierung.
 
 - **Nein:**
 
