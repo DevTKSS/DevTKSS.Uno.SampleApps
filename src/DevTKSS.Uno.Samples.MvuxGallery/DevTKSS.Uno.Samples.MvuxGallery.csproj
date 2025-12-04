@@ -36,7 +36,6 @@
     <UnoFeatures>
         Material;
         Dsp;
-        Hosting;
         Toolkit;
         Logging;
         MVUX;
