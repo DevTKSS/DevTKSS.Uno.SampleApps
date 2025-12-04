@@ -38,7 +38,7 @@ jobs:
       - name: Restore solution (fetch Uno.Sdk and packages)
         run: |
           dotnet --info
-          dotnet restore ./src/DevTKSS.Uno.Samples.sln
+          dotnet restore ./DevTKSS.Uno.Samples.slnx
 
       - name: Install DocFX as .NET tool
         run: |

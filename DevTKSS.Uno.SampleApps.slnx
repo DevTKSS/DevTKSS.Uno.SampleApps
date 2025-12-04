@@ -23,7 +23,12 @@
     <File Path="global.json" />
     <File Path="cspell.json" />
   </Folder>
-  <Project Path="src/DevTKSS.Extensions.Uno.Storage/DevTKSS.Extensions.Uno.Storage.csproj" />
-  <Project Path="src/DevTKSS.Uno.Samples.MvuxGallery/DevTKSS.Uno.Samples.MvuxGallery.csproj" />
-  <Project Path="src/DevTKSS.Uno.XamlNavigationApp/DevTKSS.Uno.XamlNavigationApp.csproj" />
+  <Folder Name="/Extensions/">
+    <Project Path="src/DevTKSS.Extensions.Uno.Storage/DevTKSS.Extensions.Uno.Storage.csproj" />
+  </Folder>
+  <Folder Name="/Tutorials/">
+    <Project Path="src/DevTKSS.Uno.Samples.MvuxGallery/DevTKSS.Uno.Samples.MvuxGallery.csproj" />
+    <Project Path="src/DevTKSS.Uno.XamlNavigationApp/DevTKSS.Uno.XamlNavigationApp.csproj" />
+    <Project Path="src/DevTKSS.Uno.SimpleMemberSelectionApp/DevTKSS.Uno.SimpleMemberSelectionApp.csproj" />
+  </Folder>
 </Solution>
