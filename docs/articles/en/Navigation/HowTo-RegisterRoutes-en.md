@@ -40,7 +40,7 @@ If additional data objects are required when navigating this route, you convert 
 
 For example, this is what it looks like in the XamlNavigationApp, where I no longer needed `Entity` and converted this route back accordingly:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87?highlight=5)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87)]
 
 ## Hierarchically Structured `RoutesMap`'s
 

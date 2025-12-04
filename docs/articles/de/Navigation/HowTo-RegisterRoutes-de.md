@@ -43,7 +43,7 @@ Wenn zusätzliche Daten Objekte bei der Navigation dieser Route erforderlich sin
 
 So sieht das zum Beispiel dann in der XamlNavigationApp aus, wo ich `Entity` nicht mehr benötigt habe und diese Route entsprechend zurück konvertiert habe:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87?highlight=5)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87)]
 
 ## Hierarchisch aufgebaute `RoutesMap`'s
 
