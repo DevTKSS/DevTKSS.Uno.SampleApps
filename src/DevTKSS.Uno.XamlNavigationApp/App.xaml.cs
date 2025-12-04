@@ -60,8 +60,6 @@ public partial class App : Application
                         .EmbeddedSource<App>()
                         .Section<AppConfig>()
                 )
-                // Enable localization (see appsettings.json for supported languages)
-                .UseLocalization()
                 .ConfigureServices((context, services) =>
                 {
                     // TODO: Register your services
@@ -95,7 +93,7 @@ public partial class App : Application
                     new ("Main", View: views.FindByViewModel<MainModel>(), IsDefault:true,
                     Nested:
                     [
-                        new("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault:true),
+                        new ("Dashboard", View: views.FindByViewModel<DashboardModel>(),IsDefault:true),
                         new ("Second", View: views.FindByViewModel<SecondModel>())
                     ])
                 ]

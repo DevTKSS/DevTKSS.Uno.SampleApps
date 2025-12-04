@@ -1,5 +1,21 @@
 {
   "files.associations": {
-    "*.tmpl*": "mustache"
+    "*.tmpl*": "mustache",
+    "global.json": "jsonc"
   },
+  "markdownlint.lintWorkspaceGlobs": [
+    "**/*.{md,mkd,mdwn,mdown,markdown,markdn,mdtxt,mdtext,workbook}",
+    "!**/*.code-search",
+    "!**/bower_components",
+    "!**/node_modules",
+    "!**/.git",
+    "!**/vendor",
+    "!**/copilot-instructions.md"
+  ],
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+    "*.xaml": "$(capture).xaml.cs"
+  },
+  "dotnet.defaultSolution": "DevTKSS.Uno.SampleApps.slnx" 
 }

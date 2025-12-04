@@ -1,6 +1,6 @@
 {
   "solution": {
-    "path": "DevTKSS.Uno.Samples.sln",
+    "path": "..\\DevTKSS.Uno.SampleApps.slnx",
     "projects": [
       "DevTKSS.Extensions.Uno\\DevTKSS.Extensions.Uno.csproj",
       "DevTKSS.Uno.Samples.MvuxGallery\\DevTKSS.Uno.Samples.MvuxGallery.csproj"

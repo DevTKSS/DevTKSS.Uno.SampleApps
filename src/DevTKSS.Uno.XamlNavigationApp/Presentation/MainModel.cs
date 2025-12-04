@@ -6,8 +6,6 @@ public partial record MainModel
     private readonly IRouteNotifier _routeNotifier;
 
     public MainModel(
-        IStringLocalizer localizer,
-        IOptions<AppConfig> appInfo,
         INavigator navigator,
         IRouteNotifier routeNotifier)
     {

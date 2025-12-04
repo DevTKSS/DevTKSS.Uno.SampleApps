@@ -11,11 +11,11 @@
       "name": "Uno Platform Desktop Debug (MvuxGallery)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build-desktop",
+      "preLaunchTask": "build-desktop-MvuxGallery",
       // If you have changed target frameworks, make sure to update the program path.
       "program": "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.SampleApps.MvuxGallery.dll",
       "args": [],
-      "launchSettingsProfile": "DevTKSS.Uno.SampleApps.MvuxGallery (Desktop)",
+      "launchSettingsProfile": "DevTKSS MvuxGallery (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
@@ -25,24 +25,38 @@
       "stopAtEntry": false
     },
     {
-      // Use IntelliSense to find out which attributes exist for C# debugging
-      // Use hover for the description of the existing attributes
-      // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/main/debugger-launchjson.md
       "name": "Uno Platform Desktop Debug (XamlNavigationApp)",
       "type": "coreclr",
       "request": "launch",
-      "preLaunchTask": "build-desktop",
+      "preLaunchTask": "build-desktop-XamlNavigationApp",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp-1/bin/Debug/net9.0-desktop/DevTKSS.Uno.XamlNavigationApp.dll",
+      "program": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.XamlNavigationApp.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS.Uno.XamlNavigationApp (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp-1",
+      "cwd": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
     },
+     {
+      "name": "Uno Platform Desktop Debug (SimpleMemberSelectionApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-desktop-SimpleMemberSelectionApp",
+      // If you have changed target frameworks, make sure to update the program path.
+      "program": "${workspaceFolder}/DevTKSS.Uno.SimpleMemberSelectionApp-1/bin/Debug/net9.0-desktop/DevTKSS.Uno.SimpleMemberSelectionApp.dll",
+      "args": [],
+      "launchSettingsProfile": "DevTKSS.Uno.SimpleMemberSelectionApp (Desktop)",
+      "env": {
+        "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
+      },
+      "cwd": "${workspaceFolder}/DevTKSS.Uno.SimpleMemberSelectionApp",
+      // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
   ]
 }
