@@ -24,7 +24,6 @@
     <File Path="cspell.json" />
   </Folder>
   <Project Path="src/DevTKSS.Extensions.Uno.Storage/DevTKSS.Extensions.Uno.Storage.csproj" />
-  <Project Path="src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj" />
   <Project Path="src/DevTKSS.Uno.Samples.MvuxGallery/DevTKSS.Uno.Samples.MvuxGallery.csproj" />
-  <Project Path="src/DevTKSS.Uno.XamlNavigationApp-1/DevTKSS.Uno.XamlNavigationApp.csproj" />
+  <Project Path="src/DevTKSS.Uno.XamlNavigationApp/DevTKSS.Uno.XamlNavigationApp.csproj" />
 </Solution>
