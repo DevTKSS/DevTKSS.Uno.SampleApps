@@ -14,12 +14,8 @@ Weitere Informationen zur Verwendung des Uno.Sdk oder zum Aktualisieren der Uno 
 
 ## Tutorial zum Mitmachen
 
-Diese Beispiel-App ist Teil eines Community-Tutorial-Videos, das dich durch den Prozess des Aufbaus einer XAML-Navigations-App mit der Uno Platform führt.
-
-Bitte wähle die Sprache deiner Wahl, um dem Tutorial zu folgen:
-
-- [Deutsch](../../docs/articles/de/Navigation/Extensions-Navigation-de.md)
-- [Englisch](../../docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
+Diese Beispiel-App  hat bisher kein dokumentiertes Tutorial, aber du kannst dir schon den auf YouTube verfügbaren Video-Guide ansehen:
+[How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic)
 
 ## Mitwirken
 

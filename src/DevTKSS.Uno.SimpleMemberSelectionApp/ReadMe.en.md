@@ -14,13 +14,9 @@ For more information on how to use the Uno.Sdk or upgrade Uno Platform packages 
 
 ## Tutorial to follow along with this sample
 
-This sample app is part of a Community Tutorial Video that will guide you through the process of building a XAML Navigation App using the Uno Platform.
-
-Please select the language of your choice to follow along:
-
-- [English](../../docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
-- [German](../../docs/articles/de/Navigation/Extensions-Navigation-de.md)
+This sample app has no Documented Tutorial by now, but you can check out the Video Guide already available on YouTube:
+[How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic) (Deutsch => Switch on Subtitles for English)
 
 ## Contributing
 
-If you want to contribute to this sample, please check out the [GitHub repository](www.github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+If you want to contribute to this sample, please check out the [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
