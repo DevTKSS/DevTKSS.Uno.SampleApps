@@ -17,7 +17,7 @@ In this video, we will look together at how to set up and use a `NavigationView`
 > [!NOTE]
 > This video is currently only available in German, but transcriptions have been added to the video description, which should be usable through YouTube's auto-translate feature. You can also enable auto-translated subtitles in YouTube to follow along in your preferred language.
 
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/knt2oOjHH30)
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://www.youtube.com/embed/knt2oOjHH30)
 
 ## Implementing the NavigationView
 

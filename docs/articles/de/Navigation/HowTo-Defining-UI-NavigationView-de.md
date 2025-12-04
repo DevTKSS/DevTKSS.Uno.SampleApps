@@ -14,7 +14,7 @@ Wir haben uns nun zuvor im Intro angeschaut, was wir mit der `Uno.Extensions.Nav
 
 In diesem Video werden wir uns zusammen anschauen, wie du ein `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden. Den Code kannst du dabei direkt aus dem Code hierunter kopieren und in deine Anwendung einfügen, wenn du möchtest, aber aus eigener Erfahrung heraus hilft es dir mehr, den Code selber zu schreiben und dabei zuzuschauen, wie es funktioniert. So kannst du auch besser verstehen, was du tust und warum.
 
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/vVvnK02r2ug)
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://www.youtube.com/embed/knt2oOjHH30)
 
 ## Implementierung der NavigationView
 
