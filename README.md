@@ -83,15 +83,24 @@ A complete tutorial application demonstrating navigation patterns with MVUX and 
 
 #### Tutorial Content
 
-- [Uno.Extensions.Reactive (MVUX)](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
-- [Uno.Extensions.Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
-- [XAML Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
+- **[Tutorial Serie Uno.Extensions Navigation via Xaml](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/Extensions-Navigation-en.html)** - Step-by-step guide (🇩🇪 German | 🇬🇧 English) - or [watch the Video Guide 🇩🇪](https://youtu.be/knt2oOjHH30)!
+- **[Listen to Route Changes with IRouteNotifier](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-ChangeRoutes-en.html)** - Advanced navigation handling - or [🇩🇪 German Version](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Navigation/HowTo-ChangeRoutes-de.html)
+- **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
+- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp/)** - Browse the implementation
 
 **Available Resources:**
 
-- **[Tutorial Documentation](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/Extensions-Navigation-en.html)** - Step-by-step guide (🇩🇪 German | 🇬🇧 English)
-- **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
-- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp-1/)** - Browse the implementation
+- [Uno.Extensions.Reactive (MVUX)](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Mvux/Overview.html)
+- [Uno.Extensions.Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/NavigationOverview.html)
+- [XAML Markup Navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-NavigateInXAML.html)
+- [IRouteNotifier](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/Advanced/HowTo-IRouteNotifier.html)
+
+### Simple Member Selection App
+
+A basic application demonstrating selection and display of member names in a `ListView` bound to a `ListState<string>` in the Model using MVUX.
+
+- **[Video Tutorial - How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic)** - Step-by-step guide (🇩🇪 German)
+- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.SimpleMemberSelectionApp/)**
 
 ---
 

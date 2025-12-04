@@ -120,7 +120,7 @@ If you haven't done this yet, it's very easy to do it afterwards:
 
 Now we only need the actual reaction to the route change. We do this in the `OnRouteChanged` method, which we registered in the constructor earlier. Here is an example of how you can implement this:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/Presentation/MainModel.cs#L19-L22)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/Presentation/MainModel.cs#L19-L22)]
 
 **What happens here?**
 
@@ -141,7 +141,7 @@ Congratulations! You have successfully learned how to respond to route changes i
 
 **Here is the complete code you should have in your Model from this tutorial:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/Presentation/MainModel.cs#L3-L25)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/Presentation/MainModel.cs#L3-L25)]
 
 ## Links to Uno Documentation
 

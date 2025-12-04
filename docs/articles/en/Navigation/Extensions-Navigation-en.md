@@ -49,7 +49,7 @@ Once you have completed this step, we will continue with the implementation of n
 
 ---
 
-- [Here you can find the source code of the sample application XamlNavigationApp used](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1)
+- [Here you can find the source code of the sample application XamlNavigationApp used](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp)
 
 ### Uno Documentation Links
 

@@ -30,7 +30,7 @@ Hier ein schneller Überblick über die enthaltenen Samples. Detaillierte Infos 
 ### XamlNavigationApp (Mvux)
 
 - [NavigationView in MVUX oder MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.de)
-- [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
+- [Zum Quellcode](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp/)
 
 ---
 

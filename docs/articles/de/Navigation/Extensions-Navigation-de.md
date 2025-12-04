@@ -28,7 +28,13 @@ Lass uns zuerst einmal schauen, was man beispielsweise in einer Xaml-basierten U
 
 ## Voraussetzungen
 
-Diese Tutorial Reihe baut darauf auf, dass deine Entwicklungsumgebung bereits vollständig eingerichtet ist und der Befehl `uno-check --tfm net9.0-desktop` ausgeführt in deinem Terminal grünes Licht gibt. Hier kannst du diese auch noch einmal nachschauen:
+Diese Tutorial Reihe baut darauf auf, dass deine Entwicklungsumgebung bereits vollständig eingerichtet ist und der nachfolgende Befehl dir  in deinem Terminal ausgeführt grünes Licht gibt:
+
+```bash
+uno-check --tfm net9.0-desktop`
+```
+
+Hier kannst du bei Bedarf auch noch einmal nachschauen:
 
 - [Tutorial: Einrichten der Entwicklungsumgebung](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.de)
 
@@ -46,7 +52,7 @@ Wenn du diesen Schritt abgeschlossen hast, fahren wir mit der Implementierung de
 
 ---
 
-- [Hier geht's zum Source Code der verwendeten Beispiel Anwendung XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1)
+- [Hier geht's zum Source Code der verwendeten Beispiel Anwendung XamlNavigationApp](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp)
 
 ### Uno Dokumentation Links
 

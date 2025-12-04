@@ -4,7 +4,7 @@ uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.en
 
 # How-To: Register and Manage Routes
 
-With `Uno.Extensions.Navigation`, we use a central definition of **route registration** handled in the App class [`App.xaml.cs`(source link)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs), which can simply be thought of as a map.
+With `Uno.Extensions.Navigation`, we use a central definition of **route registration** handled in the App class [`App.xaml.cs`(source link)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs), which can simply be thought of as a map.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ Before you start with route registration, you need two things:
 
 Add the required method to your App class below the `OnLaunched` method as follows:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82)]
 
 ## Defining the `ViewMap`'s
 
@@ -40,7 +40,7 @@ If additional data objects are required when navigating this route, you convert 
 
 For example, this is what it looks like in the XamlNavigationApp, where I no longer needed `Entity` and converted this route back accordingly:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L83-L89)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L83-L89)]
 
 ## Hierarchically Structured `RoutesMap`'s
 
@@ -65,7 +65,7 @@ Now, on the `MainPage`, we might want to use a TabBar, NavigationBar, a Frame wi
 
 **We do this, for example, like this:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L96-L101)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L96-L101)]
 
 Here you can see that I added another page, the `DashboardPage`, and created a Model for it named `DashboardModel`. I also nested the `Second` route into the `RouteMap` of the `Main` route.
 

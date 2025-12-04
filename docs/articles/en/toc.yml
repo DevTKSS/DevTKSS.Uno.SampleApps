@@ -16,7 +16,7 @@
   - name: "Create a New Uno App"
     uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.en
     href: HowTo-CreateApp-en.md
-  - name: "Add Pages"
+  - name: "Add new Pages"
     uid: DevTKSS.Uno.Setup.HowTo-AddingNewPages.en
     href: HowTo-Adding-New-Pages-en.md
   - name: "Define New Class or Record ViewModels"

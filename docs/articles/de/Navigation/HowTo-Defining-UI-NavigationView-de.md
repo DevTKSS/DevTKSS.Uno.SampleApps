@@ -6,7 +6,7 @@ uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de
 
 In diesem Teil des Tutorials, wollen wir uns anschauen, wie man eine einfache Seitennavigation mittels einer `NavigationView` erstellen kann.
 
-**Was zuvor geschah...**
+**Was wir zuvor gemacht haben**
 
 Wir haben uns nun zuvor im Intro angeschaut, was wir mit der `Uno.Extensions.Navigation` und der `NavigationView` alles machen können und im anschluss das Setup der Anwendung angepasst oder diese erstellt. Nun wollen wir uns anschauen wie man dann dann auch umsetzen kann!
 
@@ -14,7 +14,7 @@ Wir haben uns nun zuvor im Intro angeschaut, was wir mit der `Uno.Extensions.Nav
 
 In diesem Video werden wir uns zusammen anschauen, wie du ein `NavigationView`-Steuerelement in einer XAML-Markup-App einrichtest und verwendest. Wir werden die Navigation zwischen verschiedenen Seiten implementieren und dabei die MVUX-Prinzipien anwenden. Den Code kannst du dabei direkt aus dem Code hierunter kopieren und in deine Anwendung einfügen, wenn du möchtest, aber aus eigener Erfahrung heraus hilft es dir mehr, den Code selber zu schreiben und dabei zuzuschauen, wie es funktioniert. So kannst du auch besser verstehen, was du tust und warum.
 
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/knt2oOjHH30)
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/vVvnK02r2ug)
 
 ## Implementierung der NavigationView
 
@@ -84,27 +84,33 @@ Nun wollen wir die von der Extension ermöglichten Eigenschaften, sogenannte `At
 
     ```diff
     <Grid uen:Region.Attached="True"
-        utu:SafeArea.Insets="VisibleBounds">
-    <Grid.RowDefinitions>
+          utu:SafeArea.Insets="VisibleBounds">
+      <Grid.RowDefinitions>
         <RowDefinition Height="*" />
         <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
-    <NavigationView uen:Region.Attached="True"
-                    Header="{Binding Title}"
-                    IsPaneToggleButtonVisible="True"
-                    PaneDisplayMode="Auto">
-    <NavigationView.MenuItems>
+      </Grid.RowDefinitions>
+
+      <NavigationView uen:Region.Attached="True"
+                      Header="{Binding Title}"
+                      IsPaneToggleButtonVisible="True"
+                      PaneDisplayMode="Auto">
+
+      <NavigationView.MenuItems>
         <NavigationViewItem Content="Home"
     +                       uen:Region.Name="Dashboard"
                             Icon="Home" />
         <NavigationViewItem Content="Some View"
     +                       uen:Region.Name="Second"
                             Icon="AddFriend" />
-    </NavigationView.MenuItems>
-            <NavigationView.Content>
-                <Grid uen:Region.Attached="True" />
-            </NavigationView.Content>
-        </NavigationView>
+      </NavigationView.MenuItems>
+
+        <NavigationView.Content>
+          <Grid uen:Region.Attached="True" />
+        </NavigationView.Content>
+
+      </NavigationView>
+
+    </Grid>
     ```
 
 1. Zu guter Letzt benötigt das `Grid`, welches wir für die Navigation des Content der `NavigationView` verwenden wollen nun noch zwei letzte weitere und sehr wichtige Eigenschaften setzen, ohne welche es gut möglich ist, dass unser Vorhaben misslingt.
@@ -118,8 +124,8 @@ Nun wollen wir die von der Extension ermöglichten Eigenschaften, sogenannte `At
 
     ```diff
     <NavigationView.Content>
-    <Grid uen:Region.Attached="True"
-    +      uen:Region.Navigator="Visibility"
+      <Grid uen:Region.Attached="True"
+    +       uen:Region.Navigator="Visibility"
             Visibility="Visible" />
     </NavigationView.Content>
     ```
@@ -137,7 +143,7 @@ Nun wollen wir die von der Extension ermöglichten Eigenschaften, sogenannte `At
      *Die Namensgebung ist also keineswegs Zufall!*
 
      >[!NOTE]
-     > Der "Visibility"-Navigator ist gemäß der Dokumentation verfügbare Bezeichner für diese Eigenschaft.
+     > Der "Visibility"-Navigator ist gemäß der [Uno Dokumentation der einzige verfügbare Bezeichner für diese Eigenschaft](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-Regions.html#properties-in-the-region-class).
 
 ## Nächste Schritte
 
