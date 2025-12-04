@@ -4,7 +4,7 @@ uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.de
 
 # Anleitung: Registrieren und Verwalten von Routen
 
-Mit der `Uno.Extensions.Navigation` verwenden wir eine zentrale Definition der **Routen Registrierung** in der App Klasse [`App.xaml.cs`(source link)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs) gehandhabt, was man sich vereinfacht schlichtweg wie eine Landkarte vorstellen kann.
+Mit der `Uno.Extensions.Navigation` verwenden wir eine zentrale Definition der **Routen Registrierung** in der App Klasse [`App.xaml.cs`(source link)](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs) gehandhabt, was man sich vereinfacht schlichtweg wie eine Landkarte vorstellen kann.
 
 ## Voraussetzungen
 
@@ -22,7 +22,7 @@ Bevor du mit der Routen Registrierung beginnst, brauchst du noch zwei Dinge:
 
 Füge die dafür benötigte Methode wie folgt in deine App Klasse unterhalb der `OnLaunched` Methode ein:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82)]
 
 ## Definieren der `ViewMap`'s
 
@@ -34,13 +34,16 @@ Hiermit teilen wir dem Navigator mit, welche Seite (`View`) mit welchem (`View`-
         new ViewMap(ViewModel: typeof(ShellModel)),
         new ViewMap<MainPage, MainModel>(),
         new DataViewMap<SecondPage, SecondViewModel, Entity>()
+    );
+
+    ...
 ```
 
 Wenn zusätzliche Daten Objekte bei der Navigation dieser Route erforderlich sind, dann konvertierst du diese als `DataViewMap` beispielsweise so wie in der letzten Zeile.
 
 So sieht das zum Beispiel dann in der XamlNavigationApp aus, wo ich `Entity` nicht mehr benötigt habe und diese Route entsprechend zurück konvertiert habe:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L83-L89)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L83-L89?highlight=L5)]
 
 ## Hierarchisch aufgebaute `RoutesMap`'s
 
@@ -65,9 +68,16 @@ Nun wollen wir aber auf der `MainPage` vielleicht eine TabBar, NavigationBar, ei
 
 **Das machen wir beispielsweise so:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/App.xaml.cs#L96-L101)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L88-L103)]
 
-Hier siehst du, dass ich eine weitere Seite hinzugefügt habe, die `DashboardPage` und ein Model dazu erstellt habe namens `DashboardModel`. Außerdem habe ich die Route `Second` in die `RouteMap` der `Main`-Route verschachtelt.
+Hier siehst du, dass ich:
+
+1. Eine weitere Seite hinzugefügt habe: `DashboardPage`
+2. Ein zugehöriges Model erstellt habe: `DashboardModel`
+3. Diese in der `routes.Register` Methode registriert habe, indem ich sie als `Nested` Routen der `Main`-Route hinzugefügt habe.
+4. Und die beiden Routen `"Dashboard"` `"Second"` somit nun in der `RouteMap` der `Main`-Route verschachtelt sind.
+
+Klasse! Nun sind diese Routen also korrekt registriert und können mit dem "Nested"-Qualifizierer `-` in der NavigationView oder anderen Navigationssteuerelementen verwendet werden um sie innerhalb der `MainPage` `"Main"`-Route anzuzeigen!
 
 ## Nützliche Informationen
 
@@ -77,4 +87,4 @@ Wenn du anstelle von **MVVM** das **MVUX** verwendest, solltest du darauf achten
 
 ## Anwendung starten
 
-Nun sind wir auch schon fertig mit der Routen Registrierung und können die Anwendung starten. Wenn du nun die App startest, solltest du in der Lage sein, die `MainPage` zu sehen und von dort aus zu den anderen Seiten zu navigieren.
+Nun sind wir auch schon fertig mit der Routen Registrierung und können die Anwendung starten. Wenn du nun die App startest, solltest du in der Lage sein, die `MainPage` zu sehen und von dort aus zu den anderen Seiten zu navigieren. Diese sollten dann im `Content` Bereich der `NavigationView` angezeigt werden, wenn du alle Schritte bisher befolgt hast.

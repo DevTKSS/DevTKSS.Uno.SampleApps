@@ -1,4 +1,4 @@
-namespace DevTKSS.Uno.XamlNavigationApp.Presentation;
+namespace DevTKSS.Uno.SimpleMemberSelectionApp.Presentation;
 public partial record DashboardModel
 {
     public DashboardModel()

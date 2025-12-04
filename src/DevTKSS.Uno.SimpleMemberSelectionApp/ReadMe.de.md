@@ -1,0 +1,22 @@
+---
+uid: DevTKSS.Uno.SampleApps.Mvux.SimpleMemberSelectionApp
+---
+
+# DevTKSS.Uno.SampleApps.Mvux.SimpleMemberSelectionApp.de
+
+Willkommen bei der Uno Platform und insbesondere bei diesem Community-Tutorial-Beispiel!
+
+## Erste Schritte
+
+Wie du mit deiner neuen App loslegst: [Link zur Uno Doku `Getting Started`](https://aka.platform.uno/get-started)
+
+Weitere Informationen zur Verwendung des Uno.Sdk oder zum Aktualisieren der Uno Platform-Pakete in deiner Lösung: [Das Uno.Sdk benutzen](https://aka.platform.uno/using-uno-sdk)
+
+## Tutorial zum Mitmachen
+
+Diese Beispiel-App  hat bisher kein dokumentiertes Tutorial, aber du kannst dir schon den auf YouTube verfügbaren Video-Guide ansehen:
+[How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic)
+
+## Mitwirken
+
+Wenn du zu diesem Beispiel beitragen möchtest, wirf einen Blick auf das [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)

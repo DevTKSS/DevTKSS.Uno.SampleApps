@@ -4,23 +4,37 @@ uid: DevTKSS.Uno.SampleApps.Intro.en
 
 # Hello and Welcome to the Documentation and Tutorials
 
-This documentation provides insights into various sample applications built using the Uno Platform. These samples are designed to assist developers of all skill levels in understanding and implementing the showcased concepts effectively.
+Here you will find practical guides and insights into various sample applications built using the **Uno Platform**.
+The tutorials help you—regardless of your prior knowledge—quickly understand the concepts shown and implement them directly.
 
-The samples in this Repository are meant to help other Developers, independent to their pre-knowledge, get an Idea of how to use the shown things.
+**🎯 Goal:** Community Tutorials to Support developers of all experience levels in getting started with the Uno Platform.
 
-<!--Visit the [API Documentation](./api/) for a Reference created from the Sourcecode-->
+---
 
-## Current Samples List
+## First Steps
 
-To give you a quick overview of this Documentation, here is a List of quick links to the included Sample Apps. For future and more detailed Information, please lookup the depending Chapter via the Table of Contents.
+- [Set Up Development Environment for Uno Platform App Development](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.en)
+- [Resource Collection for Getting Started with Uno App Development](xref:DevTKSS.Uno.ResourcesLookup.en)
 
-- MvuxGallery
-  - [Docs](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.en)
-  - [source code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
-- Mvux.XamlNavigationApp
-  - [Docs](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.en)
-  - [source code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp-1/)
+---
 
-## Next Steps
+## Current Sample Apps
 
-- [How To: Setup Development Environment for Uno Platform App Development](xref:DevTKSS.Uno.Setup.DevelopmentEnvironment.en)
+Here is a quick overview of the included samples. You can find detailed information in the respective chapter of the table of contents.
+
+### MvuxGallery
+
+- [View Documentation](xref:DevTKSS.Uno.SampleApps.MvuxGallery.Overview.en)
+- [View Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/)
+
+### XamlNavigationApp (Mvux)
+
+- [NavigationView in MVUX or MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.en)
+- [View Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp/)
+
+---
+
+## Additional Resources
+
+- [API Documentation](~/api/index.md)
+- [Uno Platform Official Documentation](https://platform.uno/docs/)

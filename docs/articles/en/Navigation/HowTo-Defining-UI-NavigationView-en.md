@@ -17,7 +17,7 @@ In this video, we will look together at how to set up and use a `NavigationView`
 > [!NOTE]
 > This video is currently only available in German, but transcriptions have been added to the video description, which should be usable through YouTube's auto-translate feature. You can also enable auto-translated subtitles in YouTube to follow along in your preferred language.
 
-![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://youtube.com/embed/knt2oOjHH30)
+![Navigation-in-Xaml-und-Mvux-mit-Navigation-View](https://www.youtube.com/embed/knt2oOjHH30)
 
 ## Implementing the NavigationView
 
@@ -27,22 +27,22 @@ From this starting point, first remove the `StackPanel` including the controls i
 
 ```xml
 <Grid utu:SafeArea.Insets="VisibleBounds">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="*" />
-        <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="*" />
+    <RowDefinition Height="Auto"/>
+  </Grid.RowDefinitions>
     <NavigationView Header="{Binding Title}"
                     IsPaneToggleButtonVisible="True"
                     PaneDisplayMode="Auto">
-        <NavigationView.MenuItems>
-            <NavigationViewItem Content="Home"
-                                Icon="Home" />
-            <NavigationViewItem Content="Some View"
-                                Icon="AddFriend" />
-        </NavigationView.MenuItems>
-        <NavigationView.Content>
-            <Grid />
-        </NavigationView.Content>
+      <NavigationView.MenuItems>
+        <NavigationViewItem Content="Home"
+                            Icon="Home" />
+        <NavigationViewItem Content="Some View"
+                            Icon="AddFriend" />
+      </NavigationView.MenuItems>
+      <NavigationView.Content>
+          <Grid />
+      </NavigationView.Content>
     </NavigationView>
 </Grid>
 ```
@@ -67,7 +67,7 @@ Now we want to add the properties enabled by the extension, so-called `Attached 
         <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
     + <NavigationView uen:Region.Attached="True"
-                    Header="{Binding Title}" <-- Optional binding to the Title property in the ViewModel
+                    Header="{Binding Title}" <!-- Optional binding to the Title property in the ViewModel -->
                     IsPaneToggleButtonVisible="True"
                     PaneDisplayMode="Auto">
     <NavigationView.MenuItems>
@@ -140,7 +140,7 @@ Now we want to add the properties enabled by the extension, so-called `Attached 
      *The naming is by no means a coincidence!*
 
      >[!NOTE]
-     > The "Visibility" navigator is the available identifier for this property according to the documentation.
+     > The "Visibility" navigator is the only available identifier for this property [according to the Uno documentation](https://platform.uno/docs/articles/external/uno.extensions/doc/Learn/Navigation/HowTo-Regions.html#properties-in-the-region-class).
 
 ## Next Steps
 

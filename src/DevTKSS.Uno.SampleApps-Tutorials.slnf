@@ -1,8 +1,8 @@
 {
   "solution": {
-    "path": "DevTKSS.Uno.Samples.sln",
+    "path": "..\\DevTKSS.Uno.SampleApps.slnx",
     "projects": [
-      "DevTKSS.Uno.XamlNavigationApp-1\\DevTKSS.Uno.XamlNavigationApp.csproj"
+      "DevTKSS.Uno.XamlNavigationApp\\DevTKSS.Uno.XamlNavigationApp.csproj"
     ]
   }
 }

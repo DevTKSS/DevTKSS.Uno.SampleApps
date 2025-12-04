@@ -1,5 +1,5 @@
 items:
-  - name: Möglichkeiten für die Navigation in einer Uno App
+  - name: Möglichkeiten für die Navigation in unseren Uno Apps
     uid: DevTKSS.Uno.Navigation.Navigation-Options.de
     href: Navigation-Options-de.md
   - name: Navigation mit Uno Extensions
@@ -7,21 +7,21 @@ items:
     href: Extensions-Navigation-de.md
   - name: Erstellen oder upgraden
     items:
-    - name: "App erstellen (Wizard/CLI)"
+    - name: "Tutorial: Neue Uno App erstellen (Wizard/CLI)"
       uid: DevTKSS.Uno.Setup.HowTo-CreateNewUnoApp.de
       href: ../HowTo-CreateApp-de.md
-    - name: "Eine bestehende App upgraden"
+    - name: "Tutorial: Eine bestehende Uno App upgraden"
       uid: DevTKSS.Uno.ExtensionsNavigation.UpgradeExistingApp.de
       href: HowTo-UpgradeExistingApp-de.md
-  - name: "UI mit NavigationView definieren"
+  - name: "Tutorial: UI mit NavigationView definieren"
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.de
     href: HowTo-Defining-UI-NavigationView-de.md
-  - name: "Routen registrieren"
+  - name: "Anleitung: Registrieren und Verwalten von Routen"
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-RegisterRoutes.de
     href: HowTo-RegisterRoutes-de.md
-  - name: Definieren einer Navigation im Model oder ViewModel
+  - name: "Tutorial: Definieren einer Navigation im Model oder ViewModel"
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-DefiningModelOrViewModel.de
     href: HowTo-ModelDefinition-de.md
-  - name: Reagieren auf Routen Änderungen
+  - name: "Tutorial: Reagieren auf Routen Änderungen"
     uid: DevTKSS.Uno.ExtensionsNavigation.HowTo-ChangeRoutes.de
     href: HowTo-ChangeRoutes-de.md

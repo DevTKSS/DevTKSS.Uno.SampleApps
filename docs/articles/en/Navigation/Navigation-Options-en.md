@@ -2,7 +2,7 @@
 uid: DevTKSS.Uno.Navigation.Navigation-Options.en
 ---
 
-# How To: Choose Navigation Options for an Uno App
+# Navigation Options in an Uno App
 
 Every application that comprises more than a single page benefits from the presence of a well-thought-out **navigation**.
 

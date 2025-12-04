@@ -19,15 +19,5 @@
         <TextBlock Text="{Binding DashboardTitle}"
                    HorizontalTextAlignment="Center"
                    VerticalAlignment="Center" />
-
-        <TextBlock Grid.Row="1"
-                   HorizontalAlignment="Center"
-                   TextAlignment="Center">
-            <Run Text="Selected Name:" /> <Run Text="{Binding SelectedMember}" />
-        </TextBlock>
-
-        <ListView Grid.Row="2"
-                  ItemsSource="{Binding DashboardList}" />
-
     </Grid>
 </Page>
