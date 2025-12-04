@@ -64,6 +64,10 @@ public partial class DashboardViewModel : ObservableObject
 }
 ```
 
+With this code, you can bind the `Name` property in the View and use the `NavigateSecondAsyncCommand` to navigate to the `SecondViewModel`.
+
+You can use a button or another control in the View to trigger navigation, but by binding the `IsEnabled` property of the control to the `CanExecute` status of the command, you can only execute navigation when the name is not empty.
+
 ### [Mvux](#tab/mvux)
 
 ```csharp
@@ -92,8 +96,12 @@ public partial record MainModel
 }
 ```
 
-With this code, you can bind the `Name` property in the View and use the `NavigateSecondAsyncCommand` to navigate to the `SecondViewModel`.
+Here you can define a button in the View that calls the `NavigateSecondAsync` method to navigate to the `SecondModel`, retrieve the `Name` value, and pass it as data to the next page.
 
-You can use a button or another control in the View to trigger navigation, but by binding the `IsEnabled` property of the control to the `CanExecute` status of the command, you can only execute navigation when the name is not empty.
+If you compare how this looks in MVVM and MVUX, you'll notice it's fundamentally quite similar, but in MVUX the whole thing is somehow more organized and you need less "boilerplate" code to achieve the same result.
+
+To create a TwoWay binding directly on the `IState<string> Name` in the View, you don't even need a `PropertyChanged` notification like you would in MVVM. Instead, you simply attach a `.ForEach(...)` to the `.Value(...)`, create a method that receives the new value, and you can work with it directly. No more tedious implementation of `INotifyPropertyChanged`.
+
+Learn more about this in the [Guide: React to Route Changes](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-ChangeRoutes.en).
 
 ---

@@ -18,11 +18,11 @@ Bevor du mit der Routen Registrierung beginnst, brauchst du noch zwei Dinge:
 
    - [Neue Klasse oder Record Definitionen für ein ViewModel oder Model hinzufügen](xref:DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.de)
 
-## RegisterRoutes Methode
+## `RegisterRoutes` Methode in `App.xaml.cs` entdecken
 
 Füge die dafür benötigte Methode wie folgt in deine App Klasse unterhalb der `OnLaunched` Methode ein:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L80)]
 
 ## Definieren der `ViewMap`'s
 
@@ -43,7 +43,7 @@ Wenn zusätzliche Daten Objekte bei der Navigation dieser Route erforderlich sin
 
 So sieht das zum Beispiel dann in der XamlNavigationApp aus, wo ich `Entity` nicht mehr benötigt habe und diese Route entsprechend zurück konvertiert habe:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L83-L89?highlight=L5)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87?highlight=5)]
 
 ## Hierarchisch aufgebaute `RoutesMap`'s
 
@@ -68,7 +68,7 @@ Nun wollen wir aber auf der `MainPage` vielleicht eine TabBar, NavigationBar, ei
 
 **Das machen wir beispielsweise so:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L88-L103)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L89-L103)]
 
 Hier siehst du, dass ich:
 

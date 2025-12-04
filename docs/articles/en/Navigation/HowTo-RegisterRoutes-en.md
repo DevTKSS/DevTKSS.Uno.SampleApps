@@ -18,11 +18,11 @@ Before you start with route registration, you need two things:
 
    - [Add new class or record definitions for a ViewModel or Model](xref:DevTKSS.Uno.Setup.HowTo-AddingNew-VM-Class-Record.en)
 
-## RegisterRoutes Method
+## Discovering `RegisterRoutes` Method in `App.xaml.cs`
 
 Add the required method to your App class below the `OnLaunched` method as follows:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L80)]
 
 ## Defining the `ViewMap`'s
 
@@ -40,7 +40,7 @@ If additional data objects are required when navigating this route, you convert 
 
 For example, this is what it looks like in the XamlNavigationApp, where I no longer needed `Entity` and converted this route back accordingly:
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L83-L89)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L82-L87?highlight=5)]
 
 ## Hierarchically Structured `RoutesMap`'s
 
@@ -65,7 +65,7 @@ Now, on the `MainPage`, we might want to use a TabBar, NavigationBar, a Frame wi
 
 **We do this, for example, like this:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L88-L103)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L89-L103)]
 
 Here you can see that I added another page, the `DashboardPage`, and created a Model for it named `DashboardModel`. I also nested the `Second` route into the `RouteMap` of the `Main` route.
 
