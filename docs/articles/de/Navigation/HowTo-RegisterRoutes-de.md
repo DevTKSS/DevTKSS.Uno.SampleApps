@@ -68,7 +68,7 @@ Nun wollen wir aber auf der `MainPage` vielleicht eine TabBar, NavigationBar, ei
 
 **Das machen wir beispielsweise so:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L91-L103)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L88-L103)]
 
 Hier siehst du, dass ich:
 

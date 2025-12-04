@@ -65,7 +65,7 @@ Now, on the `MainPage`, we might want to use a TabBar, NavigationBar, a Frame wi
 
 **We do this, for example, like this:**
 
-[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L96-L101)]
+[!code-csharp[](../../../../src/DevTKSS.Uno.XamlNavigationApp/App.xaml.cs#L88-L103)]
 
 Here you can see that I added another page, the `DashboardPage`, and created a Model for it named `DashboardModel`. I also nested the `Second` route into the `RouteMap` of the `Main` route.
 
