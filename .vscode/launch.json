@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Uno Platform Desktop",
+      "type": "Uno",
+      "request": "launch",
+      // any Uno* task will do, this is simply to satisfy vscode requirement when a launch.json is present
+      "preLaunchTask": "build-desktop-MvuxGallery"
+    },
+    {
       // Use IntelliSense to find out which attributes exist for C# debugging
       // Use hover for the description of the existing attributes
       // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/main/debugger-launchjson.md
@@ -13,13 +20,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop-MvuxGallery",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.SampleApps.MvuxGallery.dll",
+      "program": "${workspaceFolder}/src/DevTKSS.Uno.Samples.MvuxGallery/bin/Debug/net9.0-desktop/DevTKSS.Uno.Samples.MvuxGallery.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS MvuxGallery (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/DevTKSS.Uno.SampleApps.MvuxGallery",
+      "cwd": "${workspaceFolder}/src/DevTKSS.Uno.Samples.MvuxGallery",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
@@ -30,13 +37,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop-XamlNavigationApp",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.XamlNavigationApp.dll",
+      "program": "${workspaceFolder}/src/DevTKSS.Uno.XamlNavigationApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.XamlNavigationApp.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS.Uno.XamlNavigationApp (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/DevTKSS.Uno.XamlNavigationApp",
+      "cwd": "${workspaceFolder}/src/DevTKSS.Uno.XamlNavigationApp",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false
@@ -47,13 +54,13 @@
       "request": "launch",
       "preLaunchTask": "build-desktop-SimpleMemberSelectionApp",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/DevTKSS.Uno.SimpleMemberSelectionApp-1/bin/Debug/net9.0-desktop/DevTKSS.Uno.SimpleMemberSelectionApp.dll",
+      "program": "${workspaceFolder}/src/DevTKSS.Uno.SimpleMemberSelectionApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.SimpleMemberSelectionApp.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS.Uno.SimpleMemberSelectionApp (Desktop)",
       "env": {
         "DOTNET_MODIFIABLE_ASSEMBLIES": "debug"
       },
-      "cwd": "${workspaceFolder}/DevTKSS.Uno.SimpleMemberSelectionApp",
+      "cwd": "${workspaceFolder}/src/DevTKSS.Uno.SimpleMemberSelectionApp",
       // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
       "console": "internalConsole",
       "stopAtEntry": false

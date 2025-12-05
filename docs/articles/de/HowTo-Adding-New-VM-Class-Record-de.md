@@ -36,6 +36,14 @@ Um ein für Mvux passendes Model zu erstellen:
 
 ![Umbenennen-Klasse-zu-Mvux-Model](../.attachments/renaming-class-to-record-mvux.png)
 
+> [!NOTE]
+> In Mvux werden Models als `record`-Typen definiert, um Unveränderlichkeit und wertbasierte Gleichheit zu nutzen, was für die Zustandsverwaltung in Anwendungen vorteilhaft ist.
+> Die Verwendung von `partial` ist in Mvux Models unerlässlich, um die vom Framework bereitgestellten Code-Generierungsfunktionen zu ermöglichen, wie z.B. automatische Eigenschaftsänderungsbenachrichtigungen und andere Reduzierungen von Boilerplate-Code.
+> [!CAUTION]
+> Genau wie bei regulären C#-Klassen können auch Mvux Models oder Services primäre Konstruktoren haben, die standardmäßig die Parameter als Eigenschaften des Record-Typs erzeugen.
+> Ein potenzieller Nachteil dabei ist, dass ein `INavigator`-Parameter im primären Konstruktor ebenfalls eine Eigenschaft des Models wäre, was normalerweise nicht das ist, was wir als Teil der öffentlichen API unseres Models wollen.
+> Du solltest bevorzugen, diese Service-definierenden Parameter in einem sekundären Konstruktor zu definieren und sie als `private readonly` Felder zu behalten.
+
 ### [Ein ViewModel erstellen](#tab/create-mvvm-viewmodel)
 
 Um ein für Mvvm passendes ViewModel zu erstellen:
@@ -47,3 +55,6 @@ Um ein für Mvvm passendes ViewModel zu erstellen:
 ![Konvertieren-Klasse-zu-ViewModel-Mvvm](../.attachments/converting-class-to-vm-mvvm.png)
 
 ---
+
+> [!NOTE]
+> Du kannst in Uno ViewModels oder Models frei den primären Konstruktor verwenden, beachte jedoch, dass bei Verwendung von `Uno.Extensions.Navigation` keine Parameter im *Page*-Konstruktor erlaubt sind.
