@@ -22,7 +22,7 @@ public static class ServiceProviderExtensions
         var logger = serviceProvider.GetRequiredService<ILogger<CodeSampleService>>();
         var storage = serviceProvider.GetRequiredService<IStorage>();
         logger.LogInformation("ConfigureCodeSampleService -> Name: {serviceName}", serviceName);
-        return new (serviceName, options, logger, storage);
+        return new CodeSampleService(serviceName, options, logger, storage);
 
     }
 }

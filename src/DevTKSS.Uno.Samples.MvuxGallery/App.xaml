@@ -19,7 +19,7 @@
             </ResourceDictionary>
           </utum:MaterialToolkitTheme.FontOverrideDictionary> -->
         </utum:MaterialToolkitTheme>
-        <ResourceDictionary Source="ms-appx:///DataTemplates/GalleryTemplates.xaml"/>
+        <ResourceDictionary Source="ms-appx:///Templates/GalleryTemplates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
       <!-- Add resources here -->

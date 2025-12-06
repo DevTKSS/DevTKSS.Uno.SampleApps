@@ -10,7 +10,7 @@ public partial record CodeSampleService : ICodeSampleService
 
     public CodeSampleService(
         string name,
-        IOptionsSnapshot<CodeSampleOptions> options,
+        IOptionsMonitor<CodeSampleOptions> options,
         ILogger<CodeSampleService> logger,
         IStorage storage)
     {
