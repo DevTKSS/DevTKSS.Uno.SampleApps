@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "unoplatform.vscode"
+    "unoplatform.vscode",
+    "ms-dotnettools.csdevkit",
+    "DavidAnson.vscode-markdownlint"
   ],
 }
