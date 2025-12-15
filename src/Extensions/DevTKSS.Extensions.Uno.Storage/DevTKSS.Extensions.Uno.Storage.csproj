@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net10.0</TargetFrameworks>
+	    <OutputType>Library</OutputType>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+		<AssemblyName>DevTKSS.Extensions.Uno.Storage</AssemblyName>
+		<RootNamespace>DevTKSS.Extensions.Uno.Storage</RootNamespace>
+	</PropertyGroup>
+	<PropertyGroup Label="Package Properties">
+		<PackageId>DevTKSS.Extensions.Uno.Storage</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<PackageTags>Uno Platform;Uno;Extensions;Storage</PackageTags>
+    	<Authors>Sonja Schweitzer</Authors>
+		<!--Uncomment if Test Covered-->
+		<!--<IsPackable>true</IsPackable>-->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/DevTKSS/DevTKSS.Extensions</RepositoryUrl>
+		<Description>Storage Extensions that are extending Uno Platform Extensions functionallities</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Uno.Core.Extensions" />
+		<PackageReference Include="Uno.Extensions.Storage" />
+	</ItemGroup>
+</Project>
