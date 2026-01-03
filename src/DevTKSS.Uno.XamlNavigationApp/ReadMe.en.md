@@ -23,4 +23,4 @@ Please select the language of your choice to follow along:
 
 ## Contributing
 
-If you want to contribute to this sample, please check out the [GitHub repository](www.github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+If you want to contribute to this sample, please check out the [CONTRIBUTING Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)

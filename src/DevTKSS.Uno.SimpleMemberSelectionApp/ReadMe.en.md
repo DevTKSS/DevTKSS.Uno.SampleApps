@@ -19,4 +19,4 @@ This sample app has no Documented Tutorial by now, but you can check out the Vid
 
 ## Contributing
 
-If you want to contribute to this sample, please check out the [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+If you want to contribute to this sample, please check out the [CONTRIBUTING Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)
