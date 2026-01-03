@@ -1,5 +1,5 @@
 ---
-uid: DevTKSS.Uno.Mvux-StateManagement.ListState.Selection.en
+uid: DevTKSS.Uno.MvuxStateManagement.ListState.Selection.en
 ---
 # How to: Binding ListState with Selection
 

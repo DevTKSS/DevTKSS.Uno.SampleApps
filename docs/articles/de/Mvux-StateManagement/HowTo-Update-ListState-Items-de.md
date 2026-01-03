@@ -18,7 +18,7 @@ Dieses Szenario zeigt, warum wir `ListState` anstelle von `ListFeed` benötigen:
 
 Bevor du mit diesem Tutorial beginnst, stelle sicher, dass du:
 
-- [Anleitung: Binding von ListState mit Selection](xref:DevTKSS.Uno.MvuxStateManagement.ListState-Selection.de) erfolgreich abgeschlossen hast
+- [Anleitung: Binding von ListState mit Selection](xref:DevTKSS.Uno.MvuxStateManagement.ListState.Selection.de) erfolgreich abgeschlossen hast
 
 ## Visuelle Referenz
 

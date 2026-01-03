@@ -136,8 +136,6 @@ Dieses Beispiel demonstriert:
 3. Anzeige des ausgewählten Elements in der UI
 4. Zwei Initialisierungsmethoden: `.Async(...)` für echte asynchrone Daten vs `.Value(...)` für statische Daten
 
-- [Link zum Source Code](../../../../src/DevTKSS.Uno.XamlNavigationApp-1/Presentation/DashboardModel.cs)
-
 Im nächsten Tutorial lernst du, wie du die ausgewählten Elemente bearbeiten und aktualisieren kannst.
 
 - [Nächstes Tutorial: Aktualisierung von ListState Items](xref:DevTKSS.Uno.MvuxStateManagement.ListState.UpdateItems.de)
