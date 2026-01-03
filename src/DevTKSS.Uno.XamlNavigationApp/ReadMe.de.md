@@ -23,4 +23,4 @@ Bitte wähle die Sprache deiner Wahl, um dem Tutorial zu folgen:
 
 ## Mitwirken
 
-Wenn du zu diesem Beispiel beitragen möchtest, wirf einen Blick auf das [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+Wenn du zu diesem Beispiel beitragen möchtest, wirf einen Blick auf die [CONTRIBUTING Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)

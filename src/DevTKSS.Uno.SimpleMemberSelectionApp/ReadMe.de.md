@@ -19,4 +19,4 @@ Diese Beispiel-App  hat bisher kein dokumentiertes Tutorial, aber du kannst dir 
 
 ## Mitwirken
 
-Wenn du zu diesem Beispiel beitragen möchtest, wirf einen Blick auf das [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+Wenn du zu diesem Beispiel beitragen möchtest, wirf einen Blick auf die [CONTRIBUTING Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)
