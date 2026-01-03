@@ -113,7 +113,7 @@
 | --- | --- | --- | --- |
 | | Wir freuen uns auf dein Feedback und deine Beiträge! | | We welcome your feedback and contributions! |
 | **Du hast Fragen?** | [Diskussion starten](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions) | **Do you have questions?** | [Start a Discussion](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions) |
-| **Du hast einen Fehler gefunden?** | [Issue öffnen](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) | **Did you found a bug?** | [Open an Issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) |
+| **Du hast einen Fehler gefunden?** | [Issue öffnen](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) | **Did you find a bug?** | [Open an Issue](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/issues) |
 | **Du möchtest Beitragen?** | [Hier geht's zu den Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md) | **You want to contribute?** | [Here you can find the Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md) |
 | **Hast du eine Idee?** | [Diskussionen](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions/new) | **Do you have an idea?** | [Discussions](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/discussions/new) |
 
