@@ -24,8 +24,8 @@ This sample app has no Documented Tutorial by now, but you can check out the Vid
 
 | View | ViewModel |
 | --- | --- |
-| [Main Page](./Presentation/MainPage.xaml) | [Main Model](./Presentation/MainModel.xaml)
-| [Dashboard Page](./Presentation/DashboardPage.xaml) | [Dashboard Model](./Presentation/DashboardModel.xaml)
+| [Main Page](./Presentation/MainPage.xaml) | [Main Model](./Presentation/MainModel.cs)
+| [Dashboard Page](./Presentation/DashboardPage.xaml) | [Dashboard Model](./Presentation/DashboardModel.cs)
 
 ## Contributing
 
