@@ -18,7 +18,7 @@ This sample app has no Documented Tutorial by now, but you can check out the Vid
 [How To: Binding to ListState with an ImmutableList from FeedView & ListView in UI](https://youtu.be/wOsSlv1YFic) (Deutsch => Switch on Subtitles for English)
 
 > [!NOTE]
-> The Video for the Tutorial is until now only available in German Localization, so we recommend activating automatic Sub-Titles on YouTube until there is a English Version available.
+> The Video for the Tutorial is until now only available in German Localization, so we recommend activating automatic Sub-Titles on YouTube until there is an English Version available.
 
 ### Source Code
 
