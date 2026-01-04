@@ -36,7 +36,7 @@ This sample app is part of a Community Tutorial Video that will guide you throug
 
 - [Route Registration (App.xaml.cs)](./App.xaml.cs)
 
-### Verwendung von IRouteNotifier in MVUX Model Tutorial
+### Using IRouteNotifier in MVUX Model Tutorial
 
 - [Tutorial: React on Route Changes](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Navigation/HowTo-ChangeRoutes-de.html)
 - YouTube Video: [How To: Using the IRouteNotifier with RouteChanged Event](https://youtu.be/RZ3RirA7jhk)
