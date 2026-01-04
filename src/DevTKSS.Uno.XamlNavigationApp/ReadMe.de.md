@@ -18,8 +18,8 @@ Diese Beispiel-App ist Teil eines Community-Tutorial-Videos, das dich durch den 
 
 Bitte wähle die Sprache deiner Wahl, um dem Tutorial zu folgen:
 
-- [Deutsch](../../docs/articles/de/Navigation/Extensions-Navigation-de.md)
-- [Englisch](../../docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
+- [Deutsch](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Navigation/HowTo-Defining-UI-NavigationView-de.html)
+- [Englisch](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
 
 ## Mitwirken
 
