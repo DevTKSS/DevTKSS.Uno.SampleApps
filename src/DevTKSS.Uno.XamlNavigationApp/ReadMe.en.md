@@ -16,10 +16,36 @@ For more information on how to use the Uno.Sdk or upgrade Uno Platform packages 
 
 This sample app is part of a Community Tutorial Video that will guide you through the process of building a XAML Navigation App using the Uno Platform.
 
-Please select the language of your choice to follow along:
+> [!NOTE]
+> The Videos for the Tutorials below are until now only available in German Localization, so we recommend activating automatic Sub-Titles on YouTube until they are available in English too.
 
-- [English](../../docs/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.md)
-- [German](../../docs/articles/de/Navigation/Extensions-Navigation-de.md)
+### Xaml Navigation Tutorials
+
+- [Tutorial Part 1: Create the UI with a NavigationView in XAML](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
+- [Tutorial Part 2: Registrier your Routes](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-RegisterRoutes-en.html)
+- [Tutorial Part 3: Navigating im Model or ViewModel](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-ModelDefinition-en.html)
+- YouTube Video: [How To: Navigating with NavigationView and Uno.Extensions.Navigation in MVUX und XAML](https://youtu.be/knt2oOjHH30) *(Includes all 3 Parts)*
+
+#### Source Code Links (Xaml Navigation)
+
+| View | Mvux Model |
+| --- | --- |
+| [Main Page](./Presentation/MainPage.cs) | [Main Model](./Presentation/MainModel.cs) |
+| [Dashboard Page](./Presentation/DashboardPage.cs) | [Dashboard Model](./Presentation/DashboardModel.cs) |
+| [Second Page](./Presentation/SecondPage.cs) | [Second Model](./Presentation/SecondModel.cs) |
+
+- [Route Registration (App.xaml.cs)](./App.xaml.cs)
+
+### Verwendung von IRouteNotifier in MVUX Model Tutorial
+
+- [Tutorial: React on Route Changes](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Navigation/HowTo-ChangeRoutes-de.html)
+- YouTube Video: [How To: Using the IRouteNotifier with RouteChanged Event](https://youtu.be/RZ3RirA7jhk)
+
+#### Source Code Links (IRouteNotifier)
+
+| View | Mvux Model |
+| --- | --- |
+| [Main Page](./Presentation/MainPage.cs) | [Main Model](./Presentation/MainModel.cs) |
 
 ## Contributing
 
