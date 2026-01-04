@@ -23,7 +23,7 @@ This sample app is part of a Community Tutorial Video that will guide you throug
 
 - [Tutorial Part 1: Create the UI with a NavigationView in XAML](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-Defining-UI-NavigationView-en.html)
 - [Tutorial Part 2: Register your Routes](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-RegisterRoutes-en.html)
-- [Tutorial Part 3: Navigating im Model or ViewModel](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-ModelDefinition-en.html)
+- [Tutorial Part 3: Navigating in Model or ViewModel](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Navigation/HowTo-ModelDefinition-en.html)
 - YouTube Video: [How To: Navigating with NavigationView and Uno.Extensions.Navigation in MVUX und XAML](https://youtu.be/knt2oOjHH30) *(Includes all 3 Parts)*
 
 #### Source Code Links (Xaml Navigation)
