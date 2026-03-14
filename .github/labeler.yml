@@ -1,0 +1,40 @@
+# Documentation
+documentation:
+  - changed-files:
+    - any-glob-to-any-file: 'docs/**/*'
+    - any-glob-to-any-file: '**/*.md'
+
+# Source Code
+source:
+  - changed-files:
+    - any-glob-to-any-file: 'src/**/*.cs'
+    - any-glob-to-any-file: 'src/**/*.xaml'
+
+# Extensions
+extensions:
+  - changed-files:
+    - any-glob-to-any-file: 'src/DevTKSS.Extensions.Uno/**/*'
+    - any-glob-to-any-file: 'src/DevTKSS.Extensions.Uno.Storage/**/*'
+
+# Sample Apps
+samples:
+  - changed-files:
+    - any-glob-to-any-file: 'src/DevTKSS.Uno.MvuxListApp/**/*'
+    - any-glob-to-any-file: 'src/DevTKSS.Uno.Samples.MvuxGallery/**/*'
+    - any-glob-to-any-file: 'src/DevTKSS.Uno.XamlNavigationApp-1/**/*'
+
+# CI/CD
+ci-cd:
+  - changed-files:
+    - any-glob-to-any-file: '.github/**/*'
+
+# Dependencies
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file: 'src/Directory.Packages.props'
+    - any-glob-to-any-file: 'src/global.json'
+
+# Tests
+tests:
+  - changed-files:
+    - any-glob-to-any-file: 'src/Tests/**/*'

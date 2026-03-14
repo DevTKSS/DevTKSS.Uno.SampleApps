@@ -13,11 +13,11 @@ public partial class GalleryImageService : IGalleryImageService
         this._stringlocalizer = _stringLocalizer;
     }
 
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithReswAsync(CancellationToken ct)
+    public async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesWithReswAsync(CancellationToken ct)
     {
        return await GetGalleryImagesAsync(ct);
     }
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
+    public async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
     {
         string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
         var galleryImages = cultureString switch
@@ -32,33 +32,33 @@ public partial class GalleryImageService : IGalleryImageService
 
     #region Get culture specific gallery imageDescription
     
-    private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
+    private async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesAsync(CancellationToken ct)
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2), ct);
-        var galleryImages = new GalleryImageModel[]
+        var galleryImages = new GalleryImage[]
         {
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Fluffy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
                 Description: _stringlocalizer["img_20240531_141928"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Snowball",
                 ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
                 Description: _stringlocalizer["img_20230302_175758"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Buddy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
                 Description: _stringlocalizer["img_20240602_130506"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Coco",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
                 Description: _stringlocalizer["img_20240721_130401"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Bunny",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
                 Description: _stringlocalizer["img_20240721_130831"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Thumper",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
                 Description: _stringlocalizer["img_20240721_132103"]),

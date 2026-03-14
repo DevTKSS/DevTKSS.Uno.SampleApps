@@ -24,3 +24,5 @@
     href: HowTo-Adding-New-VM-Class-Record-en.md
 - name: "Navigation in Uno Apps"
   href: Navigation/toc.yml
+- name: "MVUX State Management"
+  href: Mvux-StateManagement/toc.yml

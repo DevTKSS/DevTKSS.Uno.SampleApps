@@ -1,0 +1,12 @@
+name: "Pull Request Labeler"
+on:
+  pull_request:
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v5
+      if: github.repository == 'DevTKSS/DevTKSS.Uno.SampleApps'
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"

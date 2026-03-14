@@ -94,9 +94,19 @@
 
 ![Image of final Simple Member Selection App](https://raw.githubusercontent.com/DevTKSS/DevTKSS.Uno.SampleApps/master/docs/articles/.attachments/SimpleMemberSelectionApp.png)
 
+**Tutorial Documentation available:**
+
+- **MVUX State Management Tutorials** - Learn how to use `ListState` and `ListFeed` alongside with `ListView` and `Button.Command`-Binding (🇩🇪 [German](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/de/Mvux-StateManagement/Overview-de.html) | 🇬🇧 [English](https://devtkss.github.io/DevTKSS.Uno.SampleApps/articles/en/Mvux-StateManagement/HowTo-Binding-ListState-and-ListFeed-de.md))
+
+**Video Tutorials available:**
+
+- **[Video Tutorial - How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic)** - Step-by-step guide (🇩🇪 German)
+- **[Video Tutorial Series](https://youtube.com/playlist?list=PLEL6kb4Bivm_g81iKBl-f0eYPNr5h2dFX)** - Complete walkthrough (🇩🇪 German with English subtitles)
+- **[Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/tree/master/src/DevTKSS.Uno.XamlNavigationApp-1/)** - Browse the implementation
+
 | | |
 | --- | --- |
-| Die Simple Member Selection Anwendung demonstriert die Auswahl und Anzeige von Mitgliedernamen in einer `ListView`, gebunden an einen `ListState<string>` im Modell mittels MVUX. | The Simple Member Selection application demonstrates selection and display of member names in a `ListView` bound to a `ListState<string>` in the Model using MVUX. |
+| **Die `SimpleMemberSelection` Beispiel Anwendung zeigt, wie man:**<br/>- Einer Sammlungs/Listen-Eigenschaft (`ListState<string>`), bestehend aus ganz bewusst *einfachen* Text-Elementen, im MVUX-Model (Daten/Logik-Layer) definieren kann<br/>- Die komplette Sammlung in einem `ListView`-Steuerelement innerhalb der Benutzeroberfläche (UI / View) einbinden kann, unter Verwendung der `ListView.ItemSource`-Eigenschaft.<br/>- Das aktuell selektierte / ausgewählte Mitglieds, bzw. dessen Namen, nach Nutzer-Auswahl (View -> MVUX Model) mittels des `ListState<T>.Selection(...)`-Operators *automatisch* in eine `State<string>`-Eigenschaft transferieren lässt.<br/>- Das ausgewählte Element bzw. Mitglied aus dem `State<String>` wiederum im UI/View-Layer mittels `TextBox`/`TextBlock`-Steuerelement anzeigen lassen kann. | The `SimpleMemberSelection` Sample Application demonstrates how to setup selection between the Userinterface and the MVUX Model, by:<br/>- Defining a `ListState<string>`-Property in the MVUX Model<br/>- Binding it to a `ListView`-Control to display the collection of member names in the Page (View-Layer/UI)<br/>- Using the `ListState<T>.Selection(...)` Operator to get the currently selected Item automatically transfered to another `State<string>`-Property in the Model by the MVUX Engine<br/>- Displaying the currently Selected Member in a `TextBlock`/`TextBox`-Control binding to the `State<string>`-Property of the MVUX-Model. |
 
 #### Tutorial-Inhalte / Tutorial Content
 
@@ -140,8 +150,8 @@ Falls du gerade erst mit **C#** anfangen möchtest zu lernen, empfehle ich die K
 | .NET Guide (kostenlos) | Produktionsreife .NET Anwendungen – Umgang mit professionellen .NET Anwendungen | [Zum Kurs](https://codingmitjannick.de/s/coding-mit-jannick/leitfaden) |
 | C# Bootcamp 2024 | Vom Anfänger bis zum Profi – Umfassendes Trainingsprogramm | [Zum Kurs](https://codingmitjannick.de/s/coding-mit-jannick/csharp-bootcamp) |
 | C# Expertise | Design Patterns und Clean Code – Fortgeschrittene Konzepte für professionelle Entwicklung | [Zum Kurs](https://codingmitjannick.de/s/coding-mit-jannick/csharp-expertise) |
-| Alle Kurse | Komplette Kursübersicht | [Alle Kurse ansehen](https://codingmitjannick.de/s/coding-mit-jannick/kurse) |
+
 
 > [!NOTE]
 > **Transparenzhinweis:** Ich habe selbst an diesen Kursen teilgenommen und empfehle sie aus Überzeugung. Ich erhalte für diese Weiterempfehlung kein Geld oder andere Vergütung.
-> Die Preise und Verfügbarkeit der Kurse können sich ändern. Bitte überprüfe die Kursseiten für die aktuellsten Informationen.
+> Die Verfügbarkeit der Kurse können sich ändern. Bitte überprüfe die [Kursseiten](https://codingmitjannick.de/s/coding-mit-jannick/kurse) immer für aktuellste Informationen.

@@ -46,7 +46,7 @@ public partial record ListboardModel
     /// <summary>
     /// Gets a feed of gallery images to be displayed.
     /// </summary>
-    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
+    public IListFeed<GalleryImage> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
 
 
     #region CodeSample import

@@ -1,6 +1,7 @@
-<!-- ---
-redirect_url: 'articles/de/Introduction-de.html'
---- -->
+---
+uid: DevTKSS.Uno.SampleApps.Home
+---
+
 <!--markdownlint-disable MD041 MD033-->
-<!-- <meta http-equiv="refresh" content="0; url='articles/de/Introduction-de.html'" /> -->
+
 [!INCLUDE [landing-page](../README.md)]

@@ -14,41 +14,41 @@ public partial class GalleryImageService : IGalleryImageService
         _logger = logger;
     }
 
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithReswAsync(CancellationToken ct)
+    public async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesWithReswAsync(CancellationToken ct)
     {
        return await GetGalleryImagesAsync(ct);
     }
  
     #region Get culture specific gallery imageDescription
     #region With resw
-    private async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesAsync(CancellationToken ct)
+    private async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesAsync(CancellationToken ct)
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2), ct);
         _logger.LogTrace("Trying to get GalleryImages from Resw");
-        var galleryImages = new GalleryImageModel[]
+        var galleryImages = new GalleryImage[]
         {
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Fluffy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
                 Description: _stringlocalizer["img_20240531_141928"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Snowball",
                 ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
                 Description: _stringlocalizer["img_20230302_175758"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Buddy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
                 Description: _stringlocalizer["img_20240602_130506"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Coco",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
                 Description: _stringlocalizer["img_20240721_130401"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Bunny",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
                 Description: _stringlocalizer["img_20240721_130831"]),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Thumper",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
                 Description: _stringlocalizer["img_20240721_132103"]),
@@ -59,7 +59,7 @@ public partial class GalleryImageService : IGalleryImageService
     #endregion
     
     #region Without resw 
-    public async ValueTask<IImmutableList<GalleryImageModel>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
+    public async ValueTask<IImmutableList<GalleryImage>> GetGalleryImagesWithoutReswAsync(CancellationToken ct)
     {
         string cultureString = _localizationService.CurrentCulture.TwoLetterISOLanguageName;
         _logger.LogTrace("Trying to get GalleryImages for Culture: {culture}", cultureString);
@@ -72,34 +72,34 @@ public partial class GalleryImageService : IGalleryImageService
         return galleryImages;
     }
     #region German gallery descriptions
-    private async ValueTask<IImmutableList<GalleryImageModel>> GetDEGalleryImagesAsync(CancellationToken ct)
+    private async ValueTask<IImmutableList<GalleryImage>> GetDEGalleryImagesAsync(CancellationToken ct)
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2),ct);
         _logger.LogTrace("Creating DE GalleryImages without resw");
-        var galleryImages = new GalleryImageModel[]
+        var galleryImages = new GalleryImage[]
         {
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Fluffy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
                 Description: "Ein kleiner Kuschelmeister, der es liebt, im Zentrum der aufmerksamkeit zu stehen und sanft gekrault zu werden."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Snowball",
                 ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
                 Description: "Ein verspielter Wirbelwind, der mit seinen Hüpfern jeden Raum zum Leben erweckt und dabei immer ein Lächeln hervorruft."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Buddy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
                 Description: "Ein neugieriger Abenteurer, der ständig mit tapsigen Pfoten und seinem aufgeweckten Näschen die Welt erkundet."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Coco",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
                 Description: "Ein kleiner Genießer, der sich nichts sehnlicher wünscht, als den ganzen Tag an frischem Grünzeug zu knabbern."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Bunny",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
                 Description: "Ein absoluter Herzensbrecher, der sich mit einem einzigen Blick tief in die Herzen seiner Menschen schleicht."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Thumper",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
                 Description: "Ein lebhafter Freigeist, der mit seinen lustigen Sprüngen und Hüpfern für pure Lebensfreude sorgt."),
@@ -109,34 +109,34 @@ public partial class GalleryImageService : IGalleryImageService
     #endregion
     
     #region English gallery descriptions
-    private async ValueTask<IImmutableList<GalleryImageModel>> GetENGalleryImagesAsync(CancellationToken ct)
+    private async ValueTask<IImmutableList<GalleryImage>> GetENGalleryImagesAsync(CancellationToken ct)
     {
         // Simulate a delay to mimic data fetching
         await Task.Delay(TimeSpan.FromSeconds(2), ct);
         _logger.LogTrace("Creating EN GalleryImages without resw");
-        var galleryImages = new GalleryImageModel[]
+        var galleryImages = new GalleryImage[]
         {
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Fluffy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240531_141928.jpg",
                 Description: "A little snuggle expert who loves curling up in blankets and soaking up gentle attention."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Snowball",
                 ImageLocation: "ms-appx:///Assets/Images/img_20230302_175758.jpg",
                 Description: "A playful bundle of energy who hops around spreading joy wherever they go."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Buddy",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240602_130506.jpg",
                 Description: "A curious explorer, always investigating the world with tiny paws and an inquisitive nose."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Coco",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130401.jpg",
                 Description: "A little foodie who would happily spend all day nibbling on fresh treats."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Bunny",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_130831.jpg",
                 Description: "A charming sweetheart who wins hearts with just one adorable glance."),
-            new GalleryImageModel(
+            new GalleryImage(
                 Title: "Thumper",
                 ImageLocation: "ms-appx:///Assets/Images/img_20240721_132103.jpg",
                 Description: "A lively free spirit who bounces around spreading cheer and fun."),

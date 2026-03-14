@@ -23,8 +23,8 @@ public partial record DashboardModel
         this._logger = logger;
     }
 
-    public IListFeed<GalleryImageModel> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
-    public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
+    public IListFeed<GalleryImage> GalleryImages => ListFeed.Async(_galleryImageService.GetGalleryImagesWithoutReswAsync);
+    public IListFeed<GalleryImage> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
 
     #region CodeSample import directly in the Model
     /// <summary>

@@ -1,0 +1,31 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: weekly
+    target-branch: master
+    open-pull-requests-limit: 10
+    labels: ["dependencies", "nuget"]
+    commit-message:
+      prefix: "chore"
+      include: scope
+    pull-request-branch-name:
+      separator: "-"
+    groups:
+      minor-and-patch:
+        patterns:
+         - "*"
+        update-types:
+          - minor
+          - major
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+    target-branch: master
+    labels: ["dependencies", "github-actions"]
+    commit-message:
+      prefix: "chore"
+      include: scope

@@ -53,7 +53,34 @@
       ],
       "problemMatcher": "$msCompile"
     },
-        {
+
+    {
+      "label": "build-desktop-MvuxListApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net10.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish-desktop-MvuxListApp",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj",
+        "/property:GenerateFullPaths=true",
+        "/property:TargetFramework=net10.0-desktop",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
       "label": "build-desktop-SimpleMemberSelectionApp",
       "command": "dotnet",
       "type": "process",

@@ -1,0 +1,88 @@
+# GitHub Labels Configuration für DevTKSS.Uno.SampleApps
+# Bestehende Standard-Labels bleiben unverändert
+# Neue kategorisierte Labels werden hinzugefügt
+
+# === Bestehende Standard-Labels (NICHT überschreiben) ===
+# - bug: "d73a4a" - Something isn't working
+# - documentation: "0075ca" - Improvements or additions to documentation
+# - duplicate: "cfd3d7" - This issue or pull request already exists
+# - enhancement: "a2eeef" - New feature or request
+# - good first issue: "7057ff" - Good for newcomers
+# - help wanted: "008672" - Extra attention is needed
+# - invalid: "e4e669" - This doesn't seem right
+# - question: "d876e3" - Further information is requested
+# - wontfix: "ffffff" - This will not be worked on
+
+# === NEUE LABELS ===
+
+# Kind - Art des Changes
+- name: "kind/bug"
+  color: "d73a4a"
+  description: "Etwas funktioniert nicht"
+
+- name: "kind/feature"
+  color: "a2eeef"
+  description: "Neue Funktionalität"
+
+- name: "kind/dependency"
+  color: "0366d6"
+  description: "Dependency Updates (NuGet, SDK)"
+
+- name: "kind/refactor"
+  color: "fbca04"
+  description: "Code-Umstrukturierung ohne funktionale Änderungen"
+
+# Area - Projektbereich
+- name: "area/extensions"
+  color: "5319e7"
+  description: "DevTKSS.Extensions.Uno Projekte"
+
+- name: "area/samples"
+  color: "d4c5f9"
+  description: "Sample Applications"
+
+- name: "area/mvux"
+  color: "b60205"
+  description: "MVUX-bezogene Änderungen"
+
+- name: "area/navigation"
+  color: "c2e0c6"
+  description: "Navigation-bezogene Änderungen"
+
+- name: "area/ci-cd"
+  color: "ededed"
+  description: "CI/CD Workflows und GitHub Actions"
+
+- name: "area/tests"
+  color: "d93f0b"
+  description: "Test Code und Testing Infrastructure"
+
+- name: "area/docs"
+  color: "0075ca"
+  description: "Dokumentation (docs/, README)"
+
+# Status
+- name: "status/needs-review"
+  color: "fbca04"
+  description: "Wartet auf Code Review"
+
+- name: "status/blocked"
+  color: "d73a4a"
+  description: "Blockiert durch andere Issues/PRs"
+
+- name: "status/ready-to-merge"
+  color: "0e8a16"
+  description: "Bereit zum Merge"
+
+# Do Not Merge
+- name: "do-not-merge/work-in-progress"
+  color: "ee0701"
+  description: "PR ist noch in Arbeit (WIP)"
+
+- name: "do-not-merge/needs-tests"
+  color: "ee0701"
+  description: "Tests fehlen noch"
+
+- name: "do-not-merge/breaking-change"
+  color: "b60205"
+  description: "Breaking Change - benötigt besondere Aufmerksamkeit"

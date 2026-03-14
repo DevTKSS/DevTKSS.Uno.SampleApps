@@ -11,20 +11,21 @@
       NavigationCacheMode="Required"
       Background="{ThemeResource BackgroundBrush}">
 
-    <Page.Resources>
-        <ctk:BoolNegationConverter x:Name="InvertBoolConv"/>
-        <Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>
-        <!--Would expect this to be not needed when setting IsTitleBarAutoPaddingEnabled to false, but that does not do anything, so use this instead.
-        https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
-    </Page.Resources>
-    <Grid x:Name="MainContentGrid"
-          uen:Region.Attached="True"
-          utu:SafeArea.Insets="VisibleBounds">
+  <Page.Resources>
+      <ctk:BoolNegationConverter x:Name="InvertBoolConv"/>
+      <Thickness x:Key="NavigationViewHeaderMargin">20,20,20,20</Thickness>
+      <!--Would expect this to be not needed when setting IsTitleBarAutoPaddingEnabled to false, but that does not do anything, so use this instead.
+      https://learn.microsoft.com/de-de/windows/apps/design/controls/navigationview#top-whitespace-->
+  </Page.Resources>
+  <Grid x:Name="MainContentGrid"
+        uen:Region.Attached="True"
+        utu:SafeArea.Insets="VisibleBounds">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <NavigationView Grid.Row="0"
+        <NavigationView OpenPaneLength="250" 
+                        Grid.Row="0"
                         IsBackButtonVisible="Collapsed"
                         IsTitleBarAutoPaddingEnabled="True"
                         IsPaneToggleButtonVisible="True"

@@ -18,7 +18,7 @@ public partial record SimpleListModel
         this._galleryImageService = galleryImageService;
     }
 
-    public IListFeed<GalleryImageModel> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
+    public IListFeed<GalleryImage> GalleryImagesWithResw => ListFeed.Async(_galleryImageService.GetGalleryImagesWithReswAsync);
 
 }
 

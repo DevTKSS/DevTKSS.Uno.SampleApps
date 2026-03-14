@@ -22,13 +22,20 @@ Hier ist eine Liste von Steuerelementen und Funktionen, die Sie in der MvuxGalle
 - [`ItemOverlayTemplate` DataTemplate](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Styles/Generic.xaml) (*Layout repliziert aus WinUI 3 Galerie*)
 - [TabBar und TabBarItem](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/Views/DashboardPage.xaml) und [Model für das Binden von Elementen an ListFeed](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
 
-## Beispielhafte Uno.Extensions
+## Beispiele der Verwendung von Uno.Extensions in der MvuxGallery App
 
 - Mvux
   - ListFeed
+    - [DashboardModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
+    - [ListboardModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
+    - [GalleryImageService.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Models/GalleryImages/GalleryImageService.cs)
   - State
-
-  --> Fast jedes Model, detaillierte Übersicht folgt.
+    - [CounterModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/CounterModel.cs)
+    - [DashboardModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/DashboardModel.cs)
+    - [ListboardModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/ListboardModel.cs)
+    - [MainModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/MainModel.cs)
+    - [SimpleCardsModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ViewModels/SimpleCardsModel.cs)
+    - [ShellModel.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Presentation/ShellModel.cs)
 
 - Navigation
   - über Xaml
@@ -40,7 +47,7 @@ Hier ist eine Liste von Steuerelementen und Funktionen, die Sie in der MvuxGalle
 - Hosting
   - [App.xaml.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/App.xaml.cs)
 
-- DependencyInjection
+- DependencyInjection (Inkl. in `UnoFeature` "Hosting")
   - Service Registrierung
     - [App.xaml.cs](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/App.xaml.cs)
   - Service Definition
