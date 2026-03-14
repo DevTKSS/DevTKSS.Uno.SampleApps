@@ -62,7 +62,7 @@
         "build",
         "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net9.0-desktop",
+        "/property:TargetFramework=net10.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
@@ -75,7 +75,7 @@
         "publish",
         "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net9.0-desktop",
+        "/property:TargetFramework=net10.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"

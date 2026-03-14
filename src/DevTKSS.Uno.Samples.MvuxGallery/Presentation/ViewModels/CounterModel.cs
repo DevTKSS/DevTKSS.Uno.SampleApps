@@ -14,7 +14,7 @@ public partial record CounterModel
         _sampleService = serviceProvider.GetRequiredKeyedService<ICodeSampleService>("CounterSamples");
         _stringLocalizer = stringLocalizer;
     }
-
+    public IFeed<string> Title => Feed<string>.Async(async(ct) => _stringLocalizer["CounterTitle"]);
     public IState<Countable> Countable => State.Value(this, () => new Countable(0, 1));
     public ValueTask IncrementCounter()
         => Countable.UpdateAsync(c => c?.Increment());

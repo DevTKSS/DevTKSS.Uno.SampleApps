@@ -57,7 +57,7 @@
       "request": "launch",
       "preLaunchTask": "build-desktop-MvuxListApp",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/bin/Debug/net9.0-desktop/DevTKSS.Uno.MvuxListApp.dll",
+      "program": "${workspaceFolder}/src/DevTKSS.Uno.MvuxListApp/bin/Debug/net10.0-desktop/DevTKSS.Uno.MvuxListApp.dll",
       "args": [],
       "launchSettingsProfile": "DevTKSS.Uno.MvuxListApp (Desktop)",
       "env": {

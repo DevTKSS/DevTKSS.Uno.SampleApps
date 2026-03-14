@@ -40,25 +40,56 @@ public partial record MainModel
     public IListState<string> Members => ListState<string>.Async(this, GetMembersAsync)
                                                           .Selection(SelectedMember);
 
-    public IState<string> SelectedMember => State<string>.Value(this, () => string.Empty);
+    public IState<string> SelectedMember => State<string>.Value(this, () => string.Empty)
+        .ForEach(async (member, ct) =>
+    {
+        _logger.LogInformation("Selected Member changed to: {member}", member);
+        await ValueTask.CompletedTask;
+    });
     #endregion
     #region MembersView-Update
     public IState<string> ModifiedMemberName => State<string>.Empty(this);
+    public async ValueTask RenameOtherMemberAsync(
+        CancellationToken ct)
+    {
+        
+         var selectedMember =  await SelectedMember;
+        _logger.LogInformation("Selected Member in RenameOtherMemberAsync: {selectedMember}", selectedMember);
+        if (selectedMember is not string replaceMember)
+        {
+            if(_logger.IsEnabled(LogLevel.Warning))
+                _logger.LogWarning("Selected Member is not a string. Is null? '{selectedMember}'", selectedMember is null);
 
+            return;
+        }
+        var modName = await ModifiedMemberName;
+        if (modName is null)
+        {
+            if (_logger.IsEnabled(LogLevel.Warning))
+                _logger.LogWarning("Modified Member Name is null.");
+            return;
+        }
+
+        await Members.UpdateAllAsync(
+           match: item => item == replaceMember,
+           updater: _ => modName,
+           ct: ct
+       );
+    }
     public async ValueTask RenameMemberAsync(
-        [FeedParameter(nameof(ModifiedMemberName))] string? modName,
-        [FeedParameter(nameof(SelectedMember))] string? replaceMember,
+        [FeedParameter(nameof(ModifiedMemberName))] string modName,
+        [FeedParameter(nameof(SelectedMember))] string replaceMember,
         CancellationToken ct)
     {
 
         _logger.LogInformation("Modified MemberName ist: {modifiedName}", modName);
         _logger.LogInformation("SelectedMember ist: {selectedMember}", replaceMember);
-        if (string.IsNullOrWhiteSpace(modName))
+        if (string.IsNullOrWhiteSpace(modName) || string.IsNullOrWhiteSpace(replaceMember))
             return;
 
         await Members.UpdateAllAsync(
             match: item => item == replaceMember,
-            updater: _ => modName,
+            updater: oldName => modName,
             ct: ct
         );
 

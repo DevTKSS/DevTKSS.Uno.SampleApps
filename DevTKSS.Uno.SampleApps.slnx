@@ -27,12 +27,13 @@
     <Project Path="src/DevTKSS.Extensions.Uno.Storage/DevTKSS.Extensions.Uno.Storage.csproj" />
   </Folder>
   <Folder Name="/Gallery/">
-    <Project Path="src/DevTKSS.Uno.Samples.MvuxGallery/DevTKSS.Uno.Samples.MvuxGallery.csproj">
-      <Deploy />
-    </Project>
+    <Project Path="src/DevTKSS.Uno.Samples.MvuxGallery/DevTKSS.Uno.Samples.MvuxGallery.csproj"/>
+  </Folder>
   <Folder Name="/Tutorials/">
     <Project Path="src/DevTKSS.Uno.XamlNavigationApp/DevTKSS.Uno.XamlNavigationApp.csproj" />
-    <Project Path="src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj" />
+    <Project Path="src/DevTKSS.Uno.MvuxListApp/DevTKSS.Uno.MvuxListApp.csproj" >
+      <Deploy /> 
+    </Project>
     <Project Path="src/DevTKSS.Uno.SimpleMemberSelectionApp/DevTKSS.Uno.SimpleMemberSelectionApp.csproj" />
   </Folder>
 </Solution>

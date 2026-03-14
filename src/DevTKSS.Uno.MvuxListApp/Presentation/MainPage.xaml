@@ -35,7 +35,7 @@
 
         <TextBox x:Name="ModifiableMemberNameBox"
                  PlaceholderText="Change the Name of the selected Member:"
-                 Text="{Binding Path=ModifiedMemberName, Mode=TwoWay}"/>
+                 Text="{Binding Path=ModifiedMemberName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Button Content="Change Name"
                 Command="{Binding Path=RenameMemberAsync}" />
