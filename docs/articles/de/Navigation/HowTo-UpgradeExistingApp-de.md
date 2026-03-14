@@ -36,6 +36,10 @@ In der Projektdatei, zu erkennen an der Endung `.csproj`, brauchst du dafür neb
 
 > [!TIP]
 > Das `Toolkit` Feature wird nur benötigt, wenn Navigations-Steuerelemente wie `TabBar` oder `DrawerControl` verwendet werden sollen.
+> [!NOTE]
+> Wir benötigen grundsätzlich das `Hosting` Feature und die `DependencyInjection` Funktionalität in unserer Anwendung zu verwenden.
+> Ich sage hier absichtlich "grundsätzlich", da ich bspw. in der hier enthaltenen `MvuxGallery` und `SimpleMemberSelectionApp` Anwendungen das `Hosting` Feature entfernt habe, die App erstellt habe und entgegen der offiziellen Dokumentation ich keine Probleme feststellen konnte.
+> Alle DI Parameter wurden korrekt aufgelöst und ich war weiterhin im stande `ConfigureServices` für die Registrierung von bspw. `KeyedService` in der zugehörigen `App.xaml.cs` Datei mit dem [![Uno.Sdk 6.3.28](https://img.shields.io/badge/Uno.Sdk-6.3.28-blue)](https://www.nuget.org/packages/Uno.Sdk/6.3.28) zu verwenden.
 
 ## App.xaml.cs Konfiguration
 

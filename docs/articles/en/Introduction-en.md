@@ -29,8 +29,20 @@ Here is a quick overview of the included samples. You can find detailed informat
 
 ### XamlNavigationApp (Mvux)
 
-- [NavigationView in MVUX or MVVM + XAML](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.en)
+- [NavigationView in MVUX or MVVM + XAML - Overview](xref:DevTKSS.Uno.ExtensionsNavigation.Overview.en) - [Watch Showcase Video on Youtube](https://youtu.be/vVvnK02r2ug)
+- [Defining UI with a NavigationView](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-Defining-UI.en) - [Watch Tutorial on Youtube](https://youtu.be/knt2oOjHH30)
+- [Responding to Route Changes](xref:DevTKSS.Uno.ExtensionsNavigation.HowTo-ChangeRoutes.en) - [Watch Tutorial on Youtube](https://youtu.be/RZ3RirA7jhk)
 - [View Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.XamlNavigationApp/)
+
+### SimpleMemberSelectionApp
+
+- **YouTube Video:** [How To: Binding ListState and ImmutableList to FeedView & ListView in UI](https://youtu.be/wOsSlv1YFic)
+- [View Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.SimpleMemberSelectionApp/)
+
+### MvuxListApp
+
+- **YouTube Video:** [HowTo: Mvux ListState - Binding our UI to the Selected Item](https://youtu.be/UUa2VymR8hM)
+- [View Source Code](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.MvuxListApp/)
 
 ---
 

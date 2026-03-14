@@ -15,7 +15,7 @@ You are not required to have any prior knowledge of the Uno Platform or Mvux to 
 ## Documentation and Tutorials of the DevTKSS.Uno.SampleApps
 
 * [Discover the DevTKSS.Uno.SampleApps Repository on GitHub](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
-* [Explore the DevTKSS.Uno.SampleApps Documentation in the Browser](https://devtkss.github.io/DevTKSS.Uno.SampleApps/doc)
+* [Explore the DevTKSS.Uno.SampleApps Documentation in the Browser](https://devtkss.github.io/DevTKSS.Uno.SampleApps/)
 
 ## Official Documentation links
 

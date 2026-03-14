@@ -79,7 +79,7 @@ Hier ist eine Liste von Steuerelementen und Funktionen, die Sie in der MvuxGalle
 
 - Lokalisierung
   - **IStringLocalizer**
-    - Ressourcenwörterbücher (*Ich empfehle, diese Links mit Visual Studio 2022 zu durchsuchen*)
+    - Ressourcenwörterbücher (*Ich empfehle, diese Links mit Visual Studio 2022/2026 zu durchsuchen*)
       - [en](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Strings/en/Resources.resw)
       - [de](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Strings/de/Resources.resw)
     - Bindung des aktuellen Werts in `IState<string>` und zur entsprechenden Ansicht

@@ -75,7 +75,7 @@ Here is a list of Controls and Features you can explore in the MvuxGallery App w
 
 - Localization
   - **IStringLocalizer**
-    - Resources Dictionaries (*I recommend to lookup those links using Visual Studio 2022*)
+    - Resources Dictionaries (*I recommend to lookup those links using Visual Studio 2022/2026*)
       - [en](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Strings/en/)
       - [de](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/src/DevTKSS.Uno.Samples.MvuxGallery/Strings/de/)
     - Binding current value in `IState<string>` and to corresponding View

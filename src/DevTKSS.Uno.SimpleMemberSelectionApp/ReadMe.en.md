@@ -15,8 +15,18 @@ For more information on how to use the Uno.Sdk or upgrade Uno Platform packages 
 ## Tutorial to follow along with this sample
 
 This sample app has no Documented Tutorial by now, but you can check out the Video Guide already available on YouTube:
-[How To: Binden von ListState und ImmutableList zu FeedView & ListView im UI | Uno Community Tutorial](https://youtu.be/wOsSlv1YFic) (Deutsch => Switch on Subtitles for English)
+[How To: Binding to ListState with an ImmutableList from FeedView & ListView in UI](https://youtu.be/wOsSlv1YFic) (Deutsch => Switch on Subtitles for English)
+
+> [!NOTE]
+> The Video for the Tutorial is until now only available in German Localization, so we recommend activating automatic Sub-Titles on YouTube until there is an English Version available.
+
+### Source Code
+
+| View | ViewModel |
+| --- | --- |
+| [Main Page](./Presentation/MainPage.xaml) | [Main Model](./Presentation/MainModel.cs)
+| [Dashboard Page](./Presentation/DashboardPage.xaml) | [Dashboard Model](./Presentation/DashboardModel.cs)
 
 ## Contributing
 
-If you want to contribute to this sample, please check out the [GitHub repository](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps)
+If you want to contribute to this sample, please check out the [CONTRIBUTING Guidelines](https://github.com/DevTKSS/DevTKSS.Uno.SampleApps/blob/master/CONTRIBUTING.md)
